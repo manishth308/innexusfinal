@@ -1,0 +1,57 @@
+/* Hero slide animations */
+.hero-slide-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.hero-slide-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.hero-slide-left.visible,
+.hero-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Service card hover */
+.service-card {
+    transition: transform 0.4s ease;
+}
+.service-card:hover {
+    transform: scale(1.1);
+}
+
+/* Slide-up animation */
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testimonial carousel */
+.testimonial-track {
+    animation: scroll-testimonials linear infinite;
+    animation-duration: 30s;
+}
+.testimonial-track:hover {
+    animation-play-state: paused;
+}
+@keyframes scroll-testimonials {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Hide scrollbar for the what-we-do scroll container */
+.wwd-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.wwd-scroll::-webkit-scrollbar {
+    display: none;
+}
