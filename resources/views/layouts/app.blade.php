@@ -9,7 +9,7 @@
     @stack('styles')
     @vite(['resources/css/app.css', 'resources/css/header.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased">
+<body class="antialiased bg-[#F5F5F9]">
     @include('partials.header')
 
     <main>

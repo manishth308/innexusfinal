@@ -162,7 +162,7 @@
                                         @foreach ($category->children as $subItem)
                                             @if ($subItem->page)
                                                 <li>
-                                                    
+                                                    <a
                                                         href="{{ route('page.show', $subItem->page->slug) }}"
                                                         @click="closeAll()"
                                                         class="mega-subitem-card group"
@@ -180,7 +180,7 @@
                                     <div class="flex flex-col justify-center h-full max-w-sm">
                                         <p class="mega-leaf-title">{{ $category->title }}</p>
                                         @if ($category->page)
-                                            
+                                            <a
                                                 href="{{ route('page.show', $category->page->slug) }}"
                                                 @click="closeAll()"
                                                 class="mega-leaf-link"
@@ -275,7 +275,7 @@
                                             @foreach ($category->children as $subItem)
                                                 @if ($subItem->page)
                                                     <li>
-                                                        
+                                                        <a
                                                             href="{{ route('page.show', $subItem->page->slug) }}"
                                                             @click="mobileOpen = false"
                                                             class="flex items-center gap-2 py-1.5 text-[13px] text-ink/70 hover:text-brand-blue transition-colors"
@@ -289,7 +289,7 @@
                                         </ul>
 
                                     @elseif ($category->page)
-                                        
+                                        <a
                                             href="{{ route('page.show', $category->page->slug) }}"
                                             @click="mobileOpen = false"
                                             class="block py-2 text-[14px] text-ink/70 hover:text-brand-blue transition-colors"
@@ -302,7 +302,7 @@
                         </ul>
 
                     @elseif ($item->page)
-                        
+                        <a
                             href="{{ route('page.show', $item->page->slug) }}"
                             @click="mobileOpen = false"
                             class="block py-3 text-ink hover:text-brand-blue font-medium text-[15px] transition-colors"
@@ -315,7 +315,7 @@
 
             {{-- Mobile Contact --}}
             <li class="pt-4 mt-2 border-t border-gray-200">
-                
+                <a
                     href="#contact"
                     @click="mobileOpen = false"
                     class="inline-block btn-contact"

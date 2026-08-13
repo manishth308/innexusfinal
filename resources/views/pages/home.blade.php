@@ -46,7 +46,7 @@
     </section>
 
     <!----- AboutUs Section -->
-    <section class="px-8 py-20 relative bg-white">
+    <section class="px-8 py-20 relative bg-[#F5F5F9]">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         {{-- Left column: text content --}}
@@ -107,7 +107,7 @@
 </section>
 
 <!---- What We Do Section ---->
-<section class="px-8 py-20 bg-white text-black">
+<section class="px-8 py-20 text-black">
     <div class="max-w-6xl mx-auto">
 
         <p class="text-sm font-semibold uppercase tracking-wide text-brand-red mb-8 text-center md:text-left">What We Do</p>
@@ -148,46 +148,41 @@
 </section>
 
 <!--- Services section -->
-<section class="px-8 py-20 bg-white text-black">
-    <div class="max-w-4xl mx-auto">
+<section class="bg-[#061a3b] text-white min-h-screen flex flex-col justify-start relative">
+    <div id="services-bg" class="absolute inset-0 transition-all duration-500" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center;"></div>
 
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-blue">
-           Not Sure Which <span class="text-red-800">Service</span> Fits Your Situation? Start With the Result You Want Instead.
+    <div class="bg-[#061a3b] pt-17 pb-14 px-8 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-0 text-white px-10">
+           Not Sure Which <span class="text-red-500">Service</span> Fits Your Situation?<p> Start With the Result You Want Instead.</p>
         </h2>
+    </div>
+
+    <div class="max-w-6xl mx-auto w-full pb-0 relative z-10 px-8">
 
         @php
             $homeServices = [
-                ['number' => '01', 'title' => 'Software Development', 'description' => 'Need a working product built from scratch?'],
-                ['number' => '02', 'title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?'],
-                ['number' => '03', 'title' => 'Web Development', 'description' => 'Website not performing the way it should?'],
-                ['number' => '04', 'title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?'],
-                ['number' => '05', 'title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?'],
-                ['number' => '06', 'title' => 'Branding', 'description' => 'Brand feels inconsistent or forgettable?'],
-                ['number' => '07', 'title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?'],
-                ['number' => '08', 'title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?'],
+                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1555066931-43666627e783?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80'],
             ];
         @endphp
 
-        @foreach ($homeServices as $service)
-            <div class="service-card flex items-center gap-6 py-6 border-b-2 border-brand-red/30">
-
-                <div class="shrink-0 w-12 h-12 rounded-full border border-brand-red/30 flex items-center justify-center text-brand-blue font-semibold">
-                    {{ $service['number'] }}
+        <div class="grid md:grid-cols-3 gap-6 border-b border-white/20 relative overflow-hidden mx-8">
+            @foreach ($homeServices as $service)
+                <div class="relative min-h-[160px] overflow-hidden border-b border-white/30 hover:bg-[#2699e9] hover:scale-[1.04] transition-all duration-300" data-image="{{ $service['image'] }}">
+                    <div class="relative h-full flex items-center p-6">
+                        <div>
+                            <p class="text-sm text-white/80 mb-1">{{ $service['description'] }}</p>
+                            <h3 class="text-xl font-semibold text-white">{{ $service['title'] }}</h3>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="flex-1">
-                    <p class="text-base text-black/80">{{ $service['description'] }}</p>
-                    <h3 class="text-xl font-semibold text-brand-red">{{ $service['title'] }}</h3>
-                </div>
-
-                <div class="shrink-0 w-32 h-20 rounded-md bg-brand-blue border border-black/10 hidden md:block"></div>
-
-                <div class="shrink-0 text-black/70">
-                    →
-                </div>
-
-            </div>
-        @endforeach
+            @endforeach
+        </div>
 
     </div>
 </section>
@@ -202,126 +197,74 @@
 
         @php
             $projects = [
-                ['badge' => 'Branding', 'title' => 'EcoBrand - Green Initiative', 'description' => 'Crafted a fresh brand identity and a responsive e-commerce platform for EcoBrand.'],
-                ['badge' => 'App Development', 'title' => 'UrbanFit - Fitness on the Go', 'description' => 'Developed a user-friendly mobile app for UrbanFit that empowers users to track their fitness journey.'],
-                ['badge' => 'App Development', 'title' => 'TechFlow - Innovative Solutions', 'description' => 'Implemented cutting-edge web development and digital marketing strategies for TechFlow.'],
-                ['badge' => 'Branding', 'title' => 'TechAI - A Digital Transformation', 'description' => "We elevated TechAI's online presence through a seamless responsive website redesign."],
+                ['title' => 'Healthcare', 'description' => 'Delivering secure, compliant digital solutions that streamline patient care, telemedicine, and health data management for modern healthcare providers.', 'image' => 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80'],
+                ['title' => 'Manufacturing', 'description' => 'Empowering factories with smart automation, IoT integrations, and digital platforms that boost productivity and operational efficiency.', 'image' => 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'],
+                ['title' => 'Finance and Banking', 'description' => 'Building secure fintech platforms, digital banking apps, and data-driven solutions that modernize financial services for the digital era.', 'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'],
+                ['title' => 'Ecommerce', 'description' => 'Creating high-performing online stores, seamless checkout experiences, and scalable platforms that drive sales and customer engagement.', 'image' => 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80'],
             ];
         @endphp
 
         <div class="grid md:grid-cols-2 gap-8">
             @foreach ($projects as $project)
-                <div class="slide-up">
-                    <div class="w-full h-56 rounded-lg bg-brand-blue-light border border-black/10"></div>
-
-                    <span class="inline-block mt-4 px-3 py-1 rounded-full text-xs font-medium bg-black/5 text-brand-blue">
-                        {{ $project['badge'] }}
-                    </span>
-
-                    <h3 class="mt-2 text-lg font-semibold text-brand-blue">{{ $project['title'] }}</h3>
-                    <p class="mt-1 text-sm text-black/70">{{ $project['description'] }}</p>
+                <div class="slide-up relative h-64 rounded-lg overflow-hidden border border-black/10 group">
+                    <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-[#061a3b]/70 group-hover:bg-[#061a3b]/50 transition-colors duration-300"></div>
+                    <div class="relative h-full flex flex-col justify-center items-center text-center p-6">
+                        <h3 class="text-2xl font-semibold text-white">{{ $project['title'] }}</h3>
+                        <p class="mt-2 text-base text-white">{{ $project['description'] }}</p>
+                    </div>
                 </div>
             @endforeach
         </div>
 
         <div class="text-center mt-12 slide-up">
-            <a href="#"
-               class="inline-block px-6 py-3 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-medium transition">
-                View All Projects
-            </a>
+            <p class="text-lg font-bold text-black/70 max-w-3xl mx-auto">
+                In each of these fields, we bring real understanding of the business, not just technical skill.
+            </p>
         </div>
 
     </div>
 </section>
 
-<!---- why us --->
-<section class="px-8 py-20 relative bg-white">
-    <div class="max-w-5xl mx-auto">
+<!---- Why Choose Us --->
+<section class="bg-[#F5F5F9]">
+    <div class="mx-auto max-w-[1300px] px-6 py-16 lg:px-[90px]">
 
-        {{-- Heading --}}
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Why Us</h2>
-            <p class="mt-2 text-black/70">
-                Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
-            </p>
-        </div>
+        <h2 class="max-w-[650px] text-[36px] md:text-[42px] lg:text-[50px] font-medium leading-[1.1] -tracking-[0.02em] text-[#111111] mb-[60px]">
+            Why choose IntechNexus ?<br>
+        </h2>
 
-        {{-- Three feature cards --}}
-        @php
-            $features = [
-                ['icon' => '🎨', 'title' => 'Creative Excellence', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.', 'stat' => '95', 'label' => '% Client Satisfaction'],
-                ['icon' => '📈', 'title' => 'Proven Results', 'description' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.', 'stat' => '200', 'label' => '% ROI Increase'],
-                ['icon' => '🏅', 'title' => 'Expert Team', 'description' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis.', 'stat' => '50', 'label' => '+ Awards Won'],
-            ];
-        @endphp
+        <div>
+            @php
+                $features = [
+                    ['title' => 'One team for the full journey', 'description' => 'Build, design, and grow all work together, so nothing gets lost between vendors. From initial concept through post-launch growth, a single coordinated team owns the entire process. This removes handoff friction, keeps decisions consistent, and ensures your product evolves with one shared vision rather than fragmented vendor relationships.'],
+                    ['title' => 'Real industry knowledge', 'description' => 'Not generic delivery. Our teams bring deep sector-specific insight that shapes every recommendation, design choice, and technical decision. We study your market, users, and regulatory environment before writing a single line of code, so the solutions we build are grounded in real business context rather than one-size-fits-all templates.'],
+                    ['title' => 'A clear process on every project', 'description' => 'From discovery to launch, we follow a transparent, milestone-driven workflow with regular checkpoints, documented requirements, and measurable progress reviews. Every stakeholder knows what happens next, why each decision is made, and how risks are managed before they become issues.'],
+                    ['title' => 'Global reach', 'description' => 'With teams who understand local markets. We combine international delivery capabilities with regional expertise in pricing, compliance, culture, and user behavior. That means you get global engineering quality without losing the nuance that local market success demands.'],
+                ];
+            @endphp
 
-        <div class="grid md:grid-cols-3 gap-6 mb-20">
             @foreach ($features as $feature)
-                <div class="bg-gray-50 border border-black/10 rounded-lg p-6 text-center">
-                    <div class="w-12 h-12 mx-auto rounded-lg bg-brand-red flex items-center justify-center text-2xl text-white">
-                        {{ $feature['icon'] }}
+                <div class="group border-t border-[#D9DFE8] pt-[30px] pb-[55px] min-h-[210px] relative hover:bg-white hover:text-black transition-all duration-300 px-10">
+                    <div class="group-hover:scale-[0.96] group-hover:translate-x-4 transition-all duration-300">
+                        <h3 class="text-[27px] md:text-[31px] font-medium leading-[1.25] text-[#111111]">{{ $feature['title'] }}</h3>
+                        <p class="mt-[22px] md:mt-[25px] text-[20px] md:text-[21px] font-normal leading-[1.5] text-[#607594] max-w-[780px]">
+                            {{ $feature['description'] }}
+                        </p>
                     </div>
-                    <h3 class="mt-4 font-semibold text-brand-blue">{{ $feature['title'] }}</h3>
-                    <p class="mt-2 text-sm text-black/70">{{ $feature['description'] }}</p>
 
-                    <div class="mt-6 pt-6 border-t border-black/10">
-                        <p class="text-2xl font-bold text-brand-blue">{{ $feature['stat'] }}</p>
-                        <p class="text-xs text-black/60">{{ $feature['label'] }}</p>
-                    </div>
+                    <svg class="absolute right-0 top-[30px] w-[50px] h-[50px] text-[#D1DDED] group-hover:text-blue-600 hidden md:block transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H10M17 7V14" />
+                    </svg>
                 </div>
             @endforeach
-        </div>
-
-        {{-- "Why Leading Brands Choose Us" --}}
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-
-            <div class="w-full h-80 rounded-lg bg-gray-50 border border-black/10"></div>
-
-            <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-brand-blue">Why Leading Brands Choose Us</h2>
-                <p class="mt-4 text-black/70">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.
-                </p>
-
-                @php
-                    $reasons = [
-                        ['title' => 'Strategic Thinking', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt.'],
-                        ['title' => 'Data-Driven Approach', 'description' => 'Ut enim ad minim veniam, quis nostrud exercitation ullam laboris nisi ut aliquip ex ea.'],
-                        ['title' => '24/7 Support', 'description' => 'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.'],
-                    ];
-                @endphp
-
-                <ul class="mt-6 space-y-4">
-                    @foreach ($reasons as $reason)
-                        <li class="flex items-start gap-3">
-                            <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-xs">✓</span>
-                            <div>
-                                <p class="font-semibold text-brand-blue">{{ $reason['title'] }}</p>
-                                <p class="text-sm text-black/70">{{ $reason['description'] }}</p>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
-
-                <div class="mt-8 flex gap-4">
-                    <a href="{{ url('/contact') }}"
-                       class="px-6 py-3 rounded-md bg-brand-red hover:bg-brand-red-hover text-white font-medium transition">
-                        Start Your Project
-                    </a>
-                    <a href="#"
-                       class="px-6 py-3 rounded-md border border-black/30 text-brand-blue hover:bg-black/5 font-medium transition">
-                        View Portfolio
-                    </a>
-                </div>
-            </div>
-
         </div>
 
     </div>
 </section>
 
 <!-- Testimonials section -->
-<section class="px-8 py-20 overflow-hidden bg-white">
+<section class="px-8 py-20 overflow-hidden bg-blue-700">
     <div class="max-w-6xl mx-auto">
 
         <div class="text-center mb-12">
@@ -383,6 +326,97 @@
     </div>
 </section>
 
+<!---- Tech Stack ---->
+<section class="bg-[#F5F5F9]">
+    <div class="mx-auto max-w-[1400px] px-6 py-20 lg:px-[90px]">
+
+        <h2 class="text-[40px] md:text-[48px] lg:text-[64px] font-medium leading-[1.1] -tracking-[0.03em] text-[#111111] mb-[60px]">
+            Technologies We Work With
+        </h2>
+
+        <div class="h-px bg-[#D5DDE8] mb-5"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+
+            <div>
+                @php
+                    $techStack = [
+                        [
+                            'name' => 'Web',
+                            'technologies' => [
+                                ['name' => 'WordPress', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/1200px-WordPress_blue_logo.svg.png'],
+                                ['name' => 'React', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png'],
+                                ['name' => 'Next.js', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png'],
+                            ],
+                        ],
+                        [
+                            'name' => 'Mobile',
+                            'technologies' => [
+                                ['name' => 'iOS', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/1200px-IOS_logo.svg.png'],
+                                ['name' => 'Android', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png'],
+                                ['name' => 'Flutter', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Google-flutter-logo.png/1200px-Google-flutter-logo.png'],
+                                ['name' => 'React Native', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png'],
+                            ],
+                        ],
+                        [
+                            'name' => 'Backend and data',
+                            'technologies' => [
+                                ['name' => 'Python', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png'],
+                                ['name' => 'Node.js', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png'],
+                                ['name' => 'Custom databases', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1200px-SQLite370.svg.png'],
+                            ],
+                        ],
+                        [
+                            'name' => 'Design',
+                            'technologies' => [
+                                ['name' => 'Figma', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png'],
+                                ['name' => 'Modern design systems', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Design_%28icon%29.svg/1200px-Design_%28icon%29.svg.png'],
+                            ],
+                        ],
+                    ];
+                @endphp
+
+                <div class="flex flex-col gap-8">
+                    @foreach ($techStack as $index => $category)
+                        <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+                            <span class="tech-indicator block w-12 h-[3px] bg-[#1754B8] shrink-0 opacity-0 transition-opacity duration-300"></span>
+                            <span class="tech-name text-[27px] leading-[1.3] text-[#222222] font-normal transition-colors duration-300">
+                                {{ $category['name'] }}
+                            </span>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div id="tech-right" class="relative">
+                <h3 class="text-[38px] font-medium text-[#69758A] leading-[1.2] mb-[30px]">
+                    Web
+                </h3>
+
+                <div class="absolute inset-0 -z-10 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"></div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5" id="tech-grid">
+                    @php
+                        $webTechnologies = $techStack[0]['technologies'];
+                    @endphp
+
+                    @foreach ($webTechnologies as $tech)
+                        <div class="border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex items-center justify-center p-4">
+                            <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-full max-w-full object-contain">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    window.techStackData = @json($techStack);
+</script>
+
 <!-- Closing CTA section -->
 <section class="px-8 py-16 bg-white">
     <div class="max-w-6xl mx-auto">
@@ -391,17 +425,22 @@
 
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight text-brand-blue">
-                        Ready to Elevate<br>Your Brand?
+                        Have an Idea Worth Building?
                     </h2>
                     <p class="mt-4 text-black/70">
-                        Partner with IntechNexus and take the first step towards transforming your digital presence.
+                        Tell us where you are starting from. We will tell you the fastest, safest way to get where you want to go. That could be a new product, a full rebuild, or a growth plan for something you already launched.
                     </p>
                 </div>
 
-                <div class="shrink-0">
+                <div class="shrink-0 flex flex-wrap gap-4">
                     <a href="{{ url('/contact') }}"
-                       class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-semibold transition">
-                        Book Free Consultation
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-semibold transition">
+                        Get a Free Quote
+                        <span>&raquo;</span>
+                    </a>
+                    <a href="{{ url('/contact') }}"
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-black/30 text-brand-blue hover:bg-black/5 font-medium transition">
+                        Talk to Our Team
                         <span>&raquo;</span>
                     </a>
                 </div>

@@ -44,3 +44,73 @@ document.addEventListener('DOMContentLoaded', function () {
     cards.forEach((card) => observer.observe(card));
     setActive(0);
 })();
+
+(function () {
+    const bg = document.getElementById('services-bg');
+    const items = document.querySelectorAll('[data-image]');
+    if (!bg || !items.length) return;
+
+    items.forEach((item) => {
+        item.addEventListener('mouseenter', function () {
+            const image = this.getAttribute('data-image');
+            bg.style.backgroundImage = `url('${image}')`;
+        });
+
+        item.addEventListener('mouseleave', function () {
+            bg.style.backgroundImage = `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80')`;
+        });
+    });
+})();
+
+(function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+        categories.forEach((cat, idx) => {
+            const isActive = Number(cat.getAttribute('data-index')) === index;
+            const indicator = cat.querySelector('.tech-indicator');
+            const name = cat.querySelector('.tech-name');
+
+            if (isActive) {
+                indicator.classList.remove('opacity-0');
+                indicator.classList.add('opacity-100');
+                name.classList.remove('text-[#222222]', 'font-normal');
+                name.classList.add('text-[#1754B8]', 'font-medium');
+            } else {
+                indicator.classList.remove('opacity-100');
+                indicator.classList.add('opacity-0');
+                name.classList.remove('text-[#1754B8]', 'font-medium');
+                name.classList.add('text-[#222222]', 'font-normal');
+            }
+        });
+
+        const selected = data[index];
+        if (!selected) return;
+
+        rightHeading.textContent = selected.name;
+
+        techGrid.innerHTML = selected.technologies
+            .map(
+                (tech) => `
+                    <div class="border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex items-center justify-center p-4">
+                        <img src="${tech.image}" alt="${tech.name}" class="max-h-full max-w-full object-contain">
+                    </div>
+                `
+            )
+            .join('');
+    }
+
+    categories.forEach((cat) => {
+        cat.addEventListener('click', function () {
+            const index = Number(this.getAttribute('data-index'));
+            setActive(index);
+        });
+    });
+
+    setActive(0);
+})();

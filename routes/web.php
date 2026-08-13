@@ -5,15 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::post('/contact', [PageController::class, 'submitContact'])
-    ->middleware('throttle:5,1')
-    ->name('contact.submit');
-
-// Catch-all page route - must stay LAST so it never shadows the routes
-// above, or any blog/menu routes we add later.
-Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');
-
-Route::get('/about-us', function () {
-    return view('pages.about');
-});
 Route::view('/contact', 'pages.contact')->name('contact');
+
+// Catch-all CMS page route - resolves any single-segment slug against the
+// `pages` table (About, Services, and any future page created in the
+// admin panel). MUST stay LAST: every named/static route above this line
+// is matched first, and anything not explicitly listed here falls through
+// to this dynamic lookup instead of 404ing outright.
+Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');
