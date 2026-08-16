@@ -161,26 +161,26 @@
 
         @php
             $homeServices = [
-                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80'],
-                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80'],
-                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80'],
-                ['title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1555066931-43666627e783?auto=format&fit=crop&w=2000&q=80'],
-                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80'],
-                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80'],
-                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80'],
+                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80', 'url' => '/software-development'],
+                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80', 'url' => '/mobile-app-development'],
+                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => '/web-development'],
+                ['title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1555066931-43666627e783?auto=format&fit=crop&w=2000&q=80', 'url' => '/application-development'],
+                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80', 'url' => '/ui-ux-design'],
+                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80', 'url' => '/graphic-creative-design'],
+                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80', 'url' => '/digital-marketing'],
             ];
         @endphp
 
         <div class="grid md:grid-cols-3 gap-6 border-b border-white/20 relative overflow-hidden mx-8">
             @foreach ($homeServices as $service)
-                <div class="relative min-h-[160px] overflow-hidden border-b border-white/30 hover:bg-[#2699e9] hover:scale-[1.04] transition-all duration-300" data-image="{{ $service['image'] }}">
+                <a href="{{ $service['url'] }}" class="relative min-h-[160px] overflow-hidden border-b border-white/30 hover:bg-[#2699e9] hover:scale-[1.04] transition-all duration-300 block" data-image="{{ $service['image'] }}">
                     <div class="relative h-full flex items-center p-6">
                         <div>
                             <p class="text-sm text-white/80 mb-1">{{ $service['description'] }}</p>
                             <h3 class="text-xl font-semibold text-white">{{ $service['title'] }}</h3>
                         </div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
 

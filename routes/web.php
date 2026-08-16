@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ChatbotController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
+Route::post('/chatbot/ask', [ChatbotController::class, 'ask'])->name('chatbot.ask');
 
 Route::view('/contact', 'pages.contact')->name('contact');
 

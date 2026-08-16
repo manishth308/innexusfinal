@@ -43,7 +43,7 @@
                 <li>E-commerce solution: $4999</li>
             </ul>
         </div>
-
+        @include('partials.faq-accordion', ['faqs' => $page->activeFaqs])
         <footer class="service-footer">
             <p>Contact us today to discuss your web development project and get a custom quote.</p>
         </footer>

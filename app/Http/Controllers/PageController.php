@@ -16,10 +16,11 @@ class PageController extends Controller
         return view('pages.home', compact('testimonials'));
     }
 
+    
     public function show(string $slug): View
     {
         $page = Page::where('slug', $slug)
-            ->with(['faqs' => fn ($query) => $query->where('is_active', true)->orderBy('sort_order')])
+            ->with('activeFaqs')
             ->firstOrFail();
 
         // Never resolve an unchecked DB string directly into view() - the

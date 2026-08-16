@@ -29,7 +29,7 @@
     <div class="max-w-7xl mx-auto px-5 h-full flex items-center justify-between">
 
         <a href="{{ route('home') }}" aria-label="Home" class="shrink-0 navbar-brand">
-            IntechNexus
+            <img src="{{ asset('images/intech-logo.png') }}" alt="InTech Nexus" class="h-15 w-auto">
         </a>
 
         <ul class="hidden lg:flex gap-7 items-center absolute left-1/2 -translate-x-1/2">

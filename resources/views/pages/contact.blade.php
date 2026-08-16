@@ -34,7 +34,7 @@
 <!-- Contact Intro Section -->
 <section class="py-16 bg-[#0b0c10] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 bg-white/[0.03] border border-purple-500/30 rounded-3xl p-8 md:p-10 shadow-[0_0_25px_rgba(168,85,247,0.15)]">
             <div>
                 <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl">
                     Whatever the enquiry, we will appreciate you reaching out. Drop us a line via a contact form below or contact us at
@@ -45,7 +45,7 @@
             <div class="shrink-0">
                 <p class="text-base font-bold text-white mb-2">Start your digital transformation journey today</p>
                 <p class="text-sm text-gray-400 mb-4 max-w-xs">Drop us a line via the form below and our representative will get back to you within one business day.</p>
-                <a href="#contact-form" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-700 transition-colors">
+                <a href="#contact-form" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-700 shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all">
                     Contact us
                 </a>
             </div>
@@ -58,9 +58,9 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-            {{-- Contact Form --}}
+            {{-- Contact Form with Glowing Border --}}
             <div class="lg:col-span-2">
-                <div class="bg-white/[0.03] rounded-3xl p-8 md:p-10 border border-white/10">
+                <div class="bg-white/[0.03] rounded-3xl p-8 md:p-10 border border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-300">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Write us</h2>
                     <p class="text-gray-400 text-sm mb-8">Please fill in your contact details and a short description of your requirement. We will get back to you within one business day.</p>
 
@@ -68,7 +68,7 @@
                         @csrf
 
                         @if (session('success'))
-                            <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-sm">
+                            <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-sm shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                                 {{ session('success') }}
                             </div>
                         @endif
@@ -77,14 +77,14 @@
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-1.5">Your Name</label>
                                 <input type="text" name="name" value="{{ old('name') }}"
-                                       class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/[0.05] focus:border-purple-400 focus:ring-1 focus:ring-purple-400 focus:outline-none text-sm text-white placeholder-gray-500 transition-colors"
+                                       class="w-full px-4 py-3 rounded-xl border border-purple-500/30 bg-white/[0.05] focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40 focus:outline-none text-sm text-white placeholder-gray-500 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)] focus:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
                                        placeholder="Your full name">
                                 @error('name') <p class="text-xs text-red-400 mt-1">{{ $message }}</p> @enderror
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-1.5">Your Email</label>
                                 <input type="email" name="email" value="{{ old('email') }}"
-                                       class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/[0.05] focus:border-purple-400 focus:ring-1 focus:ring-purple-400 focus:outline-none text-sm text-white placeholder-gray-500 transition-colors"
+                                       class="w-full px-4 py-3 rounded-xl border border-purple-500/30 bg-white/[0.05] focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40 focus:outline-none text-sm text-white placeholder-gray-500 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)] focus:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
                                        placeholder="you@example.com">
                                 @error('email') <p class="text-xs text-red-400 mt-1">{{ $message }}</p> @enderror
                             </div>
@@ -94,13 +94,13 @@
                             <label class="block text-sm font-medium text-gray-300 mb-1.5">Your Message</label>
                             <p class="text-xs text-gray-500 mb-2">Please tell us about your project, idea, or challenge. The more details you share, the better we can assist you.</p>
                             <textarea name="message" rows="5"
-                                      class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/[0.05] focus:border-purple-400 focus:ring-1 focus:ring-purple-400 focus:outline-none text-sm text-white placeholder-gray-500 transition-colors resize-none"
+                                      class="w-full px-4 py-3 rounded-xl border border-purple-500/30 bg-white/[0.05] focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40 focus:outline-none text-sm text-white placeholder-gray-500 transition-all resize-none shadow-[0_0_10px_rgba(168,85,247,0.1)] focus:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
                                       placeholder="Describe your project or inquiry...">{{ old('message') }}</textarea>
                             @error('message') <p class="text-xs text-red-400 mt-1">{{ $message }}</p> @enderror
                         </div>
 
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="terms" required class="mt-1 w-4 h-4 rounded border-white/10 bg-white/5 text-purple-600 focus:ring-purple-500">
+                            <input type="checkbox" id="terms" required class="mt-1 w-4 h-4 rounded border-purple-500/40 bg-white/5 text-purple-600 focus:ring-purple-500">
                             <label for="terms" class="text-xs text-gray-400 leading-relaxed">
                                 I agree with the
                                 <a href="#privacy" class="text-purple-400 underline underline-offset-1 hover:text-purple-300">Privacy Policy</a>
@@ -110,7 +110,7 @@
                         </div>
 
                         <button type="submit"
-                                class="inline-flex items-center justify-center px-8 py-3.5 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-700 transition-colors">
+                                class="inline-flex items-center justify-center px-8 py-3.5 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
                             Send message
                         </button>
 
@@ -118,11 +118,11 @@
                 </div>
             </div>
 
-            {{-- Sidebar --}}
+            {{-- Sidebar Cards with Subtle Glow --}}
             <div class="space-y-8">
 
                 {{-- Career Card --}}
-                <div class="bg-white/[0.03] rounded-3xl overflow-hidden border border-white/10">
+                <div class="bg-white/[0.03] rounded-3xl overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
                     <div class="h-36 bg-gradient-to-br from-purple-900/50 to-[#0b0c10] flex items-center justify-center border-b border-white/5">
                         <svg class="w-16 h-16 text-purple-400/40" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -143,7 +143,7 @@
                 </div>
 
                 {{-- Referral Program Card --}}
-                <div class="bg-white/[0.03] rounded-3xl overflow-hidden border border-white/10">
+                <div class="bg-white/[0.03] rounded-3xl overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
                     <div class="h-36 bg-gradient-to-br from-[#0b0c10] to-indigo-900/50 flex items-center justify-center border-b border-white/5">
                         <svg class="w-16 h-16 text-indigo-400/40" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -179,49 +179,49 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {{-- Poland --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
                 <h3 class="text-base font-bold text-white mb-1.5">Poland</h3>
                 <p class="text-sm text-gray-400 mb-3">9A Belwederska st, Warsaw, 00-761</p>
                 <a href="mailto:warsaw@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">warsaw@intechnexus.com</a>
             </div>
 
             {{-- United States --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
                 <h3 class="text-base font-bold text-white mb-1.5">United States</h3>
                 <p class="text-sm text-gray-400 mb-3">22 Juniper st, Wenham, Massachusetts, 01984</p>
                 <a href="mailto:wenham@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">wenham@intechnexus.com</a>
             </div>
 
             {{-- Lithuania --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
                 <h3 class="text-base font-bold text-white mb-1.5">Lithuania</h3>
                 <p class="text-sm text-gray-400 mb-3">82 Laisves al., Kaunas, 44250</p>
                 <a href="mailto:kaunas@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">kaunas@intechnexus.com</a>
             </div>
 
             {{-- United Kingdom --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
                 <h3 class="text-base font-bold text-white mb-1.5">United Kingdom</h3>
                 <p class="text-sm text-gray-400 mb-3">Loughborough Technology Centre, Epinal Way, Loughborough, LE11 3GE</p>
                 <a href="mailto:london@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">london@intechnexus.com</a>
             </div>
 
             {{-- Bulgaria --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
                 <h3 class="text-base font-bold text-white mb-1.5">Bulgaria</h3>
                 <p class="text-sm text-gray-400 mb-3">Knyaginya Maria Luiza 1 Blvd., Plovdiv, 4000</p>
                 <a href="mailto:plovdiv@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">plovdiv@intechnexus.com</a>
             </div>
 
             {{-- United Arab Emirates --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
                 <h3 class="text-base font-bold text-white mb-1.5">United Arab Emirates</h3>
                 <p class="text-sm text-gray-400 mb-3">Office No. 19-177MF, Owned by Shamsa Mohammed Ibrahim Al-Suwaidi, Al-Murar, Dubai</p>
                 <a href="mailto:dubai@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">dubai@intechnexus.com</a>
             </div>
 
             {{-- Georgia --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:bg-white/[0.06] transition-all duration-300 md:col-span-2 lg:col-span-1">
+            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300 md:col-span-2 lg:col-span-1">
                 <h3 class="text-base font-bold text-white mb-1.5">Georgia</h3>
                 <p class="text-sm text-gray-400 mb-3">1 Meliton And Andria Balanchivadze st, Tbilisi, 0667</p>
                 <a href="mailto:tbilisi@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">tbilisi@intechnexus.com</a>
