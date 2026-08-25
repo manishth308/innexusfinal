@@ -62,7 +62,7 @@
           <img 
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
             alt="Custom Software Development - InTech Nexus" 
-            class="w-full h-full object-cover object-center relative z-10 rounded-2xl border border-white/10 shadow-2xl"
+            class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
           />
           <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
           <div class="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-40 pointer-events-none"></div>
@@ -77,7 +77,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
         <div>
           <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
             <span class="w-2 h-2 rounded-full bg-purple-400"></span>
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
         <div>
           <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
             <span class="w-2 h-2 rounded-full bg-purple-400"></span>
@@ -124,35 +124,35 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group p-8 rounded-3xl bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Requirements Mapping & Technical Planning</h3>
           <p class="text-gray-400 leading-relaxed text-sm">We start by understanding your exact workflows, pain points, and goals before writing a single line of code.</p>
         </div>
       </div>
 
-      <div class="group p-8 rounded-3xl bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Custom Software Solutions</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Bespoke platforms built around your workflow, not the other way around.</p>
         </div>
       </div>
 
-      <div class="group p-8 rounded-3xl bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Enterprise Software Development</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Scalable, secure solutions for larger, more complex organizational needs.</p>
         </div>
       </div>
 
-      <div class="group p-8 rounded-3xl bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Integration With Existing Tools</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Seamless connectivity with your current systems, databases, and third-party services.</p>
         </div>
       </div>
 
-      <div class="group p-8 rounded-3xl bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Ongoing Support After Launch</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Long-term maintenance, enhancements, and support to keep your software running smoothly as your business evolves.</p>
@@ -171,7 +171,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10">
+      <div class="p-8 bg-white/[0.03] border border-white/10">
         <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
         <ul class="space-y-3 text-gray-300">
           <li class="flex items-start gap-3">
@@ -193,7 +193,7 @@
         </ul>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10">
+      <div class="p-8 bg-white/[0.03] border border-white/10">
         <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
         <ul class="space-y-3 text-gray-300">
           <li class="flex items-start gap-3">
@@ -229,7 +229,7 @@
     </div>
 
     <div class="space-y-6">
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-extrabold text-purple-400">01</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Discovery & Requirements</h3>
@@ -237,7 +237,7 @@
         </div>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-extrabold text-purple-400">02</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Planning & Architecture</h3>
@@ -245,7 +245,7 @@
         </div>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-extrabold text-purple-400">03</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Design</h3>
@@ -253,7 +253,7 @@
         </div>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-extrabold text-purple-400">04</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Development</h3>
@@ -261,7 +261,7 @@
         </div>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-extrabold text-purple-400">05</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Testing & Launch</h3>
@@ -321,7 +321,7 @@
 <!-- Why Choose InTech Nexus -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="p-10 md:p-14 rounded-3xl bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04] border border-purple-500/30">
+    <div class="p-10 md:p-14 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04] border border-purple-500/30">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Choose InTech Nexus</h2>
       <p class="text-gray-300 text-lg leading-relaxed max-w-4xl">
         We work as a full software development agency, not just a coding shop. The same team that plans the software also designs the interface and supports it after launch, so nothing gets lost between departments.
@@ -336,7 +336,7 @@
     <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
     
     <div class="space-y-4">
-      <div class="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>How is custom software development different from buying off the shelf software?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
@@ -346,7 +346,7 @@
         </div>
       </div>
 
-      <div class="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>Can you build software for a large, complex organization?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
@@ -356,7 +356,7 @@
         </div>
       </div>
 
-      <div class="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>Do you build the software in phases, or all at once?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
@@ -366,7 +366,7 @@
         </div>
       </div>
 
-      <div class="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>What happens if our requirements change partway through?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
@@ -382,7 +382,7 @@
 <!-- Call to Action Banner -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
-    <div class="bg-white/[0.03] border border-purple-500/40 rounded-3xl p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)]">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)]">
       <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
         Ready to scope your custom software project?
       </h2>

@@ -25,11 +25,11 @@
                 </p>
 
                 <div class="mt-6 flex gap-4 justify-center md:justify-start">
-                    <a href="{{ url('/contact') }}"
+                    <a href="{{ route('contact') }}"
                        class="px-6 py-3 rounded-md bg-brand-red hover:bg-brand-red-hover text-white font-medium transition">
                         Get a Free Quote
                     </a>
-                    <a href="{{ url('/services')}}"
+                    <a href="{{ route('page.show', 'services')}}"
                        class="px-6 py-3 rounded-md border border-black/30 text-black hover:bg-black/5 font-medium transition">
                         See Our Work
                     </a>
@@ -60,7 +60,7 @@
             </h2>
 
             <p class="mt-4 text-black/80">
-                We work with founders, product teams, and companies in <a href="{{ url('/industries/healthcare') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">healthcare</a>, <a href="{{ url('/industries/manufacturing') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">manufacturing</a>, <a href="{{ url('/industries/finance-banking') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">finance and banking</a>, and <a href="{{ url('/industries/ecommerce') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">ecommerce</a>. Across every project, we act as a long-term partner, not a one-time vendor.
+                We work with founders, product teams, and companies in <a href="{{ route('page.show', 'healthcare') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">healthcare</a>, <a href="{{ route('page.show', 'manufacturing') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">manufacturing</a>, <a href="{{ route('page.show', 'finance') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">finance and banking</a>, and <a href="{{ route('page.show', 'ecommerce') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">ecommerce</a>. Across every project, we act as a long-term partner, not a one-time vendor.
             </p>
 
             <ul class="mt-6 space-y-3">
@@ -78,7 +78,7 @@
                 </li>
             </ul>
 
-            <a href="{{ url('/about') }}"
+            <a href="{{ route('page.show', 'about-us') }}"
                class="mt-8 inline-block px-6 py-3 rounded-md bg-brand-red hover:bg-brand-red-hover text-white font-medium transition">
                 Discover More
             </a>
@@ -161,13 +161,13 @@
 
         @php
             $homeServices = [
-                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80', 'url' => '/software-development'],
-                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80', 'url' => '/mobile-app-development'],
-                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => '/web-development'],
-                ['title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1555066931-43666627e783?auto=format&fit=crop&w=2000&q=80', 'url' => '/application-development'],
-                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80', 'url' => '/ui-ux-design'],
-                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80', 'url' => '/graphic-creative-design'],
-                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80', 'url' => '/digital-marketing'],
+                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'software-development')],
+                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'mobile-app-development')],
+                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'web-development')],
+                ['title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1555066931-43666627e783?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'application-development')],
+                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'ui-ux-design')],
+                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'graphic-creative-design')],
+                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'digital-marketing')],
             ];
         @endphp
 
@@ -433,12 +433,12 @@
                 </div>
 
                 <div class="shrink-0 flex flex-wrap gap-4">
-                    <a href="{{ url('/contact') }}"
+                    <a href="{{ route('contact') }}"
                        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-semibold transition">
                         Get a Free Quote
                         <span>&raquo;</span>
                     </a>
-                    <a href="{{ url('/contact') }}"
+                    <a href="{{ route('contact') }}"
                        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-black/30 text-brand-blue hover:bg-black/5 font-medium transition">
                         Talk to Our Team
                         <span>&raquo;</span>

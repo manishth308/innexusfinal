@@ -1,0 +1,155 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Menu;
+use App\Models\Page;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
+class MenuSeeder extends Seeder
+{
+    private function menu(string $title, ?int $pageId, ?int $parentId, int $sortOrder): Menu
+    {
+        return Menu::firstOrCreate(
+            ['title' => $title],
+            [
+                'slug' => Str::slug($title),
+                'page_id' => $pageId,
+                'parent_id' => $parentId,
+                'sort_order' => $sortOrder,
+                'is_active' => true,
+            ]
+        );
+    }
+
+    public function run(): void
+    {
+        $pageId = fn (string $slug) => Page::where('slug', $slug)->value('id');
+
+        // "Home" has no Page row — served directly by PageController::home().
+        // Menu only supports linking to a Page (page_id), no raw URL field.
+        // The header/menu Blade view needs to special-case this item and
+        // link it to route('home') instead of relying on page_id.
+        $this->menu('Home', null, null, 1);
+
+        $services = $this->menu('Services', $pageId('services'), null, 2);
+        $industries = $this->menu('Industries', $pageId('industries'), null, 3);
+        $solutions = $this->menu('Solutions', $pageId('solutions'), null, 4);
+        $this->menu('Company', $pageId('company'), null, 5);
+        $this->menu('Contact Us', $pageId('contact-us'), null, 6);
+
+        // Industries children
+        $industryItems = ['Ecommerce' => 'ecommerce', 'Marketing' => 'marketing', 'Healthcare' => 'healthcare', 'Finance' => 'finance'];
+        $i = 1;
+        foreach ($industryItems as $title => $slug) {
+            $this->menu($title, $pageId($slug), $industries->id, $i++);
+        }
+
+        // Solutions children
+        $solutionItems = [
+            'Build an MVP' => 'build-an-mvp',
+            'Launch a SaaS Product' => 'launch-a-saas-product',
+            'Design a Better Product' => 'design-a-better-product',
+            'Generate More Leads Online' => 'generate-more-leads-online',
+            'Build a High Converting Website' => 'build-a-high-converting-website',
+            'Create a Stronger Brand Identity' => 'create-a-stronger-brand-identity',
+        ];
+        $i = 1;
+        foreach ($solutionItems as $title => $slug) {
+            $this->menu($title, $pageId($slug), $solutions->id, $i++);
+        }
+
+        // Services children (L2 categories) + their L3 leaf items
+        $categories = [
+            'Software Development' => [
+                'slug' => 'software-development',
+                'children' => [
+                    'Custom Software Development' => 'custom-software-development',
+                    'Enterprise Software Development' => 'enterprise-software-development',
+                    'SaaS Development' => 'saas-development',
+                    'CRM Development' => 'crm-development',
+                    'ERP Development' => 'erp-development',
+                    'Software Product Development' => 'software-product-development',
+                    'MVP Development' => 'mvp-development',
+                ],
+            ],
+            'Mobile App Development' => [
+                'slug' => 'mobile-app-development',
+                'children' => [
+                    'iOS App Development' => 'ios-app-development',
+                    'Android App Development' => 'android-app-development',
+                    'Cross Platform App Development' => 'cross-platform-app-development',
+                    'MVP App Development' => 'mvp-app-development',
+                ],
+            ],
+            'Web Development' => [
+                'slug' => 'web-development',
+                'children' => [
+                    'Custom Website Development' => 'custom-website-development',
+                    'Ecommerce Website Development' => 'ecommerce-website-development',
+                    'Web Application Development' => 'web-application-development',
+                    'CMS Development' => 'cms-development',
+                    'WordPress Development' => 'wordpress-development',
+                    'Shopify Development' => 'shopify-development',
+                ],
+            ],
+            'UI UX Design' => [
+                'slug' => 'ui-ux-design',
+                'children' => [
+                    'UI UX Design Services' => 'ui-ux-design-services',
+                    'Web UI UX Design' => 'web-ui-ux-design',
+                    'Mobile App UI UX Design' => 'mobile-app-ui-ux-design',
+                    'SaaS UI UX Design' => 'saas-ui-ux-design',
+                    'Product Design' => 'product-design',
+                ],
+            ],
+            'Graphic Design' => [
+                'slug' => 'graphic-design',
+                'children' => [
+                    'Logo Design' => 'logo-design',
+                    'Social Media Design' => 'social-media-design',
+                    'Ad Creative Design' => 'ad-creative-design',
+                    'Motion Graphics' => 'motion-graphics',
+                ],
+            ],
+            'Digital Marketing' => [
+                'slug' => 'digital-marketing',
+                'children' => [
+                    'SEO Services' => 'seo-services',
+                    'Local SEO' => 'local-seo',
+                    'Content Marketing' => 'content-marketing',
+                    'PPC/Google Ads' => 'ppc-google-ads',
+                    'Meta Ads' => 'meta-ads',
+                    'Social Media Marketing' => 'social-media-marketing',
+                    'Email Marketing' => 'email-marketing',
+                    'Conversion Rate Optimization' => 'conversion-rate-optimization',
+                ],
+            ],
+            'Branding' => [
+                'slug' => 'branding',
+                'children' => [
+                    'Brand Strategy and Identity' => 'brand-strategy-and-identity',
+                ],
+            ],
+            'QA & Testing' => [
+                'slug' => 'qa-testing',
+                'children' => [
+                    'Mobile App Testing' => 'mobile-app-testing',
+                    'Web Testing' => 'web-testing',
+                    'QA Outsourcing' => 'qa-outsourcing',
+                ],
+            ],
+        ];
+
+        $catOrder = 1;
+        foreach ($categories as $catTitle => $cat) {
+            $catMenu = $this->menu($catTitle, $pageId($cat['slug']), $services->id, $catOrder++);
+
+            $childOrder = 1;
+            foreach ($cat['children'] as $childTitle => $childSlug) {
+                $this->menu($childTitle, $pageId($childSlug), $catMenu->id, $childOrder++);
+            }
+        }
+    }
+}

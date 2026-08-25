@@ -92,7 +92,7 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Target Audience -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 flex flex-col justify-between">
         <div>
           <h2 class="text-3xl font-bold text-white leading-tight tracking-tight mb-4 flex items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
@@ -105,7 +105,7 @@
       </div>
 
       <!-- Problems We Solve -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 flex flex-col justify-between">
         <div>
           <h2 class="text-3xl font-bold text-white leading-tight tracking-tight mb-4 flex items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
@@ -145,7 +145,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Capability 1 -->
-      <div class="group p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-3 group-hover:text-purple-400 transition-colors">Enterprise Application Development</h3>
           <p class="text-purple-400 text-sm font-medium mb-3">Custom platforms for complex business needs</p>
@@ -158,7 +158,7 @@
       </div>
 
       <!-- Capability 2 -->
-      <div class="group p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-3 group-hover:text-purple-400 transition-colors">Legacy Modernization</h3>
           <p class="text-purple-400 text-sm font-medium mb-3">Transform old systems into modern architectures</p>
@@ -171,7 +171,7 @@
       </div>
 
       <!-- Capability 3 -->
-      <div class="group p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-3 group-hover:text-purple-400 transition-colors">Integration & API Strategy</h3>
           <p class="text-purple-400 text-sm font-medium mb-3">Seamlessly connect your tech ecosystem</p>
@@ -184,7 +184,7 @@
       </div>
 
       <!-- Capability 4 -->
-      <div class="group p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.04] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-3 group-hover:text-purple-400 transition-colors">Security & Compliance</h3>
           <p class="text-purple-400 text-sm font-medium mb-3">Enterprise-grade protection and governance</p>
@@ -211,7 +211,7 @@
 
     <div class="space-y-6">
       <!-- Step 01 -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-bold text-purple-400">01</span>
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-2">Enterprise Discovery</h3>
@@ -220,7 +220,7 @@
       </div>
 
       <!-- Step 02 -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-bold text-purple-400">02</span>
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-2">Architecture & Roadmap</h3>
@@ -229,7 +229,7 @@
       </div>
 
       <!-- Step 03 -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-bold text-purple-400">03</span>
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-2">Agile Development</h3>
@@ -238,7 +238,7 @@
       </div>
 
       <!-- Step 04 -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-bold text-purple-400">04</span>
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-2">Rigorous Testing & QA</h3>
@@ -247,7 +247,7 @@
       </div>
 
       <!-- Step 05 -->
-      <div class="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+      <div class="p-8 md:p-10 bg-white/[0.02] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
         <span class="text-3xl font-bold text-purple-400">05</span>
         <div>
           <h3 class="text-2xl font-bold text-white leading-tight tracking-tight mb-2">Deployment & Managed Support</h3>
@@ -307,7 +307,7 @@
 <!-- Why Choose InTech Nexus -->
 <section class="py-24 bg-[#070709] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="p-10 md:p-14 rounded-3xl bg-gradient-to-br from-purple-950/30 via-white/[0.01] to-white/[0.03] border border-purple-500/30">
+    <div class="p-10 md:p-14 bg-gradient-to-br from-purple-950/30 via-white/[0.01] to-white/[0.03] border border-purple-500/30">
       <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight mb-6">Why Choose InTech Nexus</h2>
       <p class="text-gray-300 text-lg leading-relaxed max-w-4xl font-normal">
         We combine deep technical expertise with business acumen to deliver enterprise solutions that drive measurable outcomes. Our teams operate with the rigor your organization expects — transparent reporting, governance-aligned processes, and a commitment to long-term partnership over one-off projects.
@@ -323,7 +323,7 @@
     
     <div class="space-y-4">
       <!-- FAQ 1 -->
-      <div class="bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.02] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>What industries do you serve for enterprise software?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
@@ -334,7 +334,7 @@
       </div>
 
       <!-- FAQ 2 -->
-      <div class="bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.02] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>How do you handle data security and compliance?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
@@ -345,7 +345,7 @@
       </div>
 
       <!-- FAQ 3 -->
-      <div class="bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.02] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>Can you integrate with our existing enterprise systems?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
@@ -356,7 +356,7 @@
       </div>
 
       <!-- FAQ 4 -->
-      <div class="bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-white/[0.02] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
           <span>What does your support model look like after launch?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
@@ -372,7 +372,7 @@
 <!-- Call to Action Banner -->
 <section class="py-24 bg-[#070709] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
-    <div class="bg-white/[0.02] border border-purple-500/30 rounded-3xl p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.15)]">
+    <div class="bg-white/[0.02] border border-purple-500/30 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.15)]">
       <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
         Ready to build enterprise software that scales?
       </h2>
