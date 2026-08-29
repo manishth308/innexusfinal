@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title', 'Social Media Design Services - InTech Nexus')
+@section('title', 'Web Application Development Services - InTech Nexus')
 
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  .ux-page{
+  .wp-page{
     --navy-deep:#0B1B3D;
     --navy-darker:#071227;
     --blue-accent:#3D6BFF;
@@ -16,22 +16,22 @@
     --line:#E3E7F0;
     font-family:'Inter',system-ui,sans-serif;
   }
-  .ux-page h1, .ux-page h2, .ux-page h3, .ux-page .font-display{
+  .wp-page h1, .wp-page h2, .wp-page h3, .wp-page .font-display{
     font-family:'Space Grotesk',sans-serif;
     letter-spacing:-0.01em;
   }
-  .ux-page .font-mono{
+  .wp-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
   }
 
   /* Hero geometric overlay */
-  .ux-hero{
+  .wp-hero{
     background:
       radial-gradient(ellipse 800px 480px at 15% 10%, rgba(61,107,255,0.30), transparent 60%),
       radial-gradient(ellipse 700px 500px at 85% 90%, rgba(90,140,255,0.18), transparent 55%),
       var(--navy-deep);
   }
-  .ux-hero .vector-lines{
+  .wp-hero .vector-lines{
     position:absolute; inset:0; pointer-events:none; opacity:0.5;
   }
 
@@ -64,24 +64,24 @@
   .marquee-track{
     display:flex;
     width:max-content;
-    animation:ux-marquee 26s linear infinite;
+    animation:wp-marquee 26s linear infinite;
   }
-  @keyframes ux-marquee{
+  @keyframes wp-marquee{
     from{ transform:translateX(0); }
     to{ transform:translateX(-50%); }
   }
   @media (prefers-reduced-motion: reduce){
-    .ux-page *{ animation:none!important; transition:none!important; }
+    .wp-page *{ animation:none!important; transition:none!important; }
     .marquee-track{ animation:none!important; }
   }
 </style>
 @endpush
 
 @section('content')
-<div class="ux-page bg-white">
+<div class="wp-page bg-white">
 
   <!-- ===== Hero ===== -->
-  <header class="ux-hero relative overflow-hidden text-white">
+  <header class="wp-hero relative overflow-hidden text-white">
     <svg class="vector-lines" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0 420 L260 300 L520 380 L780 220 L1040 300 L1200 140" stroke="#5A8CFF" stroke-width="1.5" fill="none" opacity="0.4"/>
       <path d="M0 480 L300 380 L560 440 L860 280 L1200 360" stroke="#3D6BFF" stroke-width="1.5" fill="none" opacity="0.3"/>
@@ -97,23 +97,23 @@
         <span class="text-white/30">/</span>
         <a href="{{ url('/services') }}" class="hover:text-white transition-colors">Services</a>
         <span class="text-white/30">/</span>
-        <a href="{{ url('/services/graphic-design') }}" class="hover:text-white transition-colors">Graphic & Creative Design</a>
+        <a href="{{ url('/services/web-development') }}" class="hover:text-white transition-colors">Web Development</a>
         <span class="text-white/30">/</span>
-        <span class="text-white/70">Social Media Design</span>
+        <span class="text-white/70">Web Application Development</span>
       </nav>
 
       <div class="max-w-3xl">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-bright);">
-          Social Media Design
+          Web Application Development
         </span>
         <h1 class="text-4xl sm:text-4xl lg:text-[50px] font-bold leading-[1.1] mt-5 mb-6">
-          Social Media Design Services for Content That <span style="color:var(--blue-bright);">Actually Looks On Brand</span>
+          Web Application Development for Platforms That Go <span style="color:var(--blue-bright);">Beyond a Website</span>
         </h1>
         <p class="text-lg text-white/70 leading-relaxed mb-4 max-w-2xl">
-          Social media design services for businesses that need consistent, on brand content across every platform they post on.
+          Web application development services for businesses that need more than a website, a full custom platform that runs in the browser.
         </p>
         <p class="text-base text-white/60 leading-relaxed mb-10 max-w-2xl">
-          As part of our wider Graphic & Creative Design practice, we design social content as a system, using templates and a consistent visual style so your page looks intentional, not like a mix of one off posts thrown together at the last minute.
+          As part of our wider Web Development practice, we build custom web applications for businesses that need real functionality in the browser, like dashboards, portals, and tools with user accounts and complex logic, not just informational pages.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -140,7 +140,7 @@
             Who This Is For
           </h2>
           <p class="leading-relaxed text-base" style="color:var(--text-muted);">
-            Businesses that need steady, professional social content without hiring a full in house design team.
+            Businesses building tools, dashboards, or platforms that need real functionality beyond a standard website.
           </p>
         </div>
 
@@ -150,32 +150,32 @@
             Problems We Solve
           </h2>
           <ul class="space-y-3" style="color:var(--text-muted);">
-            <li class="flex items-start gap-3"><span class="font-bold" style="color:var(--blue-accent);">•</span><span>Social content looks inconsistent from post to post.</span></li>
-            <li class="flex items-start gap-3"><span class="font-bold" style="color:var(--blue-accent);">•</span><span>The in house team does not have time to keep up with content needs.</span></li>
-            <li class="flex items-start gap-3"><span class="font-bold" style="color:var(--blue-accent);">•</span><span>Posts do not reflect the brand's actual visual identity.</span></li>
+            <li class="flex items-start gap-3"><span class="font-bold" style="color:var(--blue-accent);">•</span><span>A standard website cannot handle the logic or user accounts your project needs.</span></li>
+            <li class="flex items-start gap-3"><span class="font-bold" style="color:var(--blue-accent);">•</span><span>You need a browser based platform that works like software, not just a set of pages.</span></li>
+            <li class="flex items-start gap-3"><span class="font-bold" style="color:var(--blue-accent);">•</span><span>The project involves complex features that a template or page builder cannot support.</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Core Capabilities (interactive expandable grid) ===== -->
+  <!-- ===== What We Offer ===== -->
   <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);" x-data="{ openCap: null }">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
       <div class="mb-12 max-w-xl">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-accent);">What We Offer</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">
-          We design ongoing social content aligned with your brand
+          We design and build custom web applications from the ground up
         </h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         @foreach ([
-          ['t' => 'Social Media Post Design Across Platforms', 'd' => 'Social media post design across platforms, with formats tailored to each channel\'s requirements and audience.'],
-          ['t' => 'Social Media Creatives for Both Organic and Paid Content', 'd' => 'Social media creatives for both organic and paid content, so your brand looks consistent whether posts are boosted or not.'],
-          ['t' => 'Branded Social Media Graphics That Stay Consistent', 'd' => 'Branded social media graphics that stay consistent, using templates and a repeatable visual system.'],
-          ['t' => 'Instagram Post Design and Templates', 'd' => 'Instagram post design and templates that keep your feed looking cohesive and on brand over time.'],
-          ['t' => 'Social Content Design Delivered on a Regular Schedule', 'd' => 'Social content design delivered on a regular schedule, so your team has what they need ahead of time.'],
+          ['t' => 'Custom Web Application Development for Dashboards and Platforms', 'd' => 'Custom web application development for dashboards, portals, and internal tools built around your workflow.'],
+          ['t' => 'Web App Development Company Experience', 'd' => 'Web app development company experience across industries, with focus on performance and scalability.'],
+          ['t' => 'Progressive Web Application Development', 'd' => 'Progressive web application development for app like performance and offline capable experiences.'],
+          ['t' => 'Web Based Software Development with Secure User Accounts', 'd' => 'Web based software development with secure user accounts, roles, and permissions built in.'],
+          ['t' => 'SaaS Web Application Development', 'd' => 'SaaS web application development for subscription platforms with billing and multi tenancy support.'],
         ] as $i => $offer)
           <div class="cap-card rounded-xl p-6" :class="{ 'is-open': openCap === {{ $i }} }" @click="openCap = openCap === {{ $i }} ? null : {{ $i }}">
             <div class="flex items-start justify-between gap-3">
@@ -203,27 +203,27 @@
         <div class="p-8 border" style="border-color:var(--line); background:var(--bg-soft);">
           <h3 class="text-xl font-bold mb-5" style="color:var(--navy-deep);">What We Deliver</h3>
           <ul class="space-y-3 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Branded social media post templates and graphics</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Content designed for both organic and paid use</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Platform specific sizing and formatting</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>A regular content delivery schedule</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>A fully built, custom web application</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Secure user accounts and role based access</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>A backend built to handle real business logic</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>An architecture ready to scale as usage grows</span></li>
           </ul>
         </div>
 
         <div class="p-8 border" style="border-color:var(--line); background:var(--bg-soft);">
           <h3 class="text-xl font-bold mb-5" style="color:var(--navy-deep);">Key Skill Areas</h3>
           <ul class="space-y-3 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Social media visual design</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Template systems for consistent output</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Platform specific design best practices</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Brand aligned content creation</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Full stack web application development</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>Database and backend architecture</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>User authentication and access control</span></li>
+            <li class="flex items-start gap-3"><span style="color:var(--blue-accent);">◦</span><span>API development and integrations</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== From Complexity to Clarity — Our Process (step playbook) ===== -->
+  <!-- ===== Our Process ===== -->
   <section class="py-24 border-t" style="border-color:var(--line); background:var(--navy-deep);">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
       <div class="mb-16 max-w-xl">
@@ -233,11 +233,11 @@
 
       <div class="space-y-5">
         @foreach ([
-          ['n' => '01', 't' => 'Brief & Research', 'd' => 'We learn your brand, audience, and goals for the piece.'],
-          ['n' => '02', 't' => 'Concept Development', 'd' => 'We explore a small number of strong creative directions.'],
-          ['n' => '03', 't' => 'Design & Refinement', 'd' => 'We build out the chosen direction in full detail.'],
-          ['n' => '04', 't' => 'Review & Revisions', 'd' => 'We refine the work based on your feedback.'],
-          ['n' => '05', 't' => 'Final Delivery', 'd' => 'We deliver final files in every format you need.'],
+          ['n' => '01', 't' => 'Discovery & Planning', 'd' => 'We map your goals, content, and site structure.'],
+          ['n' => '02', 't' => 'Wireframes & Sitemap', 'd' => 'We plan the layout and navigation before any design work begins.'],
+          ['n' => '03', 't' => 'Design', 'd' => 'We design pages built around clarity and conversion.'],
+          ['n' => '04', 't' => 'Development', 'd' => 'We build the site on a fast, reliable, and search friendly foundation.'],
+          ['n' => '05', 't' => 'QA, Launch & Support', 'd' => 'We test thoroughly, launch, and support the site afterward.'],
         ] as $step)
           <div class="flex flex-col sm:flex-row sm:items-center gap-6 p-6 rounded-xl border border-white/10 bg-white/[0.03]">
             <div class="font-mono text-3xl font-bold flex-shrink-0" style="color:var(--blue-bright);">{{ $step['n'] }}</div>
@@ -251,10 +251,10 @@
 
       <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
         @foreach ([
-          'Branded social media post templates and graphics',
-          'Content designed for both organic and paid use',
-          'Platform specific sizing and formatting',
-          'A regular content delivery schedule',
+          'A fully built, custom web application',
+          'Secure user accounts and role based access',
+          'A backend built to handle real business logic',
+          'An architecture ready to scale as usage grows',
         ] as $outcome)
           <div class="flex items-start gap-3">
             <span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold" style="background:var(--blue-accent); color:#fff;">✓</span>
@@ -275,16 +275,24 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
         <div class="p-6 border" style="border-color:var(--line); background:var(--bg-soft);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Design</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Adobe Illustrator · Photoshop · InDesign</p>
+          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">CMS &amp; Platforms</p>
+          <p class="text-sm font-medium" style="color:var(--navy-deep);">WordPress · Shopify · Headless CMS</p>
         </div>
         <div class="p-6 border" style="border-color:var(--line); background:var(--bg-soft);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Motion</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Adobe After Effects</p>
+          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Frontend</p>
+          <p class="text-sm font-medium" style="color:var(--navy-deep);">React · Next.js</p>
         </div>
         <div class="p-6 border" style="border-color:var(--line); background:var(--bg-soft);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Collaboration</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Figma · Canva</p>
+          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Backend</p>
+          <p class="text-sm font-medium" style="color:var(--navy-deep);">Node.js · PHP</p>
+        </div>
+        <div class="p-6 border" style="border-color:var(--line); background:var(--bg-soft);">
+          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Hosting &amp; Infra</p>
+          <p class="text-sm font-medium" style="color:var(--navy-deep);">AWS · Cloudflare</p>
+        </div>
+        <div class="p-6 border" style="border-color:var(--line); background:var(--bg-soft);">
+          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--blue-accent);">Analytics</p>
+          <p class="text-sm font-medium" style="color:var(--navy-deep);">Google Analytics · Search Console</p>
         </div>
       </div>
     </div>
@@ -299,7 +307,7 @@
       <div class="marquee-track">
         @for ($rep = 0; $rep < 2; $rep++)
           @foreach ([
-            'Adobe Illustrator', 'Adobe Photoshop', 'Adobe InDesign', 'Adobe After Effects', 'Figma', 'Canva',
+            'WordPress', 'Shopify', 'Headless CMS', 'React', 'Next.js', 'Node.js', 'PHP', 'AWS', 'Cloudflare', 'Google Analytics', 'Search Console',
           ] as $tag)
             <span class="font-mono text-sm font-semibold whitespace-nowrap mx-4 px-6 py-3 rounded-full border" style="border-color:var(--line); color:var(--navy-deep); background:#fff;">
               {{ $tag }}
@@ -316,12 +324,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden" style="border-radius:2px;">
         <div class="p-10 md:p-16 text-white h-full flex flex-col justify-center" style="background:var(--navy-deep);">
           <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-bright);">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Social content designed as a system, not a collection of one off posts</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Planning that keeps complex applications stable at launch</h2>
           <p class="text-white/70 leading-relaxed max-w-md">
-            We design social content as a system, with templates and a consistent visual style, so your page looks intentional and professional, not like a mix of one off posts.
+            Web application projects need more planning than a standard website. We map the data, the user roles, and the logic during strategy, so the application holds up under real, daily use once it launches.
           </p>
         </div>
-        <div class="h-full min-h-[320px]" style="background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+        <div class="h-full min-h-[320px]" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
       </div>
     </div>
   </section>
@@ -336,10 +344,10 @@
 
       <div class="space-y-4">
         @foreach ([
-          ['q' => 'Can you work within our existing brand guidelines?', 'a' => 'Yes. We can design within your current brand, or help build one first through our Brand strategy and identity service.'],
-          ['q' => 'How often can you deliver new content?', 'a' => 'This depends on your posting schedule. We can work on a weekly, biweekly, or monthly content cadence, based on what fits your needs.'],
-          ['q' => 'Can you work within our existing brand guidelines?', 'a' => 'Yes. We can design within your current brand, or help build one first through our Brand strategy and identity service.'],
-          ['q' => 'How often can you deliver new content?', 'a' => 'This depends on your posting schedule. We can work on a weekly, biweekly, or monthly content cadence, based on what fits your needs.'],
+          ['q' => 'How is a web application different from a website?', 'a' => 'A website mainly presents information. A web application lets users log in, interact with data, and complete tasks, more like software running in a browser.'],
+          ['q' => 'Can a web application be turned into a SaaS product later?', 'a' => 'Yes. Many web applications are built as the foundation for a future SaaS product. We can plan for that from the start if it is part of your roadmap.'],
+          ['q' => 'Can a web application later become a SaaS product?', 'a' => 'Yes. Many web applications are built as the foundation for a future SaaS product, and we can plan for that from the start if it is on your roadmap. See SaaS Development for more.'],
+          ['q' => 'Do you build the frontend and backend together?', 'a' => 'Yes. Both are handled by the same team, so the interface and the underlying logic are always in sync.'],
         ] as $i => $faq)
           <div class="bg-white border overflow-hidden" style="border-color:var(--line);">
             <button @click="openFaq = openFaq === {{ $i }} ? null : {{ $i }}" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center focus:outline-none" style="color:var(--navy-deep);">
@@ -359,16 +367,18 @@
   <section class="py-24 border-t" style="border-color:var(--line);">
     <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
       <div class="p-10 md:p-16 text-white" style="background:var(--navy-deep); border-radius:2px;">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready for social content that looks consistently on brand?</h2>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to build a custom web application?</h2>
         <p class="text-white/70 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
           Book a call, request a proposal, or get a free quote to start.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--blue-accent);">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--blue-accent);">
             Get a Free Quote
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
           </a>
-          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white border border-white/30 rounded-full hover:border-white hover:bg-white/5 transition-all">
+          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white border border-white/30 rounded-full hover:border-white hover:bg-white/5 transition-all">
             Book a Call
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
           </a>
         </div>
       </div>
