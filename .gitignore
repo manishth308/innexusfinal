@@ -27,3 +27,7 @@ Homestead.yaml
 Thumbs.db
 
 .kilo/
+
+public/build.zip
+
+storage/framework/lsp-*.php

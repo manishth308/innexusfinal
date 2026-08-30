@@ -46,11 +46,11 @@ class PageSeeder extends Seeder
 
             ['title' => 'Web Development', 'slug' => 'web-development', 'blade_file' => 'pages.services.web-development.index'],
             ['title' => 'Custom Website Development', 'slug' => 'custom-website-development', 'blade_file' => 'pages.services.web-development.custom-website-development'],
-            ['title' => 'Ecommerce Website Development', 'slug' => 'ecommerce-website-development', 'blade_file' => 'pages.services.ecommerce-website-development'],
-            ['title' => 'Web Application Development', 'slug' => 'web-application-development', 'blade_file' => 'pages.services.web-application-development'],
-            ['title' => 'CMS Development', 'slug' => 'cms-development', 'blade_file' => 'pages.services.cms-development'],
-            ['title' => 'WordPress Development', 'slug' => 'wordpress-development', 'blade_file' => 'pages.services.wordpress-development'],
-            ['title' => 'Shopify Development', 'slug' => 'shopify-development', 'blade_file' => 'pages.services.shopify-development'],
+            ['title' => 'Ecommerce Website Development', 'slug' => 'ecommerce-website-development', 'blade_file' => 'pages.services.web-development.ecommerce-website-development'],
+            ['title' => 'Web Application Development', 'slug' => 'web-application-development', 'blade_file' => 'pages.services.web-development.web-application-development'],
+            ['title' => 'CMS Development', 'slug' => 'cms-development', 'blade_file' => 'pages.services.web-development.cms-development'],
+            ['title' => 'WordPress Development', 'slug' => 'wordpress-development', 'blade_file' => 'pages.services.web-development.wordpress-development'],
+            ['title' => 'Shopify Development', 'slug' => 'shopify-development', 'blade_file' => 'pages.services.web-development.shopify-development'],
 
             ['title' => 'UI UX Design', 'slug' => 'ui-ux-design', 'blade_file' => 'pages.services.ui-ux-design.index'],
             ['title' => 'UI UX Design Services', 'slug' => 'ui-ux-design-services', 'blade_file' => 'pages.services.ui-ux-design.ui-ux-design-services'],

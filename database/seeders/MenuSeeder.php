@@ -35,29 +35,21 @@ class MenuSeeder extends Seeder
 
         $services = $this->menu('Services', $pageId('services'), null, 2);
         $industries = $this->menu('Industries', $pageId('industries'), null, 3);
-        $solutions = $this->menu('Solutions', $pageId('solutions'), null, 4);
-        $this->menu('Company', $pageId('company'), null, 5);
-        $this->menu('Contact Us', $pageId('contact-us'), null, 6);
+        $company = $this->menu('Company', $pageId('company'), null, 4);
+
+        // Company children
+        $this->menu('About Us', $pageId('about-us'), $company->id, 1);
+        // "Blogs" has no dedicated Page row yet (served by its own
+        // route/controller, not the generic Page catch-all) — placeholder
+        // link (page_id null) until wired up properly, same treatment as Home.
+        $this->menu('Blogs', null, $company->id, 2);
+        $this->menu('Contact Us', $pageId('contact-us'), $company->id, 3);
 
         // Industries children
         $industryItems = ['Ecommerce' => 'ecommerce', 'Marketing' => 'marketing', 'Healthcare' => 'healthcare', 'Finance' => 'finance'];
         $i = 1;
         foreach ($industryItems as $title => $slug) {
             $this->menu($title, $pageId($slug), $industries->id, $i++);
-        }
-
-        // Solutions children
-        $solutionItems = [
-            'Build an MVP' => 'build-an-mvp',
-            'Launch a SaaS Product' => 'launch-a-saas-product',
-            'Design a Better Product' => 'design-a-better-product',
-            'Generate More Leads Online' => 'generate-more-leads-online',
-            'Build a High Converting Website' => 'build-a-high-converting-website',
-            'Create a Stronger Brand Identity' => 'create-a-stronger-brand-identity',
-        ];
-        $i = 1;
-        foreach ($solutionItems as $title => $slug) {
-            $this->menu($title, $pageId($slug), $solutions->id, $i++);
         }
 
         // Services children (L2 categories) + their L3 leaf items
