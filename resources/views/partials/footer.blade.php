@@ -2,11 +2,11 @@
 <footer class="bg-brand-blue text-gray-300">
     {{-- Main Footer Content --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 lg:justify-center justify-items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
-            {{-- Column 1: Company / About --}}
-            <div class="text-center">
-                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 mb-5 justify-center">
+            {{-- Column 1: Company / About / Contact --}}
+            <div class="text-center lg:text-left">
+                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 mb-5 justify-center lg:justify-start">
                     <svg class="w-9 h-9 text-white" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none"/>
                         <ellipse cx="20" cy="20" rx="10" ry="18" stroke="currentColor" stroke-width="1.5" fill="none"/>
@@ -16,11 +16,11 @@
                     <span class="text-white font-heading font-bold text-xl tracking-widest uppercase">IntechNexus</span>
                 </a>
 
-                <p class="text-sm text-gray-400 leading-relaxed mb-5 max-w-xs mx-auto">
+                <p class="text-sm text-gray-400 leading-relaxed mb-5 max-w-xs mx-auto lg:mx-0">
                     Transforming Bold Ideas into Digital Reality.
                 </p>
 
-                <div class="flex items-center gap-3 flex-wrap justify-center">
+                <div class="flex items-center gap-3 flex-wrap justify-center lg:justify-start mb-6">
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
                        class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center hover:border-white hover:text-white transition-colors">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -39,53 +39,67 @@
                     </a>
                 </div>
 
-                <br>
-                <h4 class="text-white font-semibold text-lg mb-5">Get in Touch</h4>
+                <h4 class="text-white font-semibold text-lg mb-4">Get in Touch</h4>
 
-                <div class="mb-5">
-                    <p class="text-base text-gray-400 mb-1">Email us at</p>
-                    <a href="mailto:info@intechnexus.com"
-                       class="text-sm text-gray-300 hover:text-white transition-colors border-b border-gray-600 hover:border-white pb-0.5">
-                        info@intechnexus.com
-                    </a>
-                </div>
-            </div>
-
-            {{-- Column 2: Quick Links --}}
-            {{-- TODO: swap these anchors for route('page.show', $slug) once the
-                 corresponding Page records exist --}}
-            <div class="text-center">
-                <h4 class="text-white font-semibold text-base mb-5">Quick Links</h4>
-                <ul class="space-y-3">
-                    <li><a href="/services" class="text-sm text-gray-400 hover:text-white transition-colors">Services</a></li>
-                    <li><a href="/technologies" class="text-sm text-gray-400 hover:text-white transition-colors">Technologies</a></li>
-                    <li><a href="#projects" class="text-sm text-gray-400 hover:text-white transition-colors">Projects</a></li>
-                    <li><a href="#industries" class="text-sm text-gray-400 hover:text-white transition-colors">Industries</a></li>
-                    <li><a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                    <li><a href="#blog" class="text-sm text-gray-400 hover:text-white transition-colors">Our Blog</a></li>
-                    <li><a href="/contact" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                    <li><a href="/career" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                {{-- TODO: replace placeholder address/phone with actual California office details --}}
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li class="flex items-start gap-2 justify-center lg:justify-start">
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>California, USA</span>
+                    </li>
+                    <li class="flex items-start gap-2 justify-center lg:justify-start">
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <a href="tel:+10000000000" class="hover:text-white transition-colors">+1 (000) 000-0000</a>
+                    </li>
+                    <li class="flex items-start gap-2 justify-center lg:justify-start">
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <a href="mailto:info@intechnexus.com" class="hover:text-white transition-colors">info@intechnexus.com</a>
+                    </li>
                 </ul>
             </div>
 
-            {{-- Column 3: Services --}}
-            <div class="text-center">
+            {{-- Column 2: Services --}}
+            {{-- TODO: swap these anchors for real routes once Service pages exist --}}
+            <div class="text-center lg:text-left">
                 <h4 class="text-white font-semibold text-base mb-5">Services</h4>
                 <ul class="space-y-3">
-                    <li><a href="/software-development" class="text-sm text-gray-400 hover:text-white transition-colors">Software Engineering</a></li>
+                    <li><a href="#software-development" class="text-sm text-gray-400 hover:text-white transition-colors">Software Development</a></li>
+                    <li><a href="#mobile-app-development" class="text-sm text-gray-400 hover:text-white transition-colors">Mobile App Development</a></li>
                     <li><a href="#web-development" class="text-sm text-gray-400 hover:text-white transition-colors">Web Development</a></li>
-                    <li><a href="#mobile-engineering" class="text-sm text-gray-400 hover:text-white transition-colors">Mobile Engineering</a></li>
                     <li><a href="#ui-ux-design" class="text-sm text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
-                    <li><a href="#qa-testing" class="text-sm text-gray-400 hover:text-white transition-colors">QA &amp; Testing</a></li>
-                    <li><a href="#ai-ml-development" class="text-sm text-gray-400 hover:text-white transition-colors">AI &amp; ML Development</a></li>
-                    <li><a href="#devops-services" class="text-sm text-gray-400 hover:text-white transition-colors">DevOps Services</a></li>
-                    <li><a href="#it-consulting" class="text-sm text-gray-400 hover:text-white transition-colors">IT Consulting</a></li>
+                    <li><a href="#digital-marketing" class="text-sm text-gray-400 hover:text-white transition-colors">Digital Marketing</a></li>
                 </ul>
             </div>
 
-            {{-- Column 4: Google Maps Location --}}
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.368245065832!2d85.40713550852705!3d27.67501127610175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a90f3fe73bd%3A0x6717557a3e66a878!2sSallaghari%20Shopping%20Complex!5e0!3m2!1sen!2snp!4v1779603129833!5m2!1sen!2snp"
-                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {{-- Column 3: Industries --}}
+            {{-- TODO: swap these anchors for real routes once Industry pages exist --}}
+            <div class="text-center lg:text-left">
+                <h4 class="text-white font-semibold text-base mb-5">Industries</h4>
+                <ul class="space-y-3">
+                    <li><a href="#healthcare" class="text-sm text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+                    <li><a href="#ecommerce" class="text-sm text-gray-400 hover:text-white transition-colors">Ecommerce</a></li>
+                    <li><a href="#real-estate" class="text-sm text-gray-400 hover:text-white transition-colors">Real Estate</a></li>
+                    <li><a href="#saas" class="text-sm text-gray-400 hover:text-white transition-colors">SaaS</a></li>
+                    <li><a href="#startups" class="text-sm text-gray-400 hover:text-white transition-colors">Startups</a></li>
+                </ul>
+            </div>
+
+            {{-- Column 4: Company --}}
+            {{-- TODO: swap these anchors for route('page.show', $slug) once the
+                 corresponding Page records exist --}}
+            <div class="text-center lg:text-left">
+                <h4 class="text-white font-semibold text-base mb-5">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a></li>
+                    <li><a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">Work</a></li>
+                    <li><a href="#process" class="text-sm text-gray-400 hover:text-white transition-colors">Process</a></li>
+                    <li><a href="#case-studies" class="text-sm text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    <li><a href="#blog" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/career" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="/contact" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
@@ -107,11 +121,11 @@
 
                 <p class="text-xs text-gray-500 text-center">
                     Copyright &copy; {{ now()->year }} IntechNexus &reg; &nbsp;|&nbsp;
-                    <a href="#cookies" class="hover:text-gray-300 transition-colors">Cookie Settings</a>
-                    &nbsp;&bull;&nbsp;
                     <a href="#privacy" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
                     &nbsp;&bull;&nbsp;
-                    <a href="#terms" class="hover:text-gray-300 transition-colors">Terms of Services</a>
+                    <a href="#terms" class="hover:text-gray-300 transition-colors">Terms</a>
+                    &nbsp;&bull;&nbsp;
+                    <a href="#cookies" class="hover:text-gray-300 transition-colors">Cookie Policy</a>
                 </p>
             </div>
         </div>

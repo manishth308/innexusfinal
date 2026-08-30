@@ -1,234 +1,281 @@
-@extends("layouts.app")
-@section('title', 'Contact Us')
+@extends('layouts.app')
+@section('title', 'Contact Us - InTech Nexus')
 
 @push('styles')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  .ct-page{
+    --navy-deep:#0B1B3D;
+    --navy-darker:#071227;
+    --blue-accent:#3D6BFF;
+    --blue-bright:#5A8CFF;
+    --bg-soft:#F3F5FA;
+    --text-muted:#6B7280;
+    --line:#E3E7F0;
+    font-family:'Inter',system-ui,sans-serif;
   }
-  .animate-scroll {
-    animation: scroll 35s linear infinite;
+  .ct-page h1, .ct-page h2, .ct-page h3, .ct-page .font-display{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.01em;
+  }
+  .ct-page .font-mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  .ct-hero{
+    background:
+      radial-gradient(ellipse 800px 480px at 15% 10%, rgba(61,107,255,0.30), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 85% 90%, rgba(90,140,255,0.18), transparent 55%),
+      var(--navy-deep);
+  }
+  .ct-hero .vector-lines{ position:absolute; inset:0; pointer-events:none; opacity:0.5; }
+
+  .float-graphic{ animation:float 6s ease-in-out infinite; }
+  @keyframes float{ 0%, 100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
+
+  .fade-up{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .fade-up.visible{ opacity:1; transform:translateY(0); }
+
+  .ct-input, .ct-select, .ct-textarea{
+    width:100%;
+    border:1px solid var(--line);
+    background:#fff;
+    padding:.85rem 1rem;
+    font-family:'Inter',sans-serif;
+    font-size:.95rem;
+    color:var(--navy-deep);
+    border-radius:2px;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .ct-input:focus, .ct-select:focus, .ct-textarea:focus{
+    outline:none;
+    border-color:var(--blue-accent);
+    box-shadow:0 0 0 3px rgba(61,107,255,0.12);
+  }
+  .ct-label{
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-weight:600;
+    color:var(--navy-deep);
+    margin-bottom:.5rem;
+  }
+
+  .type-option input{ position:absolute; opacity:0; }
+  .type-option span{
+    display:block;
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:1rem;
+    text-align:center;
+    font-weight:600;
+    color:var(--navy-deep);
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .type-option input:checked + span{
+    border-color:var(--blue-accent);
+    background:rgba(61,107,255,0.06);
+    color:var(--blue-accent);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .ct-page *{ animation:none!important; transition:none!important; }
+    .fade-up{ opacity:1!important; transform:none!important; }
   }
 </style>
 @endpush
 
-@section("content")
+@section('content')
+<div class="ct-page bg-white">
 
-<!-- Page Hero Section -->
-<section class="relative overflow-hidden bg-[#0b0c10] pt-20 pb-16 min-h-[400px] flex flex-col justify-center">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-60"></div>
-    <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-[100px]"></div>
+  <!-- ===== Hero ===== -->
+  <header class="ct-hero relative overflow-hidden text-white">
+    <svg class="vector-lines" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 460 L260 400 L520 430 L780 340 L1040 380 L1200 260" stroke="#5A8CFF" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <path d="M0 490 L300 440 L560 470 L860 360 L1200 300" stroke="#3D6BFF" stroke-width="1.5" fill="none" opacity="0.3"/>
+      <circle cx="260" cy="400" r="4" fill="#5A8CFF"/>
+      <circle cx="780" cy="340" r="4" fill="#5A8CFF"/>
+      <circle cx="1200" cy="260" r="4" fill="#3D6BFF"/>
+    </svg>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 text-center">
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
-            Contact <span class="text-purple-400">Us</span>
+    <!-- Floating graphic: a path from a starting point to launch -->
+    <div class="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block float-graphic" aria-hidden="true">
+      <svg width="280" height="280" viewBox="0 0 280 280" fill="none">
+        <rect x="40" y="40" width="200" height="200" rx="24" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <path d="M70 200 Q 120 200 140 160 T 200 90" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="5 6" fill="none"/>
+        <circle cx="70" cy="200" r="7" fill="#fff" opacity="0.5"/>
+        <circle cx="140" cy="160" r="4" fill="#5A8CFF" opacity="0.8"/>
+        <circle cx="200" cy="90" r="9" fill="#3D6BFF"/>
+        <path d="M196 94 L200 86 L204 94" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="70" y="222" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="IBM Plex Mono, monospace" font-size="11">Start</text>
+        <text x="200" y="70" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600">Launch</text>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-14 pb-24 lg:pt-16 lg:pb-28">
+      <!-- Breadcrumb -->
+      <nav class="flex flex-wrap items-center gap-2 text-sm font-medium mb-8" style="color:var(--blue-bright);" aria-label="Breadcrumb">
+        <a href="{{ url('/') }}" class="hover:text-white transition-colors">Main Navigation</a>
+        <span class="text-white/30">/</span>
+        <span class="text-white/70">Contact</span>
+      </nav>
+
+      <div class="max-w-2xl">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-bright);">
+          Get In Touch
+        </span>
+        <h1 class="text-4xl sm:text-4xl lg:text-[50px] font-bold leading-[1.1] mt-5 mb-6">
+          Let's Build Something Worth Launching
         </h1>
-        <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            We would love to hear from you. Reach out and our team will get back to you within one business day.
-        </p>
-    </div>
-</section>
-
-<!-- Contact Intro Section -->
-<section class="py-16 bg-[#0b0c10] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8 bg-white/[0.03] border border-purple-500/30 rounded-3xl p-8 md:p-10 shadow-[0_0_25px_rgba(168,85,247,0.15)]">
-            <div>
-                <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl">
-                    Whatever the enquiry, we will appreciate you reaching out. Drop us a line via a contact form below or contact us at
-                    <a href="mailto:info@intechnexus.com" class="text-purple-400 font-semibold hover:underline">info@intechnexus.com</a>
-                    and our representative will get back to you within one business day.
-                </p>
-            </div>
-            <div class="shrink-0">
-                <p class="text-base font-bold text-white mb-2">Start your digital transformation journey today</p>
-                <p class="text-sm text-gray-400 mb-4 max-w-xs">Drop us a line via the form below and our representative will get back to you within one business day.</p>
-                <a href="#contact-form" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-700 shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all">
-                    Contact us
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Form + Sidebar -->
-<section id="contact-form" class="py-16 bg-[#0b0c10] relative">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-
-            {{-- Contact Form with Glowing Border --}}
-            <div class="lg:col-span-2">
-                <div class="bg-white/[0.03] rounded-3xl p-8 md:p-10 border border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-300">
-                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Write us</h2>
-                    <p class="text-gray-400 text-sm mb-8">Please fill in your contact details and a short description of your requirement. We will get back to you within one business day.</p>
-
-                    <form method="POST" action="{{ route('contact.submit') }}" class="space-y-6">
-                        @csrf
-
-                        @if (session('success'))
-                            <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-sm shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-1.5">Your Name</label>
-                                <input type="text" name="name" value="{{ old('name') }}"
-                                       class="w-full px-4 py-3 rounded-xl border border-purple-500/30 bg-white/[0.05] focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40 focus:outline-none text-sm text-white placeholder-gray-500 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)] focus:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                                       placeholder="Your full name">
-                                @error('name') <p class="text-xs text-red-400 mt-1">{{ $message }}</p> @enderror
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-1.5">Your Email</label>
-                                <input type="email" name="email" value="{{ old('email') }}"
-                                       class="w-full px-4 py-3 rounded-xl border border-purple-500/30 bg-white/[0.05] focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40 focus:outline-none text-sm text-white placeholder-gray-500 transition-all shadow-[0_0_10px_rgba(168,85,247,0.1)] focus:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                                       placeholder="you@example.com">
-                                @error('email') <p class="text-xs text-red-400 mt-1">{{ $message }}</p> @enderror
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1.5">Your Message</label>
-                            <p class="text-xs text-gray-500 mb-2">Please tell us about your project, idea, or challenge. The more details you share, the better we can assist you.</p>
-                            <textarea name="message" rows="5"
-                                      class="w-full px-4 py-3 rounded-xl border border-purple-500/30 bg-white/[0.05] focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40 focus:outline-none text-sm text-white placeholder-gray-500 transition-all resize-none shadow-[0_0_10px_rgba(168,85,247,0.1)] focus:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                                      placeholder="Describe your project or inquiry...">{{ old('message') }}</textarea>
-                            @error('message') <p class="text-xs text-red-400 mt-1">{{ $message }}</p> @enderror
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <input type="checkbox" id="terms" required class="mt-1 w-4 h-4 rounded border-purple-500/40 bg-white/5 text-purple-600 focus:ring-purple-500">
-                            <label for="terms" class="text-xs text-gray-400 leading-relaxed">
-                                I agree with the
-                                <a href="#privacy" class="text-purple-400 underline underline-offset-1 hover:text-purple-300">Privacy Policy</a>
-                                and the
-                                <a href="#terms" class="text-purple-400 underline underline-offset-1 hover:text-purple-300">Terms of Services</a>
-                            </label>
-                        </div>
-
-                        <button type="submit"
-                                class="inline-flex items-center justify-center px-8 py-3.5 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
-                            Send message
-                        </button>
-
-                    </form>
-                </div>
-            </div>
-
-            {{-- Sidebar Cards with Subtle Glow --}}
-            <div class="space-y-8">
-
-                {{-- Career Card --}}
-                <div class="bg-white/[0.03] rounded-3xl overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
-                    <div class="h-36 bg-gradient-to-br from-purple-900/50 to-[#0b0c10] flex items-center justify-center border-b border-white/5">
-                        <svg class="w-16 h-16 text-purple-400/40" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-base font-bold text-white mb-2">Career</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                            Looking for the next career opportunity? Consider visiting the website's Career section to learn more and apply through specialized forms.
-                        </p>
-                        <a href="/careers" class="inline-flex items-center text-sm font-semibold text-purple-400 border-b border-purple-400/30 pb-0.5 hover:text-purple-300 transition-colors">
-                            Explore careers
-                            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                {{-- Referral Program Card --}}
-                <div class="bg-white/[0.03] rounded-3xl overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
-                    <div class="h-36 bg-gradient-to-br from-[#0b0c10] to-indigo-900/50 flex items-center justify-center border-b border-white/5">
-                        <svg class="w-16 h-16 text-indigo-400/40" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-base font-bold text-white mb-2">Referral program</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                            If you would like to refer a business opportunity to IntechNexus, we recommend engaging through our referral program. We are always open to partnerships that are built with trust, transparency and win-win-win mindset.
-                        </p>
-                        <a href="#referral" class="inline-flex items-center text-sm font-semibold text-purple-400 border-b border-purple-400/30 pb-0.5 hover:text-purple-300 transition-colors">
-                            Learn more
-                            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- Our Locations --}}
-<section class="py-16 bg-[#0b0c10] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-3">Our locations</h2>
-        <p class="text-gray-400 text-base mb-12 max-w-3xl leading-relaxed">
-            IntechNexus is a global software development company with its <strong class="text-white">headquarters located in Poland</strong>. Alongside our headquarters, we operate development centers across Europe and have representative offices in other regions, allowing us to build distributed teams and remain close to our clients worldwide. This structure enables us to combine strong engineering expertise with seamless collaboration across time zones, delivering high-quality custom software solutions to clients around the globe.
+        <p class="text-lg text-white/70 leading-relaxed mb-10 max-w-xl">
+          Tell us where you are starting from. An idea, an existing product, or a business that needs to grow. We will tell you the fastest, most sensible way to get there.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            {{-- Poland --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
-                <h3 class="text-base font-bold text-white mb-1.5">Poland</h3>
-                <p class="text-sm text-gray-400 mb-3">9A Belwederska st, Warsaw, 00-761</p>
-                <a href="mailto:warsaw@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">warsaw@intechnexus.com</a>
-            </div>
-
-            {{-- United States --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
-                <h3 class="text-base font-bold text-white mb-1.5">United States</h3>
-                <p class="text-sm text-gray-400 mb-3">22 Juniper st, Wenham, Massachusetts, 01984</p>
-                <a href="mailto:wenham@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">wenham@intechnexus.com</a>
-            </div>
-
-            {{-- Lithuania --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
-                <h3 class="text-base font-bold text-white mb-1.5">Lithuania</h3>
-                <p class="text-sm text-gray-400 mb-3">82 Laisves al., Kaunas, 44250</p>
-                <a href="mailto:kaunas@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">kaunas@intechnexus.com</a>
-            </div>
-
-            {{-- United Kingdom --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
-                <h3 class="text-base font-bold text-white mb-1.5">United Kingdom</h3>
-                <p class="text-sm text-gray-400 mb-3">Loughborough Technology Centre, Epinal Way, Loughborough, LE11 3GE</p>
-                <a href="mailto:london@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">london@intechnexus.com</a>
-            </div>
-
-            {{-- Bulgaria --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
-                <h3 class="text-base font-bold text-white mb-1.5">Bulgaria</h3>
-                <p class="text-sm text-gray-400 mb-3">Knyaginya Maria Luiza 1 Blvd., Plovdiv, 4000</p>
-                <a href="mailto:plovdiv@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">plovdiv@intechnexus.com</a>
-            </div>
-
-            {{-- United Arab Emirates --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300">
-                <h3 class="text-base font-bold text-white mb-1.5">United Arab Emirates</h3>
-                <p class="text-sm text-gray-400 mb-3">Office No. 19-177MF, Owned by Shamsa Mohammed Ibrahim Al-Suwaidi, Al-Murar, Dubai</p>
-                <a href="mailto:dubai@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">dubai@intechnexus.com</a>
-            </div>
-
-            {{-- Georgia --}}
-            <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:bg-white/[0.06] transition-all duration-300 md:col-span-2 lg:col-span-1">
-                <h3 class="text-base font-bold text-white mb-1.5">Georgia</h3>
-                <p class="text-sm text-gray-400 mb-3">1 Meliton And Andria Balanchivadze st, Tbilisi, 0667</p>
-                <a href="mailto:tbilisi@intechnexus.com" class="text-sm text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-400/30 pb-0.5">tbilisi@intechnexus.com</a>
-            </div>
-
-        </div>
+        <a href="#project-form" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--blue-accent);">
+          Get a Free Quote
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+      </div>
     </div>
-</section>
+  </header>
 
+  <!-- ===== Project Intake Form ===== -->
+  <section id="project-form" class="py-24 border-t fade-up" style="border-color:var(--line); background:var(--bg-soft);">
+    <div class="max-w-3xl mx-auto px-6 sm:px-12">
+      <div class="mb-12 text-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-accent);">Tell Us About Your Project</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">Share the Details, We'll Follow Up</h2>
+        <p class="mt-3 text-base" style="color:var(--text-muted);">
+          Share your name, company, and project details, along with the type of project, build, design, or grow, and your budget range. We will follow up with next steps.
+        </p>
+      </div>
+
+      <form method="POST" action="{{ url('/contact') }}" class="bg-white p-8 md:p-10 border" style="border-color:var(--line);">
+        @csrf
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="name" class="ct-label">Your Name</label>
+            <input type="text" id="name" name="name" class="ct-input" placeholder="Jane Doe" required>
+          </div>
+          <div>
+            <label for="company" class="ct-label">Company</label>
+            <input type="text" id="company" name="company" class="ct-input" placeholder="Company name">
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="email" class="ct-label">Email</label>
+          <input type="email" id="email" name="email" class="ct-input" placeholder="you@company.com" required>
+        </div>
+
+        <div class="mb-6">
+          <span class="ct-label">Type of Project</span>
+          <div class="grid grid-cols-3 gap-3">
+            <label class="type-option relative">
+              <input type="radio" name="project_type" value="build" checked>
+              <span>Build</span>
+            </label>
+            <label class="type-option relative">
+              <input type="radio" name="project_type" value="design">
+              <span>Design</span>
+            </label>
+            <label class="type-option relative">
+              <input type="radio" name="project_type" value="grow">
+              <span>Grow</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="budget" class="ct-label">Budget Range</label>
+          <select id="budget" name="budget_range" class="ct-select">
+            <option value="">Select a range</option>
+            <option value="under-5k">Under $5,000</option>
+            <option value="5k-15k">$5,000 – $15,000</option>
+            <option value="15k-50k">$15,000 – $50,000</option>
+            <option value="50k-plus">$50,000+</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="mb-8">
+          <label for="details" class="ct-label">Project Details</label>
+          <textarea id="details" name="project_details" rows="5" class="ct-textarea" placeholder="Tell us where you're starting from and what you're trying to get to."></textarea>
+        </div>
+
+        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-7 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--blue-accent);">
+          Send Project Details
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Other Ways to Reach Us ===== -->
+  <section class="py-20 border-t fade-up" style="border-color:var(--line);">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="mb-12 max-w-xl">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-accent);">Other Ways to Reach Us</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 border" style="border-color:var(--line); background:var(--bg-soft);">
+          <h3 class="text-xl font-bold mb-3" style="color:var(--navy-deep);">General Inquiries</h3>
+          <p class="leading-relaxed text-base" style="color:var(--text-muted);">
+            Available on request.
+          </p>
+        </div>
+
+        <div class="p-8 border" style="border-color:var(--line); background:var(--bg-soft);">
+          <h3 class="text-xl font-bold mb-3" style="color:var(--navy-deep);">Existing Clients</h3>
+          <p class="leading-relaxed text-base" style="color:var(--text-muted);">
+            A dedicated support contact is given at the start of your project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== No Pressure, No Obligation ===== -->
+  <section class="py-24 border-t fade-up" style="border-color:var(--line);">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden" style="border-radius:2px;">
+        <div class="p-10 md:p-16 text-white h-full flex flex-col justify-center" style="background:var(--navy-deep);">
+          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--blue-bright);">No Pressure, No Obligation</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Just a clear look at what your project needs</h2>
+          <p class="text-white/70 leading-relaxed max-w-md mb-8">
+            Whether that is a full Build, a Design refresh, or a Grow plan.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="font-mono text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-full border border-white/25 text-white/80">Build</span>
+            <span class="font-mono text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-full border border-white/25 text-white/80">Design</span>
+            <span class="font-mono text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-full border border-white/25 text-white/80">Grow</span>
+          </div>
+        </div>
+        <div class="h-full min-h-[320px]" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  });
+</script>
 @endsection

@@ -61,7 +61,7 @@
         </ul>
 
         <div class="flex items-center gap-3 shrink-0">
-            <a href="#contact"
+            <a href="{{ route('contact')}}"
                class="hidden lg:inline-block btn-contact">
                 Contact Us
             </a>

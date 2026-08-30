@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Healthcare Industry Solutions - InTech Nexus')
+@section('title', 'Manufacturing Industry Solutions - InTech Nexus')
 
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,17 +45,12 @@
     pointer-events:none;
   }
 
-  /* Hero ECG / heartbeat "video" graphic */
-  .hc-ecg-line{
-    fill:none; stroke:var(--teal-bright); stroke-width:2.5;
-    stroke-linecap:round; stroke-linejoin:round;
-    stroke-dasharray:10 10;
-    filter:drop-shadow(0 0 6px rgba(45,212,191,0.7));
-    animation:hc-dash 1.1s linear infinite;
+  /* Connected-nodes hero graphic */
+  .hc-flow-line{
+    stroke:var(--teal-accent); stroke-width:2; stroke-dasharray:7 7;
+    animation:hc-dash 1.2s linear infinite;
   }
-  @keyframes hc-dash{ to{ stroke-dashoffset:-20; } }
-  .hc-ecg-dot{ fill:#fff; animation:hc-beat 1.1s ease-in-out infinite; transform-origin:center; }
-  @keyframes hc-beat{ 0%,100%{ opacity:.35; r:3; } 50%{ opacity:1; r:5; } }
+  @keyframes hc-dash{ to{ stroke-dashoffset:-14; } }
   .hc-pulse-ring{ fill:none; stroke:var(--teal-accent); animation:hc-ring 2.6s ease-out infinite; transform-origin:center; }
   @keyframes hc-ring{ 0%{ transform:scale(.6); opacity:.55; } 100%{ transform:scale(1.6); opacity:0; } }
 
@@ -74,12 +69,6 @@
     transition:transform .7s ease;
   }
   .hc-fade-up.visible .hc-rule{ transform:scaleX(1); }
-
-  /* Flow connector between the two teams */
-  .hc-flow-line{
-    stroke:var(--teal-accent); stroke-width:2; stroke-dasharray:7 7;
-    animation:hc-dash 1.2s linear infinite;
-  }
 
   /* Feature cards + staggered reveal */
   .hc-card{
@@ -129,7 +118,7 @@
   <!-- ===== Hero ===== -->
   <header class="hc-hero relative overflow-hidden text-white">
     <video class="hc-hero-video" autoplay muted loop playsinline poster="">
-      <!-- <source src="/videos/healthcare-hero.mp4" type="video/mp4"> -->
+      <!-- <source src="/videos/manufacturing-hero.mp4" type="video/mp4"> -->
     </video>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-14 pb-24 lg:pt-16 lg:pb-28">
@@ -138,19 +127,19 @@
         <span class="text-white/30">/</span>
         <a href="{{ url('/industries') }}" class="hover:text-white transition-colors">Industries</a>
         <span class="text-white/30">/</span>
-        <span class="text-white/70">Healthcare</span>
+        <span class="text-white/70">Manufacturing</span>
       </nav>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7 max-w-3xl">
           <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--teal-bright);">
-            Healthcare
+            Manufacturing
           </span>
           <h1 class="text-4xl sm:text-4xl lg:text-[50px] font-bold leading-[1.1] mt-5 mb-6">
-            Healthcare technology has to work for patients, providers, and regulators all at once.
+            Manufacturing businesses need digital systems that connect operations, sales, and customers.
           </h1>
           <p class="text-lg text-white/75 leading-relaxed mb-10 max-w-2xl">
-            It cannot be easy to use at the cost of privacy and safety, and it cannot treat those rules as an afterthought either.
+            Not just a website that describes what the business does.
           </p>
 
           <div class="flex flex-wrap items-center gap-4">
@@ -165,14 +154,38 @@
           </div>
         </div>
 
-        <!-- Animated ECG "video" graphic (no text, purely visual) -->
+        <!-- Animated connected-nodes "video" graphic -->
         <div class="lg:col-span-5 hidden lg:block hc-float" aria-hidden="true">
           <div class="relative rounded-2xl border border-white/10 p-6" style="background:rgba(255,255,255,0.04);">
-            <svg viewBox="0 0 600 160" class="w-full h-40" preserveAspectRatio="none">
-              <circle class="hc-pulse-ring" cx="60" cy="80" r="14"/>
-              <circle class="hc-pulse-ring" cx="540" cy="80" r="14" style="animation-delay:1.3s;"/>
-              <path class="hc-ecg-line" d="M0 80 L120 80 L150 80 L168 50 L186 118 L204 80 L320 80 L350 80 L368 56 L386 104 L404 80 L520 80 L548 80 L566 64 L584 96 L600 80"/>
-              <circle class="hc-ecg-dot" cx="186" cy="118" r="4"/>
+            <svg viewBox="0 0 600 240" class="w-full h-56">
+              <defs>
+                <linearGradient id="mnNode" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0D9488"/>
+                  <stop offset="100%" stop-color="#0B1B3D"/>
+                </linearGradient>
+              </defs>
+
+              <!-- connectors -->
+              <line class="hc-flow-line" x1="135" y1="180" x2="300" y2="60"/>
+              <line class="hc-flow-line" x1="300" y1="60" x2="465" y2="180"/>
+              <line class="hc-flow-line" x1="135" y1="180" x2="465" y2="180"/>
+
+              <!-- pulses -->
+              <circle r="5" fill="#2DD4BF"><animateMotion dur="2.6s" repeatCount="indefinite" path="M135 180 L300 60"/></circle>
+              <circle r="3" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite" path="M135 180 L300 60" begin="0.4s"/></circle>
+              <circle r="5" fill="#2DD4BF"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 60 L465 180" begin="0.9s"/></circle>
+              <circle r="3" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 60 L465 180" begin="1.3s"/></circle>
+              <circle r="5" fill="#2DD4BF"><animateMotion dur="3s" repeatCount="indefinite" path="M135 180 L465 180" begin="0.6s"/></circle>
+
+              <!-- nodes -->
+              <rect x="60" y="150" width="150" height="60" rx="14" fill="url(#mnNode)"/>
+              <text x="135" y="178" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Operations</text>
+              <rect x="225" y="30" width="150" height="60" rx="14" fill="url(#mnNode)"/>
+              <text x="300" y="58" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Sales</text>
+              <rect x="390" y="150" width="150" height="60" rx="14" fill="url(#mnNode)"/>
+              <text x="465" y="178" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Customers</text>
+
+              <text x="300" y="124" text-anchor="middle" fill="var(--teal-bright)" font-family="IBM Plex Mono, monospace" font-size="11">connected</text>
             </svg>
           </div>
         </div>
@@ -184,10 +197,10 @@
   <section class="py-20 border-t hc-fade-up" style="border-color:var(--line); background:var(--bg-soft);">
     <div class="max-w-5xl mx-auto px-6 sm:px-12">
       <p class="text-lg leading-relaxed mb-5 max-w-3xl" style="color:var(--navy-deep);">
-        A patient portal that is technically compliant but confusing to use will still go unused. A beautifully designed booking flow that overlooks data handling requirements is not a solution at all, it is a liability.
+        Buyers researching industrial equipment, parts, or manufacturing services now do most of that research online, long before they ever pick up the phone. If your website reads like a brochure instead of demonstrating real technical capability, you lose serious buyers to competitors who look more credible online, even if your actual work is better. At the same time, many manufacturers are still running core operations, inventory, and customer data across systems that were never built to talk to each other.
       </p>
       <p class="text-base leading-relaxed max-w-3xl" style="color:var(--text-muted);">
-        We work with healthcare businesses on both sides of this problem: the software and systems that need to work correctly and securely, and the patient and provider facing experience that needs to feel simple despite everything happening behind the scenes. Our team brings both technical and design discipline to every healthcare project, so neither gets treated as secondary to the other.
+        We work with manufacturing businesses that need both sides of this solved together, digital systems that connect operations and data internally, and a customer facing presence that reflects the real technical skill behind the business.
       </p>
     </div>
   </section>
@@ -202,12 +215,11 @@
 
       <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         @foreach ([
-          'Patient facing tools need to be simple to use without putting data at risk.',
-          'Older systems make it hard to improve the patient or provider experience without a costly, risky migration.',
-          'Marketing needs to build trust in a field where credibility matters more than clever wording.',
-          'Appointment scheduling and intake processes that still rely on phone calls or paperwork, creating friction for both patients and staff.',
-          'Disconnected systems between clinical records, billing, and patient communication, leading to duplicated work.',
-          'Meeting accessibility expectations for a patient base that includes older adults and people with varying levels of technical comfort.',
+          'Sales and operations data live in systems that do not talk to each other. Teams end up re-entering the same information across spreadsheets, order systems, and inventory tools.',
+          'The website undersells what the business can actually do to buyers doing early research. A generic template site does not build the confidence a technical buyer needs before reaching out.',
+          'Lead generation for manufacturing sales cycles looks different from consumer marketing. Long, considered B2B buying cycles need a different approach than a typical ecommerce funnel.',
+          'Legacy operations software can be difficult to extend, forcing teams to work around limitations instead of the system supporting the actual workflow.',
+          'Customer and supplier communication is often still manual, when a connected portal could remove a large share of the back and forth.',
         ] as $challenge)
           <div class="hc-card rounded-xl p-6">
             <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg mb-4" style="background:var(--bg-soft); color:var(--teal-accent);">
@@ -220,48 +232,42 @@
     </div>
   </section>
 
-  <!-- ===== Why Healthcare Businesses Choose InTech Nexus ===== -->
+  <!-- ===== Why Manufacturing Needs a Different Approach ===== -->
   <section class="py-24 border-t" style="border-color:var(--line); background:var(--navy-deep);">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <div class="hc-fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Why Healthcare Businesses Choose InTech Nexus</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Why Manufacturing Needs a Different Approach</h2>
           <span class="hc-rule"></span>
-          <p class="text-white/70 leading-relaxed mb-4 mt-6">
-            Healthcare projects rarely fail because of a single bad decision. They fail when privacy, usability, and clinical workflow get designed in isolation from each other.
-          </p>
-          <p class="text-white/60 leading-relaxed">
-            Our Software Development and UI/UX Design teams work on healthcare projects together from day one, so decisions about how data is handled and decisions about how a screen looks and feels are made with full knowledge of each other, not negotiated after the fact between two disconnected teams.
+          <p class="text-white/70 leading-relaxed mt-6">
+            Manufacturing buyers are usually technical, deliberate, and comparing multiple suppliers before ever reaching out. A generic marketing approach built for consumer products does not build the kind of confidence this audience needs. At the same time, manufacturing operations depend on systems that actually reflect how production, inventory, and fulfillment work day to day, not a simplified version built by a team that has never worked with a manufacturing business. We bring both kinds of understanding into every manufacturing project.
           </p>
         </div>
 
-        <!-- Animated two-teams-connected graphic -->
+        <!-- Animated production / inventory / fulfillment flow -->
         <div class="hc-fade-up relative" aria-hidden="true">
-          <svg viewBox="0 0 600 240" class="w-full h-60">
+          <svg viewBox="0 0 600 200" class="w-full h-52">
             <defs>
-              <linearGradient id="hcNode" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="mnFlow" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#0D9488"/>
                 <stop offset="100%" stop-color="#0B1B3D"/>
               </linearGradient>
             </defs>
 
-            <rect x="40" y="80" width="180" height="80" rx="16" fill="url(#hcNode)" opacity="0.95"/>
-            <text x="130" y="118" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="600">Software</text>
-            <text x="130" y="138" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="IBM Plex Mono, monospace" font-size="11">Development</text>
+            <line class="hc-flow-line" x1="190" y1="100" x2="220" y2="100"/>
+            <line class="hc-flow-line" x1="380" y1="100" x2="410" y2="100"/>
 
-            <rect x="380" y="80" width="180" height="80" rx="16" fill="url(#hcNode)" opacity="0.95"/>
-            <text x="470" y="118" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="600">UI/UX</text>
-            <text x="470" y="138" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="IBM Plex Mono, monospace" font-size="11">Design</text>
+            <circle r="5" fill="#2DD4BF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M110 100 L300 100"/></circle>
+            <circle r="5" fill="#2DD4BF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M300 100 L490 100" begin="0.7s"/></circle>
 
-            <line class="hc-flow-line" x1="220" y1="120" x2="380" y2="120"/>
-            <circle r="7" fill="#2DD4BF">
-              <animateMotion dur="2.6s" repeatCount="indefinite" path="M220 120 L380 120"/>
-            </circle>
-            <circle r="4" fill="#fff">
-              <animateMotion dur="2.6s" repeatCount="indefinite" path="M220 120 L380 120" begin="0.2s"/>
-            </circle>
+            <rect x="30" y="70" width="160" height="60" rx="14" fill="url(#mnFlow)"/>
+            <text x="110" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Production</text>
+            <rect x="220" y="70" width="160" height="60" rx="14" fill="url(#mnFlow)"/>
+            <text x="300" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Inventory</text>
+            <rect x="410" y="70" width="160" height="60" rx="14" fill="url(#mnFlow)"/>
+            <text x="490" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Fulfillment</text>
 
-            <text x="300" y="60" text-anchor="middle" fill="var(--teal-bright)" font-family="IBM Plex Mono, monospace" font-size="11">one team, day one</text>
+            <text x="300" y="160" text-anchor="middle" fill="var(--teal-bright)" font-family="IBM Plex Mono, monospace" font-size="11">how the work actually runs</text>
           </svg>
         </div>
       </div>
@@ -278,10 +284,10 @@
 
       <div class="hc-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         @foreach ([
-          ['t' => 'Software & Mobile Development', 'd' => 'Software Development and Mobile App Development for healthcare software and apps, including patient portals and provider tools.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>'],
-          ['t' => 'UI/UX Design', 'd' => 'UI/UX Design built around patients and providers, tested for clarity across a wide range of ages and technical comfort levels.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'],
-          ['t' => 'Web & Digital Marketing', 'd' => 'Web Development and Digital Marketing for your website and outreach, built to earn trust in a field where credibility matters.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>'],
-          ['t' => 'QA & Testing', 'd' => 'QA & Testing with attention to accessibility and reliability, since healthcare tools cannot afford to fail during real use.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>'],
+          ['t' => 'Software Development', 'd' => 'Software Development for custom business systems, connecting operations, inventory, and sales data instead of leaving them isolated.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3M16 9l3 3-3 3M13 6l-2 12"/></svg>'],
+          ['t' => 'ERP & CRM Development', 'd' => 'ERP and CRM development, tailored to the specific processes running your production and sales floor, not a generic manufacturing template.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>'],
+          ['t' => 'B2B Web Development', 'd' => 'B2B Web Development, built to demonstrate technical capability to buyers doing serious research, not just describe services in general terms.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg>'],
+          ['t' => 'Digital Marketing', 'd' => 'Digital Marketing for SEO and lead generation, built around how manufacturing buyers actually search and evaluate suppliers.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l13-5v12L3 13z"/><path d="M16 8a4 4 0 0 1 0 8M3 13v-2"/></svg>'],
         ] as $s)
           <div class="hc-card rounded-xl p-6">
             <div class="inline-flex w-11 h-11 items-center justify-center rounded-xl mb-5" style="background:#fff; color:var(--teal-accent);">
@@ -303,13 +309,10 @@
         <span class="hc-rule"></span>
       </div>
 
-      <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 gap-5">
         @foreach ([
-          ['t' => 'Booking & Telemedicine', 'd' => 'Appointment booking and telemedicine platforms that reduce phone based scheduling and no shows.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>'],
-          ['t' => 'Clinic & Hospital Management', 'd' => 'Clinic and hospital management systems that bring scheduling, records, and billing into one connected system.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V5l8-3 8 3v16"/><path d="M9 21v-6h6v6M12 9v4M10 11h4"/></svg>'],
-          ['t' => 'EMR / EHR Integrations', 'd' => 'EMR and EHR integrations that connect new tools to the clinical systems you already rely on.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>'],
-          ['t' => 'Reporting Dashboards', 'd' => 'Healthcare reporting dashboards that give staff and administrators a clear, real time view of what is happening across the practice.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>'],
-          ['t' => 'Intake & Communication', 'd' => 'Patient intake and communication tools designed to reduce paperwork and missed appointments.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg>'],
+          ['t' => 'Production & Inventory Management', 'd' => 'Production and inventory management systems that give real time visibility into stock, orders, and production status across the business.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>'],
+          ['t' => 'Supplier & Customer Portals', 'd' => 'Supplier and customer portals that reduce manual back and forth by giving partners direct access to the information they need.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 11a3 3 0 0 0 0-6M21 20a6 6 0 0 0-5-5.9"/></svg>'],
         ] as $sol)
           <div class="hc-card rounded-xl p-6">
             <div class="inline-flex w-11 h-11 items-center justify-center rounded-xl mb-5" style="background:var(--bg-soft); color:var(--teal-accent);">
@@ -331,28 +334,27 @@
         <span class="hc-rule"></span>
       </div>
       <div class="hc-fade-up">
-        <p class="text-base leading-relaxed mb-4 max-w-3xl" style="color:var(--text-muted);">
-          We design and build healthcare platforms and websites with privacy, accessibility, and the right rules built in from the start, not added later. This means data handling, access control, and compliance considerations are part of the technical plan from the first discovery conversation, not a checklist applied at the end of the project.
-        </p>
         <p class="text-base leading-relaxed max-w-3xl" style="color:var(--text-muted);">
-          On the patient facing side, we test designs with real usability in mind, since a confusing interface can be just as harmful as a technical failure if it keeps someone from booking care or understanding their own information.
+          We build digital systems and websites that show the real skill behind manufacturing businesses, and connect customer facing content to how sales actually happens. That means building both the internal systems that keep operations running smoothly, and the outward facing presence that helps serious buyers take your business seriously from the first visit.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ===== Common Questions ===== -->
+  <!-- ===== Frequently Asked Questions ===== -->
   <section class="py-24 border-t" style="border-color:var(--line);" x-data="{ openFaq: null }">
     <div class="max-w-5xl mx-auto px-6 sm:px-12">
       <div class="hc-fade-up text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Common Questions</h2>
+        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Frequently Asked Questions</h2>
         <span class="hc-rule" style="margin-left:auto; margin-right:auto;"></span>
       </div>
 
       <div class="hc-fade-up space-y-4">
         @foreach ([
-          ['q' => 'Do you have experience with healthcare specific compliance requirements?', 'a' => 'Yes. We build with data privacy and access control as core requirements from the start, and we plan projects around the specific rules relevant to your region and type of practice.'],
-          ['q' => 'Can you work with our existing EMR or EHR system?', 'a' => 'In most cases, yes. We assess your current systems during discovery and plan integrations that connect new tools to what you already use wherever possible.'],
+          ['q' => 'Do you have experience working with manufacturing or industrial businesses specifically?', 'a' => 'Yes. We understand the difference between a manufacturing sales cycle and a typical consumer buying journey, and we build systems and content that reflect that.'],
+          ['q' => 'Can you connect our website to our internal operations or inventory systems?', 'a' => 'In many cases, yes. We review your existing systems during discovery and plan integrations that fit around them wherever practical.'],
+          ['q' => 'Will a new website actually help us generate more qualified leads?', 'a' => 'A website built around how manufacturing buyers actually research and compare suppliers, combined with the right SEO and content strategy, is one of the most direct ways to improve lead quality.'],
+          ['q' => 'Can you build custom portals for our suppliers or customers?', 'a' => 'Yes. Supplier and customer portals are one of the most common systems we build for manufacturing businesses, and we scope them around the specific information each side actually needs.'],
         ] as $i => $faq)
           <div class="bg-white border overflow-hidden hc-card" style="border-color:var(--line);">
             <button @click="openFaq = openFaq === {{ $i }} ? null : {{ $i }}" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center focus:outline-none" style="color:var(--navy-deep);">
@@ -378,17 +380,24 @@
 
       <div class="hc-fade-up">
         <p class="text-base leading-relaxed mb-8 max-w-3xl" style="color:var(--text-muted);">
-          For a new healthcare platform idea, such as a telemedicine app, see Software Development. For an outdated patient facing website, see Web Development. Ready to talk through your healthcare project? Get a free quote or book a call with our team.
+          If lead generation is the main goal, see Digital Marketing. For connecting internal systems, see Software Development. If you are not sure where to start, reach out through our Contact page and we will help you find the right first step.
         </p>
 
         <div class="flex flex-wrap gap-4">
+          <a href="{{ url('/digital-marketing') }}" class="hc-card inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold" style="color:var(--navy-deep);">
+            Digital Marketing
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+          <a href="{{ url('/software-development') }}" class="hc-card inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold" style="color:var(--navy-deep);">
+            Software Development
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
           <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
             Get a Free Quote
           </a>
-          <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
+          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white border rounded-full hover:border-white transition-all" style="border-color:var(--line);">
             Book a Call
           </a>
-          
         </div>
       </div>
     </div>
