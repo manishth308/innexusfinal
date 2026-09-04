@@ -1,8 +1,22 @@
 @extends('layouts.app')
-@section('title', 'ERP Development Services - InTech Nexus')
+@section('title', 'MVP Development Services - InTech Nexus')
 
 @push('styles')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
+  .csd-page{
+    font-family:'Inter',system-ui,sans-serif;
+  }
+  .csd-page h1, .csd-page h2, .csd-page h3, .csd-page .font-display{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.01em;
+  }
+  .csd-page .font-mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
+
   @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -17,352 +31,506 @@
 
 @section('content')
 
-<!-- Hero / Dark Network Header Banner -->
-<section class="relative bg-[#0b102b] pt-16 pb-32 overflow-hidden border-b border-white/10">
-  
-  <!-- Network Background Pattern Overlay -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
-    <img 
-      src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop" 
-      alt="Network Background" 
-      class="w-full h-full object-cover mix-blend-screen"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0b102b]/40 via-[#0b102b]/70 to-[#0b102b]"></div>
+<div class="csd-page">
+<!-- Hero / Banner Section -->
+<section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
+
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
+    <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
   </div>
 
-  <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 text-center">
-    
-    <!-- Top Navigation Links -->
-    <nav class="flex items-center justify-center gap-3 text-xs sm:text-sm font-semibold tracking-widest text-slate-300 mb-8 uppercase" aria-label="Breadcrumb">
-      <a href="{{ url('/services') }}" class="hover:text-white transition-colors">About Us</a>
-      <span class="text-slate-600">|</span>
-      <a href="#news" class="hover:text-white transition-colors">News</a>
-      <span class="text-slate-500">|</span>
-      <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
-      <span class="text-slate-500">|</span>
-      <a href="#articles" class="hover:text-white transition-colors">Articles</a>
-      <span class="text-slate-500">|</span>
-      <span class="text-purple-300">#Future</span>
-    </nav>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
+          <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
+          <span class="text-gray-500">/</span>
+          <span class="text-purple-400">MVP Development</span>
+        </nav>
 
-    <!-- Main Hero Heading -->
-    <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
-      ERP Development Services That <span class="text-purple-300">Connect Your Operations Into One System</span>
-    </h1>
+        <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+          MVP Development Built to <span class="text-purple-400">Validate Your Idea Fast</span>
+        </h1>
 
-    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-normal mb-8">
-      ERP development services for businesses that need their operations, finance, and inventory running on one connected system.
-    </p>
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
+          MVP development services for founders and product teams who need to launch a working first version quickly, without cutting corners on the parts that matter.
+        </p>
+        <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
+          We build minimum viable products that are focused, usable, and ready for real users to test. As part of our Software Development practice, every MVP is scoped around the features that prove your idea, so you learn faster and avoid spending on what does not move the needle.
+        </p>
 
-    <!-- Call to Action Buttons -->
-    <div class="flex flex-wrap justify-center items-center gap-4 mb-4">
-      <a href="{{ url('/contact') }}" class="inline-flex items-center justify-center border-2 border-white text-white font-bold tracking-widest text-xs sm:text-sm uppercase px-8 py-3.5 hover:bg-white hover:text-[#0b102b] transition-all duration-300">
-        Learn More
-      </a>
-      <a href="{{ url('/contact') }}" class="inline-flex items-center justify-center bg-purple-600 border-2 border-purple-600 text-white font-bold tracking-widest text-xs sm:text-sm uppercase px-8 py-3.5 hover:bg-purple-700 hover:border-purple-700 transition-all duration-300">
-        Get a Free Quote
-      </a>
-    </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+            Get a Free Quote
+          </a>
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+            Book a Call
+          </a>
+        </div>
+      </div>
 
-    <p class="text-[11px] text-slate-400 tracking-wider">Image from Freepik</p>
-
-  </div>
-</section>
-
-<!-- Intersecting Feature Layout (Mirrors Preview Graphic) -->
-<section class="relative bg-[#f4f5f8] pt-12 pb-24 px-6 sm:px-12 text-[#0b102b]">
-  <div class="max-w-5xl mx-auto relative -mt-28 z-20">
-    
-    <!-- Diagonal Striped Accent Background Box -->
-    <div class="relative w-full p-6 sm:p-12">
-      <div class="absolute inset-0 bg-[repeating-linear-gradient(45deg,#1b1c4b,#1b1c4b_8px,transparent_8px,transparent_20px)] opacity-90"></div>
-
-      <!-- Main Visual Container -->
-      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        
-        <!-- Left Featured Image Block -->
-        <div class="lg:col-span-8 relative shadow-2xl border-2 border-white">
+      <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
+        <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
           <img 
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" 
-            alt="Technology Visual" 
-            class="w-full h-[380px] sm:h-[480px] object-cover block"
+            alt="MVP Development - InTech Nexus" 
+            class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
           />
-          <div class="absolute bottom-2 left-2 bg-black/60 px-3 py-1 text-[11px] text-white">
-            Image from Freepik
-          </div>
+          <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+          <div class="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-40 pointer-events-none"></div>
         </div>
-
-        <!-- Right Overlapping 2x2 Feature Grid -->
-        <div class="lg:col-span-6 lg:-ml-24 z-20 grid grid-cols-2 gap-4 mt-6 lg:mt-12">
-          
-          <div class="bg-white p-6 shadow-xl border border-slate-200 flex flex-col items-center text-center">
-            <div class="w-12 h-12 bg-[#0b102b] text-white flex items-center justify-center mb-3">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-            </div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-[#0b102b]">Operations</h3>
-          </div>
-
-          <div class="bg-white p-6 shadow-xl border border-slate-200 flex flex-col items-center text-center">
-            <div class="w-12 h-12 bg-[#0b102b] text-white flex items-center justify-center mb-3">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a10 10 0 0114.142 0M1.414 8.414a15 15 0 0121.172 0"/></svg>
-            </div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-[#0b102b]">Inventory</h3>
-          </div>
-
-          <div class="bg-white p-6 shadow-xl border border-slate-200 flex flex-col items-center text-center">
-            <div class="w-12 h-12 bg-[#0b102b] text-white flex items-center justify-center mb-3">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-            </div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-[#0b102b]">Finance</h3>
-          </div>
-
-          <div class="bg-white p-6 shadow-xl border border-slate-200 flex flex-col items-center text-center">
-            <div class="w-12 h-12 bg-[#0b102b] text-white flex items-center justify-center mb-3">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
-            </div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-[#0b102b]">Automation</h3>
-          </div>
-
-        </div>
-
       </div>
-    </div>
 
-    <!-- Section Title directly matching lower text header in preview -->
-    <div class="text-center mt-16">
-      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b102b]">
-        Technology Of The Future
-      </h2>
-      <p class="text-slate-600 mt-4 max-w-2xl mx-auto leading-relaxed">
-        When operations, finance, and inventory all live in separate places, small inefficiencies add up fast. We build ERP systems that bring these processes into one connected platform.
-      </p>
     </div>
-
   </div>
 </section>
 
-<!-- Who This Is For & Problems We Solve -->
-<section class="py-20 bg-white text-[#0b102b]">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+<!-- Who This Is For & Problems We Solve Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      
-      <div class="p-8 bg-slate-50 border border-slate-300 flex flex-col justify-between">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
         <div>
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-            <span class="w-3 h-3 bg-purple-600"></span>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
             Who This Is For
           </h2>
-          <p class="text-slate-600 leading-relaxed text-sm">
-            Businesses managing operations, inventory, or finance across disconnected spreadsheets or outdated systems.
+          <p class="text-gray-300 leading-relaxed text-base">
+            Founders and product teams who need a working first version of a product to validate with real users before investing in a full build.
           </p>
         </div>
       </div>
 
-      <div class="p-8 bg-slate-50 border border-slate-300 flex flex-col justify-between">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
         <div>
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-            <span class="w-3 h-3 bg-purple-600"></span>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
             Problems We Solve
           </h2>
-          <ul class="space-y-3 text-slate-600 text-sm">
-            <li class="flex items-start gap-2">
-              <span class="text-purple-600 font-bold">•</span>
-              <span>Operations, finance, and inventory data live in separate systems that do not talk to each other.</span>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Building too many features before validating the core idea with real users.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-purple-600 font-bold">•</span>
-              <span>Manual processes are slowing the business down.</span>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Spending too long on a full build before knowing if the product will be adopted.</span>
             </li>
-            <li class="flex items-start gap-2">
-              <span class="text-purple-600 font-bold">•</span>
-              <span>An off the shelf ERP tool does not match how the business actually operates.</span>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Launching a product that looks finished but cannot scale or evolve past the first version.</span>
             </li>
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- What We Offer -->
-<section class="py-20 bg-[#f4f5f8] text-[#0b102b] border-t border-slate-200">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <h2 class="text-3xl font-bold tracking-tight mb-3">What We Offer</h2>
-      <p class="text-slate-600 text-base">We design and build custom ERP systems around your operations.</p>
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+      <p class="text-gray-400 text-lg">We scope, design, and build MVPs focused on what proves the idea fastest.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-6 bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
-          <h3 class="text-lg font-bold mb-2">Custom ERP Development</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Tailored ERP solutions built specifically for operations, finance, and inventory management.</p>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">MVP Scoping & Feature Planning</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">We help identify the smallest set of features that will test your core assumptions with real users.</p>
         </div>
       </div>
 
-      <div class="p-6 bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
-          <h3 class="text-lg font-bold mb-2">Enterprise Resource Planning</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Enterprise resource planning software designed around your actual business processes.</p>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Rapid MVP Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Fast, structured build cycles to get a working product in front of users quickly.</p>
         </div>
       </div>
 
-      <div class="p-6 bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
-          <h3 class="text-lg font-bold mb-2">Reporting & Dashboards</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">ERP solution development integrated with real-time reporting and interactive dashboards.</p>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Prototype to Product Build</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">We take validated prototypes and turn them into a production ready first version.</p>
         </div>
       </div>
 
-      <div class="p-6 bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
-          <h3 class="text-lg font-bold mb-2">Tool & Data Integration</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Seamless integration with your existing third-party tools and data sources.</p>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">User Feedback Integration</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">We collect early user feedback and feed it into focused iteration cycles.</p>
         </div>
       </div>
 
-      <div class="p-6 bg-white border border-slate-300 shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-2">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
         <div>
-          <h3 class="text-lg font-bold mb-2">Migration Support</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Full migration support to securely transition your data from spreadsheets or legacy systems.</p>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Scalable Foundation for Growth</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">MVPs structured so the architecture can grow into a full product without a rebuild.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Capabilities -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>A working MVP shipped to real users</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Clear scope of the core features that validate the idea</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>An architecture that supports future growth</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Feedback loops built into the launch</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Product scoping and feature prioritization</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Rapid prototyping and iteration</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Lean software architecture</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Analytics and user feedback setup</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Our Process -->
-<section class="py-20 bg-[#0b102b] text-white">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
-    <div class="max-w-2xl mb-12">
-      <h2 class="text-3xl font-bold tracking-tight mb-3">Our Process</h2>
-      <p class="text-slate-300 text-base leading-relaxed">
-        A structured, transparent approach to building ERP systems that scale.
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="max-w-3xl mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        A structured, transparent approach to building MVPs that move the needle.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <div class="p-6 bg-white/[0.05] border border-white/10">
-        <span class="text-4xl font-black text-purple-400 mb-2 block">01</span>
-        <h3 class="text-xl font-bold mb-2">Discovery & Requirements</h3>
-        <p class="text-slate-300 text-sm">We map your goals, workflows, and technical needs before any planning begins.</p>
+    <div class="space-y-6">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">01</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Discovery & Requirements</h3>
+          <p class="text-gray-300">We map your goals, workflows, and technical needs before any planning begins.</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white/[0.05] border border-white/10">
-        <span class="text-4xl font-black text-purple-400 mb-2 block">02</span>
-        <h3 class="text-xl font-bold mb-2">Planning & Architecture</h3>
-        <p class="text-slate-300 text-sm">We design the system architecture and choose the right technical approach.</p>
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">02</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Planning & Architecture</h3>
+          <p class="text-gray-300">We design the system architecture and choose the right technical approach.</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white/[0.05] border border-white/10">
-        <span class="text-4xl font-black text-purple-400 mb-2 block">03</span>
-        <h3 class="text-xl font-bold mb-2">Design</h3>
-        <p class="text-slate-300 text-sm">We plan the interface and user experience alongside the technical build.</p>
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">03</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Design</h3>
+          <p class="text-gray-300">We plan the interface and user experience alongside the technical build.</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white/[0.05] border border-white/10">
-        <span class="text-4xl font-black text-purple-400 mb-2 block">04</span>
-        <h3 class="text-xl font-bold mb-2">Development</h3>
-        <p class="text-slate-300 text-sm">We build the software in structured, reviewable stages.</p>
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">04</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Development</h3>
+          <p class="text-gray-300">We build the software in structured, reviewable stages.</p>
+        </div>
       </div>
 
-      <div class="p-6 bg-white/[0.05] border border-white/10 md:col-span-2">
-        <span class="text-4xl font-black text-purple-400 mb-2 block">05</span>
-        <h3 class="text-xl font-bold mb-2">Testing & Launch</h3>
-        <p class="text-slate-300 text-sm">We test thoroughly, then launch with ongoing support.</p>
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">05</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Testing & Launch</h3>
+          <p class="text-gray-300">We test thoroughly, then launch with ongoing support.</p>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- Tools / Technologies Continuous Ticker -->
-<section class="py-12 bg-[#f4f5f8] text-[#0b102b] overflow-hidden border-t border-b border-slate-200">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12 mb-6">
-    <h2 class="text-2xl font-bold tracking-tight">Tools / Technologies</h2>
-  </div>
-
-  <div class="flex whitespace-nowrap animate-scroll">
-    <div class="flex items-center gap-10 px-6 text-slate-500 font-semibold text-sm tracking-wider uppercase">
-      <span>Python</span> • <span>JavaScript</span> • <span>PHP</span> • <span>React</span> • <span>Node.js</span> • <span>Laravel</span> • <span>Django</span> • <span>PostgreSQL</span> • <span>MySQL</span> • <span>MongoDB</span> • <span>AWS</span> • <span>Azure</span> • <span>Google Cloud</span> • <span>Jira</span> • <span>GitHub</span> • <span>Postman</span> •
+<!-- Tools / Technologies Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
-    <div class="flex items-center gap-10 px-6 text-slate-500 font-semibold text-sm tracking-wider uppercase">
-      <span>Python</span> • <span>JavaScript</span> • <span>PHP</span> • <span>React</span> • <span>Node.js</span> • <span>Laravel</span> • <span>Django</span> • <span>PostgreSQL</span> • <span>MySQL</span> • <span>MongoDB</span> • <span>AWS</span> • <span>Azure</span> • <span>Google Cloud</span> • <span>Jira</span> • <span>GitHub</span> • <span>Postman</span> •
+
+    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+      <div>
+        @php
+            $techStack = [
+                [
+                    'name' => 'Languages',
+                    'technologies' => [
+                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
+                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Frameworks',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
+                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Databases',
+                    'technologies' => [
+                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
+                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Cloud and infrastructure',
+                    'technologies' => [
+                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Project and QA tools',
+                    'technologies' => [
+                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
+                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
+                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                    ],
+                ],
+            ];
+        @endphp
+
+        <div class="flex flex-col gap-8">
+          @foreach ($techStack as $index => $category)
+            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                {{ $category['name'] }}
+              </span>
+            </div>
+          @endforeach
+        </div>
+      </div>
+
+      <div id="tech-right" class="relative lg:pr-16">
+        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+          {{ $techStack[0]['name'] }}
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
+          @php
+              $firstCategory = $techStack[0]['technologies'];
+          @endphp
+
+          @foreach ($firstCategory as $tech)
+            <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+              <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
+            </div>
+          @endforeach
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ Section -->
-<section class="py-20 bg-white text-[#0b102b]" x-data="{ openFaq: null }">
-  <div class="max-w-4xl mx-auto px-6 sm:px-12">
-    <h2 class="text-3xl font-bold tracking-tight mb-10 text-center">Frequently Asked Questions</h2>
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
+
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                      <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush
+
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Why Choose InTech Nexus</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          We treat MVPs as a focused learning tool, not a half finished product. The same team that scopes your MVP also builds it, so you get a working first version that is ready to evolve into a full product once the idea is validated.
+        </p>
+      </div>
+      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
     
-    <div class="space-y-3">
-      <div class="bg-slate-50 border border-slate-300 overflow-hidden">
-        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-5 font-semibold text-[#0b102b] text-base flex justify-between items-center focus:outline-none">
-          <span>How long does an ERP build take?</span>
-          <span class="text-purple-600 text-xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+    <div class="space-y-4">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>How long does it take to build an MVP?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
         </button>
-        <div x-show="openFaq === 1" x-collapse class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
-          It depends on how many departments and processes are involved. Timelines are set during discovery, once the scope is clear.
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Most MVPs are scoped to ship within a few weeks to a couple of months, depending on how many core features are needed to validate the idea.
         </div>
       </div>
 
-      <div class="bg-slate-50 border border-slate-300 overflow-hidden">
-        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-5 font-semibold text-[#0b102b] text-base flex justify-between items-center focus:outline-none">
-          <span>Can the ERP connect to our existing finance or inventory tools?</span>
-          <span class="text-purple-600 text-xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>How do you decide which features to include in an MVP?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
         </button>
-        <div x-show="openFaq === 2" x-collapse class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
-          Yes. We build ERP systems to integrate with the tools you already use, wherever possible.
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          We work with you to identify the smallest set of features that will test your core assumptions with real users, and leave out anything that does not directly serve that goal.
         </div>
       </div>
 
-      <div class="bg-slate-50 border border-slate-300 overflow-hidden">
-        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-5 font-semibold text-[#0b102b] text-base flex justify-between items-center focus:outline-none">
-          <span>Can the ERP grow with us as we add new departments?</span>
-          <span class="text-purple-600 text-xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can the MVP be scaled into a full product later?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
         </button>
-        <div x-show="openFaq === 3" x-collapse class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
-          Yes. We design ERP systems with modular architecture, so new departments or processes can be added later without a full rebuild.
+        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We build MVPs on architectures that support growth, so they can evolve into full products without a complete rebuild once validated.
         </div>
       </div>
 
-      <div class="bg-slate-50 border border-slate-300 overflow-hidden">
-        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-5 font-semibold text-[#0b102b] text-base flex justify-between items-center focus:outline-none">
-          <span>How disruptive is the migration to a new ERP?</span>
-          <span class="text-purple-600 text-xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you help with launching and collecting feedback?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
         </button>
-        <div x-show="openFaq === 4" x-collapse class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
-          We plan the migration carefully and can run the new system alongside the old one during transition to minimize disruption.
+        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We help with the launch setup and configure analytics and feedback tools so you can learn from real user behavior after release.
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Call to Action Footer Section -->
-<section class="py-20 bg-[#0b102b] text-white">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12 text-center">
-    <div class="bg-[#14193d] border border-purple-400/30 p-10 shadow-2xl">
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-        Ready to bring your operations onto one system?
+<!-- Call to Action Banner -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to validate your product idea?
       </h2>
-      <p class="text-slate-300 text-base max-w-xl mx-auto mb-8 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Book a call, request a proposal, or get a free quote to start the conversation.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ url('/contact') }}" class="inline-flex items-center justify-center bg-purple-600 text-white font-bold tracking-widest text-xs uppercase px-8 py-3.5 hover:bg-purple-700 transition-all">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
           Get a Free Quote
         </a>
-        <a href="{{ url('/contact') }}" class="inline-flex items-center justify-center border-2 border-white text-white font-bold tracking-widest text-xs uppercase px-8 py-3.5 hover:bg-white hover:text-[#0b102b] transition-all">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
           Book a Call
         </a>
       </div>
     </div>
   </div>
 </section>
+
+</div>
+
+<!-- Floating Chat Button Widget -->
+<a href="{{ url('/contact') }}" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:bg-purple-700 transition-all">
+  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+</a>
 
 @endsection

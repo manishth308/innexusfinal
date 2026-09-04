@@ -1,51 +1,458 @@
-<section class="service-page web-development">
-    <div class="container">
-        <header class="page-header">
-            <h1>Web Development Services</h1>
-            <p>Delivering responsive, modern websites and web applications for businesses of all sizes.</p>
-        </header>
+@extends('layouts.app')
+@section('title', 'Web Development Services - InTech Nexus')
 
-        <div class="service-overview">
-            <h2>What We Offer</h2>
-            <ul>
-                <li>Custom website design and development</li>
-                <li>Progressive Web Apps (PWA) and single-page applications</li>
-                <li>Content management system integration</li>
-                <li>E-commerce solutions with secure checkout</li>
-                <li>Performance optimization and SEO-friendly code</li>
-            </ul>
+@push('styles')
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  .csd-page{
+    font-family:'Inter',system-ui,sans-serif;
+  }
+  .csd-page h1, .csd-page h2, .csd-page h3, .csd-page .font-display{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.01em;
+  }
+  .csd-page .font-mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll {
+    animation: scroll 35s linear infinite;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+@endpush
+
+@section('content')
+
+<div class="csd-page">
+<!-- Hero / Banner Section -->
+<section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
+
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
+    <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
+          <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
+          <span class="text-gray-500">/</span>
+          <span class="text-purple-400">Web Development</span>
+        </nav>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+          Web Development Services Built Around <span class="text-purple-400">Your Business Goals</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
+          Web development services for businesses that need a fast, modern website or web application built to support real goals.
+        </p>
+        <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
+          Our web development team builds responsive websites and custom web applications on a solid technical foundation. As part of our wider Web Development practice, every build is planned around your audience, content, and growth, not just a generic template.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+            Get a Free Quote
+          </a>
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+            Book a Call
+          </a>
         </div>
+      </div>
 
-        <div class="service-details">
-            <h2>Why Choose Our Web Development</h2>
-            <p>Our team builds user-friendly websites with clean code and scalable architecture. We focus on fast load times, mobile-first design, and seamless user experiences.</p>
-
-            <div class="detail-item">
-                <h3>Responsive Design</h3>
-                <p>Each website is designed to adapt smoothly to desktops, tablets, and mobile devices.</p>
-            </div>
-            <div class="detail-item">
-                <h3>Modern Technologies</h3>
-                <p>We use the latest frameworks and tools to ensure maintainable and future-proof solutions.</p>
-            </div>
-            <div class="detail-item">
-                <h3>Ongoing Support</h3>
-                <p>Our service includes support and updates to keep your site running reliably.</p>
-            </div>
+      <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
+        <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
+          <img 
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
+            alt="Web Development - InTech Nexus" 
+            class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
+          />
+          <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+          <div class="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-40 pointer-events-none"></div>
         </div>
+      </div>
 
-        <div class="pricing-block">
-            <h2>Dummy Pricing</h2>
-            <p>Starting from:</p>
-            <ul>
-                <li>Basic website package: $999</li>
-                <li>Advanced web application: $2999</li>
-                <li>E-commerce solution: $4999</li>
-            </ul>
-        </div>
-        @include('partials.faq-accordion', ['faqs' => $page->activeFaqs])
-        <footer class="service-footer">
-            <p>Contact us today to discuss your web development project and get a custom quote.</p>
-        </footer>
     </div>
+  </div>
 </section>
+
+<!-- Who This Is For & Problems We Solve Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            Who This Is For
+          </h2>
+          <p class="text-gray-300 leading-relaxed text-base">
+            Businesses that need a new website, web application, or platform built around their exact goals and audience.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            Problems We Solve
+          </h2>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>The current website does not reflect the business or convert visitors well.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Older systems are slowing the business down and are hard to maintain.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>You need a web platform built for your exact process, not a generic template.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+      <p class="text-gray-400 text-lg">We plan and build websites and web applications on a modern, reliable base.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Custom Web Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Websites and web applications built around your exact goals and audience.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Responsive & Mobile First</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">A responsive design that works across every device, built on custom frontend and backend.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">CMS Integration</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Content management systems that let your team update content without a developer.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Ecommerce Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Online stores with secure checkout and product catalog management.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">SEO Friendly Foundation</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Search friendly structure and on page SEO fundamentals built in from the start.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Capabilities -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>A fully custom website or web application</span></li>
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>A responsive design that works across every device</span></li>
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>A content system your team can manage independently</span></li>
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Search friendly structure built in from the start</span></li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Custom frontend and backend development</span></li>
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Responsive design implementation</span></li>
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>CMS integration and customization</span></li>
+          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Ecommerce platform development</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Process -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="max-w-3xl mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        From complexity to clarity, in structured, reviewable stages.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">01</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Discovery & Planning</h3>
+          <p class="text-gray-300">We map your goals, content, and site structure.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">02</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Wireframes & Sitemap</h3>
+          <p class="text-gray-300">We plan the layout and navigation before any design work begins.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">03</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Design</h3>
+          <p class="text-gray-300">We design pages built around clarity and conversion.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">04</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Development</h3>
+          <p class="text-gray-300">We build the site on a fast, reliable, and search friendly foundation.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">05</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">QA, Launch & Support</h3>
+          <p class="text-gray-300">We test thoroughly, launch, and support the site afterward.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools / Technologies Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+      <div>
+        @php
+            $techStack = [
+                [
+                    'name' => 'Languages',
+                    'technologies' => [
+                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
+                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Frameworks',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
+                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Databases',
+                    'technologies' => [
+                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
+                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Cloud and infrastructure',
+                    'technologies' => [
+                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Project and QA tools',
+                    'technologies' => [
+                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
+                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
+                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                    ],
+                ],
+            ];
+        @endphp
+
+        <div class="flex flex-col gap-8">
+          @foreach ($techStack as $index => $category)
+            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                {{ $category['name'] }}
+              </span>
+            </div>
+          @endforeach
+        </div>
+      </div>
+
+      <div id="tech-right" class="relative lg:pr-16">
+        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+          {{ $techStack[0]['name'] }}
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
+          @php
+              $firstCategory = $techStack[0]['technologies'];
+          @endphp
+
+          @foreach ($firstCategory as $tech)
+            <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+              <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
+            </div>
+          @endforeach
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
+
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                      <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush
+
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Web development that connects design, performance, and growth</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          Our engineers work inside the same process as our design and growth teams. Software is never built alone, cut off from the product or the business goals behind it. If a project later needs a better interface or a growth plan, it is still the same team.
+        </p>
+      </div>
+      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to talk through your web development project?
+      </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Book a call with our team, request a proposal, or get a free quote to see what a custom build would look like for your business.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          Get a Free Quote
+        </a>
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+@endsection

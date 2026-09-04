@@ -4,9 +4,25 @@
 
 @push('styles')
     @vite(['resources/css/home.css'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+      .home-page{
+        font-family:'Inter',system-ui,sans-serif;
+      }
+      .home-page h1, .home-page h2, .home-page h3, .home-page .font-display{
+        font-family:'Space Grotesk',sans-serif;
+        letter-spacing:-0.01em;
+      }
+      .home-page .font-mono{
+        font-family:'IBM Plex Mono',monospace;
+      }
+    </style>
 @endpush
 
 @section('content')
+<div class="home-page">
     <!-----------Hero section ---->
     <section class="px-8 py-20 relative">
         <img src="{{ asset('images/home/background.png') }}" alt="Hero background" style="position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; z-index: -10 !important;">
@@ -14,23 +30,23 @@
 
             {{-- Left column: text content --}}
             <div class="hero-slide-left text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight text-black">
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.1] tracking-tight text-black">
                     Transforming Bold Ideas into Digital Reality
                 </h1>
-                <p class="mt-4 text-black max-w-md mx-auto md:mx-0">
+                <p class="mt-4 text-lg md:text-xl text-black/80 leading-relaxed max-w-md mx-auto md:mx-0">
                     You have the idea. We bring the team that builds it, designs it, and grows it. You do not need to hire three different companies for this.
                 </p>
-                <p class="mt-4 text-black/80">
+                <p class="mt-4 text-base text-black/70 leading-relaxed">
                     InTech Nexus is a global digital partner. We take businesses from idea to product to market, with one team of engineers, designers, and growth experts.
                 </p>
 
                 <div class="mt-6 flex gap-4 justify-center md:justify-start">
                     <a href="{{ route('contact') }}"
-                       class="px-6 py-3 rounded-md bg-brand-red hover:bg-brand-red-hover text-white font-medium transition">
+                       class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-bold transition">
                         Get a Free Quote
                     </a>
                     <a href="{{ route('page.show', 'services')}}"
-                       class="px-6 py-3 rounded-md border border-black/30 text-black hover:bg-black/5 font-medium transition">
+                       class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-black/30 text-black hover:bg-black/5 font-bold transition">
                         See Our Work
                     </a>
                 </div>
@@ -51,35 +67,18 @@
 
         {{-- Left column: text content --}}
         <div class="hero-slide-left text-center md:text-left">
-            <p class="text-sm font-semibold uppercase tracking-wide text-brand-red">
-                Discover Our Story
-            </p>
+            <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-brand-red">Discover Our Story</span>
 
-            <h2 class="mt-2 text-3xl md:text-4xl font-bold leading-tight text-brand-blue">
+            <h2 class="mt-3 text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight text-brand-blue">
                 A Digital Partner Businesses Rely On
             </h2>
 
-            <p class="mt-4 text-black/80">
-                We work with founders, product teams, and companies in <a href="{{ route('page.show', 'healthcare') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">healthcare</a>, <a href="{{ route('page.show', 'manufacturing') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">manufacturing</a>, <a href="{{ route('page.show', 'finance') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">finance and banking</a>, and <a href="{{ route('page.show', 'ecommerce') }}" class="text-brand-blue hover:text-brand-red-hover font-semibold transition-colors">ecommerce</a>. Across every project, we act as a long-term partner, not a one-time vendor.
+            <p class="mt-4 text-base text-black/80 leading-relaxed">
+                We work with founders, product teams, and companies in healthcare, manufacturing, finance and banking, and ecommerce. Across every project, we act as a long term partner, not a one time vendor.
             </p>
 
-            <ul class="mt-6 space-y-3">
-                <li class="flex items-start gap-3">
-                    <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-xs">✓</span>
-                    <span class="text-black">Excepteur sint occaecat cupidatat non proident.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-xs">✓</span>
-                    <span class="text-black">Nemo enim ipsam voluptatem quia voluptat sit.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red text-white text-xs">✓</span>
-                    <span class="text-black">Duis aute irure dolor in reprehenderit in voluptate velit.</span>
-                </li>
-            </ul>
-
             <a href="{{ route('page.show', 'about-us') }}"
-               class="mt-8 inline-block px-6 py-3 rounded-md bg-brand-red hover:bg-brand-red-hover text-white font-medium transition">
+               class="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-bold transition">
                 Discover More
             </a>
         </div>
@@ -93,11 +92,11 @@
 
             <div class="absolute -top-6 right-6 bg-brand-blue-light border border-black/10 rounded-lg px-6 py-4 flex gap-6 shadow-xl">
                 <div>
-                    <p class="text-xl font-bold text-white">10+</p>
+                    <p class="text-xl font-bold text-white font-display">10+</p>
                     <p class="text-xs text-white">Years of Expertise</p>
                 </div>
                 <div>
-                    <p class="text-xl font-bold text-white">50+</p>
+                    <p class="text-xl font-bold text-white font-display">50+</p>
                     <p class="text-xs text-white">Happy Clients</p>
                 </div>
             </div>
@@ -110,7 +109,7 @@
 <section class="px-8 py-20 text-black">
     <div class="max-w-6xl mx-auto">
 
-        <p class="text-sm font-semibold uppercase tracking-wide text-brand-red mb-8 text-center md:text-left">What We Do</p>
+        <p class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-brand-red mb-8 text-center md:text-left">What We Do</p>
 
         <div class="grid md:grid-cols-[3fr_auto_2fr] gap-8 md:gap-12">
 
@@ -130,16 +129,16 @@
 
             <div class="wwd-scroll h-[480px] overflow-y-auto pr-2 space-y-4 scroll-smooth" id="wwd-scroll">
                 <div class="wwd-card border-2 border-black/10 rounded-xl p-6" data-step="0">
-                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Build</h3>
-                    <p class="text-base text-black/70">This covers software development, mobile app development, and web development. We build products that work well and can grow with your business. This also includes application development for ecommerce, MVPs, and more.</p>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-2">Build</h3>
+                    <p class="text-base text-black/70 leading-relaxed">This covers software development, mobile app development, and web development. We build products that work well and can grow with your business. This also includes application development for ecommerce, MVPs, and more.</p>
                 </div>
                 <div class="wwd-card border-2 border-black/10 rounded-xl p-6" data-step="1">
-                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Design</h3>
-                    <p class="text-base text-black/70">A good product needs more than good code. Our UI/UX design and branding teams create products and identities that people enjoy using. Our graphic and creative design team then carries that identity across every channel.</p>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-2">Design</h3>
+                    <p class="text-base text-black/70 leading-relaxed">A good product needs more than good code. Our UI/UX design and branding teams create products and identities that people enjoy using. Our graphic and creative design team then carries that identity across every channel.</p>
                 </div>
                 <div class="wwd-card border-2 border-black/10 rounded-xl p-6" data-step="2">
-                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Grow</h3>
-                    <p class="text-base text-black/70">A launch is just the start. Our digital marketing team turns traffic into real leads through SEO, paid ads, and conversion work. Every step is checked by our QA and testing team before it reaches your users.</p>
+                    <h3 class="text-2xl font-bold text-brand-blue mb-2">Grow</h3>
+                    <p class="text-base text-black/70 leading-relaxed">A launch is just the start. Our digital marketing team turns traffic into real leads through SEO, paid ads, and conversion work. Every step is checked by our QA and testing team before it reaches your users.</p>
                 </div>
             </div>
 
@@ -150,10 +149,11 @@
 <!--- Services section -->
 <section class="bg-[#061a3b] text-white min-h-screen flex flex-col justify-start relative">
     <div id="services-bg" class="absolute inset-0 transition-all duration-500" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 bg-[#061a3b]/60 pointer-events-none"></div>
 
     <div class="bg-[#061a3b] pt-17 pb-14 px-8 relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-0 text-white px-10">
-           Not Sure Which <span class="text-red-500">Service</span> Fits Your Situation?<p> Start With the Result You Want Instead.</p>
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-0 text-white leading-[1.1] tracking-tight px-10">
+           Not Sure Which <span class="text-red-500">Service</span> Fits Your Situation?<br> Start With the Result You Want Instead.
         </h2>
     </div>
 
@@ -171,17 +171,19 @@
             ];
         @endphp
 
-        <div class="grid md:grid-cols-3 gap-6 border-b border-white/20 relative overflow-hidden mx-8">
-            @foreach ($homeServices as $service)
-                <a href="{{ $service['url'] }}" class="relative min-h-[160px] overflow-hidden border-b border-white/30 hover:bg-[#2699e9] hover:scale-[1.04] transition-all duration-300 block" data-image="{{ $service['image'] }}">
-                    <div class="relative h-full flex items-center p-6">
-                        <div>
-                            <p class="text-sm text-white/80 mb-1">{{ $service['description'] }}</p>
-                            <h3 class="text-xl font-semibold text-white">{{ $service['title'] }}</h3>
+        <div class="relative overflow-hidden">
+            <div class="relative z-10 grid md:grid-cols-3 gap-6 border-b border-white/20">
+                @foreach ($homeServices as $service)
+                    <a href="{{ $service['url'] }}" class="relative min-h-[160px] overflow-hidden border-b border-white/30 hover:bg-[#2699e9] hover:scale-[1.04] transition-all duration-300 block" data-image="{{ $service['image'] }}">
+                        <div class="relative h-full flex items-center p-6">
+                            <div>
+                                <p class="text-sm text-white/80 mb-1 leading-relaxed">{{ $service['description'] }}</p>
+                                <h3 class="text-2xl font-bold text-white">{{ $service['title'] }}</h3>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            @endforeach
+                    </a>
+                @endforeach
+            </div>
         </div>
 
     </div>
@@ -191,7 +193,7 @@
 <section class="px-8 py-20 relative bg-white">
     <div class="max-w-5xl mx-auto slide-up">
 
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-blue">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 leading-[1.1] tracking-tight text-brand-blue">
             Our Successful Projects
         </h2>
 
@@ -210,15 +212,15 @@
                     <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-[#061a3b]/70 group-hover:bg-[#061a3b]/50 transition-colors duration-300"></div>
                     <div class="relative h-full flex flex-col justify-center items-center text-center p-6">
-                        <h3 class="text-2xl font-semibold text-white">{{ $project['title'] }}</h3>
-                        <p class="mt-2 text-base text-white">{{ $project['description'] }}</p>
+                        <h3 class="text-2xl font-bold text-white">{{ $project['title'] }}</h3>
+                        <p class="mt-2 text-base text-white leading-relaxed">{{ $project['description'] }}</p>
                     </div>
                 </div>
             @endforeach
         </div>
 
         <div class="text-center mt-12 slide-up">
-            <p class="text-lg font-bold text-black/70 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl font-bold text-black/70 max-w-3xl mx-auto leading-relaxed">
                 In each of these fields, we bring real understanding of the business, not just technical skill.
             </p>
         </div>
@@ -230,7 +232,7 @@
 <section class="bg-[#F5F5F9]">
     <div class="mx-auto max-w-[1300px] px-6 py-16 lg:px-[90px]">
 
-        <h2 class="max-w-[650px] text-[36px] md:text-[42px] lg:text-[50px] font-medium leading-[1.1] -tracking-[0.02em] text-[#111111] mb-[60px]">
+        <h2 class="max-w-[650px] text-[36px] md:text-[42px] lg:text-[50px] font-bold leading-[1.1] tracking-tight text-[#111111] mb-[60px]">
             Why choose IntechNexus ?<br>
         </h2>
 
@@ -247,8 +249,8 @@
             @foreach ($features as $feature)
                 <div class="group border-t border-[#D9DFE8] pt-[30px] pb-[55px] min-h-[210px] relative hover:bg-white hover:text-black transition-all duration-300 px-10">
                     <div class="group-hover:scale-[0.96] group-hover:translate-x-4 transition-all duration-300">
-                        <h3 class="text-[27px] md:text-[31px] font-medium leading-[1.25] text-[#111111]">{{ $feature['title'] }}</h3>
-                        <p class="mt-[22px] md:mt-[25px] text-[20px] md:text-[21px] font-normal leading-[1.5] text-[#607594] max-w-[780px]">
+                        <h3 class="text-[27px] md:text-[31px] font-bold leading-[1.25] text-[#111111]">{{ $feature['title'] }}</h3>
+                        <p class="mt-[22px] md:mt-[25px] text-[18px] md:text-[20px] font-normal leading-[1.6] text-[#607594] max-w-[780px]">
                             {{ $feature['description'] }}
                         </p>
                     </div>
@@ -264,23 +266,23 @@
 </section>
 
 <!-- Testimonials section -->
-<section class="px-8 py-20 overflow-hidden bg-blue-700">
+<section class="px-8 py-20 overflow-hidden bg-[#061a3b] text-white">
     <div class="max-w-6xl mx-auto">
 
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">What Our Clients Say</h2>
-            <p class="mt-2 text-black/60">
+            <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight">What Our Clients Say</h2>
+            <p class="mt-3 text-base md:text-lg text-white/70 leading-relaxed">
                 Client testimonials showcasing our work and impact
             </p>
         </div>
 
         @if ($testimonials->isEmpty())
-            <p class="text-center text-black/50">No testimonials yet.</p>
+            <p class="text-center text-white/60">No testimonials yet.</p>
         @else
             <div class="relative">
                 <div class="flex gap-6 testimonial-track">
                     @foreach ($testimonials->concat($testimonials) as $testimonial)
-                        <div class="shrink-0 w-80 relative bg-gray-50 border-t-2 border-t-brand-red border border-black/10 rounded-lg p-6">
+                        <div class="shrink-0 w-80 relative bg-white/5 border-t-2 border-t-brand-red border border-white/10 rounded-lg p-6">
 
                             <div class="flex items-center gap-3">
                                 @if ($testimonial->client_photo)
@@ -293,23 +295,23 @@
                                 @endif
 
                                 <div>
-                                    <p class="font-semibold text-brand-blue">{{ $testimonial->client_name }}</p>
+                                    <p class="font-semibold text-white">{{ $testimonial->client_name }}</p>
                                     @if ($testimonial->client_title)
-                                        <p class="text-sm text-black/60">{{ $testimonial->client_title }}</p>
+                                        <p class="text-sm text-white/70 leading-relaxed">{{ $testimonial->client_title }}</p>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="mt-3 flex gap-0.5">
                                 @for ($i = 1; $i <= 5; $i++)
-                                    <svg class="w-4 h-4 {{ $i <= $testimonial->rating ? 'text-brand-red-hover' : 'text-black/20' }}"
+                                    <svg class="w-4 h-4 {{ $i <= $testimonial->rating ? 'text-brand-red-hover' : 'text-white/20' }}"
                                          fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 1l2.9 6.3 6.9.9-5 4.9 1.2 6.9-6-3.2-6 3.2 1.2-6.9-5-4.9 6.9-.9z" />
                                     </svg>
                                 @endfor
                             </div>
 
-                            <p class="mt-4 text-black/70 text-sm">{{ $testimonial->quote }}</p>
+                            <p class="mt-4 text-white/80 text-sm leading-relaxed">{{ $testimonial->quote }}</p>
 
                             <div class="absolute top-6 right-6 w-9 h-9 rounded-full bg-brand-red flex items-center justify-center">
                                 <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -330,7 +332,7 @@
 <section class="bg-[#F5F5F9]">
     <div class="mx-auto max-w-[1400px] px-6 py-20 lg:px-[90px]">
 
-        <h2 class="text-[40px] md:text-[48px] lg:text-[64px] font-medium leading-[1.1] -tracking-[0.03em] text-[#111111] mb-[60px]">
+        <h2 class="text-[40px] md:text-[48px] lg:text-[64px] font-bold leading-[1.1] tracking-tight text-[#111111] mb-[60px]">
             Technologies We Work With
         </h2>
 
@@ -344,33 +346,41 @@
                         [
                             'name' => 'Web',
                             'technologies' => [
-                                ['name' => 'WordPress', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/1200px-WordPress_blue_logo.svg.png'],
-                                ['name' => 'React', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png'],
-                                ['name' => 'Next.js', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png'],
+                                ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                                ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                                ['name' => 'Bootstrap', 'image' => asset('images/tech-logo/Bootstrap.png')],
+                                ['name' => 'Angular', 'image' => asset('images/tech-logo/Angular.png')],
                             ],
                         ],
                         [
                             'name' => 'Mobile',
                             'technologies' => [
-                                ['name' => 'iOS', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/1200px-IOS_logo.svg.png'],
-                                ['name' => 'Android', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png'],
-                                ['name' => 'Flutter', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Google-flutter-logo.png/1200px-Google-flutter-logo.png'],
-                                ['name' => 'React Native', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png'],
+                                ['name' => 'Flutter', 'image' => asset('images/tech-logo/Flutter.png')],
+                                ['name' => 'Kotlin', 'image' => asset('images/tech-logo/Kotlin.png')],
+                                ['name' => 'Swift', 'image' => asset('images/tech-logo/Swift.png')],
+                                ['name' => 'Dart', 'image' => asset('images/tech-logo/Dart.png')],
                             ],
                         ],
                         [
                             'name' => 'Backend and data',
                             'technologies' => [
-                                ['name' => 'Python', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png'],
-                                ['name' => 'Node.js', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png'],
-                                ['name' => 'Custom databases', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1200px-SQLite370.svg.png'],
+                                ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                                ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                                ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
+                                ['name' => 'Java', 'image' => asset('images/tech-logo/java.png')],
+                                ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
+                                ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
                             ],
                         ],
                         [
-                            'name' => 'Design',
+                            'name' => 'Cloud and design',
                             'technologies' => [
-                                ['name' => 'Figma', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png'],
-                                ['name' => 'Modern design systems', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Design_%28icon%29.svg/1200px-Design_%28icon%29.svg.png'],
+                                ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                                ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                                ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                                ['name' => 'Cloudflare', 'image' => asset('images/tech-logo/Cloudflare.png')],
+                                ['name' => 'Firebase', 'image' => asset('images/tech-logo/Firebase.png')],
+                                ['name' => 'Figma', 'image' => asset('images/tech-logo/Figma.png')],
                             ],
                         ],
                     ];
@@ -380,7 +390,7 @@
                     @foreach ($techStack as $index => $category)
                         <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
                             <span class="tech-indicator block w-12 h-[3px] bg-[#1754B8] shrink-0 opacity-0 transition-opacity duration-300"></span>
-                            <span class="tech-name text-[27px] leading-[1.3] text-[#222222] font-normal transition-colors duration-300">
+                            <span class="tech-name text-lg md:text-xl font-semibold text-[#222222] transition-colors duration-300">
                                 {{ $category['name'] }}
                             </span>
                         </div>
@@ -388,21 +398,18 @@
                 </div>
             </div>
 
-            <div id="tech-right" class="relative">
-                <h3 class="text-[38px] font-medium text-[#69758A] leading-[1.2] mb-[30px]">
-                    Web
+            <div id="tech-right" class="relative lg:pr-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-[#222222] leading-[1.2] mb-[30px]">
+                    {{ $techStack[0]['name'] }}
                 </h3>
 
                 <div class="absolute inset-0 -z-10 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"></div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5" id="tech-grid">
-                    @php
-                        $webTechnologies = $techStack[0]['technologies'];
-                    @endphp
-
-                    @foreach ($webTechnologies as $tech)
-                        <div class="border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex items-center justify-center p-4">
-                            <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-full max-w-full object-contain">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
+                    @foreach ($techStack[0]['technologies'] as $tech)
+                        <div class="group border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-[#1754B8]/40 hover:bg-white shadow-[0_0_20px_rgba(23,84,184,0.05)] transition-all duration-300">
+                            <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+                            <span class="text-xs text-black group-hover:text-[#1754B8] transition-colors">{{ $tech['name'] }}</span>
                         </div>
                     @endforeach
                 </div>
@@ -413,10 +420,6 @@
     </div>
 </section>
 
-<script>
-    window.techStackData = @json($techStack);
-</script>
-
 <!-- Closing CTA section -->
 <section class="px-8 py-16 bg-white">
     <div class="max-w-6xl mx-auto">
@@ -424,22 +427,22 @@
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold leading-tight text-brand-blue">
+                    <h2 class="text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight text-brand-blue">
                         Have an Idea Worth Building?
                     </h2>
-                    <p class="mt-4 text-black/70">
+                    <p class="mt-4 text-base md:text-lg text-black/70 leading-relaxed max-w-2xl">
                         Tell us where you are starting from. We will tell you the fastest, safest way to get where you want to go. That could be a new product, a full rebuild, or a growth plan for something you already launched.
                     </p>
                 </div>
 
                 <div class="shrink-0 flex flex-wrap gap-4">
                     <a href="{{ route('contact') }}"
-                       class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-semibold transition">
+                       class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-red hover:bg-brand-red-hover text-white font-bold transition">
                         Get a Free Quote
                         <span>&raquo;</span>
                     </a>
                     <a href="{{ route('contact') }}"
-                       class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-black/30 text-brand-blue hover:bg-black/5 font-medium transition">
+                       class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-black/30 text-brand-blue hover:bg-black/5 font-bold transition">
                         Talk to Our Team
                         <span>&raquo;</span>
                     </a>
@@ -449,8 +452,67 @@
         </div>
     </div>
 </section>
+</div>
 @endsection
 
 @push('scripts')
     @vite(['resources/js/home.js'])
+    <script>
+        window.techStackData = @json($techStack);
+    </script>
+    <script>
+        (function () {
+            const categories = document.querySelectorAll('.tech-category');
+            const rightHeading = document.querySelector('#tech-right h3');
+            const techGrid = document.getElementById('tech-grid');
+            const data = window.techStackData;
+
+            if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+            function setActive(index) {
+                categories.forEach((cat, idx) => {
+                    const isActive = Number(cat.getAttribute('data-index')) === index;
+                    const indicator = cat.querySelector('.tech-indicator');
+                    const name = cat.querySelector('.tech-name');
+
+                    if (isActive) {
+                        indicator.classList.remove('opacity-0');
+                        indicator.classList.add('opacity-100');
+                        name.classList.remove('text-[#222222]');
+                        name.classList.add('text-[#1754B8]');
+                    } else {
+                        indicator.classList.remove('opacity-100');
+                        indicator.classList.add('opacity-0');
+                        name.classList.remove('text-[#1754B8]');
+                        name.classList.add('text-[#222222]');
+                    }
+                });
+
+                const selected = data[index];
+                if (!selected) return;
+
+                rightHeading.textContent = selected.name;
+
+                techGrid.innerHTML = selected.technologies
+                    .map(
+                        (tech) => `
+                            <div class="group border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-[#1754B8]/40 hover:bg-white shadow-[0_0_20px_rgba(23,84,184,0.05)] transition-all duration-300">
+                                <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                                <span class="text-xs text-black group-hover:text-[#1754B8] transition-colors">${tech.name}</span>
+                            </div>
+                        `
+                    )
+                    .join('');
+            }
+
+            categories.forEach((cat) => {
+                cat.addEventListener('click', function () {
+                    const index = Number(this.getAttribute('data-index'));
+                    setActive(index);
+                });
+            });
+
+            setActive(0);
+        })();
+    </script>
 @endpush

@@ -6,407 +6,492 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  .hc-page{
-    --navy-deep:#0B1B3D;
-    --navy-darker:#071227;
-    --teal-accent:#0D9488;
-    --teal-bright:#2DD4BF;
-    --bg-soft:#F1F7F6;
-    --text-muted:#6B7280;
-    --line:#E1EAE8;
+  .csd-page{
     font-family:'Inter',system-ui,sans-serif;
   }
-  .hc-page h1, .hc-page h2, .hc-page h3, .hc-page .font-display{
+  .csd-page h1, .csd-page h2, .csd-page h3, .csd-page .font-display{
     font-family:'Space Grotesk',sans-serif;
     letter-spacing:-0.01em;
   }
-  .hc-page .font-mono{
+  .csd-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
   }
 
-  /* Animated mesh-gradient hero */
-  .hc-hero{
-    background:
-      radial-gradient(circle at 18% 20%, rgba(13,148,136,0.32), transparent 55%),
-      radial-gradient(circle at 82% 80%, rgba(45,212,191,0.20), transparent 50%),
-      linear-gradient(120deg, var(--navy-deep), var(--navy-darker));
-    background-size:200% 200%, 200% 200%, 100% 100%;
-    animation:hc-mesh 14s ease-in-out infinite;
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
-  @keyframes hc-mesh{
-    0%,100%{ background-position:0% 0%, 100% 100%, 0 0; }
-    50%{ background-position:100% 50%, 0% 50%, 0 0; }
+  .animate-scroll {
+    animation: scroll 35s linear infinite;
   }
-
-  /* Optional hosted video layer (drop a <source> in to enable) */
-  .hc-hero-video{
-    position:absolute; inset:0; width:100%; height:100%;
-    object-fit:cover; opacity:.28; mix-blend-mode:luminosity;
-    pointer-events:none;
-  }
-
-  /* Hero ECG / heartbeat "video" graphic */
-  .hc-ecg-line{
-    fill:none; stroke:var(--teal-bright); stroke-width:2.5;
-    stroke-linecap:round; stroke-linejoin:round;
-    stroke-dasharray:10 10;
-    filter:drop-shadow(0 0 6px rgba(45,212,191,0.7));
-    animation:hc-dash 1.1s linear infinite;
-  }
-  @keyframes hc-dash{ to{ stroke-dashoffset:-20; } }
-  .hc-ecg-dot{ fill:#fff; animation:hc-beat 1.1s ease-in-out infinite; transform-origin:center; }
-  @keyframes hc-beat{ 0%,100%{ opacity:.35; r:3; } 50%{ opacity:1; r:5; } }
-  .hc-pulse-ring{ fill:none; stroke:var(--teal-accent); animation:hc-ring 2.6s ease-out infinite; transform-origin:center; }
-  @keyframes hc-ring{ 0%{ transform:scale(.6); opacity:.55; } 100%{ transform:scale(1.6); opacity:0; } }
-
-  /* Floating + reveal */
-  .hc-float{ animation:hc-float 6s ease-in-out infinite; }
-  @keyframes hc-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
-
-  .hc-fade-up{ opacity:0; transform:translateY(26px); transition:opacity .6s ease, transform .6s ease; }
-  .hc-fade-up.visible{ opacity:1; transform:translateY(0); }
-
-  /* Animated heading rule */
-  .hc-rule{
-    display:block; width:56px; height:3px; margin-top:1rem; border-radius:2px;
-    background:var(--teal-accent);
-    transform:scaleX(0); transform-origin:left;
-    transition:transform .7s ease;
-  }
-  .hc-fade-up.visible .hc-rule{ transform:scaleX(1); }
-
-  /* Flow connector between the two teams */
-  .hc-flow-line{
-    stroke:var(--teal-accent); stroke-width:2; stroke-dasharray:7 7;
-    animation:hc-dash 1.2s linear infinite;
-  }
-
-  /* Feature cards + staggered reveal */
-  .hc-card{
-    border:1px solid var(--line); background:#fff;
-    transition:border-color .25s ease, transform .4s ease, box-shadow .25s ease;
-  }
-  .hc-card:hover{
-    border-color:var(--teal-accent); transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(13,148,136,0.16);
-  }
-  .hc-card .hc-icon{ transition:transform .3s ease; }
-  .hc-card:hover .hc-icon{ transform:scale(1.08); }
-
-  .hc-stagger > *{ opacity:0; transform:translateY(24px); transition:opacity .55s ease, transform .55s ease; }
-  .hc-stagger.visible > *{ opacity:1; transform:translateY(0); }
-  .hc-stagger.visible > *:nth-child(1){ transition-delay:0s; }
-  .hc-stagger.visible > *:nth-child(2){ transition-delay:.07s; }
-  .hc-stagger.visible > *:nth-child(3){ transition-delay:.14s; }
-  .hc-stagger.visible > *:nth-child(4){ transition-delay:.21s; }
-  .hc-stagger.visible > *:nth-child(5){ transition-delay:.28s; }
-  .hc-stagger.visible > *:nth-child(6){ transition-delay:.35s; }
-  .hc-stagger > *:hover{ transition-delay:0s; }
-
-  /* CTA shimmer */
-  .hc-shimmer{ position:relative; overflow:hidden; }
-  .hc-shimmer::after{
-    content:''; position:absolute; top:0; left:0; width:55%; height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
-    transform:translateX(-160%);
-    animation:hc-shimmer 3.6s ease-in-out infinite;
-  }
-  @keyframes hc-shimmer{ 0%{ transform:translateX(-160%); } 55%,100%{ transform:translateX(260%); } }
-
-  @media (prefers-reduced-motion: reduce){
-    .hc-page *{ animation:none!important; transition:none!important; }
-    .hc-fade-up{ opacity:1!important; transform:none!important; }
-    .hc-stagger > *{ opacity:1!important; transform:none!important; }
-    .hc-rule{ transform:none!important; }
-    .hc-shimmer::after{ display:none!important; }
-  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 @endpush
 
 @section('content')
-<div class="hc-page bg-white">
 
-  <!-- ===== Hero ===== -->
-  <header class="hc-hero relative overflow-hidden text-white">
-    <video class="hc-hero-video" autoplay muted loop playsinline poster="">
-      <!-- <source src="/videos/healthcare-hero.mp4" type="video/mp4"> -->
-    </video>
+<div class="csd-page">
+<!-- Hero / Banner Section -->
+<section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-14 pb-24 lg:pt-16 lg:pb-28">
-      <nav class="flex flex-wrap items-center gap-2 text-sm font-medium mb-8" style="color:var(--teal-bright);" aria-label="Breadcrumb">
-        <a href="{{ url('/') }}" class="hover:text-white transition-colors">Home</a>
-        <span class="text-white/30">/</span>
-        <a href="{{ url('/industries') }}" class="hover:text-white transition-colors">Industries</a>
-        <span class="text-white/30">/</span>
-        <span class="text-white/70">Healthcare</span>
-      </nav>
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(25%_0%,100%_0%,100%_100%,0%_100%)] opacity-90"></div>
+    <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+  </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 max-w-3xl">
-          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--teal-bright);">
-            Healthcare
-          </span>
-          <h1 class="text-4xl sm:text-4xl lg:text-[50px] font-bold leading-[1.1] mt-5 mb-6">
-            Healthcare technology has to work for patients, providers, and regulators all at once.
-          </h1>
-          <p class="text-lg text-white/75 leading-relaxed mb-10 max-w-2xl">
-            It cannot be easy to use at the cost of privacy and safety, and it cannot treat those rules as an afterthought either.
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
+          <a href="{{ url('/') }}" class="hover:text-purple-300 transition-colors">Home</a>
+          <span class="text-gray-500">/</span>
+          <a href="{{ url('/industries') }}" class="hover:text-purple-300 transition-colors">Industries</a>
+          <span class="text-gray-500">/</span>
+          <span class="text-purple-400">Healthcare</span>
+        </nav>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+          Healthcare Platforms That Work for <span class="text-purple-400">Patients, Providers, and Regulators</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
+          Healthcare technology has to work for patients, providers, and regulators all at once. It cannot be easy to use at the cost of privacy and safety, and it cannot treat those rules as an afterthought either.
+        </p>
+        <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
+          We work with healthcare businesses on both sides of this problem: the software and systems that need to work correctly and securely, and the patient and provider facing experience that needs to feel simple despite everything happening behind the scenes.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+            Get a Free Quote
+          </a>
+          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+            Book a Call
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
+        <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
+            alt="Healthcare Solutions - InTech Nexus"
+            class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
+          />
+          <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+          <div class="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For & Problems We Solve Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            Who This Is For
+          </h2>
+          <p class="text-gray-300 leading-relaxed text-base">
+            Healthcare businesses that need platforms and websites serving patients and providers alike, with privacy, accessibility, and clinical workflow built in from the start, not added later.
           </p>
+        </div>
+      </div>
 
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
-              Get a Free Quote
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-            </a>
-            <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white border border-white/30 rounded-full hover:border-white hover:bg-white/5 transition-all">
-              Book a Call
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-            </a>
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            Problems We Solve
+          </h2>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Patient facing tools that are simple to use without putting data at risk, and older systems that make it hard to improve the experience without a risky migration.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Marketing that needs to build trust in a field where credibility matters more than clever wording.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Disconnected systems between clinical records, billing, and patient communication, and meeting accessibility expectations for a diverse patient base.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+      <p class="text-gray-400 text-lg">We bring both technical and design discipline to every healthcare project.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Software and Mobile App Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Software Development and Mobile App Development for healthcare software and apps, including patient portals and provider tools.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">UI/UX Design for Patients and Providers</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">UI/UX Design built around patients and providers, tested for clarity across a wide range of ages and technical comfort levels.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Web Development and Digital Marketing</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Web Development and Digital Marketing for your website and outreach, built to earn trust in a field where credibility matters.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">QA and Testing for Reliability</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">QA and Testing with attention to accessibility and reliability, since healthcare tools cannot afford to fail during real use.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Privacy, Accessibility, and Compliance From Day One</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Privacy, accessibility, and the right rules built in from the start, not added later. Data handling, access control, and compliance are part of the technical plan from the first discovery conversation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Capabilities -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Appointment booking and telemedicine platforms that reduce phone based scheduling and no shows</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Clinic and hospital management systems that bring scheduling, records, and billing into one connected system</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>EMR and EHR integrations that connect new tools to the clinical systems you already rely on</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Patient intake and communication tools designed to reduce paperwork and missed appointments</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Healthcare software and mobile app engineering, including patient portals and provider tools</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>UI/UX design tested for clarity and accessibility across a wide range of patient ages and technical comfort</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Healthcare reporting dashboards that give staff and administrators a clear, real time view across the practice</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Privacy, accessibility, and compliance requirements designed in from the first conversation, not added later</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Process -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="max-w-3xl mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        Privacy, usability, and clinical workflow designed together from day one.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">01</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Discovery and Compliance Mapping</h3>
+          <p class="text-gray-300">We identify the privacy, accessibility, and clinical workflow requirements that will shape the build before any code is written.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">02</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Design and Usability Testing</h3>
+          <p class="text-gray-300">We design patient and provider experiences that are simple to use across a wide range of ages and technical comfort levels.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">03</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Build and Integration</h3>
+          <p class="text-gray-300">We build the platform and connect it to the EMR, EHR, billing, and scheduling systems your practice already uses.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">04</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Accessibility and Reliability Testing</h3>
+          <p class="text-gray-300">We test for accessibility, reliability, and security throughout, since healthcare tools cannot afford to fail during real use.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">05</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Launch and Ongoing Support</h3>
+          <p class="text-gray-300">We support the platform after launch, with clear reporting for staff and administrators on what is happening across the practice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Tools / Technologies -->
+  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+        <p class="text-gray-400 text-lg">The stack we work with on healthcare projects.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+        <div>
+          @php
+              $techStack = [
+                  [
+                      'name' => 'Frontend & Experience',
+                      'technologies' => [
+                          ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                          ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                      ],
+                  ],
+                  [
+                      'name' => 'Backend & Data',
+                      'technologies' => [
+                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                          ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                          ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                          ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
+                      ],
+                  ],
+                  [
+                      'name' => 'Infrastructure',
+                      'technologies' => [
+                          ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                          ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                          ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                      ],
+                  ],
+              ];
+          @endphp
+
+          <div class="flex flex-col gap-8">
+            @foreach ($techStack as $index => $category)
+              <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+                <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+                <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                  {{ $category['name'] }}
+                </span>
+              </div>
+            @endforeach
           </div>
         </div>
 
-        <!-- Animated ECG "video" graphic (no text, purely visual) -->
-        <div class="lg:col-span-5 hidden lg:block hc-float" aria-hidden="true">
-          <div class="relative rounded-2xl border border-white/10 p-6" style="background:rgba(255,255,255,0.04);">
-            <svg viewBox="0 0 600 160" class="w-full h-40" preserveAspectRatio="none">
-              <circle class="hc-pulse-ring" cx="60" cy="80" r="14"/>
-              <circle class="hc-pulse-ring" cx="540" cy="80" r="14" style="animation-delay:1.3s;"/>
-              <path class="hc-ecg-line" d="M0 80 L120 80 L150 80 L168 50 L186 118 L204 80 L320 80 L350 80 L368 56 L386 104 L404 80 L520 80 L548 80 L566 64 L584 96 L600 80"/>
-              <circle class="hc-ecg-dot" cx="186" cy="118" r="4"/>
-            </svg>
+        <div id="tech-right" class="relative lg:pr-16">
+          <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+            {{ $techStack[0]['name'] }}
+          </h3>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
+            @php
+                $firstCategory = $techStack[0]['technologies'];
+            @endphp
+
+            @foreach ($firstCategory as $tech)
+              <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+                <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
+              </div>
+            @endforeach
           </div>
         </div>
       </div>
     </div>
-  </header>
-
-  <!-- ===== Intro ===== -->
-  <section class="py-20 border-t hc-fade-up" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <p class="text-lg leading-relaxed mb-5 max-w-3xl" style="color:var(--navy-deep);">
-        A patient portal that is technically compliant but confusing to use will still go unused. A beautifully designed booking flow that overlooks data handling requirements is not a solution at all, it is a liability.
-      </p>
-      <p class="text-base leading-relaxed max-w-3xl" style="color:var(--text-muted);">
-        We work with healthcare businesses on both sides of this problem: the software and systems that need to work correctly and securely, and the patient and provider facing experience that needs to feel simple despite everything happening behind the scenes. Our team brings both technical and design discipline to every healthcare project, so neither gets treated as secondary to the other.
-      </p>
-    </div>
   </section>
 
-  <!-- ===== Common Challenges ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-12 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Common Challenges</h2>
-        <span class="hc-rule"></span>
-      </div>
+  @push('scripts')
+  <script>
+    window.techStackData = @json($techStack);
+  </script>
+  <script>
+    (function () {
+      const categories = document.querySelectorAll('.tech-category');
+      const rightHeading = document.querySelector('#tech-right h3');
+      const techGrid = document.getElementById('tech-grid');
+      const data = window.techStackData;
 
-      <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        @foreach ([
-          'Patient facing tools need to be simple to use without putting data at risk.',
-          'Older systems make it hard to improve the patient or provider experience without a costly, risky migration.',
-          'Marketing needs to build trust in a field where credibility matters more than clever wording.',
-          'Appointment scheduling and intake processes that still rely on phone calls or paperwork, creating friction for both patients and staff.',
-          'Disconnected systems between clinical records, billing, and patient communication, leading to duplicated work.',
-          'Meeting accessibility expectations for a patient base that includes older adults and people with varying levels of technical comfort.',
-        ] as $challenge)
-          <div class="hc-card rounded-xl p-6">
-            <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg mb-4" style="background:var(--bg-soft); color:var(--teal-accent);">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-            </span>
-            <p class="leading-relaxed text-sm" style="color:var(--text-muted);">{{ $challenge }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
+      if (!categories.length || !rightHeading || !techGrid || !data) return;
 
-  <!-- ===== Why Healthcare Businesses Choose InTech Nexus ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line); background:var(--navy-deep);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        <div class="hc-fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Why Healthcare Businesses Choose InTech Nexus</h2>
-          <span class="hc-rule"></span>
-          <p class="text-white/70 leading-relaxed mb-4 mt-6">
-            Healthcare projects rarely fail because of a single bad decision. They fail when privacy, usability, and clinical workflow get designed in isolation from each other.
-          </p>
-          <p class="text-white/60 leading-relaxed">
+      function setActive(index) {
+        categories.forEach((cat, idx) => {
+          const isActive = Number(cat.getAttribute('data-index')) === index;
+          const indicator = cat.querySelector('.tech-indicator');
+          const name = cat.querySelector('.tech-name');
+
+          if (isActive) {
+            indicator.classList.remove('opacity-0');
+            indicator.classList.add('opacity-100');
+            name.classList.remove('text-white', 'font-normal');
+            name.classList.add('text-purple-400', 'font-medium');
+          } else {
+            indicator.classList.remove('opacity-100');
+            indicator.classList.add('opacity-0');
+            name.classList.remove('purple-400', 'font-medium');
+            name.classList.add('text-white', 'font-normal');
+          }
+        });
+
+        const selected = data[index];
+        if (!selected) return;
+
+        rightHeading.textContent = selected.name;
+
+        techGrid.innerHTML = selected.technologies
+            .map(
+                (tech) => `
+                    <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                        <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                        <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                    </div>
+                `
+            )
+            .join('');
+      }
+
+      categories.forEach((cat) => {
+        cat.addEventListener('click', function () {
+          const index = Number(this.getAttribute('data-index'));
+          setActive(index);
+        });
+      });
+
+      setActive(0);
+    })();
+  </script>
+  @endpush
+
+  <!-- Why Choose InTech Nexus -->
+  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+    <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One team, day one</h2>
+          <p class="text-gray-300 leading-relaxed max-w-md">
             Our Software Development and UI/UX Design teams work on healthcare projects together from day one, so decisions about how data is handled and decisions about how a screen looks and feels are made with full knowledge of each other, not negotiated after the fact between two disconnected teams.
           </p>
         </div>
+        <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Animated two-teams-connected graphic -->
-        <div class="hc-fade-up relative" aria-hidden="true">
-          <svg viewBox="0 0 600 240" class="w-full h-60">
-            <defs>
-              <linearGradient id="hcNode" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0D9488"/>
-                <stop offset="100%" stop-color="#0B1B3D"/>
-              </linearGradient>
-            </defs>
+<!-- Frequently Asked Questions -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Common Questions</h2>
 
-            <rect x="40" y="80" width="180" height="80" rx="16" fill="url(#hcNode)" opacity="0.95"/>
-            <text x="130" y="118" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="600">Software</text>
-            <text x="130" y="138" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="IBM Plex Mono, monospace" font-size="11">Development</text>
+    <div class="space-y-4">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you have experience with healthcare specific compliance requirements?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We build with data privacy and access control as core requirements from the start, and we plan projects around the specific rules relevant to your region and type of practice.
+        </div>
+      </div>
 
-            <rect x="380" y="80" width="180" height="80" rx="16" fill="url(#hcNode)" opacity="0.95"/>
-            <text x="470" y="118" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="600">UI/UX</text>
-            <text x="470" y="138" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="IBM Plex Mono, monospace" font-size="11">Design</text>
-
-            <line class="hc-flow-line" x1="220" y1="120" x2="380" y2="120"/>
-            <circle r="7" fill="#2DD4BF">
-              <animateMotion dur="2.6s" repeatCount="indefinite" path="M220 120 L380 120"/>
-            </circle>
-            <circle r="4" fill="#fff">
-              <animateMotion dur="2.6s" repeatCount="indefinite" path="M220 120 L380 120" begin="0.2s"/>
-            </circle>
-
-            <text x="300" y="60" text-anchor="middle" fill="var(--teal-bright)" font-family="IBM Plex Mono, monospace" font-size="11">one team, day one</text>
-          </svg>
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can you work with our existing EMR or EHR system?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          In most cases, yes. We assess your current systems during discovery and plan integrations that connect new tools to what you already use wherever possible.
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== Services We Provide ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-12 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Services We Provide</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        @foreach ([
-          ['t' => 'Software & Mobile Development', 'd' => 'Software Development and Mobile App Development for healthcare software and apps, including patient portals and provider tools.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>'],
-          ['t' => 'UI/UX Design', 'd' => 'UI/UX Design built around patients and providers, tested for clarity across a wide range of ages and technical comfort levels.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'],
-          ['t' => 'Web & Digital Marketing', 'd' => 'Web Development and Digital Marketing for your website and outreach, built to earn trust in a field where credibility matters.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>'],
-          ['t' => 'QA & Testing', 'd' => 'QA & Testing with attention to accessibility and reliability, since healthcare tools cannot afford to fail during real use.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>'],
-        ] as $s)
-          <div class="hc-card rounded-xl p-6">
-            <div class="inline-flex w-11 h-11 items-center justify-center rounded-xl mb-5" style="background:#fff; color:var(--teal-accent);">
-              {!! $s['i'] !!}
-            </div>
-            <h3 class="text-lg font-semibold mb-2" style="color:var(--navy-deep);">{{ $s['t'] }}</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-muted);">{{ $s['d'] }}</p>
-          </div>
-        @endforeach
+<!-- Call to Action Banner -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to build a healthcare platform that earns trust from day one?
+      </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Book a call, request a proposal, or get a free quote to begin.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          Get a Free Quote
+        </a>
+        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          Book a Call
+        </a>
       </div>
     </div>
-  </section>
-
-  <!-- ===== Solutions We Offer ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-12 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Solutions We Offer</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        @foreach ([
-          ['t' => 'Booking & Telemedicine', 'd' => 'Appointment booking and telemedicine platforms that reduce phone based scheduling and no shows.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>'],
-          ['t' => 'Clinic & Hospital Management', 'd' => 'Clinic and hospital management systems that bring scheduling, records, and billing into one connected system.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V5l8-3 8 3v16"/><path d="M9 21v-6h6v6M12 9v4M10 11h4"/></svg>'],
-          ['t' => 'EMR / EHR Integrations', 'd' => 'EMR and EHR integrations that connect new tools to the clinical systems you already rely on.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>'],
-          ['t' => 'Reporting Dashboards', 'd' => 'Healthcare reporting dashboards that give staff and administrators a clear, real time view of what is happening across the practice.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>'],
-          ['t' => 'Intake & Communication', 'd' => 'Patient intake and communication tools designed to reduce paperwork and missed appointments.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg>'],
-        ] as $sol)
-          <div class="hc-card rounded-xl p-6">
-            <div class="inline-flex w-11 h-11 items-center justify-center rounded-xl mb-5" style="background:var(--bg-soft); color:var(--teal-accent);">
-              {!! $sol['i'] !!}
-            </div>
-            <h3 class="text-lg font-semibold mb-2" style="color:var(--navy-deep);">{{ $sol['t'] }}</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-muted);">{{ $sol['d'] }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== How We Help ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-8 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">How We Help</h2>
-        <span class="hc-rule"></span>
-      </div>
-      <div class="hc-fade-up">
-        <p class="text-base leading-relaxed mb-4 max-w-3xl" style="color:var(--text-muted);">
-          We design and build healthcare platforms and websites with privacy, accessibility, and the right rules built in from the start, not added later. This means data handling, access control, and compliance considerations are part of the technical plan from the first discovery conversation, not a checklist applied at the end of the project.
-        </p>
-        <p class="text-base leading-relaxed max-w-3xl" style="color:var(--text-muted);">
-          On the patient facing side, we test designs with real usability in mind, since a confusing interface can be just as harmful as a technical failure if it keeps someone from booking care or understanding their own information.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Common Questions ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line);" x-data="{ openFaq: null }">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Common Questions</h2>
-        <span class="hc-rule" style="margin-left:auto; margin-right:auto;"></span>
-      </div>
-
-      <div class="hc-fade-up space-y-4">
-        @foreach ([
-          ['q' => 'Do you have experience with healthcare specific compliance requirements?', 'a' => 'Yes. We build with data privacy and access control as core requirements from the start, and we plan projects around the specific rules relevant to your region and type of practice.'],
-          ['q' => 'Can you work with our existing EMR or EHR system?', 'a' => 'In most cases, yes. We assess your current systems during discovery and plan integrations that connect new tools to what you already use wherever possible.'],
-        ] as $i => $faq)
-          <div class="bg-white border overflow-hidden hc-card" style="border-color:var(--line);">
-            <button @click="openFaq = openFaq === {{ $i }} ? null : {{ $i }}" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center focus:outline-none" style="color:var(--navy-deep);">
-              <span>{{ $faq['q'] }}</span>
-              <span class="text-2xl font-bold ml-4" style="color:var(--teal-accent);" x-text="openFaq === {{ $i }} ? '−' : '+'"></span>
-            </button>
-            <div x-show="openFaq === {{ $i }}" x-collapse class="px-6 pb-6 leading-relaxed" style="color:var(--text-muted);">
-              {{ $faq['a'] }}
-            </div>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Get Started ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-8 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Get Started</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-fade-up">
-        <p class="text-base leading-relaxed mb-8 max-w-3xl" style="color:var(--text-muted);">
-          For a new healthcare platform idea, such as a telemedicine app, see Software Development. For an outdated patient facing website, see Web Development. Ready to talk through your healthcare project? Get a free quote or book a call with our team.
-        </p>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
-            Get a Free Quote
-          </a>
-          <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
-            Book a Call
-          </a>
-          
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function(){
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.hc-fade-up, .hc-stagger').forEach(el => observer.observe(el));
-  });
-</script>
 @endsection

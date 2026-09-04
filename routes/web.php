@@ -18,38 +18,7 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 // admin panel). MUST stay LAST: every named/static route above this line
 // is matched first, and anything not explicitly listed here falls through
 // to this dynamic lookup instead of 404ing outright.
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
+
 Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');
-
-
-// Temporary static routes — bypass PageController/DB while intl extension
-// is unavailable on the server (blocks Filament admin's Page management).
-// Remove once ext-intl is enabled and these pages are added via /admin.
-Route::get('/web-development', function () {
-    $page = (object) ['activeFaqs' => collect()];
-    return view('pages.services.web-development', compact('page'));
-})->name('web-development');
-
-Route::get('/software-development', function () {
-    $page = (object) ['activeFaqs' => collect()];
-    return view('pages.services.software-development.software-development', compact('page'));
-})->name('software-development');
-
-Route::get('/custom-software-development', function () {
-    $page = (object) ['activeFaqs' => collect()];
-    return view('pages.services.software-development.custom-software-development', compact('page'));
-})->name('custom-software-development');
-
-Route::get('/enterprise-software-development', function () {
-    $page = (object) ['activeFaqs' => collect()];
-    return view('pages.services.software-development.enterprise-software-development', compact('page'));
-})->name('enterprise-software-development');
-
-Route::get('/crm-development', function () {
-    $page = (object) ['activeFaqs' => collect()];
-    return view('pages.services.software-development.crm-development', compact('page'));
-})->name('crm-development');
-
-Route::get('/about-us', function () {
-    $page = (object) ['activeFaqs' => collect()];
-    return view('pages.about', compact('page'));
-})->name('about-us');

@@ -27,32 +27,27 @@ class MenuSeeder extends Seeder
     {
         $pageId = fn (string $slug) => Page::where('slug', $slug)->value('id');
 
-        // "Home" has no Page row — served directly by PageController::home().
-        // Menu only supports linking to a Page (page_id), no raw URL field.
-        // The header/menu Blade view needs to special-case this item and
-        // link it to route('home') instead of relying on page_id.
         $this->menu('Home', null, null, 1);
 
         $services = $this->menu('Services', $pageId('services'), null, 2);
         $industries = $this->menu('Industries', $pageId('industries'), null, 3);
         $company = $this->menu('Company', $pageId('company'), null, 4);
 
-        // Company children
         $this->menu('About Us', $pageId('about-us'), $company->id, 1);
-        // "Blogs" has no dedicated Page row yet (served by its own
-        // route/controller, not the generic Page catch-all) — placeholder
-        // link (page_id null) until wired up properly, same treatment as Home.
-        $this->menu('Blogs', null, $company->id, 2);
-        $this->menu('Contact Us', $pageId('contact-us'), $company->id, 3);
+        $this->menu('Contact Us', $pageId('contact'), $company->id, 2);
 
-        // Industries children
-        $industryItems = ['Ecommerce' => 'ecommerce', 'Marketing' => 'marketing', 'Healthcare' => 'healthcare', 'Finance' => 'finance'];
+        $industryItems = [
+            'Ecommerce' => 'ecommerce',
+            'Healthcare' => 'healthcare',
+            'Finance' => 'finance',
+            'Manufacturing' => 'manufacturing',
+            'Marketing' => 'marketing',
+        ];
         $i = 1;
         foreach ($industryItems as $title => $slug) {
             $this->menu($title, $pageId($slug), $industries->id, $i++);
         }
 
-        // Services children (L2 categories) + their L3 leaf items
         $categories = [
             'Software Development' => [
                 'slug' => 'software-development',
@@ -84,6 +79,7 @@ class MenuSeeder extends Seeder
                     'CMS Development' => 'cms-development',
                     'WordPress Development' => 'wordpress-development',
                     'Shopify Development' => 'shopify-development',
+                    'Web Development Services' => 'web-development-services',
                 ],
             ],
             'UI UX Design' => [
@@ -111,7 +107,7 @@ class MenuSeeder extends Seeder
                     'SEO Services' => 'seo-services',
                     'Local SEO' => 'local-seo',
                     'Content Marketing' => 'content-marketing',
-                    'PPC/Google Ads' => 'ppc-google-ads',
+                    'PPC Google Ads' => 'ppc-google-ads',
                     'Meta Ads' => 'meta-ads',
                     'Social Media Marketing' => 'social-media-marketing',
                     'Email Marketing' => 'email-marketing',
@@ -143,5 +139,7 @@ class MenuSeeder extends Seeder
                 $this->menu($childTitle, $pageId($childSlug), $catMenu->id, $childOrder++);
             }
         }
+
+        $this->command?->info('Seeded menu tree.');
     }
 }

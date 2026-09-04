@@ -1,418 +1,564 @@
 @extends('layouts.app')
-@section('title', 'Finance & Banking Industry Solutions - InTech Nexus')
+@section('title', 'Enterprise Data Transformation Services - InTech Nexus')
 
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  .hc-page{
-    --navy-deep:#0B1B3D;
-    --navy-darker:#071227;
-    --teal-accent:#0D9488;
-    --teal-bright:#2DD4BF;
-    --bg-soft:#F1F7F6;
-    --text-muted:#6B7280;
-    --line:#E1EAE8;
+  .csd-page{
     font-family:'Inter',system-ui,sans-serif;
   }
-  .hc-page h1, .hc-page h2, .hc-page h3, .hc-page .font-display{
+  .csd-page h1, .csd-page h2, .csd-page h3, .csd-page .font-display{
     font-family:'Space Grotesk',sans-serif;
     letter-spacing:-0.01em;
   }
-  .hc-page .font-mono{
+  .csd-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
-  }
-
-  /* Animated mesh-gradient hero */
-  .hc-hero{
-    background:
-      radial-gradient(circle at 18% 20%, rgba(13,148,136,0.32), transparent 55%),
-      radial-gradient(circle at 82% 80%, rgba(45,212,191,0.20), transparent 50%),
-      linear-gradient(120deg, var(--navy-deep), var(--navy-darker));
-    background-size:200% 200%, 200% 200%, 100% 100%;
-    animation:hc-mesh 14s ease-in-out infinite;
-  }
-  @keyframes hc-mesh{
-    0%,100%{ background-position:0% 0%, 100% 100%, 0 0; }
-    50%{ background-position:100% 50%, 0% 50%, 0 0; }
-  }
-
-  /* Optional hosted video layer (drop a <source> in to enable) */
-  .hc-hero-video{
-    position:absolute; inset:0; width:100%; height:100%;
-    object-fit:cover; opacity:.28; mix-blend-mode:luminosity;
-    pointer-events:none;
-  }
-
-  /* Flow connectors + pulses */
-  .hc-flow-line{
-    stroke:var(--teal-accent); stroke-width:2; stroke-dasharray:7 7;
-    animation:hc-dash 1.2s linear infinite;
-  }
-  @keyframes hc-dash{ to{ stroke-dashoffset:-14; } }
-  .hc-pulse-ring{ fill:none; stroke:var(--teal-accent); animation:hc-ring 2.6s ease-out infinite; transform-origin:center; }
-  @keyframes hc-ring{ 0%{ transform:scale(.6); opacity:.55; } 100%{ transform:scale(1.7); opacity:0; } }
-
-  /* Floating + reveal */
-  .hc-float{ animation:hc-float 6s ease-in-out infinite; }
-  @keyframes hc-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
-
-  .hc-fade-up{ opacity:0; transform:translateY(26px); transition:opacity .6s ease, transform .6s ease; }
-  .hc-fade-up.visible{ opacity:1; transform:translateY(0); }
-
-  /* Animated heading rule */
-  .hc-rule{
-    display:block; width:56px; height:3px; margin-top:1rem; border-radius:2px;
-    background:var(--teal-accent);
-    transform:scaleX(0); transform-origin:left;
-    transition:transform .7s ease;
-  }
-  .hc-fade-up.visible .hc-rule{ transform:scaleX(1); }
-
-  /* Feature cards + staggered reveal */
-  .hc-card{
-    border:1px solid var(--line); background:#fff;
-    transition:border-color .25s ease, transform .4s ease, box-shadow .25s ease;
-  }
-  .hc-card:hover{
-    border-color:var(--teal-accent); transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(13,148,136,0.16);
-  }
-  .hc-card .hc-icon{ transition:transform .3s ease; }
-  .hc-card:hover .hc-icon{ transform:scale(1.08); }
-
-  .hc-stagger > *{ opacity:0; transform:translateY(24px); transition:opacity .55s ease, transform .55s ease; }
-  .hc-stagger.visible > *{ opacity:1; transform:translateY(0); }
-  .hc-stagger.visible > *:nth-child(1){ transition-delay:0s; }
-  .hc-stagger.visible > *:nth-child(2){ transition-delay:.07s; }
-  .hc-stagger.visible > *:nth-child(3){ transition-delay:.14s; }
-  .hc-stagger.visible > *:nth-child(4){ transition-delay:.21s; }
-  .hc-stagger.visible > *:nth-child(5){ transition-delay:.28s; }
-  .hc-stagger.visible > *:nth-child(6){ transition-delay:.35s; }
-  .hc-stagger > *:hover{ transition-delay:0s; }
-
-  /* CTA shimmer */
-  .hc-shimmer{ position:relative; overflow:hidden; }
-  .hc-shimmer::after{
-    content:''; position:absolute; top:0; left:0; width:55%; height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
-    transform:translateX(-160%);
-    animation:hc-shimmer 3.6s ease-in-out infinite;
-  }
-  @keyframes hc-shimmer{ 0%{ transform:translateX(-160%); } 55%,100%{ transform:translateX(260%); } }
-
-  @media (prefers-reduced-motion: reduce){
-    .hc-page *{ animation:none!important; transition:none!important; }
-    .hc-fade-up{ opacity:1!important; transform:none!important; }
-    .hc-stagger > *{ opacity:1!important; transform:none!important; }
-    .hc-rule{ transform:none!important; }
-    .hc-shimmer::after{ display:none!important; }
   }
 </style>
 @endpush
 
 @section('content')
-<div class="hc-page bg-white">
+<div class="csd-page">
 
-  <!-- ===== Hero ===== -->
-  <header class="hc-hero relative overflow-hidden text-white">
-    <video class="hc-hero-video" autoplay muted loop playsinline poster="">
-      <!-- <source src="/videos/finance-hero.mp4" type="video/mp4"> -->
-    </video>
+  <!-- Hero / Banner Section -->
+  <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
+      <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-14 pb-24 lg:pt-16 lg:pb-28">
-      <nav class="flex flex-wrap items-center gap-2 text-sm font-medium mb-8" style="color:var(--teal-bright);" aria-label="Breadcrumb">
-        <a href="{{ url('/') }}" class="hover:text-white transition-colors">Home</a>
-        <span class="text-white/30">/</span>
-        <a href="{{ url('/industries') }}" class="hover:text-white transition-colors">Industries</a>
-        <span class="text-white/30">/</span>
-        <span class="text-white/70">Finance & Banking</span>
-      </nav>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
+            <a href="{{ url('/') }}" class="hover:text-purple-300 transition-colors">Home</a>
+            <span class="text-gray-500">/</span>
+            <a href="{{ url('/industries') }}" class="hover:text-purple-300 transition-colors">Industries</a>
+            <span class="text-gray-500">/</span>
+            <span class="text-purple-400">Finance & Banking</span>
+          </nav>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 max-w-3xl">
-          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--teal-bright);">
-            Finance & Banking
-          </span>
-          <h1 class="text-4xl sm:text-4xl lg:text-[50px] font-bold leading-[1.1] mt-5 mb-6">
-            In finance and banking, trust matters as much as the service itself.
+          <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+            Connect Your Enterprise Systems. <span class="text-purple-400">Unlock Real Growth.</span>
           </h1>
-          <p class="text-lg text-white/75 leading-relaxed mb-10 max-w-2xl">
-            Every digital touchpoint needs to feel safe, honest, and built to a high standard, because a single confusing or unreliable moment can be enough to make a customer question whether their money is actually secure.
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
+            Fragmented systems slow decisions, stall innovation, and make scaling harder than it needs to be. Build unified digital platforms that bring your entire technology ecosystem together.
+          </p>
+          <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
+            We work with finance and banking businesses to modernize legacy systems, integrate data across platforms, and build customer facing tools that meet both regulatory and user experience standards.
           </p>
 
           <div class="flex flex-wrap items-center gap-4">
-            <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
+            <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
               Get a Free Quote
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
             </a>
-            <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white border border-white/30 rounded-full hover:border-white hover:bg-white/5 transition-all">
+            <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
               Book a Call
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Animated security-first hub graphic -->
-        <div class="lg:col-span-5 hidden lg:block hc-float" aria-hidden="true">
-          <div class="relative rounded-2xl border border-white/10 p-6" style="background:rgba(255,255,255,0.04);">
-            <svg viewBox="0 0 600 280" class="w-full h-64">
-              <defs>
-                <linearGradient id="finShield" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#0D9488"/>
-                  <stop offset="100%" stop-color="#0B1B3D"/>
-                </linearGradient>
-              </defs>
-
-              <!-- connectors -->
-              <line class="hc-flow-line" x1="300" y1="130" x2="115" y2="67"/>
-              <line class="hc-flow-line" x1="300" y1="130" x2="485" y2="67"/>
-              <line class="hc-flow-line" x1="300" y1="130" x2="300" y2="239"/>
-
-              <!-- pulses -->
-              <circle r="5" fill="#2DD4BF"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 130 L115 67"/></circle>
-              <circle r="3" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 130 L115 67" begin="0.5s"/></circle>
-              <circle r="5" fill="#2DD4BF"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 130 L485 67" begin="0.8s"/></circle>
-              <circle r="3" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 130 L485 67" begin="1.3s"/></circle>
-              <circle r="5" fill="#2DD4BF"><animateMotion dur="2.8s" repeatCount="indefinite" path="M300 130 L300 239" begin="0.4s"/></circle>
-
-              <!-- pulse rings -->
-              <circle class="hc-pulse-ring" cx="300" cy="130" r="55"/>
-              <circle class="hc-pulse-ring" cx="300" cy="130" r="55" style="animation-delay:1.3s;"/>
-
-              <!-- shield -->
-              <path d="M300 90 L345 105 L345 140 Q345 175 300 186 Q255 175 255 140 L255 105 Z" fill="url(#finShield)"/>
-              <path d="M280 138 L295 153 L322 124" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-
-              <!-- satellite nodes -->
-              <rect x="40" y="40" width="150" height="54" rx="14" fill="url(#finShield)"/>
-              <text x="115" y="72" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Regulators</text>
-              <rect x="410" y="40" width="150" height="54" rx="14" fill="url(#finShield)"/>
-              <text x="485" y="72" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Customers</text>
-              <rect x="225" y="212" width="150" height="54" rx="14" fill="url(#finShield)"/>
-              <text x="300" y="244" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Risk Teams</text>
-
-              <text x="300" y="205" text-anchor="middle" fill="var(--teal-bright)" font-family="IBM Plex Mono, monospace" font-size="11">security first</text>
-            </svg>
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
+          <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
+            <img
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop"
+              alt="Finance & Banking Solutions - InTech Nexus"
+              class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
+            />
+            <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+            <div class="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-40 pointer-events-none"></div>
           </div>
         </div>
       </div>
     </div>
-  </header>
-
-  <!-- ===== Intro ===== -->
-  <section class="py-20 border-t hc-fade-up" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <p class="text-lg leading-relaxed mb-5 max-w-3xl" style="color:var(--navy-deep);">
-        This makes finance one of the least forgiving industries for cutting corners on either security or user experience.
-      </p>
-      <p class="text-base leading-relaxed max-w-3xl" style="color:var(--text-muted);">
-        We work with finance and banking businesses that need technology built to hold up under scrutiny, from regulators, from customers, and from their own internal risk teams. That means every project starts from a security first mindset, then builds outward toward an experience that still feels simple and trustworthy to the people using it.
-      </p>
-    </div>
   </section>
 
-  <!-- ===== Common Challenges ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line);">
+  <!-- Who This Is For & Problems We Solve Section -->
+  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-12 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Common Challenges</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        @foreach ([
-          'Security and compliance rules shape most technical decisions, which can slow down projects that are not planned with those constraints in mind from the start.',
-          'Customer trust depends a lot on how safe and professional the digital experience feels, not just on what is happening behind the scenes.',
-          'Older systems can make change slow and risky, especially when core banking or transaction systems are involved.',
-          'Fraud prevention and identity verification need to be built in without making the experience feel hostile to legitimate customers.',
-          'Reporting and audit requirements that demand accurate, well organized data across multiple systems.',
-          'Competing against fintech challengers who often move faster on digital experience, even without the same institutional trust.',
-        ] as $challenge)
-          <div class="hc-card rounded-xl p-6">
-            <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg mb-4" style="background:var(--bg-soft); color:var(--teal-accent);">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-            </span>
-            <p class="leading-relaxed text-sm" style="color:var(--text-muted);">{{ $challenge }}</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Who This Is For
+            </h2>
+            <p class="text-gray-300 leading-relaxed text-base">
+              Finance and banking businesses that need unified digital platforms, from legacy system modernization to customer facing tools that meet regulatory and user experience standards.
+            </p>
           </div>
-        @endforeach
+        </div>
+
+        <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Problems We Solve
+            </h2>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="text-purple-400 font-bold">•</span>
+                <span>Fragmented systems that slow decisions and make scaling harder than it needs to be.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-purple-400 font-bold">•</span>
+                <span>Legacy infrastructure that is costly to maintain and hard to integrate with modern tools.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-purple-400 font-bold">•</span>
+                <span>Customer facing experiences that do not meet the expectations of modern users.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Why Finance and Banking Businesses Choose InTech Nexus ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line); background:var(--navy-deep);">
+<!-- ============ INSIGHTS POWERING GROWTH ============ -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Insights Powering Growth</h2>
+      <a href="{{ url('/case-studies') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-white/10 transition-colors">
+        Case Studies
+        <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+        <div class="p-6">
+          <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Case Study</span>
+          <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Elevating Customer Experience & Automation for Orton</h3>
+        </div>
+      </a>
+
+      <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+        <div class="p-6">
+          <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Case Study</span>
+          <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Driving Growth and Engagement for Pickles Auction</h3>
+        </div>
+      </a>
+
+      <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+        <div class="p-6">
+          <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Enterprise Digital Platform</span>
+          <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Why Real-Time Data is the Backbone of Modern Business Innovation</h3>
+        </div>
+      </a>
+
+      <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+        <div class="p-6">
+          <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Enterprise Digital Platform</span>
+          <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Mastering Software Complexity: A Deep Dive into Domain-Driven Design</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+  <!-- What We Offer -->
+  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        <div class="hc-fade-up">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Why Finance and Banking Businesses Choose InTech Nexus</h2>
-          <span class="hc-rule"></span>
-          <p class="text-white/70 leading-relaxed mt-6">
-            Financial platforms cannot treat security as something to review at the end of a project. Our Software Development and QA & Testing teams build with security and compliance requirements defined upfront, then test against them throughout development rather than as a final gate before launch. This reduces the risk of expensive rework late in a project, and it gives you a clearer picture of where the platform stands at every stage, not just at the end.
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+        <p class="text-gray-400 text-lg">We build unified digital platforms for finance and banking.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Connected Systems & Interoperability</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">Unify systems for faster decisions and better data flow across your organization.</p>
+          </div>
+        </div>
+
+        <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Data & Cloud Transformation</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">Work faster with better data systems and modern cloud infrastructure.</p>
+          </div>
+        </div>
+
+        <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Enterprise Application Modernisation</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">Modernise without losing momentum, and build foundations that scale.</p>
+          </div>
+        </div>
+
+        <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Intelligent Platform Engineering</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">Build secure, composable architectures your teams can evolve confidently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Capabilities -->
+  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+        <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 bg-white/[0.03] border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Unified digital platforms that connect your entire technology ecosystem</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Legacy system modernization without disrupting ongoing operations</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Secure, compliant architectures built for financial data</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Data pipelines and analytics platforms for faster decision making</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 bg-white/[0.03] border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Enterprise software architecture and platform engineering</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Cloud migration and infrastructure modernization</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Data integration and real time analytics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 mt-1">◦</span>
+              <span>Compliance and security by design</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-24 bg-[#0b0c10] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          A structured approach to digital transformation in finance and banking.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+          <span class="text-3xl font-extrabold text-purple-400">01</span>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Discovery and Assessment</h3>
+            <p class="text-gray-300">We map your technology ecosystem and identify what is holding your business back.</p>
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+          <span class="text-3xl font-extrabold text-purple-400">02</span>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Platform Strategy & Roadmap</h3>
+            <p class="text-gray-300">We design a pragmatic transformation plan aligned to business outcomes.</p>
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+          <span class="text-3xl font-extrabold text-purple-400">03</span>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Architecture & Design</h3>
+            <p class="text-gray-300">We create scalable blueprints that unify infrastructure, data, and experience.</p>
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+          <span class="text-3xl font-extrabold text-purple-400">04</span>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Agile Implementation & Integration</h3>
+            <p class="text-gray-300">We build in phases, ensuring every release delivers measurable value.</p>
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+          <span class="text-3xl font-extrabold text-purple-400">05</span>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Continuous Optimization & Support</h3>
+            <p class="text-gray-300">We monitor, refine, and future-proof your platforms post-deployment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools / Technologies -->
+  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+        <p class="text-gray-400 text-lg">The stack we work with on finance and banking projects.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+        <div>
+          @php
+              $techStack = [
+                  [
+                      'name' => 'Cloud & Infrastructure',
+                      'technologies' => [
+                          ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                          ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                          ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                      ],
+                  ],
+                  [
+                      'name' => 'Frontend & Experience',
+                      'technologies' => [
+                          ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                          ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                      ],
+                  ],
+                  [
+                      'name' => 'Data & Backend',
+                      'technologies' => [
+                          ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                          ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
+                          ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                      ],
+                  ],
+              ];
+          @endphp
+
+          <div class="flex flex-col gap-8">
+            @foreach ($techStack as $index => $category)
+              <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+                <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+                <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                  {{ $category['name'] }}
+                </span>
+              </div>
+            @endforeach
+          </div>
+        </div>
+
+        <div id="tech-right" class="relative lg:pr-16">
+          <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+            {{ $techStack[0]['name'] }}
+          </h3>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
+            @php
+                $firstCategory = $techStack[0]['technologies'];
+            @endphp
+
+            @foreach ($firstCategory as $tech)
+              <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+                <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @push('scripts')
+  <script>
+    window.techStackData = @json($techStack);
+  </script>
+  <script>
+    (function () {
+      const categories = document.querySelectorAll('.tech-category');
+      const rightHeading = document.querySelector('#tech-right h3');
+      const techGrid = document.getElementById('tech-grid');
+      const data = window.techStackData;
+
+      if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+      function setActive(index) {
+        categories.forEach((cat, idx) => {
+          const isActive = Number(cat.getAttribute('data-index')) === index;
+          const indicator = cat.querySelector('.tech-indicator');
+          const name = cat.querySelector('.tech-name');
+
+          if (isActive) {
+            indicator.classList.remove('opacity-0');
+            indicator.classList.add('opacity-100');
+            name.classList.remove('text-white', 'font-normal');
+            name.classList.add('text-purple-400', 'font-medium');
+          } else {
+            indicator.classList.remove('opacity-100');
+            indicator.classList.add('opacity-0');
+            name.classList.remove('purple-400', 'font-medium');
+            name.classList.add('text-white', 'font-normal');
+          }
+        });
+
+        const selected = data[index];
+        if (!selected) return;
+
+        rightHeading.textContent = selected.name;
+
+        techGrid.innerHTML = selected.technologies
+            .map(
+                (tech) => `
+                    <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                        <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                        <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                    </div>
+                `
+            )
+            .join('');
+      }
+
+      categories.forEach((cat) => {
+        cat.addEventListener('click', function () {
+          const index = Number(this.getAttribute('data-index'));
+          setActive(index);
+        });
+      });
+
+      setActive(0);
+    })();
+  </script>
+  @endpush
+
+  <!-- Why Choose InTech Nexus -->
+  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+    <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Architecture built for scale, velocity, and long-term success</h2>
+          <p class="text-gray-300 leading-relaxed max-w-md">
+            We don't just modernize — we architect platforms for scale, velocity, and long-term success. Our team brings deep expertise in financial systems, cloud infrastructure, and compliance requirements to every project.
           </p>
         </div>
+        <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Animated secure development lifecycle flow -->
-        <div class="hc-fade-up relative" aria-hidden="true">
-          <svg viewBox="0 0 600 200" class="w-full h-52">
-            <defs>
-              <linearGradient id="finFlow" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0D9488"/>
-                <stop offset="100%" stop-color="#0B1B3D"/>
-              </linearGradient>
-            </defs>
+  <!-- Insights Powering Growth -->
+  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Insights Powering Growth</h2>
+        <a href="{{ url('/case-studies') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-white/10 transition-colors">
+          Case Studies
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+      </div>
 
-            <line class="hc-flow-line" x1="140" y1="100" x2="170" y2="100"/>
-            <line class="hc-flow-line" x1="290" y1="100" x2="320" y2="100"/>
-            <line class="hc-flow-line" x1="440" y1="100" x2="470" y2="100"/>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+          <div class="p-6">
+            <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Case Study</span>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Elevating Customer Experience & Automation for Orton</h3>
+          </div>
+        </a>
 
-            <circle r="5" fill="#2DD4BF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M80 100 L230 100"/></circle>
-            <circle r="5" fill="#2DD4BF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M230 100 L380 100" begin="0.6s"/></circle>
-            <circle r="5" fill="#2DD4BF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M380 100 L525 100" begin="1.2s"/></circle>
+        <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+          <div class="p-6">
+            <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Case Study</span>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Driving Growth and Engagement for Pickles Auction</h3>
+          </div>
+        </a>
 
-            <rect x="20" y="70" width="120" height="60" rx="14" fill="url(#finFlow)"/>
-            <text x="80" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Plan</text>
-            <rect x="170" y="70" width="120" height="60" rx="14" fill="url(#finFlow)"/>
-            <text x="230" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Build</text>
-            <rect x="320" y="70" width="120" height="60" rx="14" fill="url(#finFlow)"/>
-            <text x="380" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Test</text>
-            <rect x="470" y="70" width="110" height="60" rx="14" fill="url(#finFlow)"/>
-            <text x="525" y="98" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Release</text>
+        <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+          <div class="p-6">
+            <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Enterprise Digital Platform</span>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Why Real-Time Data is the Backbone of Modern Business Innovation</h3>
+          </div>
+        </a>
 
-            <text x="300" y="160" text-anchor="middle" fill="var(--teal-bright)" font-family="IBM Plex Mono, monospace" font-size="11">security built in, not bolted on</text>
-          </svg>
+        <a href="#" class="group block bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover" alt="">
+          <div class="p-6">
+            <span class="inline-block bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full mb-4">Enterprise Digital Platform</span>
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Mastering Software Complexity: A Deep Dive into Domain-Driven Design</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+    <div class="max-w-5xl mx-auto px-6 sm:px-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+          <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+            <span>Do you have experience with financial compliance requirements?</span>
+            <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+          </button>
+          <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+            Yes. We build with data privacy, security, and access control as core requirements from the start, and plan projects around the specific regulations relevant to your region and industry.
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+          <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+            <span>Can you work with our existing legacy systems?</span>
+            <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+          </button>
+          <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+            In most cases, yes. We assess your current systems during discovery and plan integrations that connect new tools to what you already use wherever possible.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Services We Provide ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-12 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Services We Provide</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        @foreach ([
-          ['t' => 'Secure Software Development', 'd' => 'Secure Software Development for financial platforms, including account systems, transaction processing, and reporting tools.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>'],
-          ['t' => 'UI/UX Design', 'd' => 'UI/UX Design for financial products, designed to feel trustworthy and simple even when the underlying logic is complex.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'],
-          ['t' => 'Legacy System Modernization', 'd' => 'Legacy system modernization, planned carefully to reduce risk during migration from older core systems.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2"/><path d="M20 4v5h-5M4 20v-5h5"/></svg>'],
-          ['t' => 'QA & Testing', 'd' => 'QA & Testing for security and performance, including load testing for systems that need to handle high transaction volumes reliably.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>'],
-        ] as $s)
-          <div class="hc-card rounded-xl p-6">
-            <div class="inline-flex w-11 h-11 items-center justify-center rounded-xl mb-5" style="background:#fff; color:var(--teal-accent);">
-              {!! $s['i'] !!}
-            </div>
-            <h3 class="text-lg font-semibold mb-2" style="color:var(--navy-deep);">{{ $s['t'] }}</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-muted);">{{ $s['d'] }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Solutions We Offer ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-12 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Solutions We Offer</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        @foreach ([
-          ['t' => 'Digital Banking & Fintech', 'd' => 'Digital banking and fintech platforms built for both security and everyday usability.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10M19 21V10M3 10l9-6 9 6M9 21v-6h6v6"/></svg>'],
-          ['t' => 'Loan & Insurance Management', 'd' => 'Loan and insurance management systems that bring application, underwriting, and servicing into one connected workflow.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h4M10 17h4"/></svg>'],
-          ['t' => 'Payment Integrations', 'd' => 'Payment system integrations connecting your platform to the payment processors and banking rails your business relies on.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>'],
-          ['t' => 'Reporting Dashboards', 'd' => 'Financial reporting dashboards that give your team and your regulators a clear, accurate view of performance and compliance.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>'],
-          ['t' => 'Identity & Fraud Prevention', 'd' => 'Identity verification and fraud prevention workflows designed to protect the business without adding unnecessary friction for customers.', 'i' => '<svg class="hc-icon w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a8 8 0 0 0-8 8M20 12a8 8 0 0 0-4-7M8 12a4 4 0 0 1 8 0v4a4 4 0 0 1-4 4M12 12v4"/></svg>'],
-        ] as $sol)
-          <div class="hc-card rounded-xl p-6">
-            <div class="inline-flex w-11 h-11 items-center justify-center rounded-xl mb-5" style="background:var(--bg-soft); color:var(--teal-accent);">
-              {!! $sol['i'] !!}
-            </div>
-            <h3 class="text-lg font-semibold mb-2" style="color:var(--navy-deep);">{{ $sol['t'] }}</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-muted);">{{ $sol['d'] }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== How We Help ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-8 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">How We Help</h2>
-        <span class="hc-rule"></span>
-      </div>
-      <div class="hc-fade-up">
-        <p class="text-base leading-relaxed mb-4 max-w-3xl" style="color:var(--text-muted);">
-          We build safe, trust first digital platforms and websites for regulated finance businesses, with security and compliance built into the plan from day one. This includes how data is stored, how access is controlled, and how the system behaves under real world load, not just how it performs in a demo environment.
+  <!-- Call to Action Banner -->
+  <section class="py-24 bg-[#0b0c10] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+      <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+          Ready to connect your enterprise systems and unlock growth?
+        </h2>
+        <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Book a call, request a proposal, or get a free quote to begin.
         </p>
-        <p class="text-base leading-relaxed max-w-3xl" style="color:var(--text-muted);">
-          We also know that trust is not only a technical property. It comes through in how the product looks, how clearly it communicates, and how confidently a customer can complete a task without wondering if something went wrong. Our design and development teams work together on both sides of that problem at once.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Common Questions ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line);" x-data="{ openFaq: null }">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Common Questions</h2>
-        <span class="hc-rule" style="margin-left:auto; margin-right:auto;"></span>
-      </div>
-
-      <div class="hc-fade-up space-y-4">
-        @foreach ([
-          ['q' => 'Can you work within our existing compliance and security requirements?', 'a' => 'Yes. We plan every finance project around the specific regulatory and security requirements relevant to your business and region, and we build with those constraints in mind from the start rather than adjusting for them later.'],
-          ['q' => 'Do you have experience modernizing legacy banking systems?', 'a' => 'Yes. We approach legacy modernization carefully, often running new systems alongside old ones during a transition period to reduce risk.'],
-        ] as $i => $faq)
-          <div class="bg-white border overflow-hidden hc-card" style="border-color:var(--line);">
-            <button @click="openFaq = openFaq === {{ $i }} ? null : {{ $i }}" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center focus:outline-none" style="color:var(--navy-deep);">
-              <span>{{ $faq['q'] }}</span>
-              <span class="text-2xl font-bold ml-4" style="color:var(--teal-accent);" x-text="openFaq === {{ $i }} ? '−' : '+'"></span>
-            </button>
-            <div x-show="openFaq === {{ $i }}" x-collapse class="px-6 pb-6 leading-relaxed" style="color:var(--text-muted);">
-              {{ $faq['a'] }}
-            </div>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Get Started ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="hc-fade-up mb-8 max-w-xl">
-        <h2 class="text-3xl md:text-4xl font-bold" style="color:var(--navy-deep);">Get Started</h2>
-        <span class="hc-rule"></span>
-      </div>
-
-      <div class="hc-fade-up">
-        <p class="text-base leading-relaxed mb-8 max-w-3xl" style="color:var(--text-muted);">
-          For upgrading an existing platform, see Software Development. For a stronger digital presence, see Branding. Ready to talk through your finance or banking project? Get a free quote or book a call with our team.
-        </p>
-
-        <div class="flex flex-wrap gap-4">
-          <a href="{{ url('/software-development') }}" class="hc-card inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold" style="color:var(--navy-deep);">
-            Software Development
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-          <a href="{{ url('/branding') }}" class="hc-card inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold" style="color:var(--navy-deep);">
-            Branding
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-          <a href="{{ url('/contact') }}" class="hc-shimmer inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white rounded-full transition-all hover:-translate-y-0.5" style="background:var(--teal-accent);">
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-white border rounded-full hover:border-white transition-all" style="border-color:var(--line);">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
@@ -420,19 +566,6 @@
     </div>
   </section>
 
-</div>
+  </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function(){
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.hc-fade-up, .hc-stagger').forEach(el => observer.observe(el));
-  });
-</script>
 @endsection

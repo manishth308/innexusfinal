@@ -6,380 +6,528 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  .ios-page{
-    --navy-deep:#0B1B3D;
-    --navy-darker:#071227;
-    --red-accent:#A3242E;
-    --red-bright:#D9483F;
-    --bg-soft:#F5F3F2;
-    --text-muted:#6B7280;
-    --line:#E5E1DF;
+  .csd-page{
     font-family:'Inter',system-ui,sans-serif;
   }
-  .ios-page h1, .ios-page h2, .ios-page h3, .ios-page .font-display{
+  .csd-page h1, .csd-page h2, .csd-page h3, .csd-page .font-display{
     font-family:'Space Grotesk',sans-serif;
     letter-spacing:-0.01em;
   }
-  .ios-page .font-mono{
+  .csd-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
   }
-  #iosNodeCanvas{
-    position:absolute;inset:0;width:100%;height:100%;opacity:0.55;pointer-events:none;
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
-  @media (prefers-reduced-motion: reduce){
-    .ios-page *{animation:none!important;transition:none!important;}
+  .animate-scroll {
+    animation: scroll 35s linear infinite;
   }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 @endpush
 
 @section('content')
-<div class="ios-page bg-white">
 
-  <!-- ===== Hero ===== -->
-  <header class="relative overflow-hidden text-white" style="background: radial-gradient(ellipse 900px 500px at 78% 20%, rgba(163,36,46,0.28), transparent 60%), var(--navy-deep);">
-    <canvas id="iosNodeCanvas"></canvas>
+<div class="csd-page">
+<!-- Hero / Banner Section -->
+<section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-14 pb-24 lg:pt-16 lg:pb-28">
-      <!-- Breadcrumb -->
-      <nav class="flex flex-wrap items-center gap-2 text-sm font-medium mb-8" style="color:var(--red-bright);" aria-label="Breadcrumb">
-        <a href="{{ url('/') }}" class="hover:text-white transition-colors">Main Navigation</a>
-        <span class="text-white/30">/</span>
-        <a href="{{ url('/services') }}" class="hover:text-white transition-colors">Services</a>
-        <span class="text-white/30">/</span>
-        <a href="{{ url('/services/mobile-app-development') }}" class="hover:text-white transition-colors">Mobile App Development</a>
-        <span class="text-white/30">/</span>
-        <span class="text-white/70">iOS App Development</span>
-      </nav>
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
+    <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+  </div>
 
-      <div class="max-w-2xl">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-bright);">
-          iOS App Development
-        </span>
-        <h1 class="text-4xl sm:text-4xl lg:text-[50px] font-bold leading-[1.1] mt-5 mb-6">
-          Built for <span style="color:var(--red-bright);">Apple's standards.</span>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
+          <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
+          <span class="text-gray-500">/</span>
+          <a href="{{ url('/services/mobile-app-development') }}" class="hover:text-purple-300 transition-colors">Mobile App Development</a>
+          <span class="text-gray-500">/</span>
+          <span class="text-purple-400">iOS App Development</span>
+        </nav>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+          iOS App Development Built to <span class="text-purple-400">Apple's Standards</span>
         </h1>
-        <p class="text-lg text-white/70 leading-relaxed mb-4">
+
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
           iOS app development services for businesses building a native app for iPhone and iPad, built to feel fast and familiar to Apple users.
         </p>
-        <p class="text-base text-white/60 leading-relaxed mb-10">
+        <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
           As part of our wider Mobile App Development practice, our iOS work is built natively using Apple's own tools, so the app feels fast, familiar, and fully at home on iPhone and iPad. This matters most for businesses whose audience skews toward Apple devices, or who need the performance and polish that native development provides.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5" style="background:var(--red-accent); border-radius:2px;">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white border border-white/30 hover:border-white hover:bg-white/5 transition-all" style="border-radius:2px;">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
       </div>
-    </div>
-  </header>
 
-  <!-- ===== Who This Is For & Problems We Solve ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-8 border" style="border-color:var(--line); background:var(--bg-soft);">
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color:var(--navy-deep);">
-            <span class="w-2 h-2 rounded-full" style="background:var(--red-accent);"></span>
+      <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
+        <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
+          <img 
+            src="https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=1000&auto=format&fit=crop" 
+            alt="iOS App Development - InTech Nexus" 
+            class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
+          />
+          <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+          <div class="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent opacity-40 pointer-events-none"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For & Problems We Solve Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
             Who This Is For
           </h2>
-          <p class="leading-relaxed text-base" style="color:var(--text-muted);">
+          <p class="text-gray-300 leading-relaxed text-base">
             Businesses building a new iOS app, or replacing one that feels slow or outdated.
           </p>
         </div>
+      </div>
 
-        <div class="p-8 border" style="border-color:var(--line); background:var(--bg-soft);">
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color:var(--navy-deep);">
-            <span class="w-2 h-2 rounded-full" style="background:var(--red-accent);"></span>
+      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
             Problems We Solve
           </h2>
-          <ul class="space-y-3" style="color:var(--text-muted);">
+          <ul class="space-y-3 text-gray-300">
             <li class="flex items-start gap-3">
-              <span class="font-bold" style="color:var(--red-accent);">•</span>
+              <span class="text-purple-400 font-bold">•</span>
               <span>A generic cross platform app does not feel native to iPhone users.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="font-bold" style="color:var(--red-accent);">•</span>
+              <span class="text-purple-400 font-bold">•</span>
               <span>An existing iOS app is slow, outdated, or hard to maintain.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="font-bold" style="color:var(--red-accent);">•</span>
+              <span class="text-purple-400 font-bold">•</span>
               <span>You need an app built specifically for Apple's design standards and app store requirements.</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== What We Offer ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12 max-w-xl">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-accent);">What We Offer</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">
-          We build native iOS apps using Apple's own tools and design standards
-        </h2>
+<!-- What We Offer -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+      <p class="text-gray-400 text-lg">We build native iOS apps using Apple's own tools and design standards.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Native iOS App Development Company</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Cross industry experience building native iOS apps using Apple's own tools.</p>
+        </div>
       </div>
 
-      <div class="grid gap-px border" style="background:var(--line); border-color:var(--line); grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
-        @foreach ([
-          'Native iOS app development company experience across industries',
-          'Custom iOS app development for iPhone and iPad',
-          'iPhone app development using Swift',
-          'iOS mobile app development with App Store submission support',
-          'Ongoing updates and maintenance',
-        ] as $offer)
-          <div class="bg-white p-8 transition-colors duration-300 ios-offer-card">
-            <div class="w-10 h-10 rounded-full border flex items-center justify-center font-mono text-xs mb-6" style="border-color:var(--line); color:var(--red-accent);">
-              ●
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Custom iOS App Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Apps tailored for iPhone and iPad, built around your users and workflows.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">iPhone App Development Using Swift</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Modern Swift based apps that follow current Apple development standards.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">iOS Mobile App Development with App Store Support</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">End to end support through App Store submission and review.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Ongoing Updates and Maintenance</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Long term support to keep your iOS app current with new OS releases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Capabilities -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>A fully native iOS app for iPhone and iPad</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>App Store optimized listing and submission support</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Integration with Apple specific features and frameworks</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Ongoing updates aligned with new iOS releases</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10">
+        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Native iOS development using Swift</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Apple Human Interface Guidelines compliance</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>App Store submission and review process management</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Performance tuning for Apple hardware</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Process -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="max-w-3xl mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        A structured, transparent approach to building iOS apps that feel at home on Apple devices.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">01</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Discovery & Planning</h3>
+          <p class="text-gray-300">We map the app's core features, audience, and platform needs.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">02</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">UI/UX Design</h3>
+          <p class="text-gray-300">We design the app's screens and flows around real user behavior.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">03</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Development</h3>
+          <p class="text-gray-300">We build the app using the right native or cross platform approach.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">04</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Testing</h3>
+          <p class="text-gray-300">We test across real devices and operating system versions.</p>
+        </div>
+      </div>
+
+      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+        <span class="text-3xl font-extrabold text-purple-400">05</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Launch & Support</h3>
+          <p class="text-gray-300">We manage app store submission, then support the app after launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools / Technologies Section -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+      <div>
+        @php
+            $techStack = [
+                [
+                    'name' => 'Languages',
+                    'technologies' => [
+                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
+                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Frameworks',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
+                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Databases',
+                    'technologies' => [
+                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
+                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Cloud and infrastructure',
+                    'technologies' => [
+                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Project and QA tools',
+                    'technologies' => [
+                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
+                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
+                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                    ],
+                ],
+            ];
+        @endphp
+
+        <div class="flex flex-col gap-8">
+          @foreach ($techStack as $index => $category)
+            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                {{ $category['name'] }}
+              </span>
             </div>
-            <p class="font-medium" style="color:var(--navy-deep);">{{ $offer }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Our Service Capabilities ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12 max-w-xl">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-accent);">Capabilities</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">Our Service Capabilities</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-8 bg-white border" style="border-color:var(--line);">
-          <h3 class="text-xl font-bold mb-5" style="color:var(--navy-deep);">What We Deliver</h3>
-          <ul class="space-y-3 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>A fully native iOS app for iPhone and iPad</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>App Store optimized listing and submission support</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>Integration with Apple specific features and frameworks</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>Ongoing updates aligned with new iOS releases</span></li>
-          </ul>
-        </div>
-
-        <div class="p-8 bg-white border" style="border-color:var(--line);">
-          <h3 class="text-xl font-bold mb-5" style="color:var(--navy-deep);">Key Skill Areas</h3>
-          <ul class="space-y-3 text-sm" style="color:var(--text-muted);">
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>Native iOS development using Swift</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>Apple Human Interface Guidelines compliance</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>App Store submission and review process management</span></li>
-            <li class="flex items-start gap-3"><span style="color:var(--red-accent);">◦</span><span>Performance tuning for Apple hardware</span></li>
-          </ul>
+          @endforeach
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== Our Process ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-16 max-w-xl">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-accent);">Process</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">Our Process</h2>
-      </div>
+      <div id="tech-right" class="relative lg:pr-16">
+        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+          {{ $techStack[0]['name'] }}
+        </h3>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        @foreach ([
-          ['n' => '01', 't' => 'Discovery & Planning', 'd' => "We map the app's core features, audience, and platform needs."],
-          ['n' => '02', 't' => 'UI/UX Design', 'd' => "We design the app's screens and flows around real user behavior."],
-          ['n' => '03', 't' => 'Development', 'd' => 'We build the app using the right native or cross platform approach.'],
-          ['n' => '04', 't' => 'Testing', 'd' => 'We test across real devices and operating system versions.'],
-          ['n' => '05', 't' => 'Launch & Support', 'd' => 'We manage app store submission, then support the app after launch.'],
-        ] as $step)
-          <div class="p-7 border flex flex-col" style="border-color:var(--line); min-height:230px;">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center font-mono font-semibold text-white mb-6" style="background:var(--navy-deep);">
-              {{ $step['n'] }}
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
+          @php
+              $firstCategory = $techStack[0]['technologies'];
+          @endphp
+
+          @foreach ($firstCategory as $tech)
+            <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+              <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
             </div>
-            <h3 class="text-lg font-bold mb-2" style="color:var(--navy-deep);">{{ $step['t'] }}</h3>
-            <p class="text-sm" style="color:var(--text-muted);">{{ $step['d'] }}</p>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Tools & Technologies ===== -->
-  <section class="py-20 border-t" style="border-color:var(--line); background:var(--bg-soft);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-10 max-w-xl">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-accent);">Stack</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">Tools & Technologies</h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        <div class="bg-white p-6 border" style="border-color:var(--line);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--red-accent);">Languages</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Swift · Kotlin · Dart</p>
-        </div>
-        <div class="bg-white p-6 border" style="border-color:var(--line);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--red-accent);">Frameworks</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Flutter · React Native</p>
-        </div>
-        <div class="bg-white p-6 border" style="border-color:var(--line);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--red-accent);">Design</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Figma</p>
-        </div>
-        <div class="bg-white p-6 border" style="border-color:var(--line);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--red-accent);">Backend</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">Firebase · Node.js</p>
-        </div>
-        <div class="bg-white p-6 border" style="border-color:var(--line);">
-          <p class="font-mono text-xs uppercase tracking-wider mb-3" style="color:var(--red-accent);">Testing</p>
-          <p class="text-sm font-medium" style="color:var(--navy-deep);">BrowserStack · TestFlight · Play Console</p>
+          @endforeach
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== Why Choose InTech Nexus ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden" style="border-radius:2px;">
-        <div class="p-10 md:p-16 text-white h-full flex flex-col justify-center" style="background:var(--navy-deep);">
-          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-bright);">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Built for Apple, not bolted onto it</h2>
-          <p class="text-white/70 leading-relaxed max-w-md">
-            As a team that does Swift app development natively, we build apps that feel like they belong on Apple devices, not like a web page wrapped in an app shell.
-          </p>
-        </div>
-        <div class="h-full min-h-[320px]" style="background-image:url('https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
-      </div>
-    </div>
-  </section>
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
 
-  <!-- ===== FAQ ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line); background:var(--bg-soft);" x-data="{ openFaq: null }">
-    <div class="max-w-5xl mx-auto px-6 sm:px-12">
-      <div class="text-center mb-14">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold" style="color:var(--red-accent);">FAQ</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="color:var(--navy-deep);">Frequently Asked Questions</h2>
-      </div>
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
 
-      <div class="space-y-4">
-        @foreach ([
-          ['q' => 'Do you build for both iPhone and iPad?', 'a' => 'Yes. Our iOS app development covers both iPhone and iPad, with layouts adjusted for each.'],
-          ['q' => 'Do you handle App Store submission?', 'a' => 'Yes. App Store submission and review support is part of our standard process.'],
-          ['q' => 'Do you support older iOS versions?', 'a' => 'We will confirm the supported OS range with you during discovery, based on your audience and the features the app needs.'],
-          ['q' => 'Can you add Apple specific features like Face ID or Apple Pay?', 'a' => 'Yes. We integrate Apple specific features where they fit the app\'s purpose.'],
-        ] as $i => $faq)
-          <div class="bg-white border overflow-hidden" style="border-color:var(--line);">
-            <button @click="openFaq = openFaq === {{ $i }} ? null : {{ $i }}" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center focus:outline-none" style="color:var(--navy-deep);">
-              <span>{{ $faq['q'] }}</span>
-              <span class="text-2xl font-bold ml-4" style="color:var(--red-accent);" x-text="openFaq === {{ $i }} ? '−' : '+'"></span>
-            </button>
-            <div x-show="openFaq === {{ $i }}" x-collapse class="px-6 pb-6 leading-relaxed" style="color:var(--text-muted);">
-              {{ $faq['a'] }}
-            </div>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
 
-  <!-- ===== Call to Action Banner ===== -->
-  <section class="py-24 border-t" style="border-color:var(--line);">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
-      <div class="p-10 md:p-16 text-white" style="background:var(--navy-deep); border-radius:2px;">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to build a native iOS app?</h2>
-        <p class="text-white/70 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          Book a call, request a proposal, or get a free quote to start.
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
+                      <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush
+
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Built for Apple, not bolted onto it</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          As a team that does Swift app development natively, we build apps that feel like they belong on Apple devices, not like a web page wrapped in an app shell.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5" style="background:var(--red-accent); border-radius:2px;">
-            Get a Free Quote
-          </a>
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 font-mono text-xs font-semibold uppercase tracking-wider text-white border border-white/30 hover:border-white hover:bg-white/5 transition-all" style="border-radius:2px;">
-            Book a Call
-          </a>
+      </div>
+      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+    
+    <div class="space-y-4">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you build for both iPhone and iPad?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. Our iOS app development covers both iPhone and iPad, with layouts adjusted for each.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you handle App Store submission?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. App Store submission and review support is part of our standard process.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you support older iOS versions?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          We will confirm the supported OS range with you during discovery, based on your audience and the features the app needs.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can you add Apple specific features like Face ID or Apple Pay?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We integrate Apple specific features where they fit the app's purpose.
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to build a native iOS app?
+      </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Book a call, request a proposal, or get a free quote to begin.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          Get a Free Quote
+        </a>
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 </div>
 
-<style>
-  .ios-offer-card:hover{
-    background:var(--navy-deep) !important;
-  }
-  .ios-offer-card:hover p{
-    color:#fff !important;
-  }
-  .ios-offer-card:hover div{
-    border-color:var(--red-bright) !important;
-    color:var(--red-bright) !important;
-  }
-</style>
-
-<script>
-  (function () {
-    var canvas = document.getElementById('iosNodeCanvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var w, h, nodes = [];
-    var NODE_COUNT = 40, LINK_DIST = 150;
-
-    function resize() {
-      var header = canvas.closest('header');
-      w = canvas.width = header.offsetWidth;
-      h = canvas.height = header.offsetHeight;
-    }
-    function initNodes() {
-      nodes = Array.from({ length: NODE_COUNT }, function () {
-        return {
-          x: Math.random() * w,
-          y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.25,
-          vy: (Math.random() - 0.5) * 0.25
-        };
-      });
-    }
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < nodes.length; i++) {
-        for (var j = i + 1; j < nodes.length; j++) {
-          var a = nodes[i], b = nodes[j];
-          var d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < LINK_DIST) {
-            ctx.strokeStyle = 'rgba(217,72,63,' + (0.22 * (1 - d / LINK_DIST)) + ')';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
-        }
-      }
-      for (var k = 0; k < nodes.length; k++) {
-        var n = nodes[k];
-        ctx.fillStyle = 'rgba(217,72,63,0.65)';
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-    function step() {
-      for (var k = 0; k < nodes.length; k++) {
-        var n = nodes[k];
-        n.x += n.vx; n.y += n.vy;
-        if (n.x < 0 || n.x > w) n.vx *= -1;
-        if (n.y < 0 || n.y > h) n.vy *= -1;
-      }
-      draw();
-      if (!prefersReduced) requestAnimationFrame(step);
-    }
-
-    window.addEventListener('resize', function () { resize(); initNodes(); draw(); });
-    resize();
-    initNodes();
-    step();
-  })();
-</script>
 @endsection

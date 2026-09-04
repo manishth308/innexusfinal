@@ -55,13 +55,18 @@
                            class="nav-link">
                             {{ $item->title }}
                         </a>
+                    @elseif ($item->slug === 'blog')
+                        <a href="{{ route('blog.index') }}"
+                           class="nav-link">
+                            {{ $item->title }}
+                        </a>
                     @endif
                 </li>
             @endforeach
         </ul>
 
         <div class="flex items-center gap-3 shrink-0">
-            <a href="{{ route('contact')}}"
+            <a href="/contact-us"
                class="hidden lg:inline-block btn-contact">
                 Contact Us
             </a>
@@ -309,6 +314,14 @@
                         >
                             {{ $item->title }}
                         </a>
+                    @elseif ($item->slug === 'blog')
+                        <a
+                            href="{{ route('blog.index') }}"
+                            @click="mobileOpen = false"
+                            class="block py-3 text-ink hover:text-brand-blue font-medium text-[15px] transition-colors"
+                        >
+                            {{ $item->title }}
+                        </a>
                     @endif
                 </li>
             @endforeach
@@ -316,7 +329,7 @@
             {{-- Mobile Contact --}}
             <li class="pt-4 mt-2 border-t border-gray-200">
                 <a
-                    href="#contact"
+                    href="/contact-us"
                     @click="mobileOpen = false"
                     class="inline-block btn-contact"
                 >

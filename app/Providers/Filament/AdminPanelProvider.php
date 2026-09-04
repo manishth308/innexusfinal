@@ -30,11 +30,9 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile(isSimple: false)
             ->brandName('IntechNexus')
-            // TODO: swap in real logo once available:
-            // ->brandLogo(asset('images/logos/intechnexus-logo.svg'))
             ->colors([
-                'primary' => Color::hex('#01183D'), // Prussian Blue
-                'danger' => Color::hex('#CC0309'),  // Scarlet Red — admin accent
+                'primary' => Color::hex('#a855f7'), // Purple 500
+                'danger' => Color::hex('#7f1d1d'),  // Red 900 — danger accent
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
