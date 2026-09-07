@@ -4,9 +4,15 @@
 @section('content')
 <section class="py-24 bg-[#0b0c10] min-h-screen">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
-        <div class="max-w-3xl mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Blog</h1>
-            <p class="text-gray-400 text-lg leading-relaxed">Insights, updates, and ideas from our team.</p>
+        <div class="max-w-3xl mb-16 flex flex-wrap items-end justify-between gap-6">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Blog</h1>
+                <p class="text-gray-400 text-lg leading-relaxed">Insights, updates, and ideas from our team.</p>
+            </div>
+            <div class="flex items-center gap-4 text-sm font-mono uppercase tracking-wide">
+                <a href="{{ route('blogs.apply') }}" class="text-purple-400 hover:text-purple-300 transition-colors">Write for Us</a>
+                <a href="{{ route('filament.blogs.auth.login') }}" class="text-gray-400 hover:text-white transition-colors">Blogger Login</a>
+            </div>
         </div>
 
         @if($blogs->isEmpty())

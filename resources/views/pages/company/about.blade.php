@@ -262,7 +262,7 @@
 <!-- Why Choose InTech Nexus (split-pane layout) -->
 <section class="py-24 border-t border-white/10 bg-[#0b0c10]">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden rounded-md">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden rounded-md">
       <div class="p-10 md:p-16 bg-[#0b0c10] text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One team, one brief, one result</h2>
@@ -270,7 +270,9 @@
           We design, build, and grow digital businesses, with one team handling all three from the same brief. No handoffs between disconnected vendors, no strategies built without the people who will execute them.
         </p>
       </div>
-      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="One team, one brief, one result" class="why-choose-image">
+      </div>
     </div>
   </div>
 </section>

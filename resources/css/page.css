@@ -1,0 +1,91 @@
+/*
+ * Shared, hand-authored component classes for blocks repeated across
+ * every service/industry page template — currently the "Tools /
+ * Technologies" grid+card and the "Why Choose Us" image panel.
+ *
+ * These exist to replace bracket-syntax arbitrary-value Tailwind
+ * utilities (grid-cols-[40%_60%], max-h-[50px], min-h-[320px]) that were
+ * copy-pasted across 50+ Blade files. Because these rules are written
+ * directly in this source file rather than generated from scanning
+ * Blade templates, Tailwind always includes them in every build — dev
+ * or production — with no dependency on which pages happen to have
+ * been rendered/cached before the build ran.
+ */
+
+@layer components {
+    /*
+     * Visually hides a honeypot input from real visitors while leaving it
+     * present in the DOM for simple bots that auto-fill every field.
+     * Shared by the contact form and the blogger application form.
+     */
+    .hp-field {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    .tech-split-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+        .tech-split-grid {
+            grid-template-columns: 40% 60%;
+            column-gap: 4rem;
+        }
+    }
+
+    .tech-card {
+        @apply border border-white/10 bg-white/[0.03] backdrop-blur-sm flex flex-col items-center justify-center gap-2 p-3 rounded-lg transition-all duration-300 overflow-hidden;
+        height: 100px;
+    }
+
+    .tech-card:hover {
+        @apply border-purple-500/40 bg-white/[0.06];
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.05);
+    }
+
+    .tech-card-icon-frame {
+        @apply flex items-center justify-center w-full px-2;
+        height: 3rem;
+    }
+
+    .tech-card-icon {
+        max-height: 2.5rem;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* The frame stretches to match the row height (see items-stretch on
+       the grid in the Blade templates), so it's always exactly as tall
+       as the text column beside it. The cap belongs on the image itself
+       (below), not here - capping it here would disconnect this frame
+       from the row's real height and break the vertical centering this
+       is meant to guarantee. */
+    .why-choose-image-frame {
+        @apply flex items-center justify-center overflow-hidden;
+        height: 100%;
+    }
+
+    .why-choose-image {
+        max-height: 20rem; /* keeps the photo from stretching too tall on
+            pages with a lot of copy, while still centering within the
+            taller frame around it */
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Previously capped this section's height, but that risked silently
+       clipping the text column's paragraph on pages with longer copy.
+       Height matching between the text and image columns now comes from
+       items-stretch on the grid itself instead - both columns take the
+       same height, and each centers its own content within it. */
+    .why-choose-section {
+        overflow: hidden;
+    }
+}

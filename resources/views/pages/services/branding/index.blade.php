@@ -87,7 +87,7 @@
           <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
@@ -284,10 +284,10 @@
 </section>
 
 <!-- Why Choose InTech Nexus -->
-<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Strategy and design as one process, not separate steps</h2>
@@ -295,7 +295,9 @@
           We treat strategy and design as one process, not two separate steps. That means the visual identity is grounded in a clear position, not just a set of colors and fonts chosen for their own sake.
         </p>
       </div>
-      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
+      </div>
     </div>
   </div>
 </section>
@@ -343,7 +345,7 @@
         <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
           Get a Free Quote
         </a>
-        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
           Book a Call
         </a>
       </div>

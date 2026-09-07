@@ -161,13 +161,13 @@
 
         @php
             $homeServices = [
-                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'software-development')],
-                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'mobile-app-development')],
-                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'web-development')],
-                ['title' => 'Application Development', 'description' => 'Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1555066931-43666627e783?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'application-development')],
-                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'ui-ux-design')],
-                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'graphic-creative-design')],
-                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'digital-marketing')],
+                ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/software-development')],
+                ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/mobile-development')],
+                ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/web-development')],
+                ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/ui-ux-design')],
+                ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/graphic-design')],
+                ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/digital-marketing')],
+                ['title' => 'Branding', 'description' => 'Brand feels inconsistent or outdated?', 'image' => 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', 'services/branding')],
             ];
         @endphp
 
@@ -338,7 +338,7 @@
 
         <div class="h-px bg-[#D5DDE8] mb-5"></div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+        <div class="tech-split-grid">
 
             <div>
                 @php
@@ -408,7 +408,7 @@
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
                     @foreach ($techStack[0]['technologies'] as $tech)
                         <div class="group border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-[#1754B8]/40 hover:bg-white shadow-[0_0_20px_rgba(23,84,184,0.05)] transition-all duration-300">
-                            <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+                            <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
                             <span class="text-xs text-black group-hover:text-[#1754B8] transition-colors">{{ $tech['name'] }}</span>
                         </div>
                     @endforeach
@@ -497,7 +497,7 @@
                     .map(
                         (tech) => `
                             <div class="group border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-[#1754B8]/40 hover:bg-white shadow-[0_0_20px_rgba(23,84,184,0.05)] transition-all duration-300">
-                                <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                                <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
                                 <span class="text-xs text-black group-hover:text-[#1754B8] transition-colors">${tech.name}</span>
                             </div>
                         `

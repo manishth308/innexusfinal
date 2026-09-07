@@ -297,7 +297,7 @@
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+    <div class="tech-split-grid">
       <div>
         @php
             $techStack = [
@@ -355,8 +355,11 @@
           @endphp
 
           @foreach ($firstCategory as $tech)
-            <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
-              <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+            <div class="group tech-card">
+              <div class="tech-card-icon-frame">
+                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
+              </div>
+              
               <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
             </div>
           @endforeach
@@ -406,8 +409,11 @@
       techGrid.innerHTML = selected.technologies
           .map(
               (tech) => `
-                  <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
-                      <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                  <div class="group tech-card">
+                      <div class="tech-card-icon-frame">
+                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                      </div>
+                      
                       <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                   </div>
               `
@@ -428,10 +434,10 @@
 @endpush
 
 <!-- Why Choose InTech Nexus -->
-<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">QA runs through the whole build, not just the end</h2>
@@ -439,7 +445,9 @@
           QA is not a final step tacked on at the end here. It runs alongside Software Development, Web Development, and Mobile App Development through the whole build, so problems are caught early, when they are cheaper to fix.
         </p>
       </div>
-      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
+      </div>
     </div>
   </div>
 </section>

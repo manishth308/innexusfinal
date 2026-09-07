@@ -303,7 +303,7 @@
 <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 text-white">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Industry knowledge built into every decision</h2>
@@ -311,7 +311,9 @@
           We do not treat industries as an afterthought. Our teams study the specific regulatory, operational, and customer experience requirements of each sector before writing a single line of code. The result is platforms that feel natural to the people who use them.
         </p>
       </div>
-      <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Industry knowledge built into every decision" class="why-choose-image">
+      </div>
     </div>
   </div>
 </section>

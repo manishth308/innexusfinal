@@ -115,4 +115,19 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Lead Notification Recipient
+    |--------------------------------------------------------------------------
+    |
+    | Where to send a notification email when someone submits the /contact
+    | form. The lead is always saved to the database regardless of whether
+    | this is set - this only controls the optional email alert. Leave
+    | unset to skip sending an email entirely (leads are still visible in
+    | /admin either way).
+    |
+    */
+
+    'leads_notification_email' => env('LEADS_NOTIFICATION_EMAIL'),
+
 ];

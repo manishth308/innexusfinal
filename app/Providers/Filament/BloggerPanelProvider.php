@@ -25,9 +25,10 @@ class BloggerPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('blogger')
-            ->path('blogger')
+            ->id('blogs')
+            ->path('blogs')
             ->login()
+            ->passwordReset()
             ->profile(isSimple: false)
             ->brandName('IntechNexus — Blogger')
             // TODO: swap in real logo once available:

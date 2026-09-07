@@ -66,7 +66,7 @@
         </ul>
 
         <div class="flex items-center gap-3 shrink-0">
-            <a href="/contact-us"
+            <a href="{{ route('contact') }}"
                class="hidden lg:inline-block btn-contact">
                 Contact Us
             </a>
@@ -184,7 +184,18 @@
                                 @else
                                     <div class="flex flex-col justify-center h-full max-w-sm">
                                         <p class="mega-leaf-title">{{ $category->title }}</p>
-                                        @if ($category->page)
+                                        @if ($category->slug === 'contact-us')
+                                            <a
+                                                href="{{ route('contact') }}"
+                                                @click="closeAll()"
+                                                class="mega-leaf-link"
+                                            >
+                                                View {{ $category->title }}
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>
+                                            </a>
+                                        @elseif ($category->page)
                                             <a
                                                 href="{{ route('page.show', $category->page->slug) }}"
                                                 @click="closeAll()"
@@ -293,6 +304,14 @@
                                             @endforeach
                                         </ul>
 
+                                    @elseif ($category->slug === 'contact-us')
+                                        <a
+                                            href="{{ route('contact') }}"
+                                            @click="mobileOpen = false"
+                                            class="block py-2 text-[14px] text-ink/70 hover:text-brand-blue transition-colors"
+                                        >
+                                            {{ $category->title }}
+                                        </a>
                                     @elseif ($category->page)
                                         <a
                                             href="{{ route('page.show', $category->page->slug) }}"
@@ -329,7 +348,7 @@
             {{-- Mobile Contact --}}
             <li class="pt-4 mt-2 border-t border-gray-200">
                 <a
-                    href="/contact-us"
+                    href="{{ route('contact') }}"
                     @click="mobileOpen = false"
                     class="inline-block btn-contact"
                 >

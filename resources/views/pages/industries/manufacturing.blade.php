@@ -36,7 +36,7 @@
 <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
 
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(25%_0%,100%_0%,100%_100%,0%_100%)] opacity-90"></div>
+    <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
     <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
   </div>
@@ -68,7 +68,7 @@
           <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
@@ -297,7 +297,7 @@
         <p class="text-gray-400 text-lg">The stack we work with on manufacturing projects.</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-16">
+      <div class="tech-split-grid">
         <div>
           @php
               $techStack = [
@@ -358,8 +358,11 @@
             @endphp
 
             @foreach ($firstCategory as $tech)
-              <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
-                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="max-h-[50px] max-w-full object-contain">
+              <div class="group tech-card">
+                <div class="tech-card-icon-frame">
+                  <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
+                </div>
+                
                 <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
               </div>
             @endforeach
@@ -409,8 +412,11 @@
         techGrid.innerHTML = selected.technologies
             .map(
                 (tech) => `
-                    <div class="group border border-white/10 bg-white/[0.03] backdrop-blur-sm h-[100px] flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:border-purple-500/40 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.05)] transition-all duration-300">
-                        <img src="${tech.image}" alt="${tech.name}" class="max-h-[50px] max-w-full object-contain">
+                    <div class="group tech-card">
+                        <div class="tech-card-icon-frame">
+                            <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                        </div>
+                        
                         <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                     </div>
                 `
@@ -431,10 +437,10 @@
   @endpush
 
   <!-- Why Choose InTech Nexus -->
-  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
+  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
     <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
     <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
         <div class="p-10 md:p-16 text-white flex flex-col justify-center">
           <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
           <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">How the work actually runs</h2>
@@ -442,7 +448,9 @@
             Manufacturing buyers are usually technical, deliberate, and comparing multiple suppliers before ever reaching out. We bring both kinds of understanding into every manufacturing project: a marketing approach built for this audience, and systems that actually reflect how production, inventory, and fulfillment work day to day, not a simplified version built by a team that has never worked with a manufacturing business.
           </p>
         </div>
-        <div class="min-h-[320px] bg-[url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
+      </div>
       </div>
     </div>
   </section>
@@ -510,7 +518,7 @@
         <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
           Get a Free Quote
         </a>
-        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
           Book a Call
         </a>
       </div>

@@ -9,9 +9,13 @@ use Illuminate\Support\Str;
 
 class MenuSeeder extends Seeder
 {
+    private array $seenTitles = [];
+
     private function menu(string $title, ?int $pageId, ?int $parentId, int $sortOrder): Menu
     {
-        return Menu::firstOrCreate(
+        $this->seenTitles[] = $title;
+
+        return Menu::updateOrCreate(
             ['title' => $title],
             [
                 'slug' => Str::slug($title),
@@ -27,105 +31,109 @@ class MenuSeeder extends Seeder
     {
         $pageId = fn (string $slug) => Page::where('slug', $slug)->value('id');
 
+        // "Home" has no Page row — served directly by PageController::home().
+        // Menu only supports linking to a Page (page_id), no raw URL field.
+        // The header/menu Blade view needs to special-case this item and
+        // link it to route('home') instead of relying on page_id.
         $this->menu('Home', null, null, 1);
 
         $services = $this->menu('Services', $pageId('services'), null, 2);
         $industries = $this->menu('Industries', $pageId('industries'), null, 3);
         $company = $this->menu('Company', $pageId('company'), null, 4);
 
+        // Company children
         $this->menu('About Us', $pageId('about-us'), $company->id, 1);
-        $this->menu('Contact Us', $pageId('contact'), $company->id, 2);
+        // "Blogs" has no dedicated Page row yet (served by its own
+        // route/controller, not the generic Page catch-all) — placeholder
+        // link (page_id null) until wired up properly, same treatment as Home.
+        $this->menu('Blogs', null, $company->id, 2);
+        $this->menu('Contact Us', $pageId('contact-us'), $company->id, 3);
 
-        $industryItems = [
-            'Ecommerce' => 'ecommerce',
-            'Healthcare' => 'healthcare',
-            'Finance' => 'finance',
-            'Manufacturing' => 'manufacturing',
-            'Marketing' => 'marketing',
-        ];
+        // Industries children
+        $industryItems = ['Ecommerce' => 'ecommerce', 'Marketing' => 'marketing', 'Healthcare' => 'healthcare', 'Finance' => 'finance'];
         $i = 1;
         foreach ($industryItems as $title => $slug) {
             $this->menu($title, $pageId($slug), $industries->id, $i++);
         }
 
+        // Services children (L2 categories) + their L3 leaf items
         $categories = [
             'Software Development' => [
-                'slug' => 'software-development',
+                'slug' => 'services/software-development',
                 'children' => [
-                    'Custom Software Development' => 'custom-software-development',
-                    'Enterprise Software Development' => 'enterprise-software-development',
-                    'SaaS Development' => 'saas-development',
-                    'CRM Development' => 'crm-development',
-                    'ERP Development' => 'erp-development',
-                    'Software Product Development' => 'software-product-development',
-                    'MVP Development' => 'mvp-development',
+                    'Custom Software Development' => 'services/software-development/custom-software-development',
+                    'Enterprise Software Development' => 'services/software-development/enterprise-software-development',
+                    'SaaS Development' => 'services/software-development/saas-development',
+                    'CRM Development' => 'services/software-development/crm-development',
+                    'ERP Development' => 'services/software-development/erp-development',
+                    'Software Product Development' => 'services/software-development/software-product-development',
+                    'MVP Development' => 'services/software-development/mvp-development',
                 ],
             ],
             'Mobile App Development' => [
-                'slug' => 'mobile-app-development',
+                'slug' => 'services/mobile-development',
                 'children' => [
-                    'iOS App Development' => 'ios-app-development',
-                    'Android App Development' => 'android-app-development',
-                    'Cross Platform App Development' => 'cross-platform-app-development',
-                    'MVP App Development' => 'mvp-app-development',
+                    'iOS App Development' => 'services/mobile-development/ios-app-development',
+                    'Android App Development' => 'services/mobile-development/android-app-development',
+                    'Cross Platform App Development' => 'services/mobile-development/cross-platform-app-development',
+                    'MVP App Development' => 'services/mobile-development/mvp-app-development',
                 ],
             ],
             'Web Development' => [
-                'slug' => 'web-development',
+                'slug' => 'services/web-development',
                 'children' => [
-                    'Custom Website Development' => 'custom-website-development',
-                    'Ecommerce Website Development' => 'ecommerce-website-development',
-                    'Web Application Development' => 'web-application-development',
-                    'CMS Development' => 'cms-development',
-                    'WordPress Development' => 'wordpress-development',
-                    'Shopify Development' => 'shopify-development',
-                    'Web Development Services' => 'web-development-services',
+                    'Custom Website Development' => 'services/web-development/custom-website-development',
+                    'Ecommerce Website Development' => 'services/web-development/ecommerce-website-development',
+                    'Web Application Development' => 'services/web-development/web-application-development',
+                    'CMS Development' => 'services/web-development/cms-development',
+                    'WordPress Development' => 'services/web-development/wordpress-development',
+                    'Shopify Development' => 'services/web-development/shopify-development',
                 ],
             ],
             'UI UX Design' => [
-                'slug' => 'ui-ux-design',
+                'slug' => 'services/ui-ux-design',
                 'children' => [
-                    'UI UX Design Services' => 'ui-ux-design-services',
-                    'Web UI UX Design' => 'web-ui-ux-design',
-                    'Mobile App UI UX Design' => 'mobile-app-ui-ux-design',
-                    'SaaS UI UX Design' => 'saas-ui-ux-design',
-                    'Product Design' => 'product-design',
+                    'UI UX Design Services' => 'services/ui-ux-design/ui-ux-design-services',
+                    'Web UI UX Design' => 'services/ui-ux-design/web-ui-ux-design',
+                    'Mobile App UI UX Design' => 'services/ui-ux-design/mobile-app-ui-ux-design',
+                    'SaaS UI UX Design' => 'services/ui-ux-design/saas-ui-ux-design',
+                    'Product Design' => 'services/ui-ux-design/product-design',
                 ],
             ],
             'Graphic Design' => [
-                'slug' => 'graphic-design',
+                'slug' => 'services/graphic-design',
                 'children' => [
-                    'Logo Design' => 'logo-design',
-                    'Social Media Design' => 'social-media-design',
-                    'Ad Creative Design' => 'ad-creative-design',
-                    'Motion Graphics' => 'motion-graphics',
+                    'Logo Design' => 'services/graphic-design/logo-design',
+                    'Social Media Design' => 'services/graphic-design/social-media-design',
+                    'Ad Creative Design' => 'services/graphic-design/ad-creative-design',
+                    'Motion Graphics' => 'services/graphic-design/motion-graphics',
                 ],
             ],
             'Digital Marketing' => [
-                'slug' => 'digital-marketing',
+                'slug' => 'services/digital-marketing',
                 'children' => [
-                    'SEO Services' => 'seo-services',
-                    'Local SEO' => 'local-seo',
-                    'Content Marketing' => 'content-marketing',
-                    'PPC Google Ads' => 'ppc-google-ads',
-                    'Meta Ads' => 'meta-ads',
-                    'Social Media Marketing' => 'social-media-marketing',
-                    'Email Marketing' => 'email-marketing',
-                    'Conversion Rate Optimization' => 'conversion-rate-optimization',
+                    'SEO Services' => 'services/digital-marketing/seo-services',
+                    'Local SEO' => 'services/digital-marketing/local-seo',
+                    'Content Marketing' => 'services/digital-marketing/content-marketing',
+                    'PPC/Google Ads' => 'services/digital-marketing/ppc-google-ads',
+                    'Meta Ads' => 'services/digital-marketing/meta-ads',
+                    'Social Media Marketing' => 'services/digital-marketing/social-media-marketing',
+                    'Email Marketing' => 'services/digital-marketing/email-marketing',
+                    'Conversion Rate Optimization' => 'services/digital-marketing/conversion-rate-optimization',
                 ],
             ],
             'Branding' => [
-                'slug' => 'branding',
+                'slug' => 'services/branding',
                 'children' => [
-                    'Brand Strategy and Identity' => 'brand-strategy-and-identity',
+                    'Brand Strategy and Identity' => 'services/branding/brand-strategy-and-identity',
                 ],
             ],
             'QA & Testing' => [
-                'slug' => 'qa-testing',
+                'slug' => 'services/qa-testing',
                 'children' => [
-                    'Mobile App Testing' => 'mobile-app-testing',
-                    'Web Testing' => 'web-testing',
-                    'QA Outsourcing' => 'qa-outsourcing',
+                    'Mobile App Testing' => 'services/qa-testing/mobile-app-testing',
+                    'Web Testing' => 'services/qa-testing/web-testing',
+                    'QA Outsourcing' => 'services/qa-testing/qa-outsourcing',
                 ],
             ],
         ];
@@ -140,6 +148,10 @@ class MenuSeeder extends Seeder
             }
         }
 
-        $this->command?->info('Seeded menu tree.');
+        $removed = Menu::whereNotIn('title', $this->seenTitles)->delete();
+
+        if ($removed > 0) {
+            $this->command?->info("Removed {$removed} stale menu item(s) no longer defined in this seeder.");
+        }
     }
 }
