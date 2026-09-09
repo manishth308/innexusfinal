@@ -79,13 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isActive) {
                 indicator.classList.remove('opacity-0');
                 indicator.classList.add('opacity-100');
-                name.classList.remove('text-[#222222]', 'font-normal');
-                name.classList.add('text-[#1754B8]', 'font-medium');
+                name.classList.remove('text-white', 'font-normal');
+                name.classList.add('text-purple-400', 'font-medium');
             } else {
                 indicator.classList.remove('opacity-100');
                 indicator.classList.add('opacity-0');
-                name.classList.remove('text-[#1754B8]', 'font-medium');
-                name.classList.add('text-[#222222]', 'font-normal');
+                name.classList.remove('text-purple-400', 'font-medium');
+                name.classList.add('text-white', 'font-normal');
             }
         });
 
@@ -97,8 +97,12 @@ document.addEventListener('DOMContentLoaded', function () {
         techGrid.innerHTML = selected.technologies
             .map(
                 (tech) => `
-                    <div class="border border-[#D0D9E8] bg-white/80 backdrop-blur-sm h-[100px] flex items-center justify-center p-4">
-                        <img src="${tech.image}" alt="${tech.name}" class="max-h-full max-w-full object-contain">
+                    <div class="group tech-card">
+                        <div class="tech-card-icon-frame">
+                            <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                        </div>
+
+                        <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                     </div>
                 `
             )

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Custom Software Development Services - InTech Nexus')
+@section('title', 'Software Development Services - InTech Nexus')
 
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,79 +16,57 @@
   .csd-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
   }
-
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-scroll {
-    animation: scroll 35s linear infinite;
-  }
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 @endpush
 
 @section('content')
 
 <div class="csd-page">
-<!-- Hero / Banner Section -->
-<section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
 
-  <!-- Left Side Element: Purple Angled Geometric Backdrop Accent -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <!-- Purple Angled Polygon Shape Behind Headline & Visual -->
     <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
-    
-    <!-- Top Horizontal Light Edge Line -->
     <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-    
-    <!-- Soft Ambient Lighting Grid Overlay -->
     <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      
-      <!-- Left Column: Typography & Breadcrumb -->
+
+      <!-- Left Column: Typography -->
       <div class="lg:col-span-7 flex flex-col justify-center">
-        <!-- Breadcrumb Navigation -->
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
           <span class="text-gray-500">/</span>
-          <span class="text-purple-400">Custom Software Development</span>
+          <span class="text-purple-400">Software Development</span>
         </nav>
 
-        <!-- Main Headline -->
         <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-          Custom Software Development Built Around Your Business, <span class="text-purple-400">Not a Template</span>
+          Software Development Built Around Your Business, <span class="text-purple-400">Not a Template</span>
         </h1>
 
-        <!-- Subheading Paragraphs -->
-        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
-          Custom software built around how your business really works, not a generic tool stretched to fit. Our software development team builds systems that hold up under real, daily use.
-        </p>
-        <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          Our software development services cover everything from custom SaaS platforms to CRM and ERP systems, all built by one team that stays with the project from planning through to launch and support. Whether you need a focused internal tool or a full custom platform, we scope the work around what your business actually needs.
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-8">
+          From custom platforms to CRM, ERP, and SaaS products — one team scopes, builds, and supports the exact system your business needs, start to finish.
         </p>
 
-        <!-- CTAs -->
         <div class="flex flex-wrap items-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
       </div>
 
-      <!-- Right Column: Visual Element -->
+      <!-- Right Column: Splash Image -->
       <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
         <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
-          <img 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" 
-            alt="Custom Software Development - InTech Nexus" 
+          <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+            alt="Software Development - InTech Nexus"
             class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
           />
           <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
@@ -99,394 +77,90 @@
     </div>
   </div>
 </section>
-
-<!-- Who This Is For & Problems We Solve Section -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Target Audience -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Who This Is For
-          </h2>
-          <p class="text-gray-300 leading-relaxed text-base">
-            Businesses that have outgrown off-the-shelf tools, or need a system built around a task that no existing product handles well. This includes internal tools and customer-facing platforms.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problems We Solve -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Problems We Solve
-          </h2>
-          <ul class="space-y-3 text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Off-the-shelf software makes your team work around its limits.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Older systems are slowing the business down and are hard to maintain.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>You need a SaaS, CRM, or ERP tool built for your exact process.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Core Capabilities Grid -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
-      <p class="text-gray-400 text-lg">We design and build custom software from scratch, or improve what you already have.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Capability 1 -->
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Custom Software & Platforms</h3>
-          <p class="text-purple-400 text-sm font-semibold mb-2">Tailored for your business workflows</p>
-          <ul class="text-gray-400 leading-relaxed space-y-1 text-sm">
-            <li>• Custom SaaS platforms</li>
-            <li>• CRM and ERP systems</li>
-            <li>• Internal tools and operations software</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Capability 2 -->
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Modernization & Integrations</h3>
-          <p class="text-purple-400 text-sm font-semibold mb-2">Upgrade systems and connect data</p>
-          <ul class="text-gray-400 leading-relaxed space-y-1 text-sm">
-            <li>• System upgrades and legacy migration</li>
-            <li>• API development and outside integrations</li>
-            <li>• Custom database development</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Capability 3 -->
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Service Deliverables</h3>
-          <p class="text-purple-400 text-sm font-semibold mb-2">High performance and scalability</p>
-          <p class="text-gray-400 leading-relaxed text-sm">
-            Custom software platforms built around your exact process, scalable internal tools, system upgrades, legacy software modernization, and reliable 3rd party integrations.
-          </p>
-        </div>
-      </div>
-
-      <!-- Capability 4 -->
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Key Skill Areas</h3>
-          <p class="text-purple-400 text-sm font-semibold mb-2">End-to-end technical execution</p>
-          <p class="text-gray-400 leading-relaxed text-sm">
-            Requirements analysis, technical scoping, backend & database architecture, secure scalable system design, and long-term software maintenance and support.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Process Section: 5-Step Playbook -->
+<!-- Service Cards Grid -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="max-w-3xl mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
-      <p class="text-gray-400 text-lg leading-relaxed">
-        From scoping to deployment — our structured process ensures software is built cleanly, predictably, and to specification.
-      </p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Build</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">Explore the specific software development services we offer.</p>
     </div>
 
-    <div class="space-y-6">
-      <!-- Step 01 -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">01</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Discovery & Requirements</h3>
-          <p class="text-gray-300">We map your goals, workflows, and technical needs before any planning begins.</p>
-        </div>
-      </div>
+    @php
+        $childServices = [
+            [
+                'title' => 'Custom Software Development',
+                'slug' => 'custom-software-development',
+                'description' => 'Bespoke platforms and internal tools built around your exact workflows, not a generic product stretched to fit.',
+            ],
+            [
+                'title' => 'Enterprise Software Development',
+                'slug' => 'enterprise-software-development',
+                'description' => 'Large-scale, secure systems built to handle real organizational complexity and long-term growth.',
+            ],
+            [
+                'title' => 'SaaS Development',
+                'slug' => 'saas-development',
+                'description' => 'Multi-tenant SaaS products designed and built for scale, from first release through ongoing iteration.',
+            ],
+            [
+                'title' => 'CRM Development',
+                'slug' => 'crm-development',
+                'description' => 'Custom CRM systems tailored to how your sales and support teams actually work.',
+            ],
+            [
+                'title' => 'ERP Development',
+                'slug' => 'erp-development',
+                'description' => 'Unified ERP platforms that connect operations, finance, and inventory into one reliable system.',
+            ],
+            [
+                'title' => 'Software Product Development',
+                'slug' => 'software-product-development',
+                'description' => 'End-to-end product development for teams building a new software product from the ground up.',
+            ],
+            [
+                'title' => 'MVP Development',
+                'slug' => 'mvp-development',
+                'description' => 'Fast, focused builds that get a real, testable version of your product in front of users quickly.',
+            ],
+        ];
+    @endphp
 
-      <!-- Step 02 -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">02</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Planning & Architecture</h3>
-          <p class="text-gray-300">We design the system architecture and choose the right technical approach.</p>
-        </div>
-      </div>
-
-      <!-- Step 03 -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">03</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Design</h3>
-          <p class="text-gray-300">We plan the interface and user experience alongside the technical build.</p>
-        </div>
-      </div>
-
-      <!-- Step 04 -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">04</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Development</h3>
-          <p class="text-gray-300">We build the software in structured, reviewable stages.</p>
-        </div>
-      </div>
-
-      <!-- Step 05 -->
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">05</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Testing & Launch</h3>
-          <p class="text-gray-300">We test thoroughly, then launch with ongoing support.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tools / Technologies Section -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
-    </div>
-
-    <div class="tech-split-grid">
-      <div>
-        @php
-            $techStack = [
-                [
-                    'name' => 'Languages',
-                    'technologies' => [
-                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
-                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Frameworks',
-                    'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Databases',
-                    'technologies' => [
-                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Cloud and infrastructure',
-                    'technologies' => [
-                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Project and QA tools',
-                    'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
-                    ],
-                ],
-            ];
-        @endphp
-
-        <div class="flex flex-col gap-8">
-          @foreach ($techStack as $index => $category)
-            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
-              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
-              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
-                {{ $category['name'] }}
-              </span>
-            </div>
-          @endforeach
-        </div>
-      </div>
-
-      <div id="tech-right" class="relative lg:pr-16">
-        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
-          {{ $techStack[0]['name'] }}
-        </h3>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
-          @php
-              $firstCategory = $techStack[0]['technologies'];
-          @endphp
-
-          @foreach ($firstCategory as $tech)
-            <div class="group tech-card">
-              <div class="tech-card-icon-frame">
-                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
-              </div>
-              
-              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
-            </div>
-          @endforeach
-        </div>
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @foreach ($childServices as $service)
+        <a href="{{ url('/'.$service['slug']) }}" class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{{ $service['title'] }}</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">{{ $service['description'] }}</p>
+          </div>
+          <span class="text-purple-400 text-sm font-semibold mt-6 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </span>
+        </a>
+      @endforeach
     </div>
   </div>
 </section>
-
-@push('scripts')
-<script>
-  window.techStackData = @json($techStack);
-</script>
-<script>
-  (function () {
-    const categories = document.querySelectorAll('.tech-category');
-    const rightHeading = document.querySelector('#tech-right h3');
-    const techGrid = document.getElementById('tech-grid');
-    const data = window.techStackData;
-
-    if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-    function setActive(index) {
-      categories.forEach((cat, idx) => {
-        const isActive = Number(cat.getAttribute('data-index')) === index;
-        const indicator = cat.querySelector('.tech-indicator');
-        const name = cat.querySelector('.tech-name');
-
-        if (isActive) {
-          indicator.classList.remove('opacity-0');
-          indicator.classList.add('opacity-100');
-          name.classList.remove('text-white', 'font-normal');
-          name.classList.add('text-purple-400', 'font-medium');
-        } else {
-          indicator.classList.remove('opacity-100');
-          indicator.classList.add('opacity-0');
-          name.classList.remove('text-purple-400', 'font-medium');
-          name.classList.add('text-white', 'font-normal');
-        }
-      });
-
-      const selected = data[index];
-      if (!selected) return;
-
-      rightHeading.textContent = selected.name;
-
-      techGrid.innerHTML = selected.technologies
-          .map(
-              (tech) => `
-                  <div class="group tech-card">
-                      <div class="tech-card-icon-frame">
-                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                      </div>
-                      
-                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                  </div>
-              `
-          )
-          .join('');
-    }
-
-    categories.forEach((cat) => {
-      cat.addEventListener('click', function () {
-        const index = Number(this.getAttribute('data-index'));
-        setActive(index);
-      });
-    });
-
-    setActive(0);
-  })();
-</script>
-@endpush
 
 <!-- Why Choose InTech Nexus -->
-<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+      <div class="text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Why Choose InTech Nexus</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One Team, Every Stage</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
-          Our engineers work inside the same process as our design and growth teams. Software is never built alone, cut off from the product or the business goals behind it. If a project later needs a better interface or a growth plan, it is still the same team. If you need extra hands on an ongoing basis, we can also set up a dedicated development team for you.
+          Our engineers work inside the same process as our design and growth teams. Software is never built in isolation — if a project later needs a better interface or a growth plan, it's still the same team. Need extra hands on an ongoing basis? We can also set up a dedicated development team for you.
         </p>
       </div>
-      <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Frequently Asked Questions -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-    
-    <div class="space-y-4">
-      <!-- FAQ 1 -->
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>How long does a software build take?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          It depends on the size of the project. A small internal tool can move in a few weeks. A full platform follows the timeline set during discovery and strategy.
-        </div>
-      </div>
-
-      <!-- FAQ 2 -->
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Do you work with our own technical team?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We often work next to in house teams, either adding extra hands or leading a specific part of the work.
-        </div>
-      </div>
-
-      <!-- FAQ 3 -->
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>What is included in a typical software development engagement?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          A typical engagement covers discovery, technical planning, design, development, QA, and launch, followed by ongoing support if you need it.
-        </div>
-      </div>
-
-      <!-- FAQ 4 -->
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can you support us after the software is live?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. Ongoing maintenance and support are available after launch, so the software keeps running smoothly as your business changes.
-        </div>
+      <div class="relative w-full aspect-[4/3] overflow-hidden border border-white/10 shadow-2xl">
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
+          alt="Why Choose InTech Nexus"
+          class="w-full h-full object-cover object-center"
+        />
       </div>
     </div>
   </div>
@@ -500,13 +174,13 @@
         Ready to talk through your software project?
       </h2>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call with our team, request a proposal, or get a free quote to see what a custom build would look like for your business.
+        Book a call, request a proposal, or get a free quote to see what a custom build would look like for your business.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+        <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
           Get a Free Quote
         </a>
-        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+        <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
           Book a Call
         </a>
       </div>

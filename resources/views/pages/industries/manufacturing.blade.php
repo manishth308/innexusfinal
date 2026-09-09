@@ -46,8 +46,6 @@
 
       <div class="lg:col-span-7 flex flex-col justify-center">
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
-          <a href="{{ url('/') }}" class="hover:text-purple-300 transition-colors">Home</a>
-          <span class="text-gray-500">/</span>
           <a href="{{ url('/industries') }}" class="hover:text-purple-300 transition-colors">Industries</a>
           <span class="text-gray-500">/</span>
           <span class="text-purple-400">Manufacturing</span>

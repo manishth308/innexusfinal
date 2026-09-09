@@ -49,7 +49,7 @@
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
           <span class="text-gray-500">/</span>
-          <a href="{{ url('/services/branding') }}" class="hover:text-purple-300 transition-colors">Branding</a>
+          <a href="{{ url('/branding') }}" class="hover:text-purple-300 transition-colors">Branding</a>
           <span class="text-gray-500">/</span>
           <span class="text-purple-400">Brand Strategy and Identity</span>
         </nav>

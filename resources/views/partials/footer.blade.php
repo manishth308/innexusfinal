@@ -45,11 +45,11 @@
                 <ul class="space-y-3 text-sm text-gray-400">
                     <li class="flex items-start gap-2 justify-center lg:justify-start">
                         <svg class="w-4 h-4 mt-0.5 shrink-0 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        <span>California, USA</span>
+                        <span>Sallaghari, Kathmandu, Nepal </span>
                     </li>
                     <li class="flex items-start gap-2 justify-center lg:justify-start">
                         <svg class="w-4 h-4 mt-0.5 shrink-0 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        <a href="tel:+10000000000" class="hover:text-white transition-colors">+1 (000) 000-0000</a>
+                        <a href="tel:+9779802266311" class="hover:text-white transition-colors">+977 9802266311</a>
                     </li>
                     <li class="flex items-start gap-2 justify-center lg:justify-start">
                         <svg class="w-4 h-4 mt-0.5 shrink-0 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -63,11 +63,12 @@
             <div class="text-center lg:text-left">
                 <h4 class="text-white font-semibold text-base mb-5">Services</h4>
                 <ul class="space-y-3">
-                    <li><a href="#software-development" class="text-sm text-gray-400 hover:text-white transition-colors">Software Development</a></li>
-                    <li><a href="#mobile-app-development" class="text-sm text-gray-400 hover:text-white transition-colors">Mobile App Development</a></li>
-                    <li><a href="#web-development" class="text-sm text-gray-400 hover:text-white transition-colors">Web Development</a></li>
-                    <li><a href="#ui-ux-design" class="text-sm text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
-                    <li><a href="#digital-marketing" class="text-sm text-gray-400 hover:text-white transition-colors">Digital Marketing</a></li>
+                    <li><a href="{{url('/software-development')}}" class="text-sm text-gray-400 hover:text-white transition-colors">Software Development</a></li>
+                    <li><a href="{{url('/mobile-app-development')}}" class="text-sm text-gray-400 hover:text-white transition-colors">Mobile App Development</a></li>
+                    <li><a href="{{url('/web-development') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+                    <li><a href="{{url('/ui-ux-design') }}" class="text-sm text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+                    <li><a href="{{url('/digital-marketing') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Digital Marketing</a></li>
+                    <li><a href="{{url('/graphic-design') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Graphics Design</a></li>
                 </ul>
             </div>
 
@@ -76,11 +77,10 @@
             <div class="text-center lg:text-left">
                 <h4 class="text-white font-semibold text-base mb-5">Industries</h4>
                 <ul class="space-y-3">
-                    <li><a href="#healthcare" class="text-sm text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
-                    <li><a href="#ecommerce" class="text-sm text-gray-400 hover:text-white transition-colors">Ecommerce</a></li>
-                    <li><a href="#real-estate" class="text-sm text-gray-400 hover:text-white transition-colors">Real Estate</a></li>
-                    <li><a href="#saas" class="text-sm text-gray-400 hover:text-white transition-colors">SaaS</a></li>
-                    <li><a href="#startups" class="text-sm text-gray-400 hover:text-white transition-colors">Startups</a></li>
+                    <li><a href="{{ url('/healthcare') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+                    <li><a href="{{ url('/ecommerce') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Ecommerce</a></li>
+                    <li><a href="{{ url('/marketing') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Marketing</a></li>
+                    <li><a href="{{ url('/manufacturing') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
                 </ul>
             </div>
 
@@ -90,12 +90,10 @@
             <div class="text-center lg:text-left">
                 <h4 class="text-white font-semibold text-base mb-5">Company</h4>
                 <ul class="space-y-3">
-                    <li><a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a></li>
-                    <li><a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">Work</a></li>
+                    <li><a href="/about-us" class="text-sm text-gray-400 hover:text-white transition-colors">About</a></li>
                     <li><a href="#process" class="text-sm text-gray-400 hover:text-white transition-colors">Process</a></li>
                     <li><a href="#case-studies" class="text-sm text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-                    <li><a href="#blog" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                    <li><a href="/career" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="{{ url('/blogs') }}" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
                     <li><a href="/contact" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>

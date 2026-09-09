@@ -32,9 +32,21 @@ class AdminPanelProvider extends PanelProvider
             ->profile(isSimple: false)
             ->brandName('IntechNexus')
             ->colors([
-                'primary' => Color::hex('#a855f7'), // Purple 500
+                'primary' => Color::hex('#2c1c73'), // Purple 500
                 'danger' => Color::hex('#7f1d1d'),  // Red 900 — danger accent
             ])
+            ->font('Inter')
+            ->renderHook(
+                \Filament\View\PanelsRenderHook::HEAD_END,
+                fn () => new \Illuminate\Support\HtmlString(
+                    '<link rel="stylesheet" href="https://fonts.bunny.net/css?family=sora:600,700,800" />
+                    <style>
+                        .fi-header-heading, h1, h2, h3 {
+                            font-family: "Sora", sans-serif;
+                        }
+                    </style>'
+                ),
+            )
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([

@@ -6,56 +6,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  .webdev-page{
+  .csd-page{
     font-family:'Inter',system-ui,sans-serif;
   }
-  .webdev-page h1, .webdev-page h2, .webdev-page h3, .webdev-page .font-display{
+  .csd-page h1, .csd-page h2, .csd-page h3, .csd-page .font-display{
     font-family:'Space Grotesk',sans-serif;
     letter-spacing:-0.01em;
   }
-  .webdev-page .font-mono{
+  .csd-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
-  }
-
-  .cap-card{
-    border:1px solid rgba(168,85,247,0.30);
-    background:rgba(255,255,255,0.03);
-    color:#fff;
-    cursor:pointer;
-    transition:border-color .25s ease, transform .25s ease, background-color .25s ease;
-  }
-  .cap-card:hover, .cap-card.is-open{
-    border-color:#c084fc;
-    background:rgba(255,255,255,0.06);
-    transform:translateY(-2px);
-  }
-  .cap-card .cap-detail{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .3s ease, opacity .3s ease, margin-top .3s ease;
-    opacity:0;
-  }
-  .cap-card.is-open .cap-detail{
-    max-height:200px;
-    opacity:1;
-    margin-top:.75rem;
-  }
-  .cap-card .cap-chevron{ transition:transform .25s ease; color:#c084fc; }
-  .cap-card.is-open .cap-chevron{ transform:rotate(45deg); }
-
-  @media (prefers-reduced-motion: reduce){
-    .webdev-page *{ animation:none!important; transition:none!important; }
   }
 </style>
 @endpush
 
 @section('content')
 
-<div class="webdev-page">
+<div class="csd-page">
 
-<!-- Hero / Banner Section -->
+<!-- Hero Section -->
 <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
-
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
     <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
@@ -64,7 +33,8 @@
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      
+
+      <!-- Left Column: Typography -->
       <div class="lg:col-span-7 flex flex-col justify-center">
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
@@ -73,31 +43,29 @@
         </nav>
 
         <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-          Web Development Services Built for <span class="text-purple-400">Speed, Structure, and Search</span>
+          Websites and Web Apps Built to <span class="text-purple-400">Perform, Not Just Look Good</span>
         </h1>
 
-        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
-          Websites and web apps built to perform. Fast load times, a clean structure, and a base that supports both search and sales, not just good looks.
-        </p>
-        <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          Our web development services cover everything from custom websites to full web applications, all built on a foundation planned for performance and search visibility from day one. Whether you need a marketing website, an online store, or a custom web application, we scope the right build during discovery rather than forcing every project into the same template.
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-8">
+          From marketing websites to custom web applications and ecommerce stores — fast load times, clean structure, and a base that supports both search and sales.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
       </div>
 
+      <!-- Right Column: Splash Image -->
       <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
         <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
-          <img 
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
-            alt="Web Development - InTech Nexus" 
+          <img
+            src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000&auto=format&fit=crop"
+            alt="Web Development - InTech Nexus"
             class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
           />
           <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
@@ -109,375 +77,84 @@
   </div>
 </section>
 
-<!-- Who This Is For & Problems We Solve Section -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Who This Is For
-          </h2>
-          <p class="text-gray-300 leading-relaxed text-base">
-            Businesses that need a new website, want to rebuild one that is not performing, or need a custom web app beyond what a template can offer.
-          </p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Problems We Solve
-          </h2>
-          <ul class="space-y-3 text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>The current website is slow, outdated, or hard to update.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>The design looks fine, but the site is not bringing in leads or ranking in search.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>You need a custom web app, not just a marketing site.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- What We Offer (accordion) -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5" x-data="{ openCap: null }">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">What We Offer</span>
-      <h2 class="text-3xl md:text-5xl font-bold text-white mt-3 mb-4">We build responsive, fast websites and web apps on a modern, reliable base</h2>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      @foreach ([
-        ['t' => 'Company and marketing websites', 'd' => 'Built on clean, search friendly site structure and code from day one.'],
-        ['t' => 'Custom web applications', 'd' => 'Full frontend and backend web development for needs beyond a template.'],
-        ['t' => 'Ecommerce storefronts', 'd' => 'CMS setup so your team can manage products and content easily.'],
-        ['t' => 'WordPress and custom CMS builds', 'd' => 'CMS implementation and customization suited to how your team works.'],
-        ['t' => 'Web portals and client dashboards', 'd' => 'Backed by technical SEO and site architecture best practices.'],
-        ['t' => 'Site migrations and speed improvements', 'd' => 'Site migrations with rankings protected, plus ongoing performance optimization.'],
-      ] as $i => $offer)
-        <div class="cap-card rounded-xl p-6" :class="{ 'is-open': openCap === {{ $i }} }" @click="openCap = openCap === {{ $i }} ? null : {{ $i }}">
-          <div class="flex items-start justify-between gap-3">
-            <p class="font-semibold text-lg text-white">{{ $offer['t'] }}</p>
-            <span class="cap-chevron font-mono text-lg flex-shrink-0">+</span>
-          </div>
-          <div class="cap-detail text-sm leading-relaxed text-gray-400">
-            {{ $offer['d'] }}
-          </div>
-        </div>
-      @endforeach
-    </div>
-  </div>
-</section>
-
-<!-- Service Capabilities -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Capabilities</span>
-      <h2 class="text-3xl md:text-5xl font-bold text-white mt-3 mb-4">Our Service Capabilities</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 bg-white/[0.03] border border-white/10">
-        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>A fully built, responsive website or web application</span></li>
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Clean, search friendly site structure and code</span></li>
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>CMS setup so your team can manage content easily</span></li>
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Site migrations with rankings protected</span></li>
-        </ul>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10">
-        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Frontend and backend web development</span></li>
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Technical SEO and site architecture</span></li>
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>CMS implementation and customization</span></li>
-          <li class="flex items-start gap-3"><span class="text-purple-400 mt-1">◦</span><span>Site performance optimization</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Process (with outcomes grid) -->
+<!-- Service Cards Grid -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="max-w-3xl mb-16">
-      <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Our Process</span>
-      <h2 class="text-3xl md:text-5xl font-bold text-white mt-3 mb-4">From Complexity to Clarity</h2>
-      <p class="text-gray-400 text-lg leading-relaxed">From complexity to clarity, in structured, reviewable stages.</p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Build</h2>
+      <p class="text-gray-400 text-lg leading-relaxed">Explore the specific web development services we offer.</p>
     </div>
 
-    <div class="space-y-6">
-      @foreach ([
-        ['n' => '01', 't' => 'Discovery & Planning', 'd' => 'We map your goals, content, and site structure.'],
-        ['n' => '02', 't' => 'Wireframes & Sitemap', 'd' => 'We plan the layout and navigation before any design work begins.'],
-        ['n' => '03', 't' => 'Design', 'd' => 'We design pages built around clarity and conversion.'],
-        ['n' => '04', 't' => 'Development', 'd' => 'We build the site on a fast, reliable, and search friendly foundation.'],
-        ['n' => '05', 't' => 'QA, Launch & Support', 'd' => 'We test thoroughly, launch, and support the site afterward.'],
-      ] as $step)
-        <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-          <span class="text-3xl font-extrabold text-purple-400">{{ $step['n'] }}</span>
+    @php
+        $childServices = [
+            [
+                'title' => 'Custom Website Development',
+                'slug' => 'custom-website-development',
+                'description' => 'Clean, fast marketing websites built around your brand and built to convert visitors into leads.',
+            ],
+            [
+                'title' => 'Ecommerce Website Development',
+                'slug' => 'ecommerce-website-development',
+                'description' => 'Online stores built for performance and easy product management, from setup through launch.',
+            ],
+            [
+                'title' => 'Web Application Development',
+                'slug' => 'web-application-development',
+                'description' => 'Custom web apps built for real workflows, user permissions, and data handling beyond a simple site.',
+            ],
+            [
+                'title' => 'CMS Development',
+                'slug' => 'cms-development',
+                'description' => 'Content management setups that let your team update pages, blogs, and products without a developer.',
+            ],
+            [
+                'title' => 'WordPress Development',
+                'slug' => 'wordpress-development',
+                'description' => 'Custom WordPress builds, theme customization, and plugin architecture built for security and speed.',
+            ],
+            [
+                'title' => 'Shopify Development',
+                'slug' => 'shopify-development',
+                'description' => 'Shopify storefronts, custom checkout flows, and app integrations built to grow with your sales.',
+            ],
+        ];
+    @endphp
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @foreach ($childServices as $service)
+        <a href="{{ url('/'.$service['slug']) }}" class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
           <div>
-            <h3 class="text-2xl font-bold text-white mb-2">{{ $step['t'] }}</h3>
-            <p class="text-gray-300">{{ $step['d'] }}</p>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{{ $service['title'] }}</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">{{ $service['description'] }}</p>
           </div>
-        </div>
-      @endforeach
-    </div>
-
-    <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
-      @foreach ([
-        'A fully built, responsive website or web application',
-        'Clean, search friendly site structure and code',
-        'CMS setup so your team can manage content easily',
-        'Site migrations with rankings protected',
-      ] as $outcome)
-        <div class="flex items-start gap-3">
-          <span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold bg-purple-600 text-white">✓</span>
-          <span class="text-sm text-gray-300">{{ $outcome }}</span>
-        </div>
+          <span class="text-purple-400 text-sm font-semibold mt-6 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </span>
+        </a>
       @endforeach
     </div>
   </div>
 </section>
-
-<!-- Tools / Technologies Section -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Stack</span>
-      <h2 class="text-3xl md:text-5xl font-bold text-white mt-3 mb-4">Tools & Technologies</h2>
-      <p class="text-gray-400 text-lg">The platforms, languages, and tools we use for web development.</p>
-    </div>
-
-    <div class="tech-split-grid">
-      <div>
-        @php
-            $techStack = [
-                [
-                    'name' => 'CMS & Platforms',
-                    'technologies' => [
-                        ['name' => 'WordPress', 'image' => asset('images/tech-logo/WordPress.png')],
-                        ['name' => 'Shopify', 'image' => asset('images/tech-logo/Shopify.png')],
-                        ['name' => 'Headless CMS', 'image' => asset('images/tech-logo/Contentful.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Frontend',
-                    'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
-                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Backend',
-                    'technologies' => [
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
-                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Hosting & Infra',
-                    'technologies' => [
-                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Cloudflare', 'image' => asset('images/tech-logo/Cloudflare.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Project & QA Tools',
-                    'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
-                    ],
-                ],
-            ];
-        @endphp
-
-        <div class="flex flex-col gap-8">
-          @foreach ($techStack as $index => $category)
-            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
-              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
-              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
-                {{ $category['name'] }}
-              </span>
-            </div>
-          @endforeach
-        </div>
-      </div>
-
-      <div id="tech-right" class="relative lg:pr-16">
-        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
-          {{ $techStack[0]['name'] }}
-        </h3>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
-          @php
-              $firstCategory = $techStack[0]['technologies'];
-          @endphp
-
-          @foreach ($firstCategory as $tech)
-            <div class="group tech-card">
-              <div class="tech-card-icon-frame">
-                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
-              </div>
-              
-              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
-            </div>
-          @endforeach
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-@push('scripts')
-<script>
-  window.techStackData = @json($techStack);
-</script>
-<script>
-  (function () {
-    const categories = document.querySelectorAll('.tech-category');
-    const rightHeading = document.querySelector('#tech-right h3');
-    const techGrid = document.getElementById('tech-grid');
-    const data = window.techStackData;
-
-    if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-    function setActive(index) {
-      categories.forEach((cat, idx) => {
-        const isActive = Number(cat.getAttribute('data-index')) === index;
-        const indicator = cat.querySelector('.tech-indicator');
-        const name = cat.querySelector('.tech-name');
-
-        if (isActive) {
-          indicator.classList.remove('opacity-0');
-          indicator.classList.add('opacity-100');
-          name.classList.remove('text-white', 'font-normal');
-          name.classList.add('text-purple-400', 'font-medium');
-        } else {
-          indicator.classList.remove('opacity-100');
-          indicator.classList.add('opacity-0');
-          name.classList.remove('text-purple-400', 'font-medium');
-          name.classList.add('text-white', 'font-normal');
-        }
-      });
-
-      const selected = data[index];
-      if (!selected) return;
-
-      rightHeading.textContent = selected.name;
-
-      techGrid.innerHTML = selected.technologies
-          .map(
-              (tech) => `
-                  <div class="group tech-card">
-                      <div class="tech-card-icon-frame">
-                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                      </div>
-                      
-                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                  </div>
-              `
-          )
-          .join('');
-    }
-
-    categories.forEach((cat) => {
-      cat.addEventListener('click', function () {
-        const index = Number(this.getAttribute('data-index'));
-        setActive(index);
-      });
-    });
-
-    setActive(0);
-  })();
-</script>
-@endpush
 
 <!-- Why Choose InTech Nexus -->
-<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+      <div class="text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Built with search visibility in mind from day one</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One Team, Every Stage</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
-          Every website we build is planned with Digital Marketing in mind from the start. Clean links, a good structure, and search basics are part of the build, not added later.
+          Our web engineers work inside the same process as our design, marketing, and QA teams. The site is not handed off at the end — build, content, and performance optimization happen together. Need ongoing support after launch? We can also set up a dedicated web team for you.
         </p>
       </div>
-      <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Frequently Asked Questions -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-    
-    <div class="space-y-4">
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Will a new website hurt our search rankings?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          No. Migrations are planned with redirects and search settings built into the launch checklist to protect your rankings.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can you work with our existing brand?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We can build within your current brand, or work with our Branding team if it needs more work first.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>How long does a typical website project take?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          It depends on scope, but most marketing websites are completed within a few weeks, while larger web applications take longer based on complexity.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Will the site be easy for our team to update?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We build on content systems that let your team make routine updates without needing a developer each time.
-        </div>
+      <div class="relative w-full aspect-[4/3] overflow-hidden border border-white/10 shadow-2xl">
+        <img
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+          alt="Why Choose InTech Nexus"
+          class="w-full h-full object-cover object-center"
+        />
       </div>
     </div>
   </div>
@@ -491,13 +168,13 @@
         Ready to build a website that actually performs?
       </h2>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
+        Book a call, request a proposal, or get a free quote to see what your site could look like.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+        <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
           Get a Free Quote
         </a>
-        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+        <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
           Book a Call
         </a>
       </div>

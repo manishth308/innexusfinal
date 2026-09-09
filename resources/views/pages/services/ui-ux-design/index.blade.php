@@ -20,7 +20,7 @@
 @endpush
 
 @section('content')
-<div class="csd-page">
+<div class="ux-page">
 
   <!-- Hero / Banner Section -->
   <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
@@ -50,10 +50,10 @@
           </p>
 
           <div class="flex flex-wrap items-center gap-4">
-            <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
               Get a Free Quote
             </a>
-            <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
               Book a Call
             </a>
           </div>
@@ -61,9 +61,9 @@
 
         <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
           <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
-            <img 
-              src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1000&auto=format&fit=crop" 
-              alt="UI UX Design - InTech Nexus" 
+            <img
+              src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1000&auto=format&fit=crop"
+              alt="UI UX Design - InTech Nexus"
               class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
             />
             <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
@@ -107,28 +107,56 @@
     </div>
   </section>
 
-  <!-- What We Offer -->
-  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <!-- Service Cards Grid -->
+  <section class="py-24 bg-[#0b0c10] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12">
+      <div class="max-w-3xl mb-16">
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
-        <p class="text-gray-400 text-lg">We design and test product experiences, from research to the final screen</p>
+        <p class="text-gray-400 text-lg leading-relaxed">Explore the specific UI UX design services we offer.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        @foreach ([
-          ['t' => 'User Research and Journey Mapping', 'd' => 'User research and journey mapping to understand how people actually use your product and where they struggle.'],
-          ['t' => 'Wireframes and Prototypes', 'd' => 'Wireframes and prototypes that let you test ideas and flows before any visual design or development work begins.'],
-          ['t' => 'Product and Interface Design', 'd' => 'Product and interface design with a clear visual system that works across every screen and device.'],
-          ['t' => 'Design Systems and Reusable Components', 'd' => 'Design systems and reusable components that keep the product consistent as it grows and new screens are added.'],
-          ['t' => 'Usability Testing', 'd' => 'Usability testing with real users to validate design decisions and catch issues before launch.'],
-        ] as $offer)
-          <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[180px]">
+      @php
+          $childServices = [
+              [
+                  'title' => 'UI UX Design Services',
+                  'slug' => 'ui-ux-design-services',
+                  'description' => 'Our core design offering — research, wireframes, visual design, and prototyping in one structured process.',
+              ],
+              [
+                  'title' => 'Web UI UX Design',
+                  'slug' => 'web-ui-ux-design',
+                  'description' => 'Interface design for websites and web apps, built around how visitors actually browse and convert.',
+              ],
+              [
+                  'title' => 'Mobile App UI UX Design',
+                  'slug' => 'mobile-app-ui-ux-design',
+                  'description' => 'Native-feeling mobile interfaces designed around touch, gestures, and platform conventions.',
+              ],
+              [
+                  'title' => 'SaaS UI UX Design',
+                  'slug' => 'saas-ui-ux-design',
+                  'description' => 'Dashboard and product design for SaaS platforms, focused on clarity at scale as features grow.',
+              ],
+              [
+                  'title' => 'Product Design',
+                  'slug' => 'product-design',
+                  'description' => 'End-to-end product design from early concept through a design system ready for development.',
+              ],
+          ];
+      @endphp
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @foreach ($childServices as $service)
+          <a href="{{ url('/'.$service['slug']) }}" class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
             <div>
-              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{{ $offer['t'] }}</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">{{ $offer['d'] }}</p>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{{ $service['title'] }}</h3>
+              <p class="text-gray-400 leading-relaxed text-sm">{{ $service['description'] }}</p>
             </div>
-          </div>
+            <span class="text-purple-400 text-sm font-semibold mt-6 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Learn more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </a>
         @endforeach
       </div>
     </div>
@@ -282,7 +310,7 @@
                 <div class="tech-card-icon-frame">
                   <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
                 </div>
-                
+
                 <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
               </div>
             @endforeach
@@ -319,7 +347,7 @@
           } else {
             indicator.classList.remove('opacity-100');
             indicator.classList.add('opacity-0');
-            name.classList.remove('purple-400', 'font-medium');
+            name.classList.remove('text-purple-400', 'font-medium');
             name.classList.add('text-white', 'font-normal');
           }
         });
@@ -336,7 +364,7 @@
                         <div class="tech-card-icon-frame">
                             <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
                         </div>
-                        
+
                         <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                     </div>
                 `
@@ -357,20 +385,24 @@
   @endpush
 
   <!-- Why Choose InTech Nexus -->
-  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
     <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
     <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+        <div class="text-white flex flex-col justify-center">
           <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Design that stays close to what actually gets built</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Design That Stays Close to What Gets Built</h2>
           <p class="text-gray-300 leading-relaxed max-w-md">
             Design work does not stop at handoff. Our design team stays close to Web Development and Mobile App Development, so what gets designed is what actually gets built.
           </p>
         </div>
-        <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
+        <div class="relative w-full aspect-[4/3] overflow-hidden border border-white/10 shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1200&auto=format&fit=crop"
+            alt="Why Choose InTech Nexus"
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -385,7 +417,6 @@
           ['q' => 'Do you do real user research, or just follow best practices?', 'a' => 'Both. We combine known UX rules with direct research and testing when the project calls for it.'],
           ['q' => 'Can you redesign part of a product without rebuilding it all?', 'a' => 'Yes. A focused redesign of one flow or screen is common, and often all that is needed.'],
           ['q' => 'Do you design for web, mobile, or both?', 'a' => 'Both. We design for web through Web UI UX Design and for mobile through Mobile App UI UX Design, using the same research driven process.'],
-          ['q' => 'Can you redesign just one part of our product?', 'a' => 'Yes. A focused redesign of a specific flow or screen is common, and often all that is needed.'],
         ] as $i => $faq)
           <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
             <button @click="openFaq = openFaq === {{ $i }} ? null : {{ $i }}" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
@@ -412,10 +443,10 @@
           Book a call, request a proposal, or get a free quote to begin.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
@@ -423,5 +454,5 @@
     </div>
   </section>
 
-  </div>
+</div>
 @endsection

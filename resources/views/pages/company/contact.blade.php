@@ -232,7 +232,7 @@
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-14 pb-24 lg:pt-16 lg:pb-28">
       <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
-        <a href="{{ url('/') }}" class="hover:text-purple-300 transition-colors">Main Navigation</a>
+        <a href="{{ url('/') }}" class="hover:text-purple-300 transition-colors">Home</a>
         <span class="text-gray-500">/</span>
         <span class="text-purple-400">Contact</span>
       </nav>

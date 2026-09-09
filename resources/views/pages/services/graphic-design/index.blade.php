@@ -6,21 +6,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  .ux-page{
+  .gd-page{
     font-family:'Inter',system-ui,sans-serif;
   }
-  .ux-page h1, .ux-page h2, .ux-page h3, .ux-page .font-display{
+  .gd-page h1, .gd-page h2, .gd-page h3, .gd-page .font-display{
     font-family:'Space Grotesk',sans-serif;
     letter-spacing:-0.01em;
   }
-  .ux-page .font-mono{
+  .gd-page .font-mono{
     font-family:'IBM Plex Mono',monospace;
   }
 </style>
 @endpush
 
 @section('content')
-<div class="csd-page">
+<div class="gd-page">
 
   <!-- Hero / Banner Section -->
   <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
@@ -50,10 +50,10 @@
           </p>
 
           <div class="flex flex-wrap items-center gap-4">
-            <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
               Get a Free Quote
             </a>
-            <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
               Book a Call
             </a>
           </div>
@@ -61,9 +61,9 @@
 
         <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
           <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
-            <img 
-              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1000&auto=format&fit=crop" 
-              alt="Graphic and Creative Design - InTech Nexus" 
+            <img
+              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1000&auto=format&fit=crop"
+              alt="Graphic and Creative Design - InTech Nexus"
               class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
             />
             <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
@@ -107,28 +107,51 @@
     </div>
   </section>
 
-  <!-- What We Offer -->
-  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <!-- Service Cards Grid -->
+  <section class="py-24 bg-[#0b0c10] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12">
+      <div class="max-w-3xl mb-16">
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
-        <p class="text-gray-400 text-lg">We create ongoing assets that match your brand system and campaign goals</p>
+        <p class="text-gray-400 text-lg leading-relaxed">Explore the specific graphic and creative design services we offer.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        @foreach ([
-          ['t' => 'Social Media Design', 'd' => 'Social media design that keeps your brand consistent across platforms, from post templates to story formats.'],
-          ['t' => 'Ad Creative for Paid Campaigns', 'd' => 'Ad creative for paid campaigns built to capture attention and align with your brand and messaging.'],
-          ['t' => 'Motion Graphics and Short Video', 'd' => 'Motion graphics and short video that add movement and clarity to social, ads, and product content.'],
-          ['t' => 'Presentation and Sales Materials', 'd' => 'Presentation and sales materials that make your brand look polished and professional in person or on screen.'],
-          ['t' => 'Creative Direction for Specific Campaigns', 'd' => 'Creative direction for specific campaigns, so every asset feels connected and purposeful.'],
-        ] as $offer)
-          <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[180px]">
+      @php
+          $childServices = [
+              [
+                  'title' => 'Logo Design',
+                  'slug' => 'logo-design',
+                  'description' => 'Distinct, versatile logos that work across every channel, from business cards to billboards.',
+              ],
+              [
+                  'title' => 'Social Media Design',
+                  'slug' => 'social-media-design',
+                  'description' => 'Consistent post templates and story formats that keep your brand steady across every platform.',
+              ],
+              [
+                  'title' => 'Ad Creative Design',
+                  'slug' => 'ad-creative-design',
+                  'description' => 'Paid campaign creative built to capture attention while staying aligned with your brand and messaging.',
+              ],
+              [
+                  'title' => 'Motion Graphics',
+                  'slug' => 'motion-graphics',
+                  'description' => 'Short-form video and motion graphics that add movement and clarity to social, ads, and product content.',
+              ],
+          ];
+      @endphp
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @foreach ($childServices as $service)
+          <a href="{{ url('/'.$service['slug']) }}" class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
             <div>
-              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{{ $offer['t'] }}</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">{{ $offer['d'] }}</p>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{{ $service['title'] }}</h3>
+              <p class="text-gray-400 leading-relaxed text-sm">{{ $service['description'] }}</p>
             </div>
-          </div>
+            <span class="text-purple-400 text-sm font-semibold mt-6 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Learn more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </a>
         @endforeach
       </div>
     </div>
@@ -279,7 +302,7 @@
                 <div class="tech-card-icon-frame">
                   <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
                 </div>
-                
+
                 <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
               </div>
             @endforeach
@@ -316,7 +339,7 @@
           } else {
             indicator.classList.remove('opacity-100');
             indicator.classList.add('opacity-0');
-            name.classList.remove('purple-400', 'font-medium');
+            name.classList.remove('text-purple-400', 'font-medium');
             name.classList.add('text-white', 'font-normal');
           }
         });
@@ -333,7 +356,7 @@
                         <div class="tech-card-icon-frame">
                             <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
                         </div>
-                        
+
                         <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                     </div>
                 `
@@ -354,20 +377,24 @@
   @endpush
 
   <!-- Why Choose InTech Nexus -->
-  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5">
     <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
     <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+        <div class="text-white flex flex-col justify-center">
           <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Creative planned around what actually works in campaigns</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Creative Planned Around What Actually Works</h2>
           <p class="text-gray-300 leading-relaxed max-w-md">
             Creative work here is planned together with Digital Marketing. Assets are built around what is actually working in campaigns, not made separately from the results they need to drive.
           </p>
         </div>
-        <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
+        <div class="relative w-full aspect-[4/3] overflow-hidden border border-white/10 shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop"
+            alt="Why Choose InTech Nexus"
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -379,9 +406,7 @@
 
       <div class="space-y-4">
         @foreach ([
-          ['q' => 'Can you work within our brand guidelines?', 'a' => 'Yes. We can work within your current brand, or build one first through our Branding service if needed.'],
-          ['q' => 'Is this project based or ongoing?', 'a' => 'Both options are available, based on how much content and how many campaigns you need.'],
-          ['q' => 'Can you work within our existing brand guidelines?', 'a' => 'Yes. We can work within your current brand, or help build one first through our Branding service.'],
+          ['q' => 'Can you work within our existing brand guidelines?', 'a' => 'Yes. We can work within your current brand, or help build one first through our Branding service if needed.'],
           ['q' => 'Do you offer ongoing creative support, or just one off projects?', 'a' => 'Both. We can support a single project or an ongoing retainer, depending on your content and campaign volume.'],
         ] as $i => $faq)
           <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
@@ -409,10 +434,10 @@
           Book a call, request a proposal, or get a free quote to begin.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
             Get a Free Quote
           </a>
-          <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
             Book a Call
           </a>
         </div>
@@ -420,5 +445,5 @@
     </div>
   </section>
 
-  </div>
+</div>
 @endsection

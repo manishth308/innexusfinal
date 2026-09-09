@@ -48,9 +48,9 @@
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
           <span class="text-gray-500">/</span>
-          <a href="{{ url('/services/mobile-app-development') }}" class="hover:text-purple-300 transition-colors">Mobile App Development</a>
-          <span class="text-gray-500">/</span>
-          <span class="text-purple-400">Cross Platform App Development</span>
+          <a href="{{ url('/mobile-app-development') }}" class="hover:text-purple-300 transition-colors">Mobile App Development</a>
+           <span class="text-gray-500">/</span>
+          <span class="text-purple-400">Cross Platform Development</span>
         </nav>
 
         <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">

@@ -299,14 +299,6 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-[#07080a] text-gray-400 pt-16 pb-12 border-t border-white/10">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-    <div class="text-xl font-bold text-white">InTech Nexus</div>
-    <div class="text-sm text-gray-500">© 2026 InTech Nexus. All Rights Reserved.</div>
-  </div>
-</footer>
-
 </div>
 
 @endsection

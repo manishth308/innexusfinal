@@ -48,7 +48,7 @@
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
           <span class="text-gray-500">/</span>
-          <a href="{{ url('/services/qa-testing') }}" class="hover:text-purple-300 transition-colors">QA & Testing</a>
+          <a href="{{ url('/qa-testing') }}" class="hover:text-purple-300 transition-colors">QA & Testing</a>
           <span class="text-gray-500">/</span>
           <span class="text-purple-400">QA & Testing</span>
         </nav>

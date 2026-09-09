@@ -100,7 +100,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <a href="{{ url('/industries/ecommerce') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
+      <a href="{{ url('/ecommerce') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
         <div>
           <div class="w-12 h-12 bg-purple-600/20 text-purple-400 flex items-center justify-center mb-4 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
@@ -111,7 +111,7 @@
         <span class="text-purple-400 font-semibold text-sm mt-4 inline-flex items-center gap-1">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a href="{{ url('/industries/finance') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
+      <a href="{{ url('/finance') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
         <div>
           <div class="w-12 h-12 bg-purple-600/20 text-purple-400 flex items-center justify-center mb-4 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -122,7 +122,7 @@
         <span class="text-purple-400 font-semibold text-sm mt-4 inline-flex items-center gap-1">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a href="{{ url('/industries/healthcare') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
+      <a href="{{ url('/healthcare') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
         <div>
           <div class="w-12 h-12 bg-purple-600/20 text-purple-400 flex items-center justify-center mb-4 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
@@ -133,7 +133,7 @@
         <span class="text-purple-400 font-semibold text-sm mt-4 inline-flex items-center gap-1">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a href="{{ url('/industries/manufacturing') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
+      <a href="{{ url('/manufacturing') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
         <div>
           <div class="w-12 h-12 bg-purple-600/20 text-purple-400 flex items-center justify-center mb-4 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
@@ -144,7 +144,7 @@
         <span class="text-purple-400 font-semibold text-sm mt-4 inline-flex items-center gap-1">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a href="{{ url('/industries/marketing') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
+      <a href="{{ url('/marketing') }}" class="group p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
         <div>
           <div class="w-12 h-12 bg-purple-600/20 text-purple-400 flex items-center justify-center mb-4 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>

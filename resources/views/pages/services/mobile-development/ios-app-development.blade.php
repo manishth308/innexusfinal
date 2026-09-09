@@ -46,10 +46,10 @@
       
       <div class="lg:col-span-7 flex flex-col justify-center">
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
-          <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
+         <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
           <span class="text-gray-500">/</span>
-          <a href="{{ url('/services/mobile-app-development') }}" class="hover:text-purple-300 transition-colors">Mobile App Development</a>
-          <span class="text-gray-500">/</span>
+          <a href="{{ url('/mobile-app-development') }}" class="hover:text-purple-300 transition-colors">Mobile App Development</a>
+           <span class="text-gray-500">/</span>
           <span class="text-purple-400">iOS App Development</span>
         </nav>
 
