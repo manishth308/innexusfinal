@@ -184,7 +184,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -475,44 +475,44 @@
       <!-- FAQ 1 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>How is custom CRM development different from buying off the shelf CRM software?</span>
+          <span>Can you migrate our data from our current CRM?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Off the shelf CRM tools are built for a general audience and force your team to adapt. Custom CRM development is built around your exact sales process, so adoption is faster and your team actually uses the system.
+          Yes. Data migration from spreadsheets or an existing CRM platform is part of our standard process.
         </div>
       </div>
 
       <!-- FAQ 2 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can you migrate data from our existing CRM or spreadsheets?</span>
+          <span>Will the CRM connect to our other business tools?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We handle data migration and cleanup from spreadsheets, legacy CRMs, or disconnected tools so your team has a single source of truth from day one.
+        Yes. We build CRM systems with integrations to the other tools your team already uses.
         </div>
       </div>
 
       <!-- FAQ 3 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>What integrations can you build into our CRM?</span>
+          <span>Can the CRM handle multiple sales teams or pipelines?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          We integrate with email providers, calendar systems, marketing automation platforms, support tools, and internal databases using RESTful APIs and third-party connectors.
+          Yes. We can build multiple pipelines or team views into the CRM if your business needs that level of structure.
         </div>
       </div>
 
       <!-- FAQ 4 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Will our sales team be able to use the CRM easily?</span>
+          <span>Will our team need training to use the new CRM?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Absolutely. We design the interface around your team's existing habits and workflows, and we provide training and onboarding support to make the transition smooth.
+          We provide a walkthrough as part of launch, and the CRM is designed to be intuitive enough that most teams pick it up quickly.
         </div>
       </div>
     </div>

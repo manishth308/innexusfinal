@@ -141,37 +141,37 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] justify-center">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Requirements Mapping & Technical Planning</h3>
           <p class="text-gray-400 leading-relaxed text-sm">We start by understanding your exact workflows, pain points, and goals before writing a single line of code.</p>
         </div>
       </div>
 
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] items-center">
         <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Custom Software Solutions</h3>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors justify-center">Custom Software Solutions</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Bespoke platforms built around your workflow, not the other way around.</p>
         </div>
       </div>
 
       <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Enterprise Software Development</h3>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors justify-center">Enterprise Software Development</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Scalable, secure solutions for larger, more complex organizational needs.</p>
         </div>
       </div>
 
       <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Integration With Existing Tools</h3>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors justify-center">Integration With Existing Tools</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Seamless connectivity with your current systems, databases, and third-party services.</p>
         </div>
       </div>
 
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2 items-center">
         <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Ongoing Support After Launch</h3>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors justify-center">Ongoing Support After Launch</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Long-term maintenance, enhancements, and support to keep your software running smoothly as your business evolves.</p>
         </div>
       </div>
@@ -183,7 +183,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 

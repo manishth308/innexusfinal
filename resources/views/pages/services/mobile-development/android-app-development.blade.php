@@ -61,7 +61,7 @@
           Android app development services for businesses building a native app that performs well across the wide range of Android devices.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          As part of our wider Mobile App Development practice, we build native Android apps designed to perform consistently across the wide range of devices, screen sizes, and OS versions Android users run. This keeps the experience solid whether someone is using a flagship phone or a budget device.
+          As part of our wider <strong class="text-purple-500">Mobile App Development</strong> practice, we build native Android apps designed to perform consistently across the wide range of devices, screen sizes, and OS versions Android users run. This keeps the experience solid whether someone is using a flagship phone or a budget device.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -183,7 +183,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -304,42 +304,38 @@
                 [
                     'name' => 'Languages',
                     'technologies' => [
-                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
-                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
+                        ['name' => 'Swift', 'image' => asset('images/tech-logo/Swift.png')],
+                        ['name' => 'Kotlin', 'image' => asset('images/tech-logo/Kotlin.png')],
+                        ['name' => 'Darf', 'image' => asset('images/tech-logo/Darf.png')],
                     ],
                 ],
                 [
                     'name' => 'Frameworks',
                     'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
+                        ['name' => 'Flutter', 'image' => asset('images/tech-logo/Flutter.png')],
+                        ['name' => 'React Native', 'image' => asset('images/tech-logo/Redux.png')],
                     ],
                 ],
                 [
-                    'name' => 'Databases',
+                    'name' => 'Design',
                     'technologies' => [
-                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
+                        ['name' => 'Figma', 'image' => asset('images/tech-logo/Figma.png')],
+                        ['name' => 'Canva', 'image' => asset('images/tech-logo/Canva.png')],
                     ],
                 ],
                 [
-                    'name' => 'Cloud and infrastructure',
+                    'name' => 'Backend',
                     'technologies' => [
-                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                        ['name' => 'Firebase', 'image' => asset('images/tech-logo/Firebase.png')],
+                        ['name' => 'NodeJS', 'image' => asset('images/tech-logo/Node.js.png')],
                     ],
                 ],
                 [
-                    'name' => 'Project and QA tools',
+                    'name' => 'Testing',
                     'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                        ['name' => 'BrowserStack', 'image' => asset('images/tech-logo/BrowserStack.png')],
+                        ['name' => 'TestFlight', 'image' => asset('images/tech-logo/TestFlight.png')],
+                        ['name' => 'Google Play Console', 'image' => asset('images/tech-logo/Googleplayconsole.png')],
                     ],
                 ],
             ];
@@ -382,69 +378,6 @@
   </div>
 </section>
 
-@push('scripts')
-<script>
-  window.techStackData = @json($techStack);
-</script>
-<script>
-  (function () {
-    const categories = document.querySelectorAll('.tech-category');
-    const rightHeading = document.querySelector('#tech-right h3');
-    const techGrid = document.getElementById('tech-grid');
-    const data = window.techStackData;
-
-    if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-    function setActive(index) {
-      categories.forEach((cat, idx) => {
-        const isActive = Number(cat.getAttribute('data-index')) === index;
-        const indicator = cat.querySelector('.tech-indicator');
-        const name = cat.querySelector('.tech-name');
-
-        if (isActive) {
-          indicator.classList.remove('opacity-0');
-          indicator.classList.add('opacity-100');
-          name.classList.remove('text-white', 'font-normal');
-          name.classList.add('text-purple-400', 'font-medium');
-        } else {
-          indicator.classList.remove('opacity-100');
-          indicator.classList.add('opacity-0');
-          name.classList.remove('text-purple-400', 'font-medium');
-          name.classList.add('text-white', 'font-normal');
-        }
-      });
-
-      const selected = data[index];
-      if (!selected) return;
-
-      rightHeading.textContent = selected.name;
-
-      techGrid.innerHTML = selected.technologies
-          .map(
-              (tech) => `
-                  <div class="group tech-card">
-                      <div class="tech-card-icon-frame">
-                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                      </div>
-                      
-                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                  </div>
-              `
-          )
-          .join('');
-    }
-
-    categories.forEach((cat) => {
-      cat.addEventListener('click', function () {
-        const index = Number(this.getAttribute('data-index'));
-        setActive(index);
-      });
-    });
-
-    setActive(0);
-  })();
-</script>
-@endpush
 
 <!-- Why Choose InTech Nexus -->
 <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
@@ -452,7 +385,7 @@
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Built for the Android ecosystem, not adapted to it</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           Native Android development means the app is built specifically for the Android ecosystem, not adapted from another platform. This keeps performance and design consistent across the many devices Android runs on.
@@ -539,3 +472,66 @@
 </div>
 
 @endsection
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
+
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group tech-card">
+                      <div class="tech-card-icon-frame">
+                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                      </div>
+                      
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush

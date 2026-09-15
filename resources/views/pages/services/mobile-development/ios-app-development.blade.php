@@ -183,7 +183,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -304,42 +304,38 @@
                 [
                     'name' => 'Languages',
                     'technologies' => [
-                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
-                        ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
+                        ['name' => 'Swift', 'image' => asset('images/tech-logo/Swift.png')],
+                        ['name' => 'Kotlin', 'image' => asset('images/tech-logo/Kotlin.png')],
+                        ['name' => 'Dart', 'image' => asset('images/tech-logo/Dart.png')],
                     ],
                 ],
                 [
                     'name' => 'Frameworks',
                     'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
+                        ['name' => 'Flutter', 'image' => asset('images/tech-logo/Flutter.png')],
+                        ['name' => 'React Native', 'image' => asset('images/tech-logo/Redux.png')],
                     ],
                 ],
                 [
-                    'name' => 'Databases',
+                    'name' => 'Design',
                     'technologies' => [
-                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
+                        ['name' => 'Figma', 'image' => asset('images/tech-logo/Figma.png')],
+                        ['name' => 'Canva', 'image' => asset('images/tech-logo/Canva.png')],
                     ],
                 ],
                 [
-                    'name' => 'Cloud and infrastructure',
+                    'name' => 'Backend',
                     'technologies' => [
-                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                        ['name' => 'FireBase', 'image' => asset('images/tech-logo/Firebase.png')],
+                        ['name' => 'NodeJS', 'image' => asset('images/tech-logo/Node.js.png')],
                     ],
                 ],
                 [
-                    'name' => 'Project and QA tools',
+                    'name' => 'Testing',
                     'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                        ['name' => 'BrowserStack', 'image' => asset('images/tech-logo/BrowserStack.png')],
+                        ['name' => 'TestFlight', 'image' => asset('images/tech-logo/Testflight.png')],
+                        ['name' => 'GooglePlayConsole', 'image' => asset('images/tech-logo/Postman.png')],
                     ],
                 ],
             ];
@@ -452,14 +448,14 @@
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Built for Apple, not bolted onto it</h2>
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Us</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Why Choose Intech Nexus ?</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           As a team that does Swift app development natively, we build apps that feel like they belong on Apple devices, not like a web page wrapped in an app shell.
         </p>
       </div>
       <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
+        <img src="https://unsplash.com/photos/smartphone-with-dual-camera-on-background-OxvlDO8RwKg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" alt="Why Choose InTech Nexus" class="why-choose-image">
       </div>
     </div>
   </div>

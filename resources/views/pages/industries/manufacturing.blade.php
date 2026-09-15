@@ -59,7 +59,7 @@
           Manufacturing businesses need digital systems that connect operations, sales, and customers, not just a website that describes what the business does.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          We work with manufacturing businesses that need both sides of this solved together: digital systems that connect operations and data internally, and a customer facing presence that reflects the real technical skill behind the business.
+          Buyers researching industrial equipment, parts, or manufacturing services now do most of that research online, long before they ever pick up the phone. If your website reads like a brochure instead of demonstrating real technical capability, you lose serious buyers to competitors who look more credible online, even if your actual work is better. We work with manufacturing businesses that need both sides of this solved together: digital systems that connect operations and data internally, and a customer facing presence that reflects the real technical skill behind the business.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -88,7 +88,7 @@
   </div>
 </section>
 
-<!-- Who This Is For & Problems We Solve Section -->
+<!-- Who This Is For & Common Challenges Section -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -108,20 +108,28 @@
         <div>
           <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
             <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Problems We Solve
+            Common Challenges
           </h2>
           <ul class="space-y-3 text-gray-300">
             <li class="flex items-start gap-3">
               <span class="text-purple-400 font-bold">•</span>
-              <span>Sales and operations data living in systems that do not talk to each other, with teams re-entering the same information across spreadsheets and order systems.</span>
+              <span>Sales and operations data live in systems that do not talk to each other, with teams re-entering the same information across spreadsheets, order systems, and inventory tools.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-purple-400 font-bold">•</span>
-              <span>A website that undersells what the business can actually do to technical buyers doing early research, and a marketing approach built for consumer products.</span>
+              <span>The website undersells what the business can actually do to buyers doing early research, and a generic template site does not build the confidence a technical buyer needs before reaching out.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-purple-400 font-bold">•</span>
-              <span>Legacy operations software that is hard to extend, and customer and supplier communication that is still manual instead of a connected portal.</span>
+              <span>Lead generation for manufacturing sales cycles looks different from consumer marketing, and long, considered B2B buying cycles need a different approach than a typical ecommerce funnel.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Legacy operations software can be difficult to extend, forcing teams to work around limitations instead of the system supporting the actual workflow.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Customer and supplier communication is often still manual, when a connected portal could remove a large share of the back and forth.</span>
             </li>
           </ul>
         </div>
@@ -130,11 +138,11 @@
   </div>
 </section>
 
-<!-- What We Offer -->
+<!-- Services We Provide -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Services We Provide</h2>
       <p class="text-gray-400 text-lg">We build systems and content that reflect how manufacturing actually runs.</p>
     </div>
 
@@ -166,11 +174,30 @@
           <p class="text-gray-400 leading-relaxed text-sm">Digital Marketing for SEO and lead generation, built around how manufacturing buyers actually search and evaluate suppliers.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+<!-- Solutions We Offer -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Solutions We Offer</h2>
+      <p class="text-gray-400 text-lg">Systems built around how production and customer relationships actually work.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Production and Inventory Management Systems</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Production and inventory management systems that give real time visibility into stock, orders, and production status across the business, along with supplier and customer portals that reduce manual back and forth.</p>
+          <p class="text-gray-400 leading-relaxed text-sm">Production and inventory management systems that give real time visibility into stock, orders, and production status across the business.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Supplier and Customer Portals</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Supplier and customer portals that reduce manual back and forth by giving partners direct access to the information they need.</p>
         </div>
       </div>
     </div>
@@ -191,11 +218,7 @@
         <ul class="space-y-3 text-gray-300">
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
-            <span>Production and inventory management systems that give real time visibility into stock, orders, and production status</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Supplier and customer portals that reduce manual back and forth by giving partners direct access to the information they need</span>
+            <span>Custom business systems that connect operations, inventory, and sales data instead of leaving them isolated</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
@@ -204,6 +227,10 @@
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
             <span>B2B websites that demonstrate technical capability to buyers doing serious research, not just describe services in general terms</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>SEO and lead generation content built around how manufacturing buyers actually search and evaluate suppliers</span>
           </li>
         </ul>
       </div>
@@ -287,171 +314,119 @@
   </div>
 </section>
 
-  <!-- Tools / Technologies -->
-  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-        <p class="text-gray-400 text-lg">The stack we work with on manufacturing projects.</p>
+<!-- Tools / Technologies -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+      <p class="text-gray-400 text-lg">The stack we work with on manufacturing projects.</p>
+    </div>
+
+    <div class="tech-split-grid">
+      <div>
+        @php
+            $techStack = [
+                [
+                    'name' => 'ERP & CRM',
+                    'technologies' => [
+                        ['name' => 'Salesforce', 'image' => asset('images/tech-logo/Salesforce.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Frontend & Experience',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Backend & Data',
+                    'technologies' => [
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
+                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Infrastructure',
+                    'technologies' => [
+                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/GoogleCloud.png')],
+                    ],
+                ],
+            ];
+        @endphp
+
+        <div class="flex flex-col gap-8">
+          @foreach ($techStack as $index => $category)
+            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                {{ $category['name'] }}
+              </span>
+            </div>
+          @endforeach
+        </div>
       </div>
 
-      <div class="tech-split-grid">
-        <div>
+      <div id="tech-right" class="relative lg:pr-16">
+        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+          {{ $techStack[0]['name'] }}
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
           @php
-              $techStack = [
-                  [
-                      'name' => 'ERP & CRM',
-                      'technologies' => [
-                          ['name' => 'Salesforce', 'image' => asset('images/tech-logo/Salesforce.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Frontend & Experience',
-                      'technologies' => [
-                          ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                          ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
-                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Backend & Data',
-                      'technologies' => [
-                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                          ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                          ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                          ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Infrastructure',
-                      'technologies' => [
-                          ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                          ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                          ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
-                      ],
-                  ],
-              ];
+              $firstCategory = $techStack[0]['technologies'];
           @endphp
 
-          <div class="flex flex-col gap-8">
-            @foreach ($techStack as $index => $category)
-              <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
-                <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
-                <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
-                  {{ $category['name'] }}
-                </span>
+          @foreach ($firstCategory as $tech)
+            <div class="group tech-card">
+              <div class="tech-card-icon-frame">
+                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
               </div>
-            @endforeach
-          </div>
-        </div>
 
-        <div id="tech-right" class="relative lg:pr-16">
-          <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
-            {{ $techStack[0]['name'] }}
-          </h3>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
-            @php
-                $firstCategory = $techStack[0]['technologies'];
-            @endphp
-
-            @foreach ($firstCategory as $tech)
-              <div class="group tech-card">
-                <div class="tech-card-icon-frame">
-                  <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
-                </div>
-                
-                <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
-              </div>
-            @endforeach
-          </div>
+              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
+            </div>
+          @endforeach
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  @push('scripts')
-  <script>
-    window.techStackData = @json($techStack);
-  </script>
-  <script>
-    (function () {
-      const categories = document.querySelectorAll('.tech-category');
-      const rightHeading = document.querySelector('#tech-right h3');
-      const techGrid = document.getElementById('tech-grid');
-      const data = window.techStackData;
-
-      if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-      function setActive(index) {
-        categories.forEach((cat, idx) => {
-          const isActive = Number(cat.getAttribute('data-index')) === index;
-          const indicator = cat.querySelector('.tech-indicator');
-          const name = cat.querySelector('.tech-name');
-
-          if (isActive) {
-            indicator.classList.remove('opacity-0');
-            indicator.classList.add('opacity-100');
-            name.classList.remove('text-white', 'font-normal');
-            name.classList.add('text-purple-400', 'font-medium');
-          } else {
-            indicator.classList.remove('opacity-100');
-            indicator.classList.add('opacity-0');
-            name.classList.remove('purple-400', 'font-medium');
-            name.classList.add('text-white', 'font-normal');
-          }
-        });
-
-        const selected = data[index];
-        if (!selected) return;
-
-        rightHeading.textContent = selected.name;
-
-        techGrid.innerHTML = selected.technologies
-            .map(
-                (tech) => `
-                    <div class="group tech-card">
-                        <div class="tech-card-icon-frame">
-                            <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                        </div>
-                        
-                        <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                    </div>
-                `
-            )
-            .join('');
-      }
-
-      categories.forEach((cat) => {
-        cat.addEventListener('click', function () {
-          const index = Number(this.getAttribute('data-index'));
-          setActive(index);
-        });
-      });
-
-      setActive(0);
-    })();
-  </script>
-  @endpush
-
-  <!-- Why Choose InTech Nexus -->
-  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
-    <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
-    <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">How the work actually runs</h2>
-          <p class="text-gray-300 leading-relaxed max-w-md">
-            Manufacturing buyers are usually technical, deliberate, and comparing multiple suppliers before ever reaching out. We bring both kinds of understanding into every manufacturing project: a marketing approach built for this audience, and systems that actually reflect how production, inventory, and fulfillment work day to day, not a simplified version built by a team that has never worked with a manufacturing business.
-          </p>
-        </div>
-        <div class="why-choose-image-frame">
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">How the work actually runs</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          Manufacturing buyers are usually technical, deliberate, and comparing multiple suppliers before ever reaching out. A generic marketing approach built for consumer products does not build the kind of confidence this audience needs. At the same time, manufacturing operations depend on systems that actually reflect how production, inventory, and fulfillment work day to day, not a simplified version built by a team that has never worked with a manufacturing business. We bring both kinds of understanding into every manufacturing project.
+        </p>
+      </div>
+      <div class="why-choose-image-frame">
         <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
       </div>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- How We Help -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="p-8 md:p-12 bg-white/[0.03] border border-white/10">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">How We Help</h2>
+      <p class="text-gray-300 leading-relaxed text-base md:text-lg max-w-3xl">
+        We build digital systems and websites that show the real skill behind manufacturing businesses, and connect customer facing content to how sales actually happens. That means building both the internal systems that keep operations running smoothly, and the outward facing presence that helps serious buyers take your business seriously from the first visit.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- Frequently Asked Questions -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
@@ -509,8 +484,14 @@
       <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
         Ready to show the real skill behind your manufacturing business?
       </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
+        If lead generation is the main goal, see
+        <a href="{{ url('/digital-marketing') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Digital Marketing</a>.
+        For connecting internal systems, see
+        <a href="{{ url('/software-development') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Software Development</a>.
+      </p>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
+        Not sure where to start? Book a call, request a proposal, or get a free quote and we will help you find the right first step.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
@@ -525,5 +506,69 @@
 </section>
 
 </div>
+
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
+
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group tech-card">
+                      <div class="tech-card-icon-frame">
+                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                      </div>
+
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush
 
 @endsection

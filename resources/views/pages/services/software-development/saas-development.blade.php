@@ -183,7 +183,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -473,41 +473,41 @@
     <div class="space-y-4">
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>What makes SaaS development different from regular software development?</span>
+          <span>Can you build a SaaS product from just an idea?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          SaaS development requires planning for multi-tenancy, subscription billing, user account management, and scalability from the start. These are not afterthoughts but core architectural decisions that shape the entire platform.
+          Yes. We can take a SaaS idea from early planning through to a working product, or start from an existing product that needs to be rebuilt or scaled.
         </div>
       </div>
 
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Do you handle subscription billing and payments?</span>
+          <span>Do you handle billing and subscription ?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We integrate with leading payment processors and build custom subscription billing logic, including tiered pricing, trial periods, and automated invoicing.
+        Yes. Subscription billing and account management are part of our standard SaaS development process.
         </div>
       </div>
 
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can you scale an existing SaaS product?</span>
+          <span>Which cloud platform do you build SaaS products on?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Absolutely. We work with existing SaaS platforms to optimize architecture, improve performance, and add new features without disrupting current users.
+          We choose the cloud platform that fits your budget and scale needs, typically AWS, Azure, or Google Cloud.
         </div>
       </div>
 
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>What cloud platforms do you use for SaaS hosting?</span>
+          <span>Can you help us price our subscription tiers?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          We primarily work with AWS, Azure, and Google Cloud, choosing the best fit for your product's needs, team expertise, and long-term cost considerations.
+          We can advise on the technical setup for tiered pricing, though we would recommend pairing that with your own market and pricing research.
         </div>
       </div>
     </div>

@@ -65,7 +65,7 @@
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      
+
       <div class="lg:col-span-7 flex flex-col justify-center">
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
@@ -83,7 +83,7 @@
           Web application development services for businesses that need more than a website, a full custom platform that runs in the browser.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          As part of our wider Web Development practice, we build custom web applications for businesses that need real functionality in the browser, like dashboards, portals, and tools with user accounts and complex logic, not just informational pages.
+          As part of our wider <strong class="text-purple-400">Web Development</strong> practice, we build custom web applications for businesses that need real functionality in the browser, like dashboards, portals, and tools with user accounts and complex logic, not just informational pages.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -98,9 +98,9 @@
 
       <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
         <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
-          <img 
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" 
-            alt="Web Application Development - InTech Nexus" 
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+            alt="Web Application Development - InTech Nexus"
             class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
           />
           <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
@@ -170,7 +170,13 @@
         ['t' => 'Web Based Software Development with Secure User Accounts', 'd' => 'Web based software development with secure user accounts, roles, and permissions built in.'],
         ['t' => 'SaaS Web Application Development', 'd' => 'SaaS web application development for subscription platforms with billing and multi tenancy support.'],
       ] as $i => $offer)
-        <div class="cap-card rounded-xl p-6" :class="{ 'is-open': openCap === {{ $i }} }" @click="openCap = openCap === {{ $i }} ? null : {{ $i }}">
+        <div class="cap-card rounded-xl p-6"
+             role="button"
+             tabindex="0"
+             :class="{ 'is-open': openCap === {{ $i }} }"
+             @click="openCap = openCap === {{ $i }} ? null : {{ $i }}"
+             @keydown.enter="openCap = openCap === {{ $i }} ? null : {{ $i }}"
+             @keydown.space.prevent="openCap = openCap === {{ $i }} ? null : {{ $i }}">
           <div class="flex items-start justify-between gap-3">
             <p class="font-semibold text-lg text-white">{{ $offer['t'] }}</p>
             <span class="cap-chevron font-mono text-lg flex-shrink-0">+</span>
@@ -188,7 +194,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -263,7 +269,7 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+      <p class="text-gray-400 text-lg">What we build with and where we excel.</p>
     </div>
 
     <div class="tech-split-grid">
@@ -271,44 +277,39 @@
         @php
             $techStack = [
                 [
-                    'name' => 'Languages',
+                    'name' => 'CMS and Platforms',
                     'technologies' => [
-                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
+                        ['name' => 'WordPress', 'image' => asset('images/tech-logo/WordPress.png')],
+                        ['name' => 'Shopify', 'image' => asset('images/tech-logo/Shopify.png')],
+                        ['name' => 'Headless CMS', 'image' => asset('images/tech-logo/Strapi.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Frontend',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Backend',
+                    'technologies' => [
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
                         ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
                     ],
                 ],
                 [
-                    'name' => 'Frameworks',
-                    'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Databases',
-                    'technologies' => [
-                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Cloud and infrastructure',
+                    'name' => 'Hosting and Infrastructure',
                     'technologies' => [
                         ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                        ['name' => 'Cloudflare', 'image' => asset('images/tech-logo/Cloudflare.png')],
                     ],
                 ],
                 [
-                    'name' => 'Project and QA tools',
+                    'name' => 'Analytics',
                     'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                        ['name' => 'Google Analytics', 'image' => asset('images/tech-logo/GoogleAnalytics.png')],
+                        ['name' => 'Search Console', 'image' => asset('images/tech-logo/SearchConsole.png')],
                     ],
                 ],
             ];
@@ -341,7 +342,7 @@
               <div class="tech-card-icon-frame">
                 <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
               </div>
-              
+
               <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
             </div>
           @endforeach
@@ -350,6 +351,98 @@
     </div>
   </div>
 </section>
+
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Planning that keeps complex applications stable at launch</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          Web application projects need more planning than a standard website. We map the data, the user roles, and the logic during strategy, so the application holds up under real, daily use once it launches.
+        </p>
+      </div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+
+    <div class="space-y-4">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>How is a web application different from a website?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          A website mainly presents information. A web application lets users log in, interact with data, and complete tasks, more like software running in a browser.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can a web application later become a SaaS product?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. Many web applications are built as the foundation for a future SaaS product, and we can plan for that from the start if it is on your roadmap.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>How long does a web application project take?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          It depends on scope and complexity. A focused internal tool can take a few weeks, while a full multi role platform with integrations takes longer. We give a clear estimate after discovery.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you build the frontend and backend together?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. Both are handled by the same team, so the interface and the underlying logic are always in sync.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to build a custom web application?
+      </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Book a call, request a proposal, or get a free quote to begin.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          Get a Free Quote
+        </a>
+        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
 
 @push('scripts')
 <script>
@@ -395,7 +488,7 @@
                       <div class="tech-card-icon-frame">
                           <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
                       </div>
-                      
+
                       <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                   </div>
               `
@@ -414,97 +507,5 @@
   })();
 </script>
 @endpush
-
-<!-- Why Choose InTech Nexus -->
-<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
-  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
-  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Planning that keeps complex applications stable at launch</h2>
-        <p class="text-gray-300 leading-relaxed max-w-md">
-          Web application projects need more planning than a standard website. We map the data, the user roles, and the logic during strategy, so the application holds up under real, daily use once it launches.
-        </p>
-      </div>
-      <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Frequently Asked Questions -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-    
-    <div class="space-y-4">
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>How is a web application different from a website?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          A website mainly presents information. A web application lets users log in, interact with data, and complete tasks, more like software running in a browser.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can a web application be turned into a SaaS product later?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. Many web applications are built as the foundation for a future SaaS product. We can plan for that from the start if it is part of your roadmap.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can a web application later become a SaaS product?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. Many web applications are built as the foundation for a future SaaS product, and we can plan for that from the start if it is on your roadmap. See SaaS Development for more.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Do you build the frontend and backend together?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. Both are handled by the same team, so the interface and the underlying logic are always in sync.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action Banner -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
-    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
-        Ready to build a custom web application?
-      </h2>
-      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
-          Get a Free Quote
-        </a>
-        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
-          Book a Call
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</div>
 
 @endsection

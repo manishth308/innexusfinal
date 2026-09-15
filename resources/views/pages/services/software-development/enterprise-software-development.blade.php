@@ -501,44 +501,44 @@
       <!-- FAQ 1 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>What industries do you serve for enterprise software?</span>
+          <span>How long does an enterprise software project take ?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          We work across finance, healthcare, manufacturing, logistics, retail, and government sectors. Our solutions are built to meet industry-specific compliance and regulatory requirements.
+          Enterprise builds take longer than smaller projects because of the added planning and testing needed. Timelines are set during discovery, based on the number of systems and team involved.
         </div>
       </div>
 
       <!-- FAQ 2 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>How do you handle data security and compliance?</span>
+          <span>Do you work with our internal IT team?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Security is embedded in every stage of our development lifecycle. We follow OWASP guidelines, implement encryption at rest and in transit, and ensure compliance with standards such as SOC 2, GDPR, and HIPAA where applicable.
+         Yes. We regularly work alongside internal IT and engineering teams on enterprise projects, either leading the build or supporting an existing effort.
         </div>
       </div>
 
       <!-- FAQ 3 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can you integrate with our existing enterprise systems?</span>
+          <span>How do you manage requirements across multiple department ?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We specialize in integrating with ERPs, CRMs, legacy databases, and third-party services. Our API-first approach ensures clean, maintainable integrations that avoid vendor lock-in.
+          We run structured discovery sessions with each stakeholder group, then consolidate requirements into one clear technical plan before development starts.
         </div>
       </div>
 
       <!-- FAQ 4 -->
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>What does your support model look like after launch?</span>
+          <span>Can the system be rolled out to one department firs?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          We offer flexible support tiers including monitoring, bug fixes, performance tuning, and feature enhancements. Many clients choose a dedicated managed services team for ongoing operations.
+         Yes. Phased rollouts are common for enterprise projects, and we can plan the architecture to support that from the start.
         </div>
       </div>
     </div>

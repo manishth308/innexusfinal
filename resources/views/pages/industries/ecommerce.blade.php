@@ -56,10 +56,10 @@
         </h1>
 
         <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
-          Ecommerce success comes down to two things working together: a storefront that converts, and marketing that keeps bringing the right traffic to it.
+          Ecommerce success comes down to two things working together: a storefront that converts, and marketing that keeps bringing the right traffic to it. Too often, businesses treat these as separate projects handled by separate vendors, which is exactly where things start to break down. A beautifully designed store with no traffic will not sell. A flood of traffic landing on a storefront that is slow or confusing will not convert either.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          We work with ecommerce businesses at every stage, from a first store launch to a full platform rebuild. Our approach stays the same: build a storefront that works, then build the marketing engine that fills it.
+          We work with ecommerce businesses at every stage, from a first store launch to a full platform rebuild. Whether you sell a handful of products or manage a catalog with thousands of items, our approach stays the same: build a storefront that works, then build the marketing engine that fills it.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -88,7 +88,7 @@
   </div>
 </section>
 
-<!-- Who This Is For & Problems We Solve Section -->
+<!-- Who This Is For & Common Challenges Section -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -108,12 +108,16 @@
         <div>
           <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
             <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Problems We Solve
+            Common Challenges
           </h2>
           <ul class="space-y-3 text-gray-300">
             <li class="flex items-start gap-3">
               <span class="text-purple-400 font-bold">•</span>
-              <span>Storefronts that look good but do not convert well, and paid or organic marketing running apart from the on site experience.</span>
+              <span>Storefronts that look good but do not convert well. A polished design does not always translate into a smooth path to checkout.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Paid and organic marketing running apart from the on site experience, so traffic arrives at pages that were never built with that campaign in mind.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-purple-400 font-bold">•</span>
@@ -121,7 +125,15 @@
             </li>
             <li class="flex items-start gap-3">
               <span class="text-purple-400 font-bold">•</span>
-              <span>Cart abandonment that goes unaddressed, and inventory, pricing, or fulfillment systems that do not talk to the storefront.</span>
+              <span>Cart abandonment that goes unaddressed, with no automated follow up to recover lost sales.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Inventory, pricing, or fulfillment systems that do not talk to the storefront, creating manual work and errors.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold">•</span>
+              <span>Search visibility that lags behind competitors, so potential customers never find the store in the first place.</span>
             </li>
           </ul>
         </div>
@@ -134,7 +146,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Services We Provide</h2>
       <p class="text-gray-400 text-lg">We build the storefront and the marketing engine behind it, treated as one system.</p>
     </div>
 
@@ -169,8 +181,8 @@
 
       <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
         <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">QA and Testing Across Devices and Browsers</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">QA and Testing across devices and browsers, so checkout works reliably no matter how a customer arrives at your store.</p>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">QA &amp; Testing Across Devices and Browsers</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">QA & Testing across devices and browsers, so checkout works reliably no matter how a customer arrives at your store.</p>
         </div>
       </div>
     </div>
@@ -181,7 +193,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Solutions We Offer</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -191,7 +203,7 @@
         <ul class="space-y-3 text-gray-300">
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
-            <span>Custom online stores built around your catalog and brand, not a generic theme stretched to fit</span>
+            <span>Custom online stores built around your specific catalog and brand, not a generic theme stretched to fit</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
@@ -199,11 +211,15 @@
           </li>
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
-            <span>Inventory and order management systems that keep your storefront, warehouse, and fulfillment in sync</span>
+            <span>Inventory and order management systems that keep your storefront, warehouse, and fulfillment process in sync</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
-            <span>Cart recovery and lifecycle email flows aimed at recovering sales that would otherwise be lost</span>
+            <span>Customer loyalty and subscription systems built to increase repeat purchases and lifetime value</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 mt-1">◦</span>
+            <span>Abandoned cart recovery and lifecycle email flows through our Digital Marketing team, aimed at recovering sales that would otherwise be lost</span>
           </li>
         </ul>
       </div>
@@ -225,7 +241,7 @@
           </li>
           <li class="flex items-start gap-3">
             <span class="text-purple-400 mt-1">◦</span>
-            <span>Loyalty and subscription systems designed to grow repeat purchases and lifetime value</span>
+            <span>Platform migrations planned to protect existing rankings and data</span>
           </li>
         </ul>
       </div>
@@ -287,164 +303,115 @@
   </div>
 </section>
 
-  <!-- Tools / Technologies -->
-  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-        <p class="text-gray-400 text-lg">The stack we work with on ecommerce projects.</p>
+<!-- Tools / Technologies -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+      <p class="text-gray-400 text-lg">The stack we work with on ecommerce projects.</p>
+    </div>
+
+    <div class="tech-split-grid">
+      <div>
+        @php
+            $techStack = [
+                [
+                    'name' => 'Frontend & Experience',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Marketing & Analytics',
+                    'technologies' => [
+                        ['name' => 'Google Analytics', 'image' => asset('images/tech-logo/GoogleAnalytics.png')],
+                        ['name' => 'Mailchimp', 'image' => asset('images/tech-logo/Mailchimp.png')],
+                        ['name' => 'Klaviyo', 'image' => asset('images/tech-logo/Klaviyo.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Infrastructure',
+                    'technologies' => [
+                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
+                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/GoogleCloud.png')],
+                    ],
+                ],
+            ];
+        @endphp
+
+        <div class="flex flex-col gap-8">
+          @foreach ($techStack as $index => $category)
+            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
+              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
+              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
+                {{ $category['name'] }}
+              </span>
+            </div>
+          @endforeach
+        </div>
       </div>
 
-      <div class="tech-split-grid">
-        <div>
+      <div id="tech-right" class="relative lg:pr-16">
+        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
+          {{ $techStack[0]['name'] }}
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
           @php
-              $techStack = [
-                  [
-                      'name' => 'Frontend & Experience',
-                      'technologies' => [
-                          ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                          ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
-                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Marketing & Analytics',
-                      'technologies' => [
-                          ['name' => 'Google Analytics', 'image' => asset('images/tech-logo/Google-Analytics.png')],
-                          ['name' => 'Mailchimp', 'image' => asset('images/tech-logo/Mailchimp.png')],
-                          ['name' => 'Klaviyo', 'image' => asset('images/tech-logo/Klaviyo.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Infrastructure',
-                      'technologies' => [
-                          ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                          ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                          ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
-                      ],
-                  ],
-              ];
+              $firstCategory = $techStack[0]['technologies'];
           @endphp
 
-          <div class="flex flex-col gap-8">
-            @foreach ($techStack as $index => $category)
-              <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
-                <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
-                <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
-                  {{ $category['name'] }}
-                </span>
+          @foreach ($firstCategory as $tech)
+            <div class="group tech-card">
+              <div class="tech-card-icon-frame">
+                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
               </div>
-            @endforeach
-          </div>
-        </div>
 
-        <div id="tech-right" class="relative lg:pr-16">
-          <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
-            {{ $techStack[0]['name'] }}
-          </h3>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
-            @php
-                $firstCategory = $techStack[0]['technologies'];
-            @endphp
-
-            @foreach ($firstCategory as $tech)
-              <div class="group tech-card">
-                <div class="tech-card-icon-frame">
-                  <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
-                </div>
-                
-                <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
-              </div>
-            @endforeach
-          </div>
+              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
+            </div>
+          @endforeach
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  @push('scripts')
-  <script>
-    window.techStackData = @json($techStack);
-  </script>
-  <script>
-    (function () {
-      const categories = document.querySelectorAll('.tech-category');
-      const rightHeading = document.querySelector('#tech-right h3');
-      const techGrid = document.getElementById('tech-grid');
-      const data = window.techStackData;
-
-      if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-      function setActive(index) {
-        categories.forEach((cat, idx) => {
-          const isActive = Number(cat.getAttribute('data-index')) === index;
-          const indicator = cat.querySelector('.tech-indicator');
-          const name = cat.querySelector('.tech-name');
-
-          if (isActive) {
-            indicator.classList.remove('opacity-0');
-            indicator.classList.add('opacity-100');
-            name.classList.remove('text-white', 'font-normal');
-            name.classList.add('text-purple-400', 'font-medium');
-          } else {
-            indicator.classList.remove('opacity-100');
-            indicator.classList.add('opacity-0');
-            name.classList.remove('purple-400', 'font-medium');
-            name.classList.add('text-white', 'font-normal');
-          }
-        });
-
-        const selected = data[index];
-        if (!selected) return;
-
-        rightHeading.textContent = selected.name;
-
-        techGrid.innerHTML = selected.technologies
-            .map(
-                (tech) => `
-                    <div class="group tech-card">
-                        <div class="tech-card-icon-frame">
-                            <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                        </div>
-                        
-                        <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                    </div>
-                `
-            )
-            .join('');
-      }
-
-      categories.forEach((cat) => {
-        cat.addEventListener('click', function () {
-          const index = Number(this.getAttribute('data-index'));
-          setActive(index);
-        });
-      });
-
-      setActive(0);
-    })();
-  </script>
-  @endpush
-
-  <!-- Why Choose InTech Nexus -->
-  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
-    <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
-    <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Design, development, and marketing as one system</h2>
-          <p class="text-gray-300 leading-relaxed max-w-md">
-            Our Application Development, UI/UX Design, and Digital Marketing teams work together on every ecommerce project, so changes on one side are always planned with the other in mind. This keeps the storefront and the campaigns driving traffic to it aligned, instead of drifting apart as separate initiatives with separate priorities.
-          </p>
-        </div>
-        <div class="why-choose-image-frame">
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Design, development, and marketing as one system</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          Ecommerce is one of the few areas where design, development, and marketing genuinely need to work as one system. A product page redesign affects conversion tracking. A new marketing campaign needs a landing experience built to match it. Because our Application Development, UI/UX Design, and Digital Marketing teams work together on every ecommerce project, changes on one side are always planned with the other in mind. This keeps the storefront and the campaigns driving traffic to it aligned, instead of drifting apart as separate initiatives with separate priorities.
+        </p>
+      </div>
+      <div class="why-choose-image-frame">
         <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
       </div>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- How We Help -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="p-8 md:p-12 bg-white/[0.03] border border-white/10">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">How We Help</h2>
+      <p class="text-gray-300 leading-relaxed text-base md:text-lg max-w-3xl mb-4">
+        We build and grow ecommerce businesses together. Storefronts built to convert, backed by marketing built to bring in the right traffic, not just visits. That means every project starts by looking at both sides of the equation: what is stopping visitors from buying, and what is stopping the right visitors from arriving in the first place.
+      </p>
+      <p class="text-gray-400 leading-relaxed text-base md:text-lg max-w-3xl">
+        For newer ecommerce businesses, this often starts with a properly built storefront on a platform suited to your catalog and budget. For established stores, it usually means a conversion audit first, so we can prioritize fixes that will have the biggest impact before recommending a full rebuild.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- Frequently Asked Questions -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
@@ -482,8 +449,14 @@
       <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
         Ready to build a storefront and marketing engine that work together?
       </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
+        If the storefront needs a rebuild, see
+        <a href="{{ url('/web-development') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Web Development</a>.
+        To grow traffic and sales, see
+        <a href="{{ url('/digital-marketing') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Digital Marketing</a>.
+      </p>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
+        Ready to talk through your ecommerce project? Book a call, request a proposal, or get a free quote to begin.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
@@ -498,5 +471,69 @@
 </section>
 
 </div>
+
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
+
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group tech-card">
+                      <div class="tech-card-icon-frame">
+                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                      </div>
+
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush
 
 @endsection

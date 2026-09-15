@@ -84,7 +84,7 @@
                     <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Discover Our Story</span>
                     <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">A Digital Partner Businesses Rely On</h2>
                     <p class="text-gray-300 leading-relaxed max-w-md">
-                        We work with founders, product teams, and companies in healthcare, manufacturing, finance and banking, and ecommerce. Across every project, we act as a long term partner, not a one time vendor.
+                        We work with founders, product teams, and companies in <a href="{{ url('/healthcare') }}" class="text-red-300">healthcare</a>, <a href="{{ url('/manufacturing') }}" class="text-red-300">manufacturing</a>, <a href="{{ url('/finance') }}" class="text-red-300">finance and banking</a>, and <a href="{{ url('/ecommerce') }}" class="text-red-300">ecommerce</a>. Across every project, we act as a long term partner, not a one time vendor.
                     </p>
                     <a href="{{ route('page.show', 'about-us') }}"
                        class="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
@@ -103,7 +103,7 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-12">
         <div class="mb-16 max-w-3xl">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Do</h2>
-            <p class="text-gray-400 text-lg leading-relaxed">We build, design, and grow your digital products as one coordinated team.</p>
+            <p class="text-gray-300 text-lg leading-relaxed">Most agencies do one part of the job. We do all three, and we do them.</p>
         </div>
 
         <div class="grid md:grid-cols-[3fr_auto_2fr] gap-8 md:gap-12">
@@ -123,15 +123,15 @@
             <div class="wwd-scroll h-[480px] overflow-y-auto pr-2 space-y-4 scroll-smooth" id="wwd-scroll">
                 <div class="wwd-card border border-purple-500/30 bg-white/[0.03] rounded-xl p-6" data-step="0">
                     <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400">Build</h3>
-                    <p class="text-base text-gray-300 leading-relaxed">This covers software development, mobile app development, and web development. We build products that work well and can grow with your business. This also includes application development for ecommerce, MVPs, and more.</p>
+                    <p class="text-base text-gray-300 leading-relaxed">This covers <a href="{{ url('/software-development') }}" class="text-red-300">software development</a>, <a href="{{ url('/mobile-app-development') }}" class="text-red-300">mobile app development</a>, and <a href="{{ url('/web-development') }}" class="text-red-300">web development</a>. We build products that work well and can grow with your business. This also includes <a href="{{ url('/application-development') }}" class="text-red-300">application development</a> for ecommerce, MVPs, and more.</p>
                 </div>
                 <div class="wwd-card border border-purple-500/30 bg-white/[0.03] rounded-xl p-6" data-step="1">
                     <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400">Design</h3>
-                    <p class="text-base text-gray-300 leading-relaxed">A good product needs more than good code. Our UI/UX design and branding teams create products and identities that people enjoy using. Our graphic and creative design team then carries that identity across every channel.</p>
+                    <p class="text-base text-gray-300 leading-relaxed">A good product needs more than good code. Our <a href="{{ url('/ui-ux-design') }}" class="text-red-300">UI/UX design</a> and branding teams create products and identities that people enjoy using. Our <a href="{{ url('/graphic-and-creative-design') }}" class="text-red-300">graphic and creative design</a> team then carries that identity across every channel.</p>
                 </div>
                 <div class="wwd-card border border-purple-500/30 bg-white/[0.03] rounded-xl p-6" data-step="2">
                     <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400">Grow</h3>
-                    <p class="text-base text-gray-300 leading-relaxed">A launch is just the start. Our digital marketing team turns traffic into real leads through SEO, paid ads, and conversion work. Every step is checked by our QA and testing team before it reaches your users.</p>
+                    <p class="text-base text-gray-300 leading-relaxed">A launch is just the start. Our <a href="{{ url('/digital-marketing') }}" class="text-red-300">digital marketing</a> team turns traffic into real leads through SEO, paid ads, and conversion work. Every step is checked by our <a href="{{ url('/qa-testing') }}" class="text-red-300">QA and testing</a> team before it reaches your users.</p>
                 </div>
             </div>
 
@@ -228,10 +228,10 @@
         <div>
             @php
                 $features = [
-                    ['title' => 'One team for the full journey', 'description' => 'Build, design, and grow all work together, so nothing gets lost between vendors. From initial concept through post-launch growth, a single coordinated team owns the entire process. This removes handoff friction, keeps decisions consistent, and ensures your product evolves with one shared vision rather than fragmented vendor relationships.'],
-                    ['title' => 'Real industry knowledge', 'description' => 'Not generic delivery. Our teams bring deep sector-specific insight that shapes every recommendation, design choice, and technical decision. We study your market, users, and regulatory environment before writing a single line of code, so the solutions we build are grounded in real business context rather than one-size-fits-all templates.'],
-                    ['title' => 'A clear process on every project', 'description' => 'From discovery to launch, we follow a transparent, milestone-driven workflow with regular checkpoints, documented requirements, and measurable progress reviews. Every stakeholder knows what happens next, why each decision is made, and how risks are managed before they become issues.'],
-                    ['title' => 'Global reach', 'description' => 'With teams who understand local markets. We combine international delivery capabilities with regional expertise in pricing, compliance, culture, and user behavior. That means you get global engineering quality without losing the nuance that local market success demands.'],
+                    ['title' => 'One team for the full journey', 'description' => 'Build, design, and grow all work together, so nothing gets lost between vendors. From initial concept through post-launch growth, a single coordinated team owns the entire process.'],
+                    ['title' => 'Real industry knowledge', 'description' => 'Not generic delivery. Our teams bring deep sector-specific insight that shapes every recommendation, design choice, and technical decision.'],
+                    ['title' => 'A clear process on every project', 'description' => 'From discovery to launch, we follow a transparent, milestone-driven workflow with regular checkpoints, documented requirements, and measurable progress reviews.'],
+                    ['title' => 'Global reach', 'description' => 'With teams who understand local markets. We combine international delivery capabilities with regional expertise in pricing, compliance, culture, and user behavior.'],
                 ];
             @endphp
 
@@ -260,7 +260,7 @@
 
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight">What Our Clients Say</h2>
-            <p class="mt-3 text-base md:text-lg text-white/70 leading-relaxed">
+            <p class="mt-3 text-base md:text-lg text-white leading-relaxed">
                 Client testimonials showcasing our work and impact
             </p>
         </div>
@@ -323,7 +323,7 @@
 
         <div class="mb-12">
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-            <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+            <p class="text-gray-400 text-lg">Our teams build with modern, proven tools across web, mobile, and cloud platforms.</p>
         </div>
 
         <div class="tech-split-grid">
@@ -332,44 +332,37 @@
                 @php
                     $techStack = [
                         [
-                            'name' => 'Languages',
+                            'name' => 'Web',
+                            'technologies' => [
+                                ['name' => 'WordPress', 'image' => asset('images/tech-logo/wordpress.png')],
+                                ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                                ['name' => 'NextJs', 'image' => asset('images/tech-logo/Next.js.png')],
+                            ],
+                        ],
+                        [
+                            'name' => 'Mobile',
+                            'technologies' => [
+                                ['name' => 'iOS', 'image' => asset('images/tech-logo/ios.png')],
+                                ['name' => 'Android', 'image' => asset('images/tech-logo/Node.js.png')],
+                                ['name' => 'Flutter', 'image' => asset('images/tech-logo/Flutter.png')],
+                                ['name' => 'React Native', 'image' => asset('images/tech-logo/React.png')],
+                            ],
+                        ],
+                        [
+                            'name' => 'Backend and Data',
                             'technologies' => [
                                 ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                                ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
-                                ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
-                            ],
-                        ],
-                        [
-                            'name' => 'Frameworks',
-                            'technologies' => [
-                                ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                                ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                                ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                                ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
-                            ],
-                        ],
-                        [
-                            'name' => 'Databases',
-                            'technologies' => [
-                                ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
+                                ['name' => 'NodeJS', 'image' => asset('images/tech-logo/Node.js.png')],
                                 ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
                                 ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
                             ],
                         ],
                         [
-                            'name' => 'Cloud and infrastructure',
+                            'name' => 'Design',
                             'technologies' => [
-                                ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                                ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
+                                ['name' => 'Figma', 'image' => asset('images/tech-logo/Figma.png')],
+                                ['name' => 'Canva', 'image' => asset('images/tech-logo/Canva.png')],
                                 ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
-                            ],
-                        ],
-                        [
-                            'name' => 'Project and QA tools',
-                            'technologies' => [
-                                ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                                ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                                ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
                             ],
                         ],
                     ];
@@ -445,6 +438,45 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+
+    <div class="space-y-4">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>How fast can you start a project?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Most projects begin within one to two weeks of the initial call, once scope is agreed.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Do you work with bussines outside your main office location?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We work as one global team, with local understanding in each market we serve.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can youhelp with just one part of a project, like design or marketing alone?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. You can work with us on a single service, or the full journey from build to design to grow.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 </div>
 @endsection

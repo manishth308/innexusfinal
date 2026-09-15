@@ -47,8 +47,6 @@
 
       <div class="lg:col-span-7 flex flex-col justify-center">
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
-          <a href="{{ url('/') }}" class="hover:text-purple-300 transition-colors">Home</a>
-          <span class="text-gray-500">/</span>
           <a href="{{ url('/company') }}" class="hover:text-purple-300 transition-colors">Company</a>
           <span class="text-gray-500">/</span>
           <span class="text-purple-400">About Us</span>
@@ -58,8 +56,9 @@
           One Team. <span class="text-purple-400">Every Stage</span> of the Digital Journey.
         </h1>
 
-        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-8">
-          InTech Nexus exists because businesses were tired of managing three separate companies. A dev shop, a design studio, and a marketing agency that rarely talk to each other. We built one team that does.
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-8 bg-amber-50/10 p-[10px]">
+          InTech Nexus exists because businesses were tired of managing three separate companies. A dev shop, a design studio, and a marketing agency that rarely talk to each other. We built one team that does.<br/>
+          We work across the full digital journey, from a first working prototype to a fully grown, revenue generating platform. Whatever stage your business is at, our team can meet you there and carry the work forward, without a handoff to a different company halfway through.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -121,7 +120,7 @@
         We are a global digital and IT company. We believe the best digital products come from a team that understands the full journey, not just one part of it. A developer who never talks to a designer builds software that is hard to use. A marketer who never talks to a developer sends traffic to pages that were never built to convert it. We removed that gap by building one team that handles all of it together.
       </p>
       <p class="text-gray-300 text-lg leading-relaxed mt-4">
-        That is why our business has three connected parts: <strong class="text-purple-400">Build, Design, and Grow</strong>. We do not treat software, design, and marketing as separate businesses under one roof. A project that starts in our Software Development team stays connected to UI/UX Design and Digital Marketing for as long as you need us, instead of being handed off to a disconnected vendor once the code is written.
+        That is why our business has three connected parts. <strong class="text-purple-400">Build, Design, and Grow</strong>. We do not treat software, design, and marketing as separate businesses under one roof. A project that starts in our Software Development team stays connected to UI/UX Design and Digital Marketing for as long as you need us, instead of being handed off to a disconnected vendor once the code is written.
       </p>
       <p class="text-gray-300 text-lg leading-relaxed mt-4">
         We operate as one global brand with local delivery. Our teams work across time zones and markets, which means you get a partner who understands global standards and local context, not just a single office with a narrow view of your market.
@@ -158,9 +157,15 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Believe</h2>
-      <p class="text-purple-400 font-semibold text-xl mb-6">
+      <p class="text-white text-xl font-semibold mb-6">
         We design, build, and grow digital businesses. This is not just a tagline. It is how we work.
       </p>
+      <p class="text-white font-semibold text-xl mb-6">
+        A software development project does not get handed off to a design team that was not part of the plan.
+        <br/>
+        A digital marketing campaign is not guessing at a brand it never helped shape. Every team works from the same brief, inside the same process.
+      </p>
+
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -194,7 +199,7 @@
         <span class="text-3xl font-extrabold text-purple-400">01</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Full Journey Support</h3>
-          <p class="text-gray-300">From your first working build to a fully grown platform, we stay with you as the project grows.</p>
+          <p class="text-gray-300">From your first working build to a fully grown platform, we stay with you as the project grows, instead of stepping away once the first version ships.</p>
         </div>
       </div>
 
@@ -202,7 +207,7 @@
         <span class="text-3xl font-extrabold text-purple-400">02</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Real Industry Knowledge</h3>
-          <p class="text-gray-300">Deep expertise in healthcare, manufacturing, finance and banking, and ecommerce. Not generic delivery.</p>
+          <p class="text-gray-300">Deep expertise in healthcare, manufacturing, finance and banking, and ecommerce. Not generic delivery. We bring an understanding of how these businesses actually operate, not just technical skill.</p>
         </div>
       </div>
 
@@ -210,7 +215,7 @@
         <span class="text-3xl font-extrabold text-purple-400">03</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">One Team You Can Reach</h3>
-          <p class="text-gray-300">One point of contact across design, development, and growth. Nothing gets lost between vendors.</p>
+          <p class="text-gray-300">One point of contact across design, development, and growth. Nothing gets lost between vendors, and you are never stuck explaining the same context to three different companies.</p>
         </div>
       </div>
 
@@ -218,7 +223,7 @@
         <span class="text-3xl font-extrabold text-purple-400">04</span>
         <div>
           <h3 class="text-2xl font-bold text-white mb-2">Global Reach, Local Understanding</h3>
-          <p class="text-gray-300">Global reach with local understanding, wherever you are building.</p>
+          <p class="text-gray-300">Global reach with local understanding, wherever you are building. Our delivery model combines global standards with people who understand local markets and expectations.</p>
         </div>
       </div>
 
@@ -264,7 +269,7 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden rounded-md">
       <div class="p-10 md:p-16 bg-[#0b0c10] text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One team, one brief, one result</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           We design, build, and grow digital businesses, with one team handling all three from the same brief. No handoffs between disconnected vendors, no strategies built without the people who will execute them.

@@ -37,7 +37,7 @@
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      
+
       <div class="lg:col-span-7 flex flex-col justify-center">
         <nav class="flex items-center gap-2 text-sm font-medium text-purple-400 mb-6" aria-label="Breadcrumb">
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
@@ -55,7 +55,7 @@
           Ecommerce website development services for businesses that need a storefront built to convert, not just to look good.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          As part of our wider Web Development practice, we build ecommerce websites around the full buying journey, not just the product pages. That means a storefront, checkout, and backend that work together to turn traffic into completed orders, whether you are launching your first store or replacing one that is not converting.
+          As part of our wider <strong class="text-purple-400">Web Development</strong> practice, we build ecommerce websites around the full buying journey, not just the product pages. That means a storefront, checkout, and backend that work together to turn traffic into completed orders, whether you are launching your first store or replacing one that is not converting.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -70,9 +70,9 @@
 
       <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
         <div class="relative w-full max-w-[520px] aspect-[4/3] lg:aspect-square">
-          <img 
-            src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=1000&auto=format&fit=crop" 
-            alt="Ecommerce Website Development - InTech Nexus" 
+          <img
+            src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=1000&auto=format&fit=crop"
+            alt="Ecommerce Website Development - InTech Nexus"
             class="w-full h-full object-cover object-center relative z-10 border border-white/10 shadow-2xl"
           />
           <div class="absolute inset-0 z-20 bg-gradient-to-r from-[#0b0c10] via-transparent to-transparent opacity-90 pointer-events-none"></div>
@@ -126,6 +126,7 @@
   </div>
 </section>
 
+
 <!-- What We Offer -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
@@ -134,28 +135,42 @@
       <p class="text-gray-400 text-lg">We build ecommerce websites designed around the buying journey.</p>
     </div>
 
-    <ul class="space-y-4 text-gray-300 text-lg">
-      <li class="flex items-start gap-3">
-        <span class="text-purple-400 font-bold">•</span>
-        <span>Ecommerce website development services for growing catalogs.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-purple-400 font-bold">•</span>
-        <span>Ecommerce development company experience across platforms.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-purple-400 font-bold">•</span>
-        <span>Custom ecommerce development beyond template themes.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-purple-400 font-bold">•</span>
-        <span>Online store development with secure checkout.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-purple-400 font-bold">•</span>
-        <span>Ecommerce web design built around conversion.</span>
-      </li>
-    </ul>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Ecommerce Website Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Storefronts structured to handle a growing product catalog.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Multi Platform Experience</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Builds delivered across Shopify, WordPress, and custom platforms.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Custom Ecommerce Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Builds that go past what an off the shelf template theme allows.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Online Store Development</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Secure checkout and payment handling built into the store.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Ecommerce Web Design</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Pages and product flows designed around conversion, not just presentation.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -163,7 +178,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -250,7 +265,7 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
+      <p class="text-gray-400 text-lg">What we build with and where we excel.</p>
     </div>
 
     <div class="tech-split-grid">
@@ -258,44 +273,39 @@
         @php
             $techStack = [
                 [
-                    'name' => 'Languages',
+                    'name' => 'CMS and Platforms',
                     'technologies' => [
-                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                        ['name' => 'JavaScript', 'image' => asset('images/tech-logo/js.png')],
+                        ['name' => 'WordPress', 'image' => asset('images/tech-logo/WordPress.png')],
+                        ['name' => 'Shopify', 'image' => asset('images/tech-logo/Shopify.png')],
+                        ['name' => 'Headless CMS', 'image' => asset('images/tech-logo/Strapi.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Frontend',
+                    'technologies' => [
+                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
+                        ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
+                    ],
+                ],
+                [
+                    'name' => 'Backend',
+                    'technologies' => [
+                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
                         ['name' => 'PHP', 'image' => asset('images/tech-logo/PHP.png')],
                     ],
                 ],
                 [
-                    'name' => 'Frameworks',
-                    'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'Laravel', 'image' => asset('images/tech-logo/Laravel.png')],
-                        ['name' => 'Django', 'image' => asset('images/tech-logo/Django.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Databases',
-                    'technologies' => [
-                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                        ['name' => 'MongoDB', 'image' => asset('images/tech-logo/MongoDB.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Cloud and infrastructure',
+                    'name' => 'Hosting and Infrastructure',
                     'technologies' => [
                         ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
+                        ['name' => 'Cloudflare', 'image' => asset('images/tech-logo/Cloudflare.png')],
                     ],
                 ],
                 [
-                    'name' => 'Project and QA tools',
+                    'name' => 'Analytics',
                     'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
+                        ['name' => 'Google Analytics', 'image' => asset('images/tech-logo/GoogleAnalytics.png')],
+                        ['name' => 'Search Console', 'image' => asset('images/tech-logo/SearchConsole.png')],
                     ],
                 ],
             ];
@@ -328,7 +338,7 @@
               <div class="tech-card-icon-frame">
                 <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
               </div>
-              
+
               <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
             </div>
           @endforeach
@@ -337,6 +347,103 @@
     </div>
   </div>
 </section>
+
+<!-- Why Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Storefront and checkout, planned together</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          As a team offering full ecommerce solutions, we plan the storefront and the checkout flow together, so the site is not just attractive but actually built to turn visitors into buyers.
+        </p>
+      </div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1556742049-0cf9c6f7c36e?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
+  <div class="max-w-5xl mx-auto px-6 sm:px-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+
+    <div class="space-y-4">
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can you build on Shopify or a custom platform?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We can build ecommerce sites on Shopify, WordPress, or a fully custom platform, depending on what fits your catalog and goals.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can the store handle a large or growing product catalog?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We plan the site structure and backend to handle catalog growth without needing a rebuild later.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Which ecommerce platform is right for us?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          It depends on your catalog size, budget, and customization needs. We will recommend the right platform, whether that is <strong class="text-purple-400">Shopify Development</strong> or a fully custom build, during discovery.
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
+        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
+          <span>Can the store integrate with our existing inventory system?</span>
+          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
+        </button>
+        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
+          Yes. We can integrate the storefront with most inventory and fulfillment systems.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-24 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
+    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Ready to build a storefront that actually converts?
+      </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Book a call, request a proposal, or get a free quote to begin.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+          Get a Free Quote
+        </a>
+        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Chat Button Widget -->
+<a href="{{ url('/contact') }}" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:bg-purple-700 transition-all">
+  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+</a>
+
+</div>
 
 @push('scripts')
 <script>
@@ -382,7 +489,7 @@
                       <div class="tech-card-icon-frame">
                           <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
                       </div>
-                      
+
                       <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
                   </div>
               `
@@ -401,102 +508,5 @@
   })();
 </script>
 @endpush
-
-<!-- Why Choose InTech Nexus -->
-<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
-  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
-  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Why Choose InTech Nexus</h2>
-        <p class="text-gray-300 leading-relaxed max-w-md">
-          As a team offering full ecommerce solutions, we plan the storefront and the checkout flow together, so the site is not just attractive but actually built to turn visitors into buyers.
-        </p>
-      </div>
-      <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1556742049-0cf9c6f7c36e?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Frequently Asked Questions -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
-  <div class="max-w-5xl mx-auto px-6 sm:px-12">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-    
-    <div class="space-y-4">
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can you build on Shopify or a custom platform?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We can build ecommerce sites on Shopify, WordPress, or a fully custom platform, depending on what fits your catalog and goals.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can the store handle a large or growing product catalog?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We plan the site structure and backend to handle catalog growth without needing a rebuild later.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Which ecommerce platform is right for us?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 3 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 3" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          It depends on your catalog size, budget, and customization needs. We will recommend the right platform, whether that is Shopify Development or a fully custom build, during discovery.
-        </div>
-      </div>
-
-      <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
-        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can the store integrate with our existing inventory system?</span>
-          <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 4 ? '−' : '+'"></span>
-        </button>
-        <div x-show="openFaq === 4" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Yes. We can integrate the storefront with most inventory and fulfillment systems.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action Banner -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
-    <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
-        Ready to build a storefront that actually converts?
-      </h2>
-      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
-          Get a Free Quote
-        </a>
-        <a href="{{ url('/book-a-call') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all">
-          Book a Call
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Floating Chat Button Widget -->
-<a href="{{ url('/contact') }}" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:bg-purple-700 transition-all">
-  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-</a>
-
-</div>
 
 @endsection
