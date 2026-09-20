@@ -24,7 +24,7 @@
 @section('content')
 <div class="home-page">
     <!-----------Hero section ---->
-    <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
+    <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[600px] flex items-center border-b border-white/10">
 
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
             <div class="absolute top-0 right-0 w-full lg:w-[65%] h-full bg-gradient-to-br from-purple-900/60 via-purple-800/30 to-purple-950/10 [clip-path:polygon(75%_0%,100%_0%,100%_100%,0%_100%)] opacity-90" style="filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));"></div>
@@ -84,7 +84,7 @@
                     <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Discover Our Story</span>
                     <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">A Digital Partner Businesses Rely On</h2>
                     <p class="text-gray-300 leading-relaxed max-w-md">
-                        We work with founders, product teams, and companies in <a href="{{ url('/healthcare') }}" class="text-red-300">healthcare</a>, <a href="{{ url('/manufacturing') }}" class="text-red-300">manufacturing</a>, <a href="{{ url('/finance') }}" class="text-red-300">finance and banking</a>, and <a href="{{ url('/ecommerce') }}" class="text-red-300">ecommerce</a>. Across every project, we act as a long term partner, not a one time vendor.
+                        We work with founders, product teams, and companies in <a href="{{ url('/healthcare') }}" class="text-purple-400 font-semibold">healthcare</a>, <a href="{{ url('/manufacturing') }}" class="text-purple-400 font-semibold">manufacturing</a>, <a href="{{ url('/finance') }}" class="text-purple-400 font-semibold">finance and banking</a>, and <a href="{{ url('/ecommerce') }}" class="text-purple-400 font-semibold">ecommerce</a>. Across every project, we act as a long term partner, not a one time vendor.
                     </p>
                     <a href="{{ route('page.show', 'about-us') }}"
                        class="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
@@ -123,15 +123,15 @@
             <div class="wwd-scroll h-[480px] overflow-y-auto pr-2 space-y-4 scroll-smooth" id="wwd-scroll">
                 <div class="wwd-card border border-purple-500/30 bg-white/[0.03] rounded-xl p-6" data-step="0">
                     <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400">Build</h3>
-                    <p class="text-base text-gray-300 leading-relaxed">This covers <a href="{{ url('/software-development') }}" class="text-red-300">software development</a>, <a href="{{ url('/mobile-app-development') }}" class="text-red-300">mobile app development</a>, and <a href="{{ url('/web-development') }}" class="text-red-300">web development</a>. We build products that work well and can grow with your business. This also includes <a href="{{ url('/application-development') }}" class="text-red-300">application development</a> for ecommerce, MVPs, and more.</p>
+                    <p class="text-base text-gray-300 leading-relaxed">This covers <a href="{{ url('/software-development') }}" class="text-purple-400">software development</a>, <a href="{{ url('/mobile-app-development') }}" class="text-purple-400">mobile app development</a>, and <a href="{{ url('/web-development') }}" class="text-purple-400">web development</a>. We build products that work well and can grow with your business. This also includes <a href="{{ url('/application-development') }}" class="text-purple-400 font-medium">application development</a> for ecommerce, MVPs, and more.</p>
                 </div>
                 <div class="wwd-card border border-purple-500/30 bg-white/[0.03] rounded-xl p-6" data-step="1">
                     <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400">Design</h3>
-                    <p class="text-base text-gray-300 leading-relaxed">A good product needs more than good code. Our <a href="{{ url('/ui-ux-design') }}" class="text-red-300">UI/UX design</a> and branding teams create products and identities that people enjoy using. Our <a href="{{ url('/graphic-and-creative-design') }}" class="text-red-300">graphic and creative design</a> team then carries that identity across every channel.</p>
+                    <p class="text-base text-gray-300 leading-relaxed">A good product needs more than good code. Our <a href="{{ url('/ui-ux-design') }}" class="text-purple-400 font-medium">UI/UX design</a> and branding teams create products and identities that people enjoy using. Our <a href="{{ url('/graphic-and-creative-design') }}" class="text-purple-400 font-medium">graphic and creative design</a> team then carries that identity across every channel.</p>
                 </div>
                 <div class="wwd-card border border-purple-500/30 bg-white/[0.03] rounded-xl p-6" data-step="2">
                     <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400">Grow</h3>
-                    <p class="text-base text-gray-300 leading-relaxed">A launch is just the start. Our <a href="{{ url('/digital-marketing') }}" class="text-red-300">digital marketing</a> team turns traffic into real leads through SEO, paid ads, and conversion work. Every step is checked by our <a href="{{ url('/qa-testing') }}" class="text-red-300">QA and testing</a> team before it reaches your users.</p>
+                    <p class="text-base text-gray-200 leading-relaxed">A launch is just the start. Our <a href="{{ url('/digital-marketing') }}" class="text-purple-400 font-medium">digital marketing</a> team turns traffic into real leads through SEO, paid ads, and conversion work. Every step is checked by our <a href="{{ url('/qa-testing') }}" class="text-purple-400 font-medium">QA and testing</a> team before it reaches your users.</p>
                 </div>
             </div>
 
@@ -183,7 +183,7 @@
     <div class="max-w-5xl mx-auto px-6 sm:px-12 slide-up">
 
         <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 leading-[1.1] tracking-tight text-white">
-            Our Successful Projects
+            Industries We Serve
         </h2>
 
         @php
@@ -222,7 +222,7 @@
     <div class="mx-auto max-w-[1300px] px-6 py-16 lg:px-[90px]">
 
         <h2 class="max-w-[650px] text-[36px] md:text-[42px] lg:text-[50px] font-bold leading-[1.1] tracking-tight text-[#111111] mb-[60px]">
-            Why choose IntechNexus ?<br>
+            Why Choose IntechNexus ?<br>
         </h2>
 
         <div>
@@ -318,7 +318,7 @@
 </section>
 
 <!---- Tech Stack ---->
-<section class="bg-[#0b0c10]">
+<section class="bg-[#0b0c10] min-h-[90vh]">
     <div class="max-w-7xl mx-auto px-6 sm:px-12 py-20">
 
         <div class="mb-12">

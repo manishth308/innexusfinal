@@ -176,7 +176,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -311,14 +311,12 @@
                     'name' => 'Device Testing',
                     'technologies' => [
                         ['name' => 'BrowserStack', 'image' => asset('images/tech-logo/BrowserStack.png')],
-                        ['name' => 'Firebase', 'image' => asset('images/tech-logo/Firebase.png')],
                     ],
                 ],
                 [
-                    'name' => 'Performance',
+                    'name' => 'API Testing',
                     'technologies' => [
-                        ['name' => 'Xcode Instruments', 'image' => asset('images/tech-logo/Xcode Instruments.png')],
-                        ['name' => 'Android Profiler', 'image' => asset('images/tech-logo/Android Profiler.png')],
+                        ['name' => 'Postman', 'image' => asset('images/tech-logo/Postman.png')],
                     ],
                 ],
             ];
@@ -431,7 +429,7 @@
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Real devices, not just simulators</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           We test on real devices, not just simulators, since real world conditions catch issues a simulator often misses. This keeps launches from being derailed by device specific bugs.

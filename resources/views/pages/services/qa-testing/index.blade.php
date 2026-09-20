@@ -49,8 +49,6 @@
           <a href="{{ url('/services') }}" class="hover:text-purple-300 transition-colors">Services</a>
           <span class="text-gray-500">/</span>
           <a href="{{ url('/qa-testing') }}" class="hover:text-purple-300 transition-colors">QA & Testing</a>
-          <span class="text-gray-500">/</span>
-          <span class="text-purple-400">QA & Testing</span>
         </nav>
 
         <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
@@ -183,7 +181,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -305,7 +303,6 @@
                     'name' => 'Automation',
                     'technologies' => [
                         ['name' => 'Selenium', 'image' => asset('images/tech-logo/Selenium.png')],
-                        ['name' => 'Cypress', 'image' => asset('images/tech-logo/Cypress.png')],
                         ['name' => 'Appium', 'image' => asset('images/tech-logo/Appium.png')],
                     ],
                 ],
@@ -319,7 +316,6 @@
                     'name' => 'Device Testing',
                     'technologies' => [
                         ['name' => 'BrowserStack', 'image' => asset('images/tech-logo/BrowserStack.png')],
-                        ['name' => 'Sauce Labs', 'image' => asset('images/tech-logo/Sauce Labs.png')],
                         ['name' => 'Firebase', 'image' => asset('images/tech-logo/Firebase.png')],
                     ],
                 ],
@@ -439,7 +435,7 @@
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">QA runs through the whole build, not just the end</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           QA is not a final step tacked on at the end here. It runs alongside Software Development, Web Development, and Mobile App Development through the whole build, so problems are caught early, when they are cheaper to fix.

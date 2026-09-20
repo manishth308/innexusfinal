@@ -15,7 +15,8 @@ class BlogPolicy
 
     public function view(User $user, Blog $blog): bool
     {
-        return in_array($user->role, [UserRole::Admin, UserRole::Blogger], true);
+        return $user->role === UserRole::Admin
+            || ($user->role === UserRole::Blogger && $user->id === $blog->user_id);
     }
 
     public function create(User $user): bool
@@ -25,16 +26,21 @@ class BlogPolicy
 
     public function update(User $user, Blog $blog): bool
     {
-        return in_array($user->role, [UserRole::Admin, UserRole::Blogger], true);
+        return $user->role === UserRole::Admin
+            || ($user->role === UserRole::Blogger && $user->id === $blog->user_id);
     }
 
     public function delete(User $user, Blog $blog): bool
     {
-        return in_array($user->role, [UserRole::Admin, UserRole::Blogger], true);
+        return $user->role === UserRole::Admin
+            || ($user->role === UserRole::Blogger && $user->id === $blog->user_id);
     }
 
+    // Bulk delete: only Admin gets the toolbar bulk-delete action at all.
+    // Bloggers still delete individually via delete() above, scoped to
+    // their own posts by BlogResource::getEloquentQuery().
     public function deleteAny(User $user): bool
     {
-        return in_array($user->role, [UserRole::Admin, UserRole::Blogger], true);
+        return $user->role === UserRole::Admin;
     }
 }

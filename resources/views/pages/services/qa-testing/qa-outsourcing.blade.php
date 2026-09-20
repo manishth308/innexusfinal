@@ -143,6 +143,20 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
         <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Software QA Outsourcing for Ongoing Release Cycles</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Software QA outsourcing for ongoing release cycles, so testing keeps pace with every release instead of slipping between them.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Quality Assurance Outsourcing Company Experience</h3>
+          <p class="text-gray-400 leading-relaxed text-sm">Quality assurance outsourcing company experience across project types, from web and mobile to APIs and internal tools.</p>
+        </div>
+      </div>
+
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+        <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Dedicated QA Team Options for Consistent Coverage</h3>
           <p class="text-gray-400 leading-relaxed text-sm">Dedicated QA team options for consistent, ongoing coverage that stays available as your roadmap changes.</p>
         </div>
@@ -155,24 +169,10 @@
         </div>
       </div>
 
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
+      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
         <div>
           <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">QA Support Services That Plug Into Your Workflow</h3>
           <p class="text-gray-400 leading-relaxed text-sm">QA support services that plug into your existing workflow, tools, and release process without disruption.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Software QA Outsourcing for Ongoing Release Cycles</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Software QA outsourcing for ongoing release cycles, so testing keeps pace with every release instead of slipping between them.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Quality Assurance Outsourcing Company Experience</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Quality assurance outsourcing company experience across project types, from web and mobile to APIs and internal tools.</p>
         </div>
       </div>
     </div>
@@ -183,7 +183,7 @@
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Service Capabilities</h2>
       <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
     </div>
 
@@ -366,69 +366,6 @@
   </div>
 </section>
 
-@push('scripts')
-<script>
-  window.techStackData = @json($techStack);
-</script>
-<script>
-  (function () {
-    const categories = document.querySelectorAll('.tech-category');
-    const rightHeading = document.querySelector('#tech-right h3');
-    const techGrid = document.getElementById('tech-grid');
-    const data = window.techStackData;
-
-    if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-    function setActive(index) {
-      categories.forEach((cat, idx) => {
-        const isActive = Number(cat.getAttribute('data-index')) === index;
-        const indicator = cat.querySelector('.tech-indicator');
-        const name = cat.querySelector('.tech-name');
-
-        if (isActive) {
-          indicator.classList.remove('opacity-0');
-          indicator.classList.add('opacity-100');
-          name.classList.remove('text-white', 'font-normal');
-          name.classList.add('text-purple-400', 'font-medium');
-        } else {
-          indicator.classList.remove('opacity-100');
-          indicator.classList.add('opacity-0');
-          name.classList.remove('text-purple-400', 'font-medium');
-          name.classList.add('text-white', 'font-normal');
-        }
-      });
-
-      const selected = data[index];
-      if (!selected) return;
-
-      rightHeading.textContent = selected.name;
-
-      techGrid.innerHTML = selected.technologies
-          .map(
-              (tech) => `
-                  <div class="group tech-card">
-                      <div class="tech-card-icon-frame">
-                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                      </div>
-                      
-                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                  </div>
-              `
-          )
-          .join('');
-    }
-
-    categories.forEach((cat) => {
-      cat.addEventListener('click', function () {
-        const index = Number(this.getAttribute('data-index'));
-        setActive(index);
-      });
-    });
-
-    setActive(0);
-  })();
-</script>
-@endpush
 
 <!-- Why Choose InTech Nexus -->
 <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
@@ -436,7 +373,7 @@
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why Choose InTech Nexus</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">An extension of your team, not a disconnected vendor</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           Outsourced QA here follows the same process as our other outsourced work, with regular check ins, clear updates, and one point of contact, so it works like an extension of your team, not a disconnected outside vendor.
@@ -521,5 +458,68 @@
 </section>
 
 </div>
-
 @endsection
+
+@push('scripts')
+<script>
+  window.techStackData = @json($techStack);
+</script>
+<script>
+  (function () {
+    const categories = document.querySelectorAll('.tech-category');
+    const rightHeading = document.querySelector('#tech-right h3');
+    const techGrid = document.getElementById('tech-grid');
+    const data = window.techStackData;
+
+    if (!categories.length || !rightHeading || !techGrid || !data) return;
+
+    function setActive(index) {
+      categories.forEach((cat, idx) => {
+        const isActive = Number(cat.getAttribute('data-index')) === index;
+        const indicator = cat.querySelector('.tech-indicator');
+        const name = cat.querySelector('.tech-name');
+
+        if (isActive) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+          name.classList.remove('text-white', 'font-normal');
+          name.classList.add('text-purple-400', 'font-medium');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+          name.classList.remove('text-purple-400', 'font-medium');
+          name.classList.add('text-white', 'font-normal');
+        }
+      });
+
+      const selected = data[index];
+      if (!selected) return;
+
+      rightHeading.textContent = selected.name;
+
+      techGrid.innerHTML = selected.technologies
+          .map(
+              (tech) => `
+                  <div class="group tech-card">
+                      <div class="tech-card-icon-frame">
+                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
+                      </div>
+                      
+                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
+                  </div>
+              `
+          )
+          .join('');
+    }
+
+    categories.forEach((cat) => {
+      cat.addEventListener('click', function () {
+        const index = Number(this.getAttribute('data-index'));
+        setActive(index);
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
+@endpush

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\BloggerApplications\Tables;
 use App\Enums\BloggerApplicationStatus;
 use App\Enums\UserRole;
 use App\Mail\BloggerApplicationRejected;
+use App\Mail\BloggerWelcomeInvite;
 use App\Models\BloggerApplication;
 use App\Models\User;
 use Filament\Actions\Action;
@@ -96,10 +97,15 @@ class BloggerApplicationsTable
 
         $record->update(['status' => BloggerApplicationStatus::Approved]);
 
-        // Laravel's own password broker: generates + stores the token and
-        // fires the standard ResetPassword notification email. No custom
-        // token/mail code needed for this part.
-        Password::sendResetLink(['email' => $user->email]);
+        // Generate the token directly rather than calling
+        // Password::sendResetLink() - that call would fire the shared
+        // ResetPassword notification (the same one a genuine "forgot
+        // password" request uses), which is exactly what we don't want
+        // for a first-time invite. createToken() only generates + stores
+        // the token; it sends nothing on its own.
+        $token = Password::createToken($user);
+
+        Mail::to($user->email)->send(new BloggerWelcomeInvite($user, $token));
 
         Notification::make()
             ->title('Approved - invite email sent.')

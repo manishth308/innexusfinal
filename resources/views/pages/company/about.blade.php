@@ -87,30 +87,6 @@
   </div>
 </section>
 
-<!-- Client Ticker Banner -->
-<section class="bg-[#0b0c10] border-t border-white/5 overflow-hidden py-6">
-  <div class="flex whitespace-nowrap animate-scroll">
-    <div class="flex items-center gap-16 px-8 text-gray-400 text-lg font-bold tracking-wide uppercase">
-      <span>Healthcare</span>
-      <span>Manufacturing</span>
-      <span>Finance & Banking</span>
-      <span>E-Commerce</span>
-      <span>Build</span>
-      <span>Design</span>
-      <span>Grow</span>
-    </div>
-    <div class="flex items-center gap-16 px-8 text-gray-400 text-lg font-bold tracking-wide uppercase">
-      <span>Healthcare</span>
-      <span>Manufacturing</span>
-      <span>Finance & Banking</span>
-      <span>E-Commerce</span>
-      <span>Build</span>
-      <span>Design</span>
-      <span>Grow</span>
-    </div>
-  </div>
-</section>
-
 <!-- Who We Are Section -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
@@ -120,7 +96,7 @@
         We are a global digital and IT company. We believe the best digital products come from a team that understands the full journey, not just one part of it. A developer who never talks to a designer builds software that is hard to use. A marketer who never talks to a developer sends traffic to pages that were never built to convert it. We removed that gap by building one team that handles all of it together.
       </p>
       <p class="text-gray-300 text-lg leading-relaxed mt-4">
-        That is why our business has three connected parts. <strong class="text-purple-400">Build, Design, and Grow</strong>. We do not treat software, design, and marketing as separate businesses under one roof. A project that starts in our Software Development team stays connected to UI/UX Design and Digital Marketing for as long as you need us, instead of being handed off to a disconnected vendor once the code is written.
+        That is why our business has three connected parts. <strong class="text-red-700">Build, Design, and Grow</strong>. We do not treat software, design, and marketing as separate businesses under one roof. A project that starts in our Software Development team stays connected to UI/UX Design and Digital Marketing for as long as you need us, instead of being handed off to a disconnected vendor once the code is written.
       </p>
       <p class="text-gray-300 text-lg leading-relaxed mt-4">
         We operate as one global brand with local delivery. Our teams work across time zones and markets, which means you get a partner who understands global standards and local context, not just a single office with a narrow view of your market.
@@ -157,10 +133,10 @@
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="mb-12">
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Believe</h2>
-      <p class="text-white text-xl font-semibold mb-6">
+      <p class="text-white font-semibold mb-6">
         We design, build, and grow digital businesses. This is not just a tagline. It is how we work.
       </p>
-      <p class="text-white font-semibold text-xl mb-6">
+      <p class="text-white font-semibold  mb-6">
         A software development project does not get handed off to a design team that was not part of the plan.
         <br/>
         A digital marketing campaign is not guessing at a brand it never helped shape. Every team works from the same brief, inside the same process.

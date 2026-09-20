@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Blogs\Schemas;
 
 use App\Enums\BlogStatus;
+use App\Enums\UserRole;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -71,10 +72,19 @@ class BlogForm
                             ->visible(fn ($get) => $get('status') === BlogStatus::Published->value)
                             ->helperText('Set automatically the first time this post is published.'),
 
+                        // Bloggers are scoped to their own posts (see
+                        // BlogResource::getEloquentQuery() + BlogPolicy) —
+                        // letting them freely reassign this would just let
+                        // them hand a post to/take one from someone else's
+                        // bucket, so it's locked to Admin only. Still
+                        // dehydrated while disabled so the default value
+                        // (the current blogger) is actually saved.
                         Select::make('user_id')
                             ->label('Author')
                             ->relationship('user', 'name')
                             ->default(fn () => Auth::id())
+                            ->disabled(fn () => Auth::user()?->role !== UserRole::Admin)
+                            ->dehydrated()
                             ->searchable()
                             ->preload(),
 

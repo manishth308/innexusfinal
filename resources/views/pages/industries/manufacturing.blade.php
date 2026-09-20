@@ -32,6 +32,7 @@
 @section('content')
 
 <div class="csd-page">
+
 <!-- Hero / Banner Section -->
 <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
 
@@ -56,10 +57,10 @@
         </h1>
 
         <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
-          Manufacturing businesses need digital systems that connect operations, sales, and customers, not just a website that describes what the business does.
+          Manufacturing businesses need digital systems that connect operations, sales, and customers. Not just a website that describes what the business does.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          Buyers researching industrial equipment, parts, or manufacturing services now do most of that research online, long before they ever pick up the phone. If your website reads like a brochure instead of demonstrating real technical capability, you lose serious buyers to competitors who look more credible online, even if your actual work is better. We work with manufacturing businesses that need both sides of this solved together: digital systems that connect operations and data internally, and a customer facing presence that reflects the real technical skill behind the business.
+          Buyers researching industrial equipment, parts, or manufacturing services now do most of that research online, long before they ever pick up the phone. If your website reads like a brochure instead of demonstrating real technical capability, you lose serious buyers to competitors who look more credible online, even if your actual work is better. At the same time, many manufacturers are still running core operations, inventory, and customer data across systems that were never built to talk to each other. We work with manufacturing businesses that need both sides of this solved together, digital systems that connect operations and data internally, and a customer facing presence that reflects the real technical skill behind the business.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -88,323 +89,33 @@
   </div>
 </section>
 
-<!-- Who This Is For & Common Challenges Section -->
+<!-- Common Challenges -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Who This Is For
-          </h2>
-          <p class="text-gray-300 leading-relaxed text-base">
-            Manufacturing businesses that need both internal systems that connect operations and data, and a customer facing presence that reflects the real technical skill behind the business, not a generic brochure.
-          </p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Common Challenges
-          </h2>
-          <ul class="space-y-3 text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Sales and operations data live in systems that do not talk to each other, with teams re-entering the same information across spreadsheets, order systems, and inventory tools.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>The website undersells what the business can actually do to buyers doing early research, and a generic template site does not build the confidence a technical buyer needs before reaching out.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Lead generation for manufacturing sales cycles looks different from consumer marketing, and long, considered B2B buying cycles need a different approach than a typical ecommerce funnel.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Legacy operations software can be difficult to extend, forcing teams to work around limitations instead of the system supporting the actual workflow.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Customer and supplier communication is often still manual, when a connected portal could remove a large share of the back and forth.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <div class="max-w-4xl mx-auto px-6 sm:px-12">
+    <div class="p-8 bg-white/[0.03] border border-white/10 text-center">
+      <h2 class="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+        Common Challenges
+      </h2>
+      <ul class="space-y-3 text-gray-300 max-w-2xl mx-auto">
+        <li>Sales and operations data live in systems that do not talk to each other. Teams end up re-entering the same information across spreadsheets, order systems, and inventory tools.</li>
+        <li>The website undersells what the business can actually do to buyers doing early research. A generic template site does not build the confidence a technical buyer needs before reaching out.</li>
+        <li>Lead generation for manufacturing sales cycles looks different from consumer marketing. Long, considered B2B buying cycles need a different approach than a typical ecommerce funnel.</li>
+        <li>Legacy operations software can be difficult to extend, forcing teams to work around limitations instead of the system supporting the actual workflow.</li>
+        <li>Customer and supplier communication is often still manual, when a connected portal could remove a large share of the back and forth.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- Services We Provide -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Services We Provide</h2>
-      <p class="text-gray-400 text-lg">We build systems and content that reflect how manufacturing actually runs.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Software Development</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Software Development for custom business systems, connecting operations, inventory, and sales data instead of leaving them isolated.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">ERP and CRM Development</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">ERP and CRM development, tailored to the specific processes running your production and sales floor, not a generic manufacturing template.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">B2B Web Development</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">B2B Web Development, built to demonstrate technical capability to buyers doing serious research, not just describe services in general terms.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Digital Marketing</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Digital Marketing for SEO and lead generation, built around how manufacturing buyers actually search and evaluate suppliers.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Solutions We Offer -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Solutions We Offer</h2>
-      <p class="text-gray-400 text-lg">Systems built around how production and customer relationships actually work.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Production and Inventory Management Systems</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Production and inventory management systems that give real time visibility into stock, orders, and production status across the business.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Supplier and Customer Portals</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Supplier and customer portals that reduce manual back and forth by giving partners direct access to the information they need.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Service Capabilities -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 bg-white/[0.03] border border-white/10">
-        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Custom business systems that connect operations, inventory, and sales data instead of leaving them isolated</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>ERP and CRM systems tailored to the specific processes running your production and sales floor, not a generic template</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>B2B websites that demonstrate technical capability to buyers doing serious research, not just describe services in general terms</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>SEO and lead generation content built around how manufacturing buyers actually search and evaluate suppliers</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10">
-        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Custom software for connecting operations, inventory, and sales data across systems that were never built to talk to each other</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Lead generation for long, considered B2B buying cycles rather than a typical consumer ecommerce funnel</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Extending or modernizing legacy operations software so it can support the actual workflow instead of forcing workarounds</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>SEO and content strategy built around how manufacturing buyers actually search and evaluate suppliers</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Process -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="max-w-3xl mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
-      <p class="text-gray-400 text-lg leading-relaxed">
-        Built around how production, inventory, and fulfillment actually run day to day.
-      </p>
-    </div>
-
-    <div class="space-y-6">
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">01</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Discovery and Operations Audit</h3>
-          <p class="text-gray-300">We review how production, inventory, sales, and customer data actually flow today, and where the gaps are between systems.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">02</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Systems Strategy</h3>
-          <p class="text-gray-300">We scope the right blend of custom systems, integrations, and customer facing work based on your operations and sales cycle.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">03</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Build and Integrate</h3>
-          <p class="text-gray-300">We build the internal systems, the customer and supplier portals, and the B2B website, with integrations planned together.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">04</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Test Against Real Workflows</h3>
-          <p class="text-gray-300">We test the systems against the actual workflows your team runs, including how data moves between production, inventory, and sales.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">05</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Launch and Grow</h3>
-          <p class="text-gray-300">We support the systems after launch and run the lead generation engine that fills them with serious buyer inquiries.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tools / Technologies -->
-<section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-      <p class="text-gray-400 text-lg">The stack we work with on manufacturing projects.</p>
-    </div>
-
-    <div class="tech-split-grid">
-      <div>
-        @php
-            $techStack = [
-                [
-                    'name' => 'ERP & CRM',
-                    'technologies' => [
-                        ['name' => 'Salesforce', 'image' => asset('images/tech-logo/Salesforce.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Frontend & Experience',
-                    'technologies' => [
-                        ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                        ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Backend & Data',
-                    'technologies' => [
-                        ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                        ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                        ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                        ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                    ],
-                ],
-                [
-                    'name' => 'Infrastructure',
-                    'technologies' => [
-                        ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                        ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                        ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/GoogleCloud.png')],
-                    ],
-                ],
-            ];
-        @endphp
-
-        <div class="flex flex-col gap-8">
-          @foreach ($techStack as $index => $category)
-            <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
-              <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
-              <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
-                {{ $category['name'] }}
-              </span>
-            </div>
-          @endforeach
-        </div>
-      </div>
-
-      <div id="tech-right" class="relative lg:pr-16">
-        <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
-          {{ $techStack[0]['name'] }}
-        </h3>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
-          @php
-              $firstCategory = $techStack[0]['technologies'];
-          @endphp
-
-          @foreach ($firstCategory as $tech)
-            <div class="group tech-card">
-              <div class="tech-card-icon-frame">
-                <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
-              </div>
-
-              <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
-            </div>
-          @endforeach
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why Choose InTech Nexus -->
+<!-- Why Manufacturing Needs a Different Approach -->
 <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
   <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="p-10 md:p-16 text-white flex flex-col justify-center">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">How the work actually runs</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Why Manufacturing Needs a Different Approach</h2>
         <p class="text-gray-300 leading-relaxed max-w-md">
           Manufacturing buyers are usually technical, deliberate, and comparing multiple suppliers before ever reaching out. A generic marketing approach built for consumer products does not build the kind of confidence this audience needs. At the same time, manufacturing operations depend on systems that actually reflect how production, inventory, and fulfillment work day to day, not a simplified version built by a team that has never worked with a manufacturing business. We bring both kinds of understanding into every manufacturing project.
         </p>
@@ -412,6 +123,41 @@
       <div class="why-choose-image-frame">
         <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services We Provide -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-4xl mx-auto px-6 sm:px-12">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Services We Provide</h2>
+      <p class="text-gray-400 text-lg">We build systems and content that reflect how manufacturing actually runs.</p>
+    </div>
+
+    <div class="p-8 bg-white/[0.03] border border-white/10 text-center">
+      <ul class="space-y-3 text-gray-300 max-w-2xl mx-auto">
+        <li>Software Development for custom business systems, connecting operations, inventory, and sales data instead of leaving them isolated.</li>
+        <li>ERP and CRM development, tailored to the specific processes running your production and sales floor, not a generic manufacturing template.</li>
+        <li>B2B Web Development, built to demonstrate technical capability to buyers doing serious research, not just describe services in general terms.</li>
+        <li>Digital Marketing for SEO and lead generation, built around how manufacturing buyers actually search and evaluate suppliers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions We Offer -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-4xl mx-auto px-6 sm:px-12">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Solutions We Offer</h2>
+    </div>
+
+    <div class="p-8 bg-white/[0.03] border border-white/10 text-center">
+      <ul class="space-y-3 text-gray-300 max-w-2xl mx-auto">
+        <li>Production and inventory management systems that give real time visibility into stock, orders, and production status across the business.</li>
+        <li>Supplier and customer portals that reduce manual back and forth by giving partners direct access to the information they need.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -477,7 +223,7 @@
   </div>
 </section>
 
-<!-- Call to Action Banner -->
+<!-- Get Started / Call to Action Banner -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
     <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
@@ -491,7 +237,9 @@
         <a href="{{ url('/software-development') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Software Development</a>.
       </p>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Not sure where to start? Book a call, request a proposal, or get a free quote and we will help you find the right first step.
+        If you are not sure where to start, reach out through our
+        <a href="{{ url('/contact') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Contact</a>
+        page and we will help you find the right first step.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
@@ -506,69 +254,5 @@
 </section>
 
 </div>
-
-@push('scripts')
-<script>
-  window.techStackData = @json($techStack);
-</script>
-<script>
-  (function () {
-    const categories = document.querySelectorAll('.tech-category');
-    const rightHeading = document.querySelector('#tech-right h3');
-    const techGrid = document.getElementById('tech-grid');
-    const data = window.techStackData;
-
-    if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-    function setActive(index) {
-      categories.forEach((cat, idx) => {
-        const isActive = Number(cat.getAttribute('data-index')) === index;
-        const indicator = cat.querySelector('.tech-indicator');
-        const name = cat.querySelector('.tech-name');
-
-        if (isActive) {
-          indicator.classList.remove('opacity-0');
-          indicator.classList.add('opacity-100');
-          name.classList.remove('text-white', 'font-normal');
-          name.classList.add('text-purple-400', 'font-medium');
-        } else {
-          indicator.classList.remove('opacity-100');
-          indicator.classList.add('opacity-0');
-          name.classList.remove('text-purple-400', 'font-medium');
-          name.classList.add('text-white', 'font-normal');
-        }
-      });
-
-      const selected = data[index];
-      if (!selected) return;
-
-      rightHeading.textContent = selected.name;
-
-      techGrid.innerHTML = selected.technologies
-          .map(
-              (tech) => `
-                  <div class="group tech-card">
-                      <div class="tech-card-icon-frame">
-                          <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                      </div>
-
-                      <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                  </div>
-              `
-          )
-          .join('');
-    }
-
-    categories.forEach((cat) => {
-      cat.addEventListener('click', function () {
-        const index = Number(this.getAttribute('data-index'));
-        setActive(index);
-      });
-    });
-
-    setActive(0);
-  })();
-</script>
-@endpush
 
 @endsection

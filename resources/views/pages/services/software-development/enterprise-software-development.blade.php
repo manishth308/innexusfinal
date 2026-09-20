@@ -54,14 +54,14 @@
         </nav>
 
         <h1 class="text-4xl sm:text-6xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-          Enterprise Software Development Built Around <span class="text-purple-400">Your Business Scale</span>
+          Enterprise Software Development for Organizations That Cannot Afford to Get It Wrong
         </h1>
 
         <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
-          Enterprise software development services built around the complexity and scale of your organization, not generic templates forced to fit.
+          Enterprise software development for organizations that need systems built to handle scale, complexity, and multiple teams at once.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          We handle everything from discovery through long-term support, so the software scales with your team and processes instead of capping your growth.
+          Enterprise projects come with more moving parts, more stakeholders, and more risk if the architecture is not planned properly. As part of our wider Software Development practice, we bring the extra planning and structure that enterprise software solutions demand, without slowing the project down unnecessarily.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -101,7 +101,7 @@
             Who This Is For
           </h2>
           <p class="text-gray-300 leading-relaxed text-base">
-            Mid-to-large organizations that need robust internal platforms, customer-facing enterprise portals, or full-scale digital transformation initiatives. Ideal for teams managing complex workflows across multiple departments and geographies.
+            Larger organizations that need software built for many users, departments, or locations working from the same system.
           </p>
         </div>
       </div>
@@ -116,19 +116,15 @@
           <ul class="space-y-3 text-gray-300">
             <li class="flex items-start gap-3">
               <span class="text-purple-400 mt-1">◦</span>
-              <span>Legacy systems that are slow, fragile, and costly to maintain.</span>
+              <span>Off the shelf tools cannot handle the scale or complexity of a large organization.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-purple-400 mt-1">◦</span>
-              <span>Disconnected tools creating data silos across departments.</span>
+              <span>Different departments are working from disconnected systems.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-purple-400 mt-1">◦</span>
-              <span>Platforms that cannot scale with growing user bases or business demands.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 mt-1">◦</span>
-              <span>Compliance and security gaps in existing software architectures.</span>
+              <span>The business needs software that can support growth across teams and regions.</span>
             </li>
           </ul>
         </div>

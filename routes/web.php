@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\BlogFeedController;
 use App\Http\Controllers\BloggerApplicationController;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
@@ -31,7 +33,11 @@ Route::post('/blogs/reset-password', [PasswordResetController::class, 'store'])-
 // admin panel). MUST stay LAST: every named/static route above this line
 // is matched first, and anything not explicitly listed here falls through
 // to this dynamic lookup instead of 404ing outright.
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/feed', [BlogFeedController::class, 'index'])->name('blog.feed');
+Route::get('/blog/category/{category:slug}', [\App\Http\Controllers\BlogController::class, 'category'])->name('blog.category');
 Route::get('/blog/{slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');

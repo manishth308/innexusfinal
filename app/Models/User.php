@@ -54,6 +54,17 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         return $this->avatar ? asset('storage/'.$this->avatar) : null;
     }
 
+    /**
+     * Only affects genuine self-service "forgot password" requests - see
+     * App\Notifications\ResetPasswordNotification's docblock for why the
+     * brand-new-blogger invite email is deliberately NOT sent through
+     * this hook.
+     */
+    public function sendPasswordResetNotification($token): void
+    {
+        $this->notify(new \App\Notifications\ResetPasswordNotification($token));
+    }
+
     public function blogs(): HasMany
     {
         return $this->hasMany(Blog::class);

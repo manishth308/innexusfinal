@@ -217,108 +217,105 @@
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
     <div class="max-w-3xl mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
-      <p class="text-gray-400 text-lg leading-relaxed">
-        A structured approach to local SEO that helps nearby customers find and choose your business.
-      </p>
-    </div>
-
-    <div class="space-y-6">
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">01</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Local Audit & Research</h3>
-          <p class="text-gray-300">We audit your current local presence, citations, and rankings to identify gaps and opportunities.</p>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            A structured approach to local SEO that helps nearby customers find and choose your business.
+          </p>
         </div>
-      </div>
 
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">02</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Profile & Citation Optimization</h3>
-          <p class="text-gray-300">We optimize your Google Business Profile and clean up citations for consistency across every directory.</p>
-        </div>
-      </div>
+        <div class="space-y-6">
+          <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+            <span class="text-3xl font-extrabold text-purple-400">01</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Audit & Strategy</h3>
+              <p class="text-gray-300">We review your current performance and set clear goals.</p>
+            </div>
+          </div>
 
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">03</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Content & Landing Pages</h3>
-          <p class="text-gray-300">We build or optimize location-specific pages and content that signal relevance to search engines.</p>
-        </div>
-      </div>
+          <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+            <span class="text-3xl font-extrabold text-purple-400">02</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Setup & Implementation</h3>
+              <p class="text-gray-300">We set up campaigns, tracking, and technical foundations.</p>
+            </div>
+          </div>
 
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">04</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Review & Reputation Building</h3>
-          <p class="text-gray-300">We implement review generation and response systems to build trust and improve local ranking signals.</p>
-        </div>
-      </div>
+          <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+            <span class="text-3xl font-extrabold text-purple-400">03</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Execution</h3>
+              <p class="text-gray-300">We launch and run campaigns or content on a consistent schedule.</p>
+            </div>
+          </div>
 
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">05</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Monitoring & Reporting</h3>
-          <p class="text-gray-300">We track map rankings, citation health, and review growth, then adjust strategy based on performance data.</p>
+          <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+            <span class="text-3xl font-extrabold text-purple-400">04</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Monitoring & Optimization</h3>
+              <p class="text-gray-300">We track performance and adjust based on real data.</p>
+            </div>
+          </div>
+
+          <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
+            <span class="text-3xl font-extrabold text-purple-400">05</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Reporting</h3>
+              <p class="text-gray-300">We report results clearly, tied back to your original goals.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- Tools / Technologies Section -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
-    </div>
+<div class="mb-12">
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
+          <p class="text-gray-400 text-lg">The tools we use to deliver local SEO results.</p>
+        </div>
 
-    <div class="tech-split-grid">
-      <div>
-        @php
-            $techStack = [
-                [
-                    'name' => 'SEO & Analytics',
-                    'technologies' => [
-                        ['name' => 'Ahrefs', 'image' => asset('images/tech-logo/Ahrefs.png')],
-                        ['name' => 'SEMrush', 'image' => asset('images/tech-logo/SEMrush.png')],
-                        ['name' => 'Google Search Console', 'image' => asset('images/tech-logo/Google Search Console.png')],
+        <div class="tech-split-grid">
+          <div>
+            @php
+                $techStack = [
+                    [
+                        'name' => 'SEO',
+                        'technologies' => [
+                            ['name' => 'Ahrefs', 'image' => asset('images/tech-logo/Ahrefs.png')],
+                            ['name' => 'SEMrush', 'image' => asset('images/tech-logo/SEMrush.png')],
+                            ['name' => 'Google Search Console', 'image' => asset('images/tech-logo/Google Search Console.png')],
+                        ],
                     ],
-                ],
-                [
-                    'name' => 'Paid Ads',
-                    'technologies' => [
-                        ['name' => 'Google Ads', 'image' => asset('images/tech-logo/Google Ads.png')],
-                        ['name' => 'Meta Ads Manager', 'image' => asset('images/tech-logo/Meta Ads Manager.png')],
+                    [
+                        'name' => 'Paid Ads',
+                        'technologies' => [
+                            ['name' => 'Google Ads', 'image' => asset('images/tech-logo/Google Ads.png')],
+                            ['name' => 'Meta Ads Manager', 'image' => asset('images/tech-logo/Meta Ads Manager.png')],
+                        ],
                     ],
-                ],
-                [
-                    'name' => 'Email & Automation',
-                    'technologies' => [
-                        ['name' => 'Mailchimp', 'image' => asset('images/tech-logo/Mailchimp.png')],
-                        ['name' => 'Klaviyo', 'image' => asset('images/tech-logo/Klaviyo.png')],
+                    [
+                        'name' => 'Analytics',
+                        'technologies' => [
+                            ['name' => 'Google Analytics', 'image' => asset('images/tech-logo/Google Analytics.png')],
+                            ['name' => 'Looker Studio', 'image' => asset('images/tech-logo/Looker Studio.png')],
+                        ],
                     ],
-                ],
-                [
-                    'name' => 'Analytics & CRO',
-                    'technologies' => [
-                        ['name' => 'Google Analytics', 'image' => asset('images/tech-logo/Google Analytics.png')],
-                        ['name' => 'Hotjar', 'image' => asset('images/tech-logo/Hotjar.png')],
-                        ['name' => 'Mixpanel', 'image' => asset('images/tech-logo/Mixpanel.png')],
+                    [
+                        'name' => 'Email',
+                        'technologies' => [
+                            ['name' => 'Mailchimp', 'image' => asset('images/tech-logo/Mailchimp.png')],
+                            ['name' => 'Klaviyo', 'image' => asset('images/tech-logo/Klaviyo.png')],
+                        ],
                     ],
-                ],
-                [
-                    'name' => 'Project & QA Tools',
-                    'technologies' => [
-                        ['name' => 'Jira', 'image' => asset('images/tech-logo/Jira.png')],
-                        ['name' => 'GitHub', 'image' => asset('images/tech-logo/github-white.png')],
-                        ['name' => 'Notion', 'image' => asset('images/tech-logo/Notion.png')],
+                    [
+                        'name' => 'CRO',
+                        'technologies' => [
+                            ['name' => 'Hotjar', 'image' => asset('images/tech-logo/Hotjar.png')],
+                        ],
                     ],
-                ],
-            ];
-        @endphp
+                ];
+            @endphp
 
         <div class="flex flex-col gap-8">
           @foreach ($techStack as $index => $category)
@@ -452,7 +449,7 @@
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 1 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 1" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
-          Local SEO focuses specifically on map results and location based searches, while broader SEO covers your visibility across all of search.
+          Local SEO focuses specifically on map results and location based searches, while broader SEO Services cover your visibility across all of search.
         </div>
       </div>
 

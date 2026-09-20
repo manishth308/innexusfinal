@@ -7,6 +7,8 @@ use App\Support\HtmlSanitizer;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -78,5 +80,41 @@ class Blog extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Falls back to the title itself when no meta_title was set in the
+     * admin/blogger panel - every post gets a real <title>, never blank.
+     */
+    public function seoTitle(): string
+    {
+        return $this->meta_title ?: $this->title;
+    }
+
+    /**
+     * meta_description, then the excerpt, then a plain-text clip of the
+     * body - always something usable for <meta name="description">/OG,
+     * never blank and never raw HTML.
+     */
+    public function seoDescription(): string
+    {
+        if (filled($this->meta_description)) {
+            return $this->meta_description;
+        }
+
+        $source = $this->excerpt ?: strip_tags($this->body);
+
+        return Str::limit(trim(preg_replace('/\s+/', ' ', $source)), 160);
+    }
+
+    /**
+     * og_image, then the featured_image, then null (caller supplies a
+     * site-wide default) - never a broken path.
+     */
+    public function seoImageUrl(): ?string
+    {
+        $path = $this->og_image ?: $this->featured_image;
+
+        return $path ? Storage::url($path) : null;
     }
 }

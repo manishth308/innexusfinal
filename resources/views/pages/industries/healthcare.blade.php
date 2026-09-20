@@ -32,6 +32,7 @@
 @section('content')
 
 <div class="csd-page">
+
 <!-- Hero / Banner Section -->
 <section class="relative overflow-hidden bg-[#0b0c10] pt-12 pb-20 lg:pt-16 lg:pb-24 min-h-[580px] flex items-center border-b border-white/10">
 
@@ -56,10 +57,10 @@
         </h1>
 
         <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl font-normal mb-4">
-          Healthcare technology has to work for patients, providers, and regulators all at once. It cannot be easy to use at the cost of privacy and safety, and it cannot treat those rules as an afterthought either.
+          Healthcare technology has to work for patients, providers, and regulators all at once. It cannot be easy to use at the cost of privacy and safety, and it cannot treat those rules as an afterthought either. A patient portal that is technically compliant but confusing to use will still go unused. A beautifully designed booking flow that overlooks data handling requirements is not a solution at all, it is a liability.
         </p>
         <p class="text-base text-gray-400 leading-relaxed max-w-2xl font-normal mb-8">
-          We work with healthcare businesses on both sides of this problem: the software and systems that need to work correctly and securely, and the patient and provider facing experience that needs to feel simple despite everything happening behind the scenes.
+          We work with healthcare businesses on both sides of this problem: the software and systems that need to work correctly and securely, and the patient and provider facing experience that needs to feel simple despite everything happening behind the scenes. Our team brings both technical and design discipline to every healthcare project, so neither gets treated as secondary to the other.
         </p>
 
         <div class="flex flex-wrap items-center gap-4">
@@ -88,366 +89,99 @@
   </div>
 </section>
 
-<!-- Who This Is For & Problems We Solve Section -->
+<!-- Common Challenges -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Who This Is For
-          </h2>
-          <p class="text-gray-300 leading-relaxed text-base">
-            Healthcare businesses that need platforms and websites serving patients and providers alike, with privacy, accessibility, and clinical workflow built in from the start, not added later.
-          </p>
-        </div>
-      </div>
+  <div class="max-w-4xl mx-auto px-6 sm:px-12">
+    <div class="p-8 bg-white/[0.03] border border-white/10 text-center">
+      <h2 class="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+        Common Challenges
+      </h2>
+      <ul class="space-y-3 text-gray-300 max-w-2xl mx-auto">
+        <li>Patient facing tools need to be simple to use without putting data at risk.</li>
+        <li>Older systems make it hard to improve the patient or provider experience without a costly, risky migration.</li>
+        <li>Marketing needs to build trust in a field where credibility matters more than clever wording.</li>
+        <li>Appointment scheduling and intake processes that still rely on phone calls or paperwork, creating friction for both patients and staff.</li>
+        <li>Disconnected systems between clinical records, billing, and patient communication, leading to duplicated work.</li>
+        <li>Meeting accessibility expectations for a patient base that includes older adults and people with varying levels of technical comfort.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <div class="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            Problems We Solve
-          </h2>
-          <ul class="space-y-3 text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Patient facing tools that are simple to use without putting data at risk, and older systems that make it hard to improve the experience without a risky migration.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Marketing that needs to build trust in a field where credibility matters more than clever wording.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-400 font-bold">•</span>
-              <span>Disconnected systems between clinical records, billing, and patient communication, and meeting accessibility expectations for a diverse patient base.</span>
-            </li>
-          </ul>
-        </div>
+<!-- Why Healthcare Businesses Choose InTech Nexus -->
+<section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+        <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One team, day one</h2>
+        <p class="text-gray-300 leading-relaxed max-w-md">
+          Healthcare projects rarely fail because of a single bad decision. They fail when privacy, usability, and clinical workflow get designed in isolation from each other. Our Software Development and UI/UX Design teams work on healthcare projects together from day one, so decisions about how data is handled and decisions about how a screen looks and feels are made with full knowledge of each other, not negotiated after the fact between two disconnected teams.
+        </p>
+      </div>
+      <div class="why-choose-image-frame">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
       </div>
     </div>
   </div>
 </section>
 
-<!-- What We Offer -->
+<!-- Services We Provide -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">What We Offer</h2>
+  <div class="max-w-4xl mx-auto px-6 sm:px-12">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Services We Provide</h2>
       <p class="text-gray-400 text-lg">We bring both technical and design discipline to every healthcare project.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Software and Mobile App Development</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Software Development and Mobile App Development for healthcare software and apps, including patient portals and provider tools.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">UI/UX Design for Patients and Providers</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">UI/UX Design built around patients and providers, tested for clarity across a wide range of ages and technical comfort levels.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Web Development and Digital Marketing</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Web Development and Digital Marketing for your website and outreach, built to earn trust in a field where credibility matters.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px]">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">QA and Testing for Reliability</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">QA and Testing with attention to accessibility and reliability, since healthcare tools cannot afford to fail during real use.</p>
-        </div>
-      </div>
-
-      <div class="group p-8 bg-white/[0.03] border border-purple-500/30 hover:border-purple-400 hover:bg-white/[0.06] shadow-[0_0_20px_rgba(168,85,247,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[220px] md:col-span-2">
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Privacy, Accessibility, and Compliance From Day One</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">Privacy, accessibility, and the right rules built in from the start, not added later. Data handling, access control, and compliance are part of the technical plan from the first discovery conversation.</p>
-        </div>
-      </div>
+    <div class="p-8 bg-white/[0.03] border border-white/10 text-center">
+      <ul class="space-y-3 text-gray-300 max-w-2xl mx-auto">
+        <li>Software Development and Mobile App Development for healthcare software and apps, including patient portals and provider tools.</li>
+        <li>UI/UX Design built around patients and providers, tested for clarity across a wide range of ages and technical comfort levels.</li>
+        <li>Web Development and Digital Marketing for your website and outreach, built to earn trust in a field where credibility matters.</li>
+        <li>QA & Testing with attention to accessibility and reliability, since healthcare tools cannot afford to fail during real use.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- Service Capabilities -->
+<!-- Solutions We Offer -->
+<section class="py-20 bg-[#0b0c10] border-t border-white/5">
+  <div class="max-w-4xl mx-auto px-6 sm:px-12">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Solutions We Offer</h2>
+    </div>
+
+    <div class="p-8 bg-white/[0.03] border border-white/10 text-center">
+      <ul class="space-y-3 text-gray-300 max-w-2xl mx-auto">
+        <li>Appointment booking and telemedicine platforms that reduce phone based scheduling and no shows.</li>
+        <li>Clinic and hospital management systems that bring scheduling, records, and billing into one connected system.</li>
+        <li>EMR and EHR integrations that connect new tools to the clinical systems you already rely on.</li>
+        <li>Healthcare reporting dashboards that give staff and administrators a clear, real time view of what is happening across the practice.</li>
+        <li>Patient intake and communication tools designed to reduce paperwork and missed appointments.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- How We Help -->
 <section class="py-20 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Service Capabilities</h2>
-      <p class="text-gray-400 text-lg">What we deliver and where we excel.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-8 bg-white/[0.03] border border-white/10">
-        <h3 class="text-xl font-bold text-white mb-4">What We Deliver</h3>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Appointment booking and telemedicine platforms that reduce phone based scheduling and no shows</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Clinic and hospital management systems that bring scheduling, records, and billing into one connected system</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>EMR and EHR integrations that connect new tools to the clinical systems you already rely on</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Patient intake and communication tools designed to reduce paperwork and missed appointments</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10">
-        <h3 class="text-xl font-bold text-white mb-4">Key Skill Areas</h3>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Healthcare software and mobile app engineering, including patient portals and provider tools</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>UI/UX design tested for clarity and accessibility across a wide range of patient ages and technical comfort</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Healthcare reporting dashboards that give staff and administrators a clear, real time view across the practice</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-purple-400 mt-1">◦</span>
-            <span>Privacy, accessibility, and compliance requirements designed in from the first conversation, not added later</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Process -->
-<section class="py-24 bg-[#0b0c10] border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12">
-    <div class="max-w-3xl mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Process</h2>
-      <p class="text-gray-400 text-lg leading-relaxed">
-        Privacy, usability, and clinical workflow designed together from day one.
+    <div class="p-8 md:p-12 bg-white/[0.03] border border-white/10">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">How We Help</h2>
+      <p class="text-gray-300 leading-relaxed text-base md:text-lg max-w-3xl mb-4">
+        We design and build healthcare platforms and websites with privacy, accessibility, and the right rules built in from the start, not added later. This means data handling, access control, and compliance considerations are part of the technical plan from the first discovery conversation, not a checklist applied at the end of the project.
+      </p>
+      <p class="text-gray-400 leading-relaxed text-base md:text-lg max-w-3xl">
+        On the patient facing side, we test designs with real usability in mind, since a confusing interface can be just as harmful as a technical failure if it keeps someone from booking care or understanding their own information.
       </p>
     </div>
-
-    <div class="space-y-6">
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">01</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Discovery and Compliance Mapping</h3>
-          <p class="text-gray-300">We identify the privacy, accessibility, and clinical workflow requirements that will shape the build before any code is written.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">02</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Design and Usability Testing</h3>
-          <p class="text-gray-300">We design patient and provider experiences that are simple to use across a wide range of ages and technical comfort levels.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">03</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Build and Integration</h3>
-          <p class="text-gray-300">We build the platform and connect it to the EMR, EHR, billing, and scheduling systems your practice already uses.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">04</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Accessibility and Reliability Testing</h3>
-          <p class="text-gray-300">We test for accessibility, reliability, and security throughout, since healthcare tools cannot afford to fail during real use.</p>
-        </div>
-      </div>
-
-      <div class="p-8 bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-start">
-        <span class="text-3xl font-extrabold text-purple-400">05</span>
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">Launch and Ongoing Support</h3>
-          <p class="text-gray-300">We support the platform after launch, with clear reporting for staff and administrators on what is happening across the practice.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
-  <!-- Tools / Technologies -->
-  <section class="py-20 bg-[#0b0c10] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="mb-12">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Tools / Technologies</h2>
-        <p class="text-gray-400 text-lg">The stack we work with on healthcare projects.</p>
-      </div>
-
-      <div class="tech-split-grid">
-        <div>
-          @php
-              $techStack = [
-                  [
-                      'name' => 'Frontend & Experience',
-                      'technologies' => [
-                          ['name' => 'React', 'image' => asset('images/tech-logo/React.png')],
-                          ['name' => 'Next.js', 'image' => asset('images/tech-logo/Next.js.png')],
-                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Backend & Data',
-                      'technologies' => [
-                          ['name' => 'Node.js', 'image' => asset('images/tech-logo/Node.js.png')],
-                          ['name' => 'Python', 'image' => asset('images/tech-logo/Python.png')],
-                          ['name' => 'PostgreSQL', 'image' => asset('images/tech-logo/PostgresSQL.png')],
-                          ['name' => 'MySQL', 'image' => asset('images/tech-logo/MySQL.png')],
-                      ],
-                  ],
-                  [
-                      'name' => 'Infrastructure',
-                      'technologies' => [
-                          ['name' => 'AWS', 'image' => asset('images/tech-logo/AWS.png')],
-                          ['name' => 'Azure', 'image' => asset('images/tech-logo/Azure.png')],
-                          ['name' => 'Google Cloud', 'image' => asset('images/tech-logo/Google Cloud.png')],
-                      ],
-                  ],
-              ];
-          @endphp
-
-          <div class="flex flex-col gap-8">
-            @foreach ($techStack as $index => $category)
-              <div class="tech-category flex items-center gap-3 cursor-pointer" data-index="{{ $index }}">
-                <span class="tech-indicator block w-12 h-[3px] bg-purple-400 shrink-0 opacity-0 transition-opacity duration-300"></span>
-                <span class="tech-name text-lg md:text-xl font-semibold text-white transition-colors duration-300">
-                  {{ $category['name'] }}
-                </span>
-              </div>
-            @endforeach
-          </div>
-        </div>
-
-        <div id="tech-right" class="relative lg:pr-16">
-          <h3 class="text-2xl md:text-3xl font-bold text-white leading-[1.2] mb-[30px]">
-            {{ $techStack[0]['name'] }}
-          </h3>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5" id="tech-grid">
-            @php
-                $firstCategory = $techStack[0]['technologies'];
-            @endphp
-
-            @foreach ($firstCategory as $tech)
-              <div class="group tech-card">
-                <div class="tech-card-icon-frame">
-                  <img src="{{ $tech['image'] }}" alt="{{ $tech['name'] }}" class="tech-card-icon">
-                </div>
-                
-                <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">{{ $tech['name'] }}</span>
-              </div>
-            @endforeach
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  @push('scripts')
-  <script>
-    window.techStackData = @json($techStack);
-  </script>
-  <script>
-    (function () {
-      const categories = document.querySelectorAll('.tech-category');
-      const rightHeading = document.querySelector('#tech-right h3');
-      const techGrid = document.getElementById('tech-grid');
-      const data = window.techStackData;
-
-      if (!categories.length || !rightHeading || !techGrid || !data) return;
-
-      function setActive(index) {
-        categories.forEach((cat, idx) => {
-          const isActive = Number(cat.getAttribute('data-index')) === index;
-          const indicator = cat.querySelector('.tech-indicator');
-          const name = cat.querySelector('.tech-name');
-
-          if (isActive) {
-            indicator.classList.remove('opacity-0');
-            indicator.classList.add('opacity-100');
-            name.classList.remove('text-white', 'font-normal');
-            name.classList.add('text-purple-400', 'font-medium');
-          } else {
-            indicator.classList.remove('opacity-100');
-            indicator.classList.add('opacity-0');
-            name.classList.remove('purple-400', 'font-medium');
-            name.classList.add('text-white', 'font-normal');
-          }
-        });
-
-        const selected = data[index];
-        if (!selected) return;
-
-        rightHeading.textContent = selected.name;
-
-        techGrid.innerHTML = selected.technologies
-            .map(
-                (tech) => `
-                    <div class="group tech-card">
-                        <div class="tech-card-icon-frame">
-                            <img src="${tech.image}" alt="${tech.name}" class="tech-card-icon">
-                        </div>
-                        
-                        <span class="text-xs text-gray-300 group-hover:text-purple-400 transition-colors">${tech.name}</span>
-                    </div>
-                `
-            )
-            .join('');
-      }
-
-      categories.forEach((cat) => {
-        cat.addEventListener('click', function () {
-          const index = Number(this.getAttribute('data-index'));
-          setActive(index);
-        });
-      });
-
-      setActive(0);
-    })();
-  </script>
-  @endpush
-
-  <!-- Why Choose InTech Nexus -->
-  <section class="relative py-24 bg-[#0b0c10] border-t border-white/5 why-choose-section">
-    <div class="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-white/[0.02] to-white/[0.04]"></div>
-    <div class="relative max-w-7xl mx-auto px-6 sm:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="p-10 md:p-16 text-white flex flex-col justify-center">
-          <span class="font-mono text-xs uppercase tracking-[0.14em] font-semibold text-purple-400">Why InTech Nexus</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">One team, day one</h2>
-          <p class="text-gray-300 leading-relaxed max-w-md">
-            Our Software Development and UI/UX Design teams work on healthcare projects together from day one, so decisions about how data is handled and decisions about how a screen looks and feels are made with full knowledge of each other, not negotiated after the fact between two disconnected teams.
-          </p>
-        </div>
-        <div class="why-choose-image-frame">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" alt="Why Choose InTech Nexus" class="why-choose-image">
-      </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Frequently Asked Questions -->
+<!-- Common Questions -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5" x-data="{ openFaq: null }">
   <div class="max-w-5xl mx-auto px-6 sm:px-12">
     <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Common Questions</h2>
@@ -476,15 +210,21 @@
   </div>
 </section>
 
-<!-- Call to Action Banner -->
+<!-- Get Started / Call to Action Banner -->
 <section class="py-24 bg-[#0b0c10] border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center">
     <div class="bg-white/[0.03] border border-purple-500/40 p-10 md:p-16 shadow-[0_0_40px_rgba(168,85,247,0.2)] hover:shadow-[0_0_60px_rgba(168,85,247,0.35)] transition-all duration-300">
       <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
         Ready to build a healthcare platform that earns trust from day one?
       </h2>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
+        For a new healthcare platform idea, such as a telemedicine app, see
+        <a href="{{ url('/software-development') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Software Development</a>.
+        For an outdated patient facing website, see
+        <a href="{{ url('/web-development') }}" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Web Development</a>.
+      </p>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Book a call, request a proposal, or get a free quote to begin.
+        Ready to talk through your healthcare project? Get a free quote or book a call with our team.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="{{ url('/contact') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
