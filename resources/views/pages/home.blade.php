@@ -156,6 +156,7 @@
                 ['title' => 'Software Development', 'description' => 'Need a working product built from scratch?', 'image' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/software-development')],
                 ['title' => 'Mobile App Development', 'description' => 'Need a mobile app for your business?', 'image' => 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/mobile-app-development')],
                 ['title' => 'Web Development', 'description' => 'Website not performing the way it should?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/web-development')],
+                ['title' => 'Application Development', 'description' => '  Building something more complex than a simple app or site?', 'image' => 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/application-development')],
                 ['title' => 'UI/UX Design', 'description' => 'Product feels hard to use or outdated?', 'image' => 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/ui-ux-design')],
                 ['title' => 'Graphic & Creative Design', 'description' => 'Need ongoing content and creative support?', 'image' => 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/graphic-design')],
                 ['title' => 'Digital Marketing', 'description' => 'Traffic not turning into leads or sales?', 'image' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80', 'url' => route('page.show', '/digital-marketing')],
@@ -468,7 +469,7 @@
 
       <div class="bg-white/[0.03] border border-white/10 overflow-hidden">
         <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left p-6 font-semibold text-white text-lg flex justify-between items-center focus:outline-none">
-          <span>Can youhelp with just one part of a project, like design or marketing alone?</span>
+          <span>Can you help with just one part of a project, like design or marketing alone?</span>
           <span class="text-purple-400 text-2xl font-bold ml-4" x-text="openFaq === 2 ? '−' : '+'"></span>
         </button>
         <div x-show="openFaq === 2" x-collapse class="px-6 pb-6 text-gray-300 leading-relaxed">
